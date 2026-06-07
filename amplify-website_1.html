@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMPLIFY — Making AI Work for NTD Programme Leaders</title>
+<meta name="description" content="AMPLIFY is an independent WHO ESPEN × Sightsavers initiative equipping national NTD programme leaders across Africa with practical, sustainable AI skills — built for the work they actually do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#15263f;
+    --navy-deep:#0e1a2d;
+    --teal:#0f7d72;
+    --teal-bright:#13a293;
+    --gold:#e0a52e;
+    --gold-soft:#f0c969;
+    --ivory:#f5efe2;
+    --ivory-2:#efe7d6;
+    --paper:#fbf8f1;
+    --ink:#1c2433;
+    --muted:#5a6577;
+    --line:rgba(21,38,63,.12);
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Libre Franklin',-apple-system,sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--teal);display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+  .eyebrow.center::before{display:none}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,239,226,.82);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:.02em;color:var(--navy)}
+  .brand .mark{flex:0 0 auto}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--navy);opacity:.78;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;
+    font-size:.92rem;padding:13px 24px;border-radius:40px;border:1.5px solid transparent;
+    cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .2s;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy-deep);box-shadow:0 6px 18px -6px rgba(224,165,46,.7)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(224,165,46,.8)}
+  .btn-outline{border-color:var(--navy);color:var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:var(--ivory)}
+  .btn-ghost-light{border-color:rgba(245,239,226,.5);color:var(--ivory)}
+  .btn-ghost-light:hover{background:var(--ivory);color:var(--navy)}
+  .nav-cta{display:flex;gap:12px;align-items:center}
+  .hamb{display:none;background:none;border:0;cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:var(--navy);color:var(--ivory);overflow:hidden;padding:96px 0 0}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 88% -10%, rgba(19,162,147,.32), transparent 55%),
+      radial-gradient(90% 80% at 10% 110%, rgba(224,165,46,.16), transparent 60%);
+    pointer-events:none;
+  }
+  .signal{position:absolute;top:-120px;right:-140px;opacity:.5;pointer-events:none}
+  .signal circle{fill:none;stroke:var(--teal-bright);stroke-width:1.5;opacity:.5;transform-origin:center;
+    animation:pulse 4.5s ease-out infinite}
+  .signal circle:nth-child(2){animation-delay:.6s;stroke:var(--gold-soft);opacity:.35}
+  .signal circle:nth-child(3){animation-delay:1.2s}
+  .signal circle:nth-child(4){animation-delay:1.8s;stroke:var(--gold-soft);opacity:.25}
+  @keyframes pulse{0%{transform:scale(.6);opacity:.6}80%{opacity:0}100%{transform:scale(1.25);opacity:0}}
+  .hero-inner{position:relative;z-index:2;max-width:860px;padding-bottom:8px}
+  .hero .tag{
+    display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(240,201,105,.4);
+    padding:7px 16px;border-radius:30px;margin-bottom:30px;
+  }
+  .hero h1{font-size:clamp(2.7rem,6.3vw,5rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:26px}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p.lead{font-size:clamp(1.05rem,1.7vw,1.33rem);max-width:680px;color:rgba(245,239,226,.85);margin-bottom:38px;font-weight:300}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .anim{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}
+
+  .stats{
+    position:relative;z-index:2;margin-top:78px;border-top:1px solid rgba(245,239,226,.16);
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .stat{padding:30px 8px 38px;border-right:1px solid rgba(245,239,226,.12)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:var(--serif);font-size:clamp(2.1rem,3.6vw,3rem);font-weight:600;color:var(--ivory);line-height:1}
+  .stat .n span{color:var(--teal-bright)}
+  .stat .l{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,239,226,.65);margin-top:10px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:96px 0}
+  .section-head{max-width:740px;margin-bottom:54px}
+  .section-head.center{margin:0 auto 56px;text-align:center}
+  .section-head h2{font-size:clamp(2rem,4vw,3.05rem);color:var(--navy);margin:18px 0 0}
+  .section-head p{font-size:1.12rem;color:var(--muted);margin-top:20px}
+
+  .intro{background:var(--paper)}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .intro-grid p{font-size:1.12rem;color:var(--ink);margin-bottom:18px}
+  .pull{
+    border-left:4px solid var(--gold);padding:6px 0 6px 26px;margin-top:8px;
+    font-family:var(--serif);font-size:1.45rem;font-style:italic;color:var(--navy);line-height:1.3;
+  }
+
+  /* icon cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:38px 32px 34px;
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s;position:relative;overflow:hidden;
+  }
+  .card::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--teal);transition:width .35s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 44px -22px rgba(21,38,63,.32);border-color:transparent}
+  .card:hover::after{width:100%}
+  .card .ic{margin-bottom:22px}
+  .card h3{font-size:1.38rem;color:var(--navy);margin-bottom:12px}
+  .card p{color:var(--muted);font-size:1rem}
+  .card.gold::after{background:var(--gold)}
+
+  .invest{background:var(--navy);color:var(--ivory)}
+  .invest .section-head h2{color:var(--ivory)}
+  .invest .section-head p{color:rgba(245,239,226,.78)}
+  .invest .card{background:rgba(255,255,255,.04);border-color:rgba(245,239,226,.14)}
+  .invest .card h3{color:var(--ivory)}
+  .invest .card p{color:rgba(245,239,226,.74)}
+  .invest .card:hover{box-shadow:0 22px 50px -22px rgba(0,0,0,.6)}
+
+  /* how it works */
+  .how{background:var(--ivory-2)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:10px}
+  .step{background:var(--paper);border-radius:16px;padding:30px 24px;border:1px solid var(--line);position:relative}
+  .step .num{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--gold);line-height:1;opacity:.85}
+  .step .ic{margin:14px 0 16px}
+  .step h4{font-size:1.12rem;color:var(--navy);margin-bottom:8px}
+  .step p{font-size:.95rem;color:var(--muted)}
+
+  /* curriculum */
+  .curric{background:var(--paper)}
+  .arc{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 46px}
+  .arc .pill{
+    display:flex;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--line);
+    border-radius:14px;padding:16px 20px;flex:1 1 200px;
+  }
+  .arc .pill .letter{font-family:var(--serif);font-weight:700;font-size:1.6rem;width:46px;height:46px;border-radius:11px;
+    display:grid;place-items:center;color:#fff;flex:0 0 auto}
+  .arc .pill:nth-child(1) .letter{background:var(--teal)}
+  .arc .pill:nth-child(2) .letter{background:var(--navy)}
+  .arc .pill:nth-child(3) .letter{background:var(--gold);color:var(--navy-deep)}
+  .arc .pill:nth-child(4) .letter{background:var(--teal-bright)}
+  .arc .pill .t{font-weight:600;color:var(--navy);font-size:1rem}
+  .arc .pill .s{font-size:.82rem;color:var(--muted)}
+  .modules{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+  .mod{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .mod .mn{font-family:var(--serif);font-weight:600;color:var(--teal);font-size:1.05rem;flex:0 0 56px;
+    border:1px solid var(--teal);border-radius:9px;height:42px;display:grid;place-items:center}
+  .mod h4{font-size:1.08rem;color:var(--navy);margin-bottom:3px}
+  .mod p{font-size:.92rem;color:var(--muted)}
+
+  /* responsible band */
+  .resp{background:var(--teal);color:#eafffb}
+  .resp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+  .resp .eyebrow{color:#bff3ec}
+  .resp .eyebrow::before{background:var(--gold-soft)}
+  .resp h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:#fff;margin:16px 0 18px}
+  .resp p{color:rgba(234,255,251,.9);font-size:1.08rem}
+  .redlines{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .redline{display:flex;gap:13px;align-items:flex-start;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 18px}
+  .redline svg{flex:0 0 auto;margin-top:2px}
+  .redline strong{display:block;color:#fff;font-size:.98rem;font-weight:600}
+  .redline span{font-size:.85rem;color:rgba(234,255,251,.78)}
+
+  /* impact / multiplier */
+  .mult{background:var(--ivory)}
+  .mult-grid{display:grid;grid-template-columns:1fr 1fr;gap:62px;align-items:center}
+  .mult .big{font-family:var(--serif);font-size:clamp(3rem,7vw,5.2rem);font-weight:600;color:var(--navy);line-height:.95}
+  .mult .big em{font-style:normal;color:var(--teal)}
+  .mult .sub{font-size:1.05rem;color:var(--muted);margin-top:16px;max-width:420px}
+  .mult ul{list-style:none;display:grid;gap:18px}
+  .mult li{display:flex;gap:16px;align-items:flex-start}
+  .mult li svg{flex:0 0 auto;margin-top:3px}
+  .mult li b{color:var(--navy)}
+  .mult li p{color:var(--muted);font-size:1rem}
+
+  /* CTA */
+  .cta{background:var(--navy-deep);color:var(--ivory);position:relative;overflow:hidden;text-align:center}
+  .cta::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(80% 120% at 50% -20%,rgba(19,162,147,.28),transparent 60%)}
+  .cta .wrap{position:relative;z-index:2}
+  .cta h2{font-size:clamp(2.1rem,4.6vw,3.4rem);color:#fff;max-width:760px;margin:18px auto 22px}
+  .cta p{font-size:1.16rem;color:rgba(245,239,226,.82);max-width:620px;margin:0 auto 36px;font-weight:300}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* footer */
+  footer{background:var(--navy-deep);color:rgba(245,239,226,.7);padding:56px 0 40px;border-top:1px solid rgba(245,239,226,.1)}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(245,239,226,.12)}
+  .foot-brand{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--ivory);margin-bottom:10px;letter-spacing:.02em}
+  .foot-brand+p{max-width:340px;font-size:.94rem}
+  .partners{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .partner .pl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,226,.45);margin-bottom:6px}
+  .partner .pn{font-family:var(--serif);font-size:1.15rem;color:var(--ivory)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:24px;font-size:.85rem}
+
+  @media(max-width:960px){
+    .intro-grid,.resp-grid,.mult-grid{grid-template-columns:1fr;gap:38px}
+    .cards{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .modules{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat{border-bottom:1px solid rgba(245,239,226,.12)}
+  }
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .cards{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .redlines{grid-template-columns:1fr}
+    .arc .pill{flex:1 1 100%}
+    section{padding:70px 0}
+    .nav-cta .btn-outline{display:none}
+  }
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <circle cx="9" cy="17" r="3.4" fill="#e0a52e"/>
+        <path d="M15 11a9 9 0 0 1 0 12" stroke="#0f7d72" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M19.5 7a15 15 0 0 1 0 20" stroke="#15263f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M24 3.5a21 21 0 0 1 0 27" stroke="#13a293" stroke-width="2.2" stroke-linecap="round" opacity=".6"/>
+      </svg>
+      AMPLIFY
+    </a>
+    <nav class="nav-links">
+      <a href="#different">Why AMPLIFY</a>
+      <a href="#how">How it works</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#impact">Impact</a>
+      <a href="#support">Support</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#support" class="btn btn-outline">Partner with us</a>
+      <a href="mailto:apavluck@sightsavers.org?subject=Supporting%20future%20AMPLIFY%20cohorts" class="btn btn-gold">Support future cohorts</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="signal" width="520" height="520" viewBox="0 0 520 520" aria-hidden="true">
+    <circle cx="260" cy="260" r="90"/>
+    <circle cx="260" cy="260" r="150"/>
+    <circle cx="260" cy="260" r="210"/>
+    <circle cx="260" cy="260" r="255"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="tag anim d1">A WHO ESPEN × Sightsavers Initiative</span>
+    <h1 class="anim d2">Making AI work for the people who run <em>NTD programmes.</em></h1>
+    <p class="lead anim d3">AMPLIFY equips national Neglected Tropical Disease programme leaders across Africa with practical, durable AI skills — taught entirely through the data, decisions, and deadlines of their own work.</p>
+    <div class="hero-actions anim d4">
+      <a href="#support" class="btn btn-gold">Support the programme →</a>
+      <a href="#different" class="btn btn-ghost-light">See what makes it different</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats anim d5">
+      <div class="stat"><div class="n">7</div><div class="l">Countries</div></div>
+      <div class="stat"><div class="n">16</div><div class="l">Programme leaders</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Monthly modules</div></div>
+      <div class="stat"><div class="n">100<span>%</span></div><div class="l">NTD-specific</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <span class="eyebrow">The idea behind AMPLIFY</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--navy);margin-top:18px;">A capacity gap that AI is uniquely placed to close.</h2>
+    </div>
+    <div class="reveal">
+      <p>The NTD field is moving decisively toward country ownership — at the same moment that partner technical and human-resource capacity is contracting. Programme teams are being asked to do more, with less support, on tighter timelines.</p>
+      <p>AMPLIFY treats AI fluency as a high-leverage response to that squeeze: a way for national teams to clean data, surface insight, and produce their own materials without waiting on external consultants.</p>
+      <div class="pull">We teach skills people keep — not tools they lose when the funding ends.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENT FROM OTHER TRAINING -->
+<section id="different">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Different from other AI training</span>
+      <h2>There are excellent AI courses online. AMPLIFY does three things they can't.</h2>
+      <p>Coursera, edX, DeepLearning.AI and YouTube are genuinely good starting points. But generic training leaves the hardest step to the learner: translating it into the realities of an NTD programme. AMPLIFY closes that gap by design.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ic">
+          <!-- target / domain -->
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+            <circle cx="31" cy="31" r="24" stroke="#0f7d72" stroke-width="3"/>
+            <circle cx="31" cy="31" r="14" stroke="#15263f" stroke-width="3"/>
+            <circle cx="31" cy="31" r="4.5" fill="#e0a52e"/>
+          </svg>
+        </div>
+        <h3>Built on NTD work</h3>
+        <p>Every example uses the data NTD professionals actually handle — MDA coverage, endemic IU status, district names, ESPEN exports. Students learn the AI skill, not an unfamiliar dataset.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <!-- mentor -->
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+            <circle cx="23" cy="22" r="9" stroke="#0f7d72" stroke-width="3"/>
+            <path d="M9 50c0-9 6.3-15 14-15s14 6 14 15" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="44" cy="27" r="6.5" stroke="#e0a52e" stroke-width="3"/>
+            <path d="M39 50c0-7 4-11 9-11s8 3 8 9" stroke="#e0a52e" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>A mentor for every student</h3>
+        <p>Each student is paired with a mentor for individual mid-month check-ins — not a forum, but real one-to-one support that keeps people moving when a course would otherwise lose them.</p>
+      </div>
+      <div class="card reveal gold">
+        <div class="ic">
+          <!-- teach others -->
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+            <rect x="9" y="12" width="34" height="26" rx="3" stroke="#15263f" stroke-width="3"/>
+            <path d="M9 44h44" stroke="#0f7d72" stroke-width="3" stroke-linecap="round"/>
+            <path d="M16 22h20M16 29h14" stroke="#0f7d72" stroke-width="3" stroke-linecap="round"/>
+            <path d="M49 24l4 4-4 4" stroke="#e0a52e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Students build, then teach</h3>
+        <p>Monthly, students watch AI applied to NTD tasks, practise live and in homework, and then create their own training materials for each module — to teach colleagues back home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENT FROM OTHER NTD INVESTMENTS -->
+<section class="invest" id="investment">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:#bff3ec;">Different from other NTD investments</span>
+      <h2>Designed to outlast the grant that funds it.</h2>
+      <p>Too many investments deliver a capability that disappears the moment the money does. AMPLIFY is engineered for the opposite — value that compounds inside national programmes long after the cohort closes.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ic">
+          <!-- sustainability / seed -->
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+            <path d="M31 52V30" stroke="#13a293" stroke-width="3" stroke-linecap="round"/>
+            <path d="M31 30c0-9-7-15-16-15 0 9 7 15 16 15Z" stroke="#13a293" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M31 34c0-8 6-13 14-13 0 8-6 13-14 13Z" stroke="#e0a52e" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M22 52h18" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Skills, not subscriptions</h3>
+        <p>We never hand students a paid tool they lose access to when the course ends. The focus is transferable skill and judgement — capabilities that stay with the person and the programme.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <!-- independent / balance -->
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+            <path d="M31 10v40" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+            <path d="M14 18h34" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+            <path d="M14 18l-6 12h12l-6-12ZM48 18l-6 12h12l-6-12Z" stroke="#0f7d72" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="31" cy="52" r="3.5" fill="#e0a52e"/>
+          </svg>
+        </div>
+        <h3>Independent &amp; vendor-neutral</h3>
+        <p>AMPLIFY isn't funded by, or affiliated with, any AI company. Tool guidance is driven by fitness for the task and cost to the user — never by a commercial relationship.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <!-- fills gap / bridge -->
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+            <path d="M8 38h46" stroke="#13a293" stroke-width="3" stroke-linecap="round"/>
+            <path d="M8 38V24M54 38V24" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 38v-8M31 38V26M44 38v-8" stroke="#e0a52e" stroke-width="3" stroke-linecap="round"/>
+            <path d="M8 24c8-9 38-9 46 0" stroke="#0f7d72" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Funds the under-funded</h3>
+        <p>Donors rightly prioritise programmatic delivery — which leaves capacity-building chronically under-resourced. AMPLIFY targets exactly that gap, at a fraction of the cost of the activities it strengthens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow center">The cohort model</span>
+      <h2>A seven-month rhythm, built around real schedules.</h2>
+      <p>March–September 2026 · third Thursday monthly · two hours online · plus mid-month mentoring and a peer Slack community.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">01</div>
+        <div class="ic">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <rect x="6" y="9" width="34" height="30" rx="3" stroke="#0f7d72" stroke-width="3"/>
+            <path d="M6 17h34M15 5v8M31 5v8" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="23" cy="28" r="3.5" fill="#e0a52e"/>
+          </svg>
+        </div>
+        <h4>Monthly live class</h4>
+        <p>Two focused hours: AI demonstrated on genuine NTD tasks, then practised together in the room.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">02</div>
+        <div class="ic">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <path d="M23 6l4.8 9.7L38 17l-7.5 7.3L32 35l-9-4.7L14 35l1.5-10.7L8 17l10.2-1.3L23 6Z" stroke="#0f7d72" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="23" cy="22" r="3" fill="#e0a52e"/>
+          </svg>
+        </div>
+        <h4>Hands-on homework</h4>
+        <p>Applied assignments on each student's own data, submitted and discussed in the cohort Slack.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">03</div>
+        <div class="ic">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <circle cx="18" cy="16" r="7" stroke="#0f7d72" stroke-width="3"/>
+            <path d="M6 38c0-7 5-12 12-12s12 5 12 12" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+            <path d="M30 14l3.5 3.5L40 11" stroke="#e0a52e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h4>1:1 mentor check-in</h4>
+        <p>A mid-month conversation with a dedicated mentor to unblock, deepen, and keep momentum.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">04</div>
+        <div class="ic">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <path d="M23 5l3 6 6 .8-4.5 4.4 1 6.3L23 26l-5.5 2.5 1-6.3L14 11.8 20 11l3-6Z" stroke="#e0a52e" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M14 40c3-5 15-5 18 0" stroke="#0f7d72" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 30v8M28 30v8" stroke="#15263f" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Teach-back artefact</h4>
+        <p>Each module ends with the student producing a training resource to share with their own team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curric" id="curriculum">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The curriculum</span>
+      <h2>From first prompt to programme decision.</h2>
+      <p>The data modules follow a simple arc students can carry into any analysis — <strong>CAVA</strong> — wrapped in foundations at the start and strategy at the end.</p>
+    </div>
+    <div class="arc reveal">
+      <div class="pill"><span class="letter">C</span><div><div class="t">Clean</div><div class="s">Raw data → reliable dataset</div></div></div>
+      <div class="pill"><span class="letter">A</span><div><div class="t">Analyse</div><div class="s">Dataset → patterns &amp; trends</div></div></div>
+      <div class="pill"><span class="letter">V</span><div><div class="t">Visualise</div><div class="s">Numbers → charts &amp; maps</div></div></div>
+      <div class="pill"><span class="letter">A</span><div><div class="t">Act</div><div class="s">Insight → decisions</div></div></div>
+    </div>
+    <div class="modules">
+      <div class="mod reveal"><div class="mn">01</div><div><h4>AI Fundamentals for NTD Programmes</h4><p>What generative AI is, what it isn't, and responsible use from day one.</p></div></div>
+      <div class="mod reveal"><div class="mn">02</div><div><h4>Prompting &amp; Data Literacy</h4><p>Writing effective prompts and reading what the model gives back critically.</p></div></div>
+      <div class="mod reveal"><div class="mn">03</div><div><h4>Data Cleaning, Transformation &amp; Analysis</h4><p>Turning messy ESPEN exports into analysis-ready insight — the C and A of CAVA.</p></div></div>
+      <div class="mod reveal"><div class="mn">04</div><div><h4>AI for Data Visualisation</h4><p>Charts and maps that make the numbers tell a programme story.</p></div></div>
+      <div class="mod reveal"><div class="mn">05</div><div><h4>From Insight to Action</h4><p>Closing the loop: using analysis to inform programme and policy decisions.</p></div></div>
+      <div class="mod reveal"><div class="mn">06</div><div><h4>AI for Strategy, Planning &amp; Decision Support</h4><p>Applying AI to higher-order planning — within clear data-protection limits.</p></div></div>
+      <div class="mod reveal"><div class="mn">07</div><div><h4>Capstone Project</h4><p>Each student ships a real piece of work that benefits their own programme.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESPONSIBLE BY DESIGN -->
+<section class="resp" id="responsible">
+  <div class="wrap resp-grid">
+    <div class="reveal">
+      <span class="eyebrow">Responsible by design</span>
+      <h2>Practical AI, with the guardrails public health requires.</h2>
+      <p>AMPLIFY doesn't pretend AI is risk-free. Students are taught, from Module 1, a firm set of red lines — what must never be entered into a public AI tool — and to work only with de-identified, publicly available data. Capability and caution are taught together.</p>
+    </div>
+    <div class="redlines reveal">
+      <div class="redline">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M5 5l12 12" stroke="#f0c969" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <div><strong>No patient data</strong><span>Names, addresses, identifiable health records</span></div>
+      </div>
+      <div class="redline">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M5 5l12 12" stroke="#f0c969" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <div><strong>No confidential gov data</strong><span>Unpublished strategy or policy drafts</span></div>
+      </div>
+      <div class="redline">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M5 5l12 12" stroke="#f0c969" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <div><strong>No credentials</strong><span>Passwords, API keys, logins</span></div>
+      </div>
+      <div class="redline">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M5 5l12 12" stroke="#f0c969" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <div><strong>De-identified only</strong><span>Public ESPEN aggregate data by default</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT / MULTIPLIER -->
+<section class="mult" id="impact">
+  <div class="wrap mult-grid">
+    <div class="reveal">
+      <span class="eyebrow">The multiplier</span>
+      <div class="big" style="margin-top:18px;">16 students.<br><em>Hundreds reached.</em></div>
+      <p class="sub">Because every student builds teaching materials and trains their own colleagues, a single cohort seeds AI capability across seven national NTD programmes — not just sixteen inboxes.</p>
+    </div>
+    <div class="reveal">
+      <ul>
+        <li>
+          <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#0f7d72" stroke-width="2.4" fill="none"/><path d="M8 13l3.3 3.3L18 9.5" stroke="#0f7d72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Country ownership, strengthened.</b> Capability lives inside the Ministry of Health team, not with an external consultant.</p>
+        </li>
+        <li>
+          <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#0f7d72" stroke-width="2.4" fill="none"/><path d="M8 13l3.3 3.3L18 9.5" stroke="#0f7d72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Bilingual by design.</b> Delivered across francophone and anglophone programmes, with materials in both English and French.</p>
+        </li>
+        <li>
+          <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#0f7d72" stroke-width="2.4" fill="none"/><path d="M8 13l3.3 3.3L18 9.5" stroke="#0f7d72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Independently evaluated.</b> An external evaluator assesses the pilot, so the model can be improved and scaled on evidence.</p>
+        </li>
+        <li>
+          <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#0f7d72" stroke-width="2.4" fill="none"/><path d="M8 13l3.3 3.3L18 9.5" stroke="#0f7d72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>A replicable blueprint.</b> The curriculum and teach-back model are designed to be handed to the next cohort and the next disease area.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="support">
+  <div class="wrap">
+    <span class="eyebrow center" style="color:#bff3ec;justify-content:center;display:flex;">Support AMPLIFY</span>
+    <h2>Help us prove that AI belongs in public-health training.</h2>
+    <p>Funding a cohort builds lasting capability inside national NTD programmes — and helps make the case for AI fluency as standard practice across global health. We'd welcome a conversation with funders and partners.</p>
+    <div class="cta-actions">
+      <a href="mailto:apavluck@sightsavers.org?subject=Supporting%20future%20AMPLIFY%20cohorts" class="btn btn-gold">Support future cohorts →</a>
+      <a href="mailto:apavluck@sightsavers.org" class="btn btn-ghost-light">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">AMPLIFY</div>
+        <p>Making AI work for NTD programme leaders. A capacity-building programme for national Neglected Tropical Disease teams across Africa.</p>
+      </div>
+      <div class="partners">
+        <div class="partner"><div class="pl">Delivered with</div><div class="pn">WHO&nbsp;ESPEN</div></div>
+        <div class="partner"><div class="pl">In partnership with</div><div class="pn">Sightsavers</div></div>
+        <div class="partner"><div class="pl">Pilot</div><div class="pn">2026</div></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AMPLIFY. An independent, vendor-neutral initiative.</span>
+      <span>Côte d'Ivoire · Burkina Faso · Togo · DR Congo · Ghana · South Sudan · Ethiopia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay = (i % 3 * 0.08) + 's';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
