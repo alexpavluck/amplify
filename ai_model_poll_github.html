@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Model Poll</title>
+</head>
+<body>
+<div id="app"></div>
+<style>
+  * { box-sizing: border-box; }
+  #app {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1a1a2e;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  h1 {
+    font-size: 22px;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .option-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fafafa;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #1a1a2e;
+  }
+  .option-btn:hover:not(:disabled) {
+    border-color: #6366f1;
+    background: #f5f5ff;
+    transform: translateY(-1px);
+  }
+  .option-btn:disabled {
+    cursor: default;
+    opacity: 0.6;
+  }
+  .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    font-size: 14px;
+  }
+  .link-btn {
+    background: none;
+    border: none;
+    color: #6366f1;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 0;
+  }
+  .link-btn:hover { text-decoration: underline; }
+  .status {
+    color: #16a34a;
+    font-weight: 600;
+  }
+  .bar-row {
+    margin-bottom: 14px;
+  }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .bar-track {
+    background: #f3f4f6;
+    border-radius: 8px;
+    height: 22px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.4s ease;
+  }
+  .total-votes {
+    text-align: center;
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 16px;
+  }
+  .error-msg {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .reset-link {
+    color: #9ca3af !important;
+    font-size: 12px !important;
+  }
+  .reset-link:hover {
+    color: #dc2626 !important;
+  }
+  .reset-confirm {
+    margin-top: 10px;
+    padding: 12px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #7f1d1d;
+  }
+  .reset-confirm div {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+  }
+  .small-btn {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .small-btn.danger {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+  }
+</style>
+
+<script>
+const OPTIONS = [
+  { key: 'Claude', color: '#d97757' },
+  { key: 'ChatGPT', color: '#10a37f' },
+  { key: 'Gemini', color: '#4285f4' },
+  { key: 'Mistral', color: '#f97316' },
+  { key: 'Deepseek / Kimi / GLM', color: '#6366f1' },
+  { key: 'Other', color: '#6b7280' },
+];
+
+// ---- REQUIRED SETUP ----
+// 1. Sign up free at https://jsonbin.io and copy your Master Key from the API Keys page.
+// 2. Create the starting bin (see instructions Alex was given) and copy its Bin ID.
+// 3. Paste both values below before uploading this file.
+const JSONBIN_MASTER_KEY = 'PASTE_YOUR_MASTER_KEY_HERE';
+const JSONBIN_BIN_ID = 'PASTE_YOUR_BIN_ID_HERE';
+const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+
+let view = 'vote'; // 'vote' | 'results'
+let hasVoted = false;
+let votedFor = null;
+let votes = {};
+OPTIONS.forEach(o => votes[o.key] = 0);
+let errorMsg = '';
+let pollTimer = null;
+let resetConfirm = false;
+
+async function loadVotes() {
+  try {
+    const res = await fetch(JSONBIN_URL + '/latest', {
+      headers: { 'X-Master-Key': JSONBIN_MASTER_KEY }
+    });
+    if (!res.ok) throw new Error('Bad response: ' + res.status);
+    const data = await res.json();
+    const record = data.record || {};
+    OPTIONS.forEach(o => votes[o.key] = record[o.key] || 0);
+  } catch (e) {
+    console.error('loadVotes failed', e);
+  }
+}
+
+async function castVote(key) {
+  if (hasVoted) return;
+  try {
+    await loadVotes(); // get freshest counts before incrementing
+    votes[key] = (votes[key] || 0) + 1;
+    const res = await fetch(JSONBIN_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSONBIN_MASTER_KEY,
+        'X-Bin-Versioning': 'false'
+      },
+      body: JSON.stringify(votes)
+    });
+    if (!res.ok) throw new Error('Bad response: ' + res.status);
+    hasVoted = true;
+    votedFor = key;
+    errorMsg = '';
+    render();
+  } catch (e) {
+    console.error('castVote failed', e);
+    errorMsg = 'Could not submit your vote. Please try again.';
+    render();
+  }
+}
+
+function switchView(v) {
+  view = v;
+  if (v === 'results') {
+    loadVotes().then(render);
+    if (!pollTimer) {
+      pollTimer = setInterval(async () => {
+        if (view === 'results') {
+          await loadVotes();
+          render();
+        }
+      }, 3000);
+    }
+  } else {
+    render();
+  }
+}
+
+function totalVotes() {
+  return Object.values(votes).reduce((a, b) => a + b, 0);
+}
+
+function renderVoteView() {
+  const app = document.getElementById('app');
+  app.innerHTML = `
+    <div class="card">
+      <h1>What AI model do you use the most?</h1>
+      <div class="subtitle">Pick one — you can view live results after voting.</div>
+      <div id="options"></div>
+      ${hasVoted ? `<div class="status">✓ Vote recorded: ${votedFor}</div>` : ''}
+      ${errorMsg ? `<div class="error-msg">${errorMsg}</div>` : ''}
+      <div class="footer-row">
+        <button class="link-btn" id="results-link">See live results →</button>
+      </div>
+    </div>
+  `;
+  const optionsDiv = document.getElementById('options');
+  OPTIONS.forEach(o => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.disabled = hasVoted;
+    btn.innerHTML = `<span class="swatch" style="background:${o.color}"></span>${o.key}`;
+    btn.onclick = () => castVote(o.key);
+    optionsDiv.appendChild(btn);
+  });
+  document.getElementById('results-link').onclick = () => switchView('results');
+}
+
+function renderResultsView() {
+  const app = document.getElementById('app');
+  const total = totalVotes();
+  app.innerHTML = `
+    <div class="card">
+      <h1>Live Results</h1>
+      <div class="subtitle">Updates automatically every few seconds.</div>
+      <div id="bars"></div>
+      <div class="total-votes">${total} vote${total === 1 ? '' : 's'} total</div>
+      <div class="footer-row">
+        <button class="link-btn" id="back-link">← Back to vote</button>
+        <button class="link-btn" id="refresh-link">Refresh now</button>
+      </div>
+      <div class="footer-row" style="margin-top:6px;">
+        <button class="link-btn reset-link" id="reset-link">Reset all votes (testing)</button>
+      </div>
+      ${resetConfirm ? `
+        <div class="reset-confirm">
+          <span>Wipe all votes? This can't be undone.</span>
+          <div>
+            <button class="small-btn danger" id="reset-yes">Yes, wipe</button>
+            <button class="small-btn" id="reset-no">Cancel</button>
+          </div>
+        </div>
+      ` : ''}
+    </div>
+  `;
+  const barsDiv = document.getElementById('bars');
+  OPTIONS.forEach(o => {
+    const count = votes[o.key] || 0;
+    const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+    const row = document.createElement('div');
+    row.className = 'bar-row';
+    row.innerHTML = `
+      <div class="bar-label"><span>${o.key}</span><span>${count} (${pct}%)</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%; background:${o.color}"></div></div>
+    `;
+    barsDiv.appendChild(row);
+  });
+  document.getElementById('back-link').onclick = () => switchView('vote');
+  document.getElementById('refresh-link').onclick = async () => {
+    await loadVotes();
+    render();
+  };
+  document.getElementById('reset-link').onclick = () => {
+    resetConfirm = true;
+    render();
+  };
+  if (resetConfirm) {
+    document.getElementById('reset-yes').onclick = async () => {
+      OPTIONS.forEach(o => votes[o.key] = 0);
+      try {
+        const res = await fetch(JSONBIN_URL, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': JSONBIN_MASTER_KEY,
+            'X-Bin-Versioning': 'false'
+          },
+          body: JSON.stringify(votes)
+        });
+        if (!res.ok) throw new Error('Bad response: ' + res.status);
+      } catch (e) {
+        console.error('reset failed', e);
+        errorMsg = 'Could not reset votes. Please try again.';
+      }
+      resetConfirm = false;
+      hasVoted = false;
+      votedFor = null;
+      render();
+    };
+    document.getElementById('reset-no').onclick = () => {
+      resetConfirm = false;
+      render();
+    };
+  }
+}
+
+function render() {
+  if (view === 'vote') renderVoteView();
+  else renderResultsView();
+}
+
+loadVotes().then(render);
+</script>
+</body></html>
