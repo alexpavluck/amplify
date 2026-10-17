@@ -144,12 +144,14 @@ button{font:inherit;color:inherit}
 .hub-panel{
   max-width:1160px;margin:1.5rem auto 0;background:var(--muted);border-radius:16px;
   padding:clamp(1.5rem,1rem + 2vw,2.5rem);text-align:left;
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.6fr);gap:2rem 3rem;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:2rem 3rem;
 }
 .hub-panel[hidden]{display:none}
 .hub-panel .m{color:var(--ink-2);font-size:var(--fs-small)}
 .hub-panel .m{margin-top:.5rem}
 .hub-panel .h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);letter-spacing:-.03em;line-height:1.1}
+.hub-panel .story{max-width:44rem}
+.hub-panel .story p+p{margin-top:1rem}
 .hub-panel dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem 2rem}
 .hub-panel dt{font-weight:600;margin-bottom:.35rem}
 .hub-panel dd{color:var(--ink)}
@@ -340,67 +342,35 @@ button{font:inherit;color:inherit}
     <div aria-live="polite">
       <div class="hub-panel" id="panel-0">
         <div><h3 class="h3">Setup &amp; AI fundamentals</h3><p class="m">Month 1 · Foundations · first session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>Meet the cohort, set up Slack and a Claude project of your own, and learn the shared vocabulary: models, red lines, and the keep, new idea or discard habit of iterating.</dd></div>
-          <div><dt>Your homework</dt><dd>Introduce yourself on Slack, post your problem to the whole cohort, and respond to at least two others.</dd></div>
-          <div><dt>What it adds</dt><dd>A shared cohort, and a problem with a name.</dd></div>
-        </dl>
+        <div class="story"><p>You meet the cohort and the instructors, and leave with your own Claude project and a place on the course Slack. We introduce the vocabulary you will use for the next four months: what the different models are good at, the red lines on what must never go into an AI tool, and the habit of judging every answer, then keeping it, trying a new idea or discarding it.</p><p>Before the next session, you introduce yourself on Slack, post your problem for the whole cohort to read, and respond to at least two other people’s. By the end of the week your problem has a name, and other people are already thinking about it.</p></div>
       </div>
       <div class="hub-panel" id="panel-1" hidden>
         <div><h3 class="h3">Prompting &amp; skills</h3><p class="m">Month 1 · Foundations · second session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>The structure of an effective prompt, prompting in your own voice, and building or borrowing a reusable skill, with breakouts to practise both.</dd></div>
-          <div><dt>Your homework</dt><dd>Use prompting to question and sharpen your problem. Find or build a skill for it, and sort the parts that repeat from the one-offs.</dd></div>
-          <div><dt>What it adds</dt><dd>A sharper problem, and tools you can reuse.</dd></div>
-        </dl>
+        <div class="story"><p>This session is about asking well. You learn how an effective prompt is put together, how to get answers that sound like you rather than a chatbot, and how to build a reusable skill or borrow one someone else has made. Most of the time is spent practising in small groups.</p><p>Afterwards, you turn those prompts on your own problem, using the AI to question it until it is sharper than the version you posted. You look for a skill that fits, and start to separate the parts of your task that repeat, which a skill can take on, from the steps you only do once.</p></div>
       </div>
       <div class="hub-panel" id="panel-2" hidden>
         <div><h3 class="h3">Knowledge management</h3><p class="m">Month 2 · Knowledge &amp; connectors · first session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>Why programme knowledge gets lost, and how a notebook can hold it. Hands-on practice building one, then a demo of carrying its synthesis into Claude.</dd></div>
-          <div><dt>Your homework</dt><dd>Create a notebook around your problem.</dd></div>
-          <div><dt>What it adds</dt><dd>An organised knowledge base behind the problem.</dd></div>
-        </dl>
+        <div class="story"><p>Programme knowledge has a habit of disappearing. It leaves with staff, or sits in email threads nobody can search. You see how a notebook can hold it in one place, build one yourself in a hands-on session, and watch the instructor take a notebook’s synthesis into Claude to work with.</p><p>Your homework is a notebook built around your own problem: the reports, guidelines and past data it depends on, gathered where you and the AI can both use them.</p></div>
       </div>
       <div class="hub-panel" id="panel-3" hidden>
         <div><h3 class="h3">Connectors to your data</h3><p class="m">Month 2 · Knowledge &amp; connectors · second session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>Connecting Claude to where your information lives: built-in connectors such as Google Drive and email, and a custom connector to ESPEN data.</dd></div>
-          <div><dt>Your homework</dt><dd>Map the connectors that reach the data and documents behind your problem.</dd></div>
-          <div><dt>What it adds</dt><dd>Live access to real data.</dd></div>
-        </dl>
+        <div class="story"><p>Next, the AI goes to where your information already lives. You connect Claude to tools you use every day, such as Google Drive and email, and to ESPEN data through a custom connector, then try each one on real examples.</p><p>Before the next session, you map which connectors reach the data and documents behind your problem. From here on, you are working with live information rather than copies.</p></div>
       </div>
       <div class="hub-panel" id="panel-4" hidden>
         <div><h3 class="h3">AI for decision-making</h3><p class="m">Month 3 · Decisions &amp; content · first session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>A data-to-action framework (decision question, source, trigger, action), with worked examples for each problem area and group work by theme.</dd></div>
-          <div><dt>Your homework</dt><dd>Use AI to build a data-to-action framework for your project, then run it.</dd></div>
-          <div><dt>What it adds</dt><dd>A decision structure for the problem.</dd></div>
-        </dl>
+        <div class="story"><p>Data only matters if it changes a decision. This session introduces a data-to-action framework: the decision you need to make, the source that informs it, the trigger that should prompt it, and the action that follows. You work through examples for each problem area, in groups with people tackling similar problems.</p><p>You then use AI to build a framework for your own project and run it, which puts a clear decision at the centre of your problem.</p></div>
       </div>
       <div class="hub-panel" id="panel-5" hidden>
         <div><h3 class="h3">Documents &amp; presentations</h3><p class="m">Month 3 · Decisions &amp; content · second session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>Using AI to write reports and checklists and to build presentations, then making them better: clearer visuals, diagrams, layout and accessibility.</dd></div>
-          <div><dt>Your homework</dt><dd>Create the pitch for your solution.</dd></div>
-          <div><dt>What it adds</dt><dd>A draft of your final presentation.</dd></div>
-        </dl>
+        <div class="story"><p>Now you make the case. You use AI to draft reports, checklists and presentations, then learn to improve on the first draft it hands you, with clearer visuals, useful diagrams, a sensible layout and attention to accessibility.</p><p>Your homework is the pitch for your solution, which becomes the first draft of your final presentation.</p></div>
       </div>
       <div class="hub-panel" id="panel-6" hidden>
         <div><h3 class="h3">Presentations &amp; dashboards</h3><p class="m">Month 4 · Visualisation &amp; showcase · first session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>The first five pairs present their solutions. Then charting, and when a static dashboard is enough and when it needs to be live.</dd></div>
-          <div><dt>Your homework</dt><dd>Prepare your presentation.</dd></div>
-          <div><dt>What it adds</dt><dd>Ready for the showcase.</dd></div>
-        </dl>
+        <div class="story"><p>The showcase begins, with the first five pairs presenting their solutions to the cohort. The second half turns to charting, and to knowing when a static dashboard is enough and when your audience needs a live one.</p><p>If you have not presented yet, you spend the next fortnight getting your presentation ready.</p></div>
       </div>
       <div class="hub-panel" id="panel-7" hidden>
         <div><h3 class="h3">Presentations, maps &amp; close</h3><p class="m">Month 4 · Visualisation &amp; showcase · second session</p></div>
-        <dl>
-          <div><dt>In the session</dt><dd>The remaining pairs present. A guest session on maps, and a final worked demo.</dd></div>
-          <div><dt>Your homework</dt><dd>A one-page reflection on what the course was worth to you and the blind spots that remain.</dd></div>
-          <div><dt>What it adds</dt><dd>A solution presented, and a clear view of what is left to learn.</dd></div>
-        </dl>
+        <div class="story"><p>The remaining pairs present, a guest speaker leads a session on maps, and the instructors close with a final worked demo. You leave with a solution you have presented to your peers.</p><p>Your last piece of work is a one-page reflection on what the course was worth to you, and on the blind spots that remain.</p></div>
       </div>
     </div>
   </div>
@@ -413,10 +383,10 @@ button{font:inherit;color:inherit}
       <h2 class="h2" data-rise>Start with the task, not the AI.</h2>
       <p class="lead" data-rise style="--rd:.08s">Your application begins with a problem statement. It asks about your work, not about AI: one specific task you do again and again, described as if a new colleague were taking it over next month. Everything you build in the course grows out of it.</p>
       <ul class="areas">
-        <li data-rise style="--rd:.12s"><b>Data management and analysis</b>Qualitative or quantitative: compiling, cleaning, checking and analysing programme data.</li>
-        <li data-rise style="--rd:.18s"><b>Communication</b>Writing reports, preparing slides, running social and behaviour change campaigns.</li>
-        <li data-rise style="--rd:.24s"><b>Knowledge management</b>Bringing sources together and getting the right information to people when they need it, including training.</li>
-        <li data-rise style="--rd:.3s"><b>Project management</b>Planning, tracking and coordinating the work itself.</li>
+        <li data-rise style="--rd:.12s"><b>Data management and analysis</b>You compile, clean, check or analyse programme data, whether it is numbers or interview notes.</li>
+        <li data-rise style="--rd:.18s"><b>Communication</b>You write reports, prepare slides, or run social and behaviour change campaigns.</li>
+        <li data-rise style="--rd:.24s"><b>Knowledge management</b>You bring information together from different places and get it to the people who need it, when they need it, including through training.</li>
+        <li data-rise style="--rd:.3s"><b>Project management</b>You plan, track and coordinate the work itself.</li>
       </ul>
     </div>
     <div class="example">
@@ -428,11 +398,11 @@ button{font:inherit;color:inherit}
       <div class="ex ex-strong" data-rise style="--rd:.1s">
         <p class="tag"><i aria-hidden="true"></i>A strong one</p>
         <dl>
-          <dt>Task</dt><dd>Compiling district MDA treatment data into a presentation, with charts and maps, for the national LF and oncho technical meetings.</dd>
-          <dt>How often</dt><dd>Once a year. About three weeks for two people.</dd>
-          <dt>Last time</dt><dd>38 districts reported: 25 by Excel email, 9 as WhatsApp photos of paper forms, 4 by phone, on several versions of the template.</dd>
-          <dt>What went wrong</dt><dd>One district reported 112% coverage. It was only caught at the chart stage, after the numbers had gone to a partner.</dd>
-          <dt>Better looks like</dt><dd>Every district file checked within days of arrival; the report done in one week, not three.</dd>
+          <dt>Task</dt><dd>I compile district MDA treatment data into a presentation, with charts and maps, for the national LF and oncho technical meetings.</dd>
+          <dt>How often</dt><dd>Once a year. It takes me and a data officer about three weeks.</dd>
+          <dt>Last time</dt><dd>After the 2025 round, 38 districts sent their summaries: 25 as Excel files by email, 9 as WhatsApp photos of paper forms, and 4 by phone. Several used old versions of the template, and I retyped every figure into our national workbook.</dd>
+          <dt>What went wrong</dt><dd>One district reported more people treated than lived there, which gave 112% coverage. I only noticed when I made the chart, after the numbers had already gone to a partner.</dd>
+          <dt>Better looks like</dt><dd>Every district’s data checked for obvious errors within a few days of arriving, and the report finished in one week instead of three.</dd>
         </dl>
         <p class="note">Illustrative example, abridged from the AMPLIFY problem statement form.</p>
       </div>
@@ -487,13 +457,13 @@ button{font:inherit;color:inherit}
     </div>
     <ol class="needs" aria-label="What you need to apply">
       <li data-rise>
-        <div><b>The application form</b>Who you are, your programme, and your role in it.</div>
+        <div><b>The application form</b>This tells us who you are, which programme you work for, and your role in it.</div>
       </li>
       <li data-rise style="--rd:.07s">
-        <div><b>A problem statement</b>Eleven questions about one task: how often you do it, the last time step by step, where it goes wrong, and what better would look like. AI comes last.</div>
+        <div><b>A problem statement</b>Eleven questions about one task: how often you do it, what happened the last time you did it, where it goes wrong, and what better would look like. AI only comes in at the end.</div>
       </li>
       <li data-rise style="--rd:.14s">
-        <div><b>A letter of support from your manager</b>The problem is part of your own work, so your manager needs to agree you can work on it during the course.</div>
+        <div><b>A letter of support from your manager</b>Because the problem comes from your own work, your manager needs to agree that you can spend time on it during the course.</div>
       </li>
     </ol>
   </div>
