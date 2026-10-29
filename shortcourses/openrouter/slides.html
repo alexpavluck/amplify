@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nigeria LF Elimination — Technical Deck | Présentation technique</title>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin>
+</head>
+<body class="deck-body">
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="dot"></span>OMP × OpenRouter</a>
+  <nav>
+    <a href="index.html"><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></a>
+    <a href="setup.html"><span class="lang-en">Setup &amp; Basics</span><span class="lang-fr">Installation &amp; bases</span></a>
+    <a href="slides.html" class="active"><span class="lang-en">LF Slides (Nigeria)</span><span class="lang-fr">Diapos FL (Nigeria)</span></a>
+  </nav>
+  <div class="lang-toggle" role="group" aria-label="Language / Langue">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+  </div>
+</header>
+
+<div class="deck">
+  <div class="deck-viewport">
+
+    <!-- ========== SLIDE 1 ========== -->
+    <section class="slide active" data-slide="0">
+      <h1 class="slide-title">
+        <span class="lang-en">Eliminating Lymphatic Filariasis in Nigeria</span>
+        <span class="lang-fr">Éliminer la filariose lymphatique au Nigeria</span>
+      </h1>
+      <p class="lede">
+        <span class="lang-en">National programme progress, 2014–2025 · Technical briefing built from ESPEN Portal implementation-unit data</span>
+        <span class="lang-fr">Progrès du programme national, 2014–2025 · Synthèse technique construite à partir des données par unité de mise en œuvre du portail ESPEN</span>
+      </p>
+      <div class="stat-cards" style="margin-top:1.6rem">
+        <div class="stat-card">
+          <div class="value">774</div>
+          <div class="label"><span class="lang-en">Implementation units (IUs) followed for 12 years</span><span class="lang-fr">Unités de mise en œuvre (IU) suivies pendant 12 ans</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="value good" id="kpi-reduction">–78.7%</div>
+          <div class="label"><span class="lang-en">Population still requiring MDA, 2014 → 2025</span><span class="lang-fr">Population nécessitant encore une DAM, 2014 → 2025</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="value">342</div>
+          <div class="label"><span class="lang-en">IUs in post-intervention surveillance (30 in 2014)</span><span class="lang-fr">IU en surveillance post-intervention (30 en 2014)</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="value">687 M</div>
+          <div class="label"><span class="lang-en">Treatments delivered since 2014</span><span class="lang-fr">Traitements administrés depuis 2014</span></div>
+        </div>
+      </div>
+      <p class="src-note">
+        <span class="lang-en">Source: <a href="https://espen.afro.who.int/">ESPEN Portal</a> — Nigeria, LF, IU-level, 2014–2025 (downloaded 2026-10-28). MDA = mass drug administration. Use ← → or the controls below to navigate.</span>
+        <span class="lang-fr">Source : <a href="https://espen.afro.who.int/">Portail ESPEN</a> — Nigeria, FL, au niveau IU, 2014–2025 (téléchargé le 28/10/2026). DAM = distribution de masse de médicaments. Utilisez ← → ou les commandes ci-dessous.</span>
+      </p>
+    </section>
+
+    <!-- ========== SLIDE 2 ========== -->
+    <section class="slide" data-slide="1">
+      <h2 class="slide-title">
+        <span class="lang-en">The population at risk keeps shrinking</span>
+        <span class="lang-fr">La population à risque ne cesse de diminuer</span>
+      </h2>
+      <div class="slide-canvas">
+        <div class="viz-box"><canvas id="chart-trend"></canvas></div>
+        <div style="flex:0 0 300px" class="viz-box">
+          <h3 style="margin-top:0"><span class="lang-en">Reading the chart</span><span class="lang-fr">Lecture du graphique</span></h3>
+          <p><span class="lang-en"><strong>118.8 M → 25.3 M</strong> people still need LF treatment — a 78.7% drop in eleven years.</span>
+             <span class="lang-fr"><strong>118,8 M → 25,3 M</strong> personnes nécessitent encore un traitement contre la FL — une baisse de 78,7 % en onze ans.</span></p>
+          <p><span class="lang-en">Annual treatments (bars) reached ~85&nbsp;M at peak — among the largest LF campaigns in Africa.</span>
+             <span class="lang-fr">Les traitements annuels (barres) ont atteint ~85&nbsp;M au pic — parmi les plus grandes campagnes de FL en Afrique.</span></p>
+          <p><span class="lang-en">The <strong>2021 dip</strong> (19 M treated) reflects pandemic-era campaign disruption; delivery recovered in 2022.</span>
+             <span class="lang-fr">Le <strong>creux de 2021</strong> (19 M traités) reflète la perturbation des campagnes en période de pandémie ; la distribution a repris en 2022.</span></p>
+        </div>
+      </div>
+      <p class="src-note"><span class="lang-en">Sums across all 774 IUs from the ESPEN dataset (popReq, popTreat).</span><span class="lang-fr">Sommes sur les 774 IU du jeu de données ESPEN (popReq, popTreat).</span></p>
+    </section>
+
+    <!-- ========== SLIDE 3 ========== -->
+    <section class="slide" data-slide="2">
+      <h2 class="slide-title">
+        <span class="lang-en">IUs are moving down the elimination pipeline</span>
+        <span class="lang-fr">Les IU avancent dans le pipeline d'élimination</span>
+      </h2>
+      <div class="slide-canvas">
+        <div class="viz-box"><canvas id="chart-status"></canvas></div>
+        <div style="flex:0 0 300px" class="viz-box">
+          <h3 style="margin-top:0"><span class="lang-en">2025 status of 774 IUs</span><span class="lang-fr">Statut 2025 des 774 IU</span></h3>
+          <table class="ref">
+            <tbody>
+              <tr><td><span class="lang-en">Non-endemic / never required MDA</span><span class="lang-fr">Non endémique / DAM jamais requise</span></td><td class="num">191</td></tr>
+              <tr><td><span class="lang-en">Post-intervention surveillance</span><span class="lang-fr">Surveillance post-intervention</span></td><td class="num">342</td></tr>
+              <tr><td><span class="lang-en">Pending impact assessment (TAS)</span><span class="lang-fr">En attente d'évaluation d'impact (TAS)</span></td><td class="num">162</td></tr>
+              <tr><td><span class="lang-en">Still under MDA</span><span class="lang-fr">Encore sous DAM</span></td><td class="num" style="color:var(--warn)">63</td></tr>
+              <tr><td><span class="lang-en">MDA not delivered</span><span class="lang-fr">DAM non réalisée</span></td><td class="num" style="color:var(--error)">10</td></tr>
+              <tr><td><span class="lang-en">Targeted treatment only</span><span class="lang-fr">Traitement ciblé uniquement</span></td><td class="num">6</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-bottom:0"><span class="lang-en"><strong>533 of 774 IUs (69%)</strong> no longer require any MDA.</span>
+             <span class="lang-fr"><strong>533 IU sur 774 (69 %)</strong> ne nécessitent plus aucune DAM.</span></p>
+        </div>
+      </div>
+      <p class="src-note"><span class="lang-en">IU counts by ESPEN endemicity status, per year. "Pending IA" = awaiting transmission assessment survey.</span><span class="lang-fr">Nombre d'IU par statut d'endémicité ESPEN, par année. « En attente d'EI » = en attente d'enquête d'évaluation de la transmission.</span></p>
+    </section>
+
+    <!-- ========== SLIDE 4 ========== -->
+    <section class="slide" data-slide="3">
+      <h2 class="slide-title">
+        <span class="lang-en">Progress by state, 2014 → 2025</span>
+        <span class="lang-fr">Progrès par État, 2014 → 2025</span>
+      </h2>
+      <div class="slide-canvas">
+        <div class="viz-box map-box" style="flex:1.5">
+          <div id="lf-map"></div>
+          <div class="map-legend" id="map-legend" style="margin-top:.5rem"></div>
+        </div>
+        <div style="flex:0 0 300px" class="viz-box">
+          <h3 style="margin-top:0"><span class="lang-en">Reading the map</span><span class="lang-fr">Lecture de la carte</span></h3>
+          <p><span class="lang-en">Colour = percentage reduction in the population requiring MDA per state between 2014 and 2025. Hover or tap a state for details.</span>
+             <span class="lang-fr">Couleur = réduction en pourcentage de la population nécessitant une DAM par État entre 2014 et 2025. Survolez ou touchez un État pour les détails.</span></p>
+          <p><span class="lang-en">States with large treated populations — e.g. <strong>Lagos</strong> and the south — show deep reductions as IUs exit MDA.</span>
+             <span class="lang-fr">Les États comptant de grandes populations traitées — par ex. <strong>Lagos</strong> et le sud — montrent de fortes réductions à mesure que les IU sortent de la DAM.</span></p>
+          <p><span class="lang-en">Security-affected northern states retain the largest remaining at-risk populations — the finishing-line challenge.</span>
+             <span class="lang-fr">Les États du nord touchés par l'insécurité conservent les plus grandes populations à risque restantes — le défi de la ligne d'arrivée.</span></p>
+        </div>
+      </div>
+      <p class="src-note"><span class="lang-en">State boundaries: geoBoundaries (ADM1). Values aggregated from the ESPEN dataset by admin1.</span><span class="lang-fr">Limites des États : geoBoundaries (ADM1). Valeurs agrégées à partir du jeu de données ESPEN par admin1.</span></p>
+    </section>
+
+    <!-- ========== SLIDE 5 ========== -->
+    <section class="slide" data-slide="4">
+      <h2 class="slide-title">
+        <span class="lang-en">Where the programme stands — and what comes next</span>
+        <span class="lang-fr">Où en est le programme — et la suite</span>
+      </h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>✅ <span class="lang-en">Confirmed progress</span><span class="lang-fr">Progrès confirmés</span></h3>
+          <p><span class="lang-en">79% fewer people require MDA; 342 IUs have passed into post-intervention surveillance and 162 more are queued for impact assessment.</span>
+             <span class="lang-fr">79 % de personnes en moins nécessitant une DAM ; 342 IU sont passées en surveillance post-intervention et 162 autres attendent l'évaluation d'impact.</span></p>
+        </div>
+        <div class="card">
+          <h3>⚠️ <span class="lang-en">Remaining burden</span><span class="lang-fr">Fardeau restant</span></h3>
+          <p><span class="lang-en">25.3 M people still require treatment in 63 IUs under MDA; 10 IUs have not yet received a delivered round; 6 need targeted treatment.</span>
+             <span class="lang-fr">25,3 M de personnes nécessitent encore un traitement dans 63 IU sous DAM ; 10 IU n'ont pas encore reçu de cycle effectif ; 6 nécessitent un traitement ciblé.</span></p>
+        </div>
+        <div class="card">
+          <h3>🎯 <span class="lang-en">Programme priorities</span><span class="lang-fr">Priorités du programme</span></h3>
+          <p><span class="lang-en">Sustain ≥65% effective coverage in remaining endemic IUs; complete TAS in the 162 pending IUs; keep surveillance funding after MDA stops; reach delivery-naïve IUs.</span>
+             <span class="lang-fr">Maintenir une couverture effective ≥ 65 % dans les IU endémiques restantes ; boucler les TAS dans les 162 IU en attente ; financer la surveillance après l'arrêt de la DAM ; atteindre les IU jamais couvertes.</span></p>
+        </div>
+        <div class="card">
+          <h3>🗺️ <span class="lang-en">For the technical meeting</span><span class="lang-fr">Pour la réunion technique</span></h3>
+          <p><span class="lang-en">Focus discussion on sub-national variation (slide 4): where are treatments concentrated in 2025, and what logistics or security barriers remain there?</span>
+             <span class="lang-fr">Centrer la discussion sur la variation infranationale (diapo 4) : où se concentrent les traitements en 2025, et quelles barrières logistiques ou sécuritaires y subsistent ?</span></p>
+        </div>
+      </div>
+      <p style="margin-top:1.2rem" class="lede">
+        <span class="lang-en">Nigeria is on track — the finish line now runs through a smaller, harder set of implementation units.</span>
+        <span class="lang-fr">Le Nigeria est sur la bonne voie — la ligne d'arrivée passe désormais par un ensemble plus restreint et plus difficile d'unités de mise en œuvre.</span>
+      </p>
+      <p class="src-note"><span class="lang-en">Deck generated from the ESPEN Nigeria LF dataset (2014–2025) using OMP + OpenRouter, as taught in this class.</span><span class="lang-fr">Présentation générée à partir du jeu de données ESPEN Nigeria FL (2014–2025) avec OMP + OpenRouter, comme enseigné dans ce cours.</span></p>
+    </section>
+
+  </div>
+
+  <div class="deck-nav">
+    <button id="nav-prev" type="button"><span class="lang-en">← Prev</span><span class="lang-fr">← Préc.</span></button>
+    <div class="deck-dots" id="deck-dots"></div>
+    <span class="deck-count" id="deck-count">1 / 5</span>
+    <button id="nav-next" type="button"><span class="lang-en">Next →</span><span class="lang-fr">Suiv. →</span></button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin></script>
+<script src="assets/js/lf-data.js"></script>
+<script src="assets/js/geo-nga.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/slides.js"></script>
+</body>
+</html>

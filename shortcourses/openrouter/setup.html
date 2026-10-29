@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup &amp; Basics — OMP × OpenRouter | Installation &amp; bases</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="dot"></span>OMP × OpenRouter</a>
+  <nav>
+    <a href="index.html"><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></a>
+    <a href="setup.html" class="active"><span class="lang-en">Setup &amp; Basics</span><span class="lang-fr">Installation &amp; bases</span></a>
+    <a href="slides.html"><span class="lang-en">LF Slides (Nigeria)</span><span class="lang-fr">Diapos FL (Nigeria)</span></a>
+  </nav>
+  <div class="lang-toggle" role="group" aria-label="Language / Langue">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span class="lang-en">Parts 1–5 · checklist-driven</span><span class="lang-fr">Parties 1–5 · guidé par des check-lists</span></p>
+    <h1>
+      <span class="lang-en">Setup &amp; Basics</span>
+      <span class="lang-fr">Installation &amp; bases</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">Work top to bottom. Tick every box — your progress is saved in this browser, so you can pause and come back. All terminal blocks have a <strong>Copy</strong> button.</span>
+      <span class="lang-fr">Avancez de haut en bas. Cochez chaque case — votre progression est enregistrée dans ce navigateur, vous pouvez faire une pause et revenir. Tous les blocs de terminal ont un bouton <strong>Copier</strong>.</span>
+    </p>
+  </section>
+
+  <!-- ================= PART 1 ================= -->
+  <h2 id="part-openrouter">1 · <span class="lang-en">Create your free OpenRouter account</span><span class="lang-fr">Créez votre compte OpenRouter gratuit</span></h2>
+  <p>
+    <span class="lang-en">Yes — an OpenRouter account is <strong>completely free to create</strong>, and the free-tier models cost $0 with no credit card. OpenRouter is a single account that unlocks hundreds of models (Claude, GPT, Gemini, DeepSeek, Llama…) behind one API key.</span>
+    <span class="lang-fr">Oui — la création d'un compte OpenRouter est <strong>totalement gratuite</strong>, et les modèles du niveau gratuit coûtent 0 $, sans carte bancaire. OpenRouter est un compte unique qui débloque des centaines de modèles (Claude, GPT, Gemini, DeepSeek, Llama…) derrière une seule clé API.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="openrouter">0 / 6 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="openrouter"></div></div>
+
+  <ul class="checklist" data-checklist="openrouter">
+    <li><input type="checkbox" id="or1"><label class="step-text" for="or1">
+      <strong><span class="lang-en">Open the site</span><span class="lang-fr">Ouvrez le site</span></strong>
+      <span class="note"><span class="lang-en">Go to <a href="https://openrouter.ai" target="_blank" rel="noopener">https://openrouter.ai</a> and click <em>Sign in</em> (top right).</span>
+      <span class="lang-fr">Rendez-vous sur <a href="https://openrouter.ai" target="_blank" rel="noopener">https://openrouter.ai</a> et cliquez sur <em>Sign in</em> (en haut à droite).</span></span></label></li>
+    <li><input type="checkbox" id="or2"><label class="step-text" for="or2">
+      <strong><span class="lang-en">Choose a sign-in method</span><span class="lang-fr">Choisissez un mode de connexion</span></strong>
+      <span class="note"><span class="lang-en">Sign in with <strong>Google</strong>, <strong>GitHub</strong>, or your <strong>email</strong>. All are free; pick whichever you use already.</span>
+      <span class="lang-fr">Connectez-vous avec <strong>Google</strong>, <strong>GitHub</strong> ou votre <strong>e-mail</strong>. Tout est gratuit ; prenez celui que vous utilisez déjà.</span></span></label></li>
+    <li><input type="checkbox" id="or3"><label class="step-text" for="or3">
+      <strong><span class="lang-en">Land on your dashboard</span><span class="lang-fr">Arrivez sur votre tableau de bord</span></strong>
+      <span class="note"><span class="lang-en">You should see your avatar top right and $0.00 credits. That is normal — free models need zero credits.</span>
+      <span class="lang-fr">Vous devez voir votre avatar en haut à droite et 0,00 $ de crédits. C'est normal — les modèles gratuits ne demandent aucun crédit.</span></span></label></li>
+    <li><input type="checkbox" id="or4"><label class="step-text" for="or4">
+      <strong><span class="lang-en">Look at the free models</span><span class="lang-fr">Repérez les modèles gratuits</span></strong>
+      <span class="note"><span class="lang-en">Open <a href="https://openrouter.ai/models?q=free" target="_blank" rel="noopener">openrouter.ai/models</a> and filter to free models. Their IDs all end in <code class="inline">:free</code> (e.g. <code class="inline">google/gemma-4-31b-it:free</code>).</span>
+      <span class="lang-fr">Ouvrez <a href="https://openrouter.ai/models?q=free" target="_blank" rel="noopener">openrouter.ai/models</a> et filtrez sur les modèles gratuits. Leurs identifiants finissent tous par <code class="inline">:free</code> (ex. <code class="inline">google/gemma-4-31b-it:free</code>).</span></span></label></li>
+    <li><input type="checkbox" id="or5"><label class="step-text" for="or5">
+      <strong><span class="lang-en">Know your free-tier limits</span><span class="lang-fr">Connaissez les limites du niveau gratuit</span></strong>
+      <span class="note"><span class="lang-en">Free models allow <strong>50 requests/day</strong> if your account has never bought credits (and 1,000/day once you've ever purchased $10+). Burst limit: ~20 requests/minute. Plenty for this class.</span>
+      <span class="lang-fr">Les modèles gratuits permettent <strong>50 requêtes/jour</strong> si le compte n'a jamais acheté de crédits (et 1 000/jour dès que vous avez un jour acheté 10 $ ou plus). Pic : ~20 requêtes/minute. Largement suffisant pour ce cours.</span></span></label></li>
+    <li><input type="checkbox" id="or6"><label class="step-text" for="or6">
+      <strong><span class="lang-en">(Optional) Create an API key page shortcut</span><span class="lang-fr">(Optionnel) Retenez la page des clés API</span></strong>
+      <span class="note"><span class="lang-en">Keys live at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>. In Part 3 OMP will sign in through the browser for you, so you won't need to copy a key manually — this is just good to know.</span>
+      <span class="lang-fr">Les clés se trouvent sur <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>. Dans la partie 3, OMP se connectera via le navigateur pour vous, donc inutile de copier une clé à la main — c'est juste bon à savoir.</span></span></label></li>
+  </ul>
+
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">What you get for $0</span><span class="lang-fr">Ce que vous obtenez à 0 $</span></div>
+    <span class="lang-en">Model IDs ending in <code class="inline">:free</code> are routed by OpenRouter to whichever provider currently sponsors free capacity, at no charge. The lineup <strong>changes frequently</strong> — great for learning; for production work you'll later pick a paid model and see its exact price per million tokens. There is also an <code class="inline">openrouter/free</code> router that picks an available free model for you automatically.</span>
+    <span class="lang-fr">Les identifiants se terminant par <code class="inline">:free</code> sont routés par OpenRouter vers le fournisseur qui offre actuellement de la capacité gratuite, sans frais. La liste <strong>change fréquemment</strong> — très bien pour apprendre ; pour un usage en production, vous choisirez plus tard un modèle payant et verrez son prix exact par million de tokens. Il existe aussi un routeur <code class="inline">openrouter/free</code> qui choisit automatiquement un modèle gratuit disponible.</span>
+  </div>
+
+  <!-- ================= PART 2 ================= -->
+  <h2 id="part-install">2 · <span class="lang-en">Install OMP on Windows</span><span class="lang-fr">Installer OMP sous Windows</span></h2>
+  <p>
+    <span class="lang-en">OMP is the agent harness: the program that runs in your terminal, talks to OpenRouter, and can read files, run commands, and build things for you.</span>
+    <span class="lang-fr">OMP est l'harnais d'agent : le programme qui tourne dans votre terminal, dialogue avec OpenRouter, et peut lire des fichiers, exécuter des commandes et construire des choses pour vous.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="install">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="install"></div></div>
+
+  <ul class="checklist" data-checklist="install">
+    <li><input type="checkbox" id="in1"><label class="step-text" for="in1">
+      <strong><span class="lang-en">Open PowerShell</span><span class="lang-fr">Ouvrez PowerShell</span></strong>
+      <span class="note"><span class="lang-en">Press <kbd>Win</kbd>, type <em>PowerShell</em>, press <kbd>Enter</kbd>. (Windows Terminal works great too.)</span>
+      <span class="lang-fr">Appuyez sur <kbd>Win</kbd>, tapez <em>PowerShell</em>, appuyez sur <kbd>Entrée</kbd>. (Windows Terminal fonctionne très bien aussi.)</span></span></label></li>
+    <li><input type="checkbox" id="in2"><label class="step-text" for="in2">
+      <strong><span class="lang-en">Run the installer command</span><span class="lang-fr">Exécutez la commande d'installation</span></strong>
+      <span class="note"><span class="lang-en">Copy the block below into PowerShell and press <kbd>Enter</kbd>.</span>
+      <span class="lang-fr">Copiez le bloc ci-dessous dans PowerShell et appuyez sur <kbd>Entrée</kbd>.</span></span>
+      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> irm https://omp.sh/install.ps1 | iex</code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="in3"><label class="step-text" for="in3">
+      <strong><span class="lang-en">Note the PATH hint</span><span class="lang-fr">Notez l'indication de PATH</span></strong>
+      <span class="note"><span class="lang-en">If the installer prints a PATH instruction, follow it, then <strong>close PowerShell and open a new one</strong> so the change takes effect.</span>
+      <span class="lang-fr">Si l'installateur affiche une instruction concernant le PATH, suivez-la, puis <strong>fermez PowerShell et rouvrez-le</strong> pour que le changement prenne effet.</span></span></label></li>
+    <li><input type="checkbox" id="in4"><label class="step-text" for="in4">
+      <strong><span class="lang-en">Verify the install</span><span class="lang-fr">Vérifiez l'installation</span></strong>
+      <span class="note"><span class="lang-en">A version number printed (e.g. <code class="inline">omp/18.x.x</code>) means success.</span>
+      <span class="lang-fr">Un numéro de version affiché (ex. <code class="inline">omp/18.x.x</code>) signifie que c'est bon.</span></span>
+      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp --version</code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="in5"><label class="step-text" for="in5">
+      <strong><span class="lang-en">Keep this terminal open</span><span class="lang-fr">Gardez ce terminal ouvert</span></strong>
+      <span class="note"><span class="lang-en">Everything from here happens in this same PowerShell window.</span>
+      <span class="lang-fr">Tout le reste se passe dans cette même fenêtre PowerShell.</span></span></label></li>
+  </ul>
+
+  <details class="acc">
+    <summary><span class="lang-en">Troubleshooting: <code class="inline">omp</code> is not recognized</span><span class="lang-fr">Dépannage : <code class="inline">omp</code> n'est pas reconnu</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Almost always a PATH refresh issue: close <em>all</em> PowerShell/Terminal windows and open a brand-new one, then run <code class="inline">omp --version</code> again. If it still fails, re-run the installer and read the PATH note it prints. macOS/Linux users instead run <code class="inline">curl -fsSL https://omp.sh/install | sh</code>.</span>
+      <span class="lang-fr">Presque toujours un problème de rafraîchissement du PATH : fermez <em>toutes</em> les fenêtres PowerShell/Terminal et rouvrez-en une nouvelle, puis relancez <code class="inline">omp --version</code>. Si cela échoue encore, réexécutez l'installateur et lisez la note PATH qu'il affiche. Sous macOS/Linux : <code class="inline">curl -fsSL https://omp.sh/install | sh</code>.</span>
+    </div>
+  </details>
+
+  <!-- ================= PART 3 ================= -->
+  <h2 id="part-connect">3 · <span class="lang-en">Launch OMP and connect it to OpenRouter</span><span class="lang-fr">Lancer OMP et le connecter à OpenRouter</span></h2>
+
+  <p>
+    <span class="lang-en">You remembered correctly: the connection happens <strong>through the browser</strong>. OMP opens a secure OpenRouter sign-in page, you approve it, and OMP saves the key — no copying secrets by hand.</span>
+    <span class="lang-fr">Vous vous souvenez bien : la connexion se fait <strong>via le navigateur</strong>. OMP ouvre une page de connexion OpenRouter sécurisée, vous l'approuvez, et OMP enregistre la clé — sans copier de secret à la main.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="connect">0 / 6 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="connect"></div></div>
+
+  <ul class="checklist" data-checklist="connect">
+    <li><input type="checkbox" id="co1"><label class="step-text" for="co1">
+      <strong><span class="lang-en">Create the <code class="inline">amplify</code> folder and enter it</span><span class="lang-fr">Créez le dossier <code class="inline">amplify</code> et entrez-y</span></strong>
+      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> mkdir amplify
+<span class="ps">PS&gt;</span> cd amplify</code></pre></div>
+      <span class="note"><span class="lang-en">The folder you launch OMP from becomes the "project" the agent works in.</span>
+      <span class="lang-fr">Le dossier depuis lequel vous lancez OMP devient le « projet » dans lequel l'agent travaille.</span></span></label></li>
+    <li><input type="checkbox" id="co2"><label class="step-text" for="co2">
+      <strong><span class="lang-en">Launch OMP</span><span class="lang-fr">Lancez OMP</span></strong>
+      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp</code></pre></div>
+      <span class="note"><span class="lang-en">The first launch opens a short setup wizard.</span>
+      <span class="lang-fr">Le premier lancement ouvre un petit assistant de configuration.</span></span></label></li>
+    <li><input type="checkbox" id="co3"><label class="step-text" for="co3">
+      <strong><span class="lang-en">Choose OpenRouter → Sign in</span><span class="lang-fr">Choisissez OpenRouter → Sign in</span></strong>
+      <span class="note"><span class="lang-en">On <em>Set up your providers</em>, select <strong>OpenRouter</strong> and press <kbd>Enter</kbd>. Your browser opens an OpenRouter approval page.</span>
+      <span class="lang-fr">Sur <em>Set up your providers</em>, sélectionnez <strong>OpenRouter</strong> et appuyez sur <kbd>Entrée</kbd>. Votre navigateur ouvre une page d'autorisation OpenRouter.</span></span></label></li>
+    <li><input type="checkbox" id="co4"><label class="step-text" for="co4">
+      <strong><span class="lang-en">Approve in the browser</span><span class="lang-fr">Approuvez dans le navigateur</span></strong>
+      <span class="note"><span class="lang-en">Since you're already signed in to OpenRouter (Part 1), just approve. Return to the terminal — OMP now shows OpenRouter as connected. (Inside a running session you can redo this any time with <code class="inline">/login openrouter</code>.)</span>
+      <span class="lang-fr">Comme vous êtes déjà connecté·e à OpenRouter (partie 1), il suffit d'approuver. Revenez au terminal — OMP affiche OpenRouter comme connecté. (Dans une session en cours, <code class="inline">/login openrouter</code> permet de refaire cela à tout moment.)</span></span></label></li>
+    <li><input type="checkbox" id="co5"><label class="step-text" for="co5">
+      <strong><span class="lang-en">Pick a default model when asked</span><span class="lang-fr">Choisissez un modèle par défaut si demandé</span></strong>
+      <span class="note"><span class="lang-en">Any choice is fine — you'll change it in Part 4. Finish the remaining appearance prompts; <kbd>Esc</kbd> skips.</span>
+      <span class="lang-fr">N'importe quel choix convient — vous le changerez dans la partie 4. Terminez les questions d'apparence ; <kbd>Échap</kbd> permet de passer.</span></span></label></li>
+    <li><input type="checkbox" id="co6"><label class="step-text" for="co6">
+      <strong><span class="lang-en">Say hello</span><span class="lang-fr">Dites bonjour</span></strong>
+      <span class="note"><span class="lang-en">Type <em>&quot;Introduce yourself in one sentence and tell me which model you are.&quot;</em> and press <kbd>Enter</kbd>. If it answers, you're connected. 🎉</span>
+      <span class="lang-fr">Tapez <em>&quot;Présente-toi en une phrase et dis-moi quel modèle tu es.&quot;</em> puis <kbd>Entrée</kbd>. S'il répond, vous êtes connecté·e. 🎉</span></span></label></li>
+  </ul>
+
+  <details class="acc">
+    <summary><span class="lang-en">Alternative: log in without the wizard, or use an API key</span><span class="lang-fr">Alternative : connexion sans l'assistant, ou avec une clé API</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">
+        From the terminal you can run <code class="inline">omp login openrouter</code> (opens the same browser flow, then return to the terminal).
+        If you'd rather use a key directly: create one at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>
+        and either paste it into <code class="inline">/login openrouter</code> inside a session or put
+        <code class="inline">OPENROUTER_API_KEY=sk-or-…</code> in an <code class="inline">.env</code> file in your project folder.
+      </span>
+      <span class="lang-fr">
+        Depuis le terminal, vous pouvez lancer <code class="inline">omp login openrouter</code> (même flux navigateur, puis retour au terminal).
+        Si vous préférez une clé directement : créez-en une sur <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>
+        et collez-la dans <code class="inline">/login openrouter</code> dans une session, ou mettez
+        <code class="inline">OPENROUTER_API_KEY=sk-or-…</code> dans un fichier <code class="inline">.env</code> de votre dossier projet.
+      </span>
+    </div>
+  </details>
+
+  <!-- ================= PART 4 ================= -->
+  <h2 id="part-models">4 · <span class="lang-en">Basics: <code class="inline">/model</code>, cost &amp; performance</span><span class="lang-fr">Bases : <code class="inline">/model</code>, coût &amp; performance</span></h2>
+
+  <h3><span class="lang-en">Switching models</span><span class="lang-fr">Changer de modèle</span></h3>
+  <p>
+    <span class="lang-en">Inside an OMP session, type <code class="inline">/model</code>: a searchable list opens. Highlight a model and press <kbd>Enter</kbd> to switch <em>mid-conversation</em> — nothing else about your session changes. Try it now: type <code class="inline">/model</code>, search <code class="inline">free</code>, and watch what appears.</span>
+    <span class="lang-fr">Dans une session OMP, tapez <code class="inline">/model</code> : une liste avec recherche s'ouvre. Sélectionnez un modèle et appuyez sur <kbd>Entrée</kbd> pour changer <em>en pleine conversation</em> — rien d'autre ne change dans votre session. Essayez : tapez <code class="inline">/model</code>, cherchez <code class="inline">free</code>, et regardez ce qui apparaît.</span>
+  </p>
+
+  <h3><span class="lang-en">Understanding cost vs. performance</span><span class="lang-fr">Comprendre coût et performance</span></h3>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">Choice</span><span class="lang-fr">Choix</span></th>
+      <th><span class="lang-en">Cost</span><span class="lang-fr">Coût</span></th>
+      <th><span class="lang-en">What you trade</span><span class="lang-fr">Ce que vous échangez</span></th>
+      <th><span class="lang-en">Use when…</span><span class="lang-fr">À utiliser quand…</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><code class="inline">…:free</code> models</td>
+        <td><span class="pill free">$0</span></td>
+        <td><span class="lang-en">Rate-limited (50 req/day); lineup rotates; no SLA on speed or availability.</span><span class="lang-fr">Débit limité (50 req/jour) ; la liste tourne ; aucune garantie de vitesse ni de disponibilité.</span></td>
+        <td><span class="lang-en">Learning, demos, light tasks — like today.</span><span class="lang-fr">Apprentissage, démos, tâches légères — comme aujourd'hui.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">openrouter/free</code></td>
+        <td><span class="pill free">$0</span></td>
+        <td><span class="lang-en">Auto-picks an available free model; convenient, but you don't control which model answers.</span><span class="lang-fr">Choisit automatiquement un modèle gratuit disponible ; pratique, mais vous ne contrôlez pas quel modèle répond.</span></td>
+        <td><span class="lang-en">You just want it to work, no tuning.</span><span class="lang-fr">Vous voulez juste que ça marche, sans réglages.</span></td>
+      </tr>
+      <tr>
+        <td><span class="lang-en">Cheap paid (e.g. small Gemini/DeepSeek)</span><span class="lang-fr">Payant léger (ex. petit Gemini/DeepSeek)</span></td>
+        <td><span class="pill paid">~$0.05–0.50 / 1M tok</span></td>
+        <td><span class="lang-en">A few dollars of credits removes the daily cap and is dramatically more reliable.</span><span class="lang-fr">Quelques dollars de crédits suppriment le plafond journalier et sont nettement plus fiables.</span></td>
+        <td><span class="lang-en">Serious analysis on a budget.</span><span class="lang-fr">Analyse sérieuse à petit budget.</span></td>
+      </tr>
+      <tr>
+        <td><span class="lang-en">Frontier (Claude, GPT, Gemini Pro)</span><span class="lang-fr">Modèles de pointe (Claude, GPT, Gemini Pro)</span></td>
+        <td><span class="pill paid">$$–$$$ / 1M tok</span></td>
+        <td><span class="lang-en">Best accuracy and tool-calling, longest reliable context; pay for what the task needs.</span><span class="lang-fr">Meilleure précision et appels d'outils, contexte long fiable ; payez selon les besoins de la tâche.</span></td>
+        <td><span class="lang-en">High-stakes reports, complex data work.</span><span class="lang-fr">Rapports à fort enjeu, travail de données complexe.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <span class="lang-en">In OMP, the status line shows the model and running session cost ($0.0000 on free models); <code class="inline">--warn-cost 1</code> and <code class="inline">--max-cost 2</code> can cap spend on paid models. Bigger context windows handle larger datasets; faster tokens/second feels snappier; reasoning models think longer for harder questions. Rule of thumb: <strong>start free, upgrade only when the task demands it</strong>.</span>
+    <span class="lang-fr">Dans OMP, la barre d'état affiche le modèle et le coût cumulé de la session (0,0000 $ pour les modèles gratuits) ; <code class="inline">--warn-cost 1</code> et <code class="inline">--max-cost 2</code> plafonnent la dépense sur les modèles payants. Une fenêtre de contexte plus grande accepte des jeux de données plus volumineux ; plus de tokens/seconde, c'est plus réactif ; les modèles de raisonnement réfléchissent plus longtemps pour les questions difficiles. Règle d'or : <strong>commencez gratuit, ne passez au payant que si la tâche l'exige</strong>.</span>
+  </p>
+
+  <div class="callout">
+    <div class="callout-title"><span class="lang-en">✅ In-class decision: pick the free model for the task</span><span class="lang-fr">✅ Décision en cours : choisir le modèle gratuit pour l'exercice</span></div>
+    <span class="lang-en">
+      Our task — analyze a 2&nbsp;MB CSV and build an HTML slide deck — is a <strong>coding + data</strong> task. From today's free lineup, the best fits are:
+      → <strong><code class="inline">poolside/laguna-s-2.1:free</code></strong> (coding-trained, 262&nbsp;K context), with
+      <strong><code class="inline">nvidia/nemotron-3-ultra-550b-a55b:free</code></strong> as the heavy thinker (1&nbsp;M context) if you hit its limits,
+      or <code class="inline">openrouter/free</code> to let OpenRouter pick.
+      <em>Do it now:</em> type <code class="inline">/model</code> and select one of these.
+    </span>
+    <span class="lang-fr">
+      Notre tâche — analyser un CSV de 2&nbsp;Mo et construire des diapositives HTML — est une tâche de <strong>code + données</strong>. Dans la liste gratuite du jour, les meilleurs choix sont :
+      → <strong><code class="inline">poolside/laguna-s-2.1:free</code></strong> (entraîné au code, contexte 262&nbsp;K), avec
+      <strong><code class="inline">nvidia/nemotron-3-ultra-550b-a55b:free</code></strong> en gros réfléchisseur (contexte 1&nbsp;M) en secours,
+      ou <code class="inline">openrouter/free</code> pour laisser OpenRouter choisir.
+      <em>Faites-le maintenant :</em> tapez <code class="inline">/model</code> et sélectionnez l'un d'eux.
+    </span>
+  </div>
+
+  <h3><span class="lang-en">A handful of keystrokes worth knowing</span><span class="lang-fr">Quelques raccourcis à connaître</span></h3>
+  <table class="ref">
+    <thead><tr><th><span class="lang-en">Key / command</span><span class="lang-fr">Touche / commande</span></th><th><span class="lang-en">Does what</span><span class="lang-fr">Effet</span></th></tr></thead>
+    <tbody>
+      <tr><td><code class="inline">/model</code></td><td><span class="lang-en">Search &amp; switch the model mid-session.</span><span class="lang-fr">Chercher et changer de modèle en cours de session.</span></td></tr>
+      <tr><td><kbd>Esc</kbd></td><td><span class="lang-en">Interrupt the agent when it goes the wrong way, then clarify.</span><span class="lang-fr">Interrompre l'agent s'il part dans la mauvaise direction, puis préciser.</span></td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td><span class="lang-en">Expand/collapse full tool output (see what it ran and read).</span><span class="lang-fr">Déplier/replier la sortie complète des outils (voir ce qu'il a exécuté et lu).</span></td></tr>
+      <tr><td><code class="inline">@file</code></td><td><span class="lang-en">Attach a file (e.g. the CSV) to your message.</span><span class="lang-fr">Joindre un fichier (ex. le CSV) à votre message.</span></td></tr>
+      <tr><td><code class="inline">omp --continue</code></td><td><span class="lang-en">Reopen your last session in the same folder tomorrow.</span><span class="lang-fr">Rouvrir votre dernière session dans le même dossier demain.</span></td></tr>
+      <tr><td><code class="inline">omp -p "…"</code></td><td><span class="lang-en">Script mode: answer and exit — automation without chat.</span><span class="lang-fr">Mode script : répondre et quitter — de l'automatisation sans conversation.</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ================= PART 5 ================= -->
+  <h2 id="part-task">5 · <span class="lang-en">Hands-on: build the Nigeria LF presentation</span><span class="lang-fr">Pratique : construire la présentation FL du Nigeria</span></h2>
+  <p>
+    <span class="lang-en">Dataset: <a href="data-NG-lf-iu-2014-2025-20261028_150104.csv" download><code class="inline">data-NG-lf-iu-2014-2025-20261028_150104.csv</code> ↓ (2 MB)</a> — Nigeria LF, IU-level, 2014–2025, ESPEN Portal.</span>
+    <span class="lang-fr">Jeu de données : <a href="data-NG-lf-iu-2014-2025-20261028_150104.csv" download><code class="inline">data-NG-lf-iu-2014-2025-20261028_150104.csv</code> ↓ (2 Mo)</a> — Nigeria FL, niveau IU, 2014–2025, portail ESPEN.</span>
+  </p>
+  <p>
+    <span class="lang-en">Copy the class dataset <code class="inline">data-NG-lf-iu-2014-2025-20261028_150104.csv</code> into your <code class="inline">amplify</code> folder, then paste this prompt into OMP (adjust model/paths as needed):</span>
+    <span class="lang-fr">Copiez le jeu de données du cours <code class="inline">data-NG-lf-iu-2014-2025-20261028_150104.csv</code> dans votre dossier <code class="inline">amplify</code>, puis collez cette consigne dans OMP :</span>
+  </p>
+  <div class="term"><div class="term-head"><span class="lang-en">prompt to paste into OMP</span><span class="lang-fr">consigne à coller dans OMP</span></div><pre><code>You are a data analyst for a neglected tropical disease program.
+The file data-NG-lf-iu-2014-2025-20261028_150104.csv in this folder is
+Nigeria's lymphatic filariasis (LF) dataset from the ESPEN Portal:
+774 implementation units (IUs), years 2014–2025, with columns for
+endemicity status, population requiring MDA (popReq), population
+treated (popTreat), and MDA round counts (cumMda).
+
+Analyze it and build a self-contained HTML slide deck (max 5 slides,
+keyboard navigation) for a technical meeting, showing the national
+program's progress toward LF elimination. Include:
+1. A title slide with headline numbers.
+2. A national trend chart: population requiring MDA vs treated, by year.
+3. A chart of IU counts by endemicity status across years
+   (MDA not delivered → under MDA → pending impact assessment →
+   post-intervention surveillance).
+4. A state-level map (use natural breaks; add a legend and tooltips).
+5. A closing slide: interpretation, remaining challenges, next steps.
+
+Compute all numbers from the CSV itself. Use charts (e.g. Chart.js)
+and a map library (e.g. Leaflet). Serve it locally so I can open it.</code></pre></div>
+
+  <p>
+    <span class="lang-en">Watch the agent read the CSV, compute aggregates, and write files. Steer it with follow-ups like <em>&quot;make the map show 2025 status only&quot;</em> or <em>&quot;the 2021 dip needs an annotation for COVID-19&quot;</em>. When it claims to be done, open the page and check a number by hand — trusting the output is a skill you build.</span>
+    <span class="lang-fr">Regardez l'agent lire le CSV, calculer les agrégats et écrire des fichiers. Guidez-le avec des relances comme <em>&quot;affiche uniquement le statut 2025 sur la carte&quot;</em> ou <em>&quot;la baisse de 2021 mérite une annotation COVID-19&quot;</em>. Quand il déclare avoir fini, ouvrez la page et vérifiez un chiffre à la main — faire confiance au résultat est une compétence qui se construit.</span>
+  </p>
+
+  <div class="callout warn">
+    <div class="callout-title"><span class="lang-en">Free-tier reality check</span><span class="lang-fr">Réalité du niveau gratuit</span></div>
+    <span class="lang-en">A 50-requests/day account can run out during a long build if you make many corrections. If you see HTTP 429, wait for the reset, or let <code class="inline">openrouter/free</code> fall back to another free model with <code class="inline">/model</code>. For production programs, a small credit purchase is the reliable fix.</span>
+    <span class="lang-fr">Un compte à 50 requêtes/jour peut s'épuiser pendant une session longue et riche en corrections. Si vous voyez une erreur HTTP 429, attendez la remise à zéro, ou laissez basculer vers un autre modèle gratuit via <code class="inline">/model</code>. Pour un usage en programme réel, un petit achat de crédits est la solution fiable.</span>
+  </div>
+
+  <h3><span class="lang-en">What a good result looks like</span><span class="lang-fr">À quoi ressemble un bon résultat</span></h3>
+  <p>
+    <a class="btn primary" href="slides.html"><span class="lang-en">Open the reference deck →</span><span class="lang-fr">Ouvrir la présentation de référence →</span></a>
+  </p>
+  <p>
+    <span class="lang-en">The reference deck on this site was built from the same CSV. It is the <em>answer key</em>: your agent's output will (and should) look different — its numbers should not.</span>
+    <span class="lang-fr">La présentation de référence de ce site a été construite à partir du même CSV. C'est le <em>corrigé</em> : le rendu de votre agent sera différent (et c'est normal) — mais pas ses chiffres.</span>
+  </p>
+</main>
+
+<footer class="site">
+  <span class="lang-en">Built for the class with OMP + OpenRouter · Data: <a href="https://espen.afro.who.int/">ESPEN Portal</a> (Nigeria LF, 2014–2025)</span>
+  <span class="lang-fr">Conçu pour le cours avec OMP + OpenRouter · Données : <a href="https://espen.afro.who.int/">Portail ESPEN</a> (Nigeria FL, 2014–2025)</span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
