@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMPLIFY 2027 · Course 1 — Foundations</title>
+<meta name="description" content="AMPLIFY 2027 Course 1: course setup, Slack, Claude, your problem statement, and the art of the perfect prompt.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="progress-bar" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">▲</div>
+    <div>
+      <h1 data-i18n="brand.title">AMPLIFY 2027</h1>
+      <p class="tagline" data-i18n="brand.tagline">Course 1 · Foundations — Sightsavers × ESPEN</p>
+    </div>
+  </div>
+  <nav class="mainnav" aria-label="Course sections">
+    <a href="#setup" data-i18n="nav.setup">Course setup</a>
+    <a href="#slack" data-i18n="nav.slack">Slack</a>
+    <a href="#claude" data-i18n="nav.claude">Claude</a>
+    <a href="#problem" data-i18n="nav.problem">Your problem</a>
+    <a href="#prompt" data-i18n="nav.prompt">Perfect prompt</a>
+    <a href="#homework" data-i18n="nav.homework">Homework</a>
+    <span class="nav-checks" id="nav-checks">Skill checks 0/3</span>
+  </nav>
+  <div class="topbar-actions">
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button id="lang-en" class="lang-btn active" type="button" aria-pressed="true">EN</button>
+      <button id="lang-fr" class="lang-btn" type="button" aria-pressed="false">FR</button>
+    </div>
+    <a class="ring-wrap" href="#setup" id="ring-link" aria-label="Setup progress">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+        <circle class="ring-bg" cx="22" cy="22" r="17"></circle>
+        <circle class="ring-fg" id="ring-fg" cx="22" cy="22" r="17"></circle>
+      </svg>
+      <span class="ring-label" id="ring-label">0/6</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <p class="kicker" data-i18n="hero.kicker">Sightsavers × ESPEN · Cohort 2 · 2027</p>
+  <h2 data-i18n="hero.title">Course 1 — Foundations</h2>
+  <p class="lead" data-i18n="hero.lead">Welcome to AMPLIFY. Over four months you will take one real problem from your own work and build a working AI-assisted solution to it — ending with a group presentation. This first class gets you set up on the tools, shows you how the course runs, and teaches the habit everything else is built on: writing prompts that get you what you actually want.</p>
+  <div class="chips">
+    <span class="chip" data-i18n="hero.chip.freq">Every 2 weeks</span>
+    <span class="chip" data-i18n="hero.chip.dur">90 minutes</span>
+    <span class="chip" data-i18n="hero.chip.meet">Google Meet</span>
+    <span class="chip chip-accent" data-i18n="hero.chip.count">Class 1 of 8</span>
+  </div>
+  <p class="hero-note" data-i18n="hero.note">This page is part of the course. Everything here is interactive — switch languages at the top, tick the setup checklist, pass the three skill checks, and build your first prompt. Your progress is saved in your browser only.</p>
+</section>
+
+<!-- ============================ 1 · SETUP ============================ -->
+<section id="setup" class="section">
+  <h2 data-i18n="setup.h2">1 · How the course runs</h2>
+  <p class="section-lead" data-i18n="setup.lead">Four months, eight classes, one growing project. Know the rules of the road before we start.</p>
+
+  <div class="grid3">
+    <div class="card card-icon">
+      <span class="ic" aria-hidden="true">▶</span>
+      <h3 data-i18n="setup.meet.t">We meet on Google Meet</h3>
+      <p data-i18n="setup.meet.d">Every two weeks, 90 minutes, live. You must have a Google account and be signed in — captions and live interpretation only work when you are. Join five minutes early to test your mic and camera.</p>
+    </div>
+    <div class="card card-icon">
+      <span class="ic" aria-hidden="true">#</span>
+      <h3 data-i18n="setup.slack.t">Everything else happens on Slack</h3>
+      <p data-i18n="setup.slack.d">Materials, questions, homework, feedback — all on Slack. No email. No WhatsApp. If you write to us anywhere else, we will point you back here.</p>
+    </div>
+    <div class="card card-icon">
+      <span class="ic" aria-hidden="true">↻</span>
+      <h3 data-i18n="setup.rhythm.t">Every class, the same rhythm</h3>
+      <ol class="rhythm">
+        <li data-i18n="setup.rhythm.i1">A student presents the last class's homework (10 min)</li>
+        <li data-i18n="setup.rhythm.i2">The week's topic, with hands-on practice</li>
+        <li data-i18n="setup.rhythm.i3">A worked "instructor problem" demo</li>
+        <li data-i18n="setup.rhythm.i4">Your next homework assignment</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout-accent">
+    <h3 data-i18n="setup.hw.t">Homework is not optional — it is how you stay in the course</h3>
+    <p data-i18n="setup.hw.d">A homework assignment follows every class. Each one practices the topics we just covered and applies them to your own project. Every class opens with a student presenting their solution. You will all present during the course — homework is your ticket to the showcase.</p>
+    <p class="banned"><span data-i18n="setup.banned.label">Tools we leave at the door:</span>
+      <span class="chip chip-banned">✉ Email</span>
+      <span class="chip chip-banned">📱 WhatsApp</span>
+      <span class="chip chip-ok" data-i18n="setup.banned.slack">Slack only ✓</span>
+    </p>
+  </div>
+
+  <div class="card checklist-card">
+    <div class="checklist-head">
+      <div>
+        <h3 data-i18n="setup.chk.t">Set up before Class 1</h3>
+        <p class="hint" data-i18n="setup.chk.hint">Tick as you go — progress is saved on this device and shows in the ring at the top.</p>
+      </div>
+      <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true">
+        <circle class="ring-bg" cx="36" cy="36" r="28" style="stroke-width:7"></circle>
+        <circle class="ring-fg" id="ring-fg-big" cx="36" cy="36" r="28" style="stroke-width:7"></circle>
+        <text id="ring-label-big" x="36" y="40" text-anchor="middle">0/6</text>
+      </svg>
+    </div>
+    <ul class="checklist" id="setup-checklist">
+      <li><label><input type="checkbox" data-check="meet"><span data-i18n="chk.meet">My Google account works — I can sign in and join a Google Meet test call</span></label></li>
+      <li><label><input type="checkbox" data-check="slack"><span data-i18n="chk.slack">I joined the AMPLIFY Slack workspace</span></label></li>
+      <li><label><input type="checkbox" data-check="intro"><span data-i18n="chk.intro">I posted my introduction on #all-amplify</span></label></li>
+      <li><label><input type="checkbox" data-check="app"><span data-i18n="chk.app">The Claude desktop app is installed on my computer</span></label></li>
+      <li><label><input type="checkbox" data-check="login"><span data-i18n="chk.login">I can log in to Claude with my Teams account</span></label></li>
+      <li><label><input type="checkbox" data-check="project"><span data-i18n="chk.project">I opened the Projects link and found my project</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ 2 · SLACK ============================ -->
+<section id="slack" class="section">
+  <h2 data-i18n="slack.h2">2 · Slack — where the course lives</h2>
+  <p class="section-lead" data-i18n="slack.lead">Slack does three jobs in this course: support, community, and homework. Learn your way around and you will never wait for an email reply.</p>
+
+  <div class="grid3">
+    <div class="card card-icon"><span class="ic" aria-hidden="true">⛑</span>
+      <h3 data-i18n="slack.support.t">Support</h3>
+      <p data-i18n="slack.support.d">Stuck on homework, a prompt, or an install? Ask on Slack — instructors answer there first, and a classmate may beat them to it.</p>
+    </div>
+    <div class="card card-icon"><span class="ic" aria-hidden="true">🌍</span>
+      <h3 data-i18n="slack.community.t">The AMPLIFY community</h3>
+      <p data-i18n="slack.community.d">Your cohort, your instructors, and the wider AMPLIFY network. Share what you try, what breaks, and what works — in English or French.</p>
+    </div>
+    <div class="card card-icon"><span class="ic" aria-hidden="true">📥</span>
+      <h3 data-i18n="slack.homework.t">Homework — in, out, and back</h3>
+      <p data-i18n="slack.homework.d">You get each assignment, submit your work, and receive instructor feedback — all in Slack, all findable later.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="slack.channels.t">Your map of the workspace</h3>
+    <div class="chan-table" role="table">
+      <div class="chan-row chan-head" role="row">
+        <span role="columnheader" data-i18n="slack.channels.h1">Channel</span>
+        <span role="columnheader" data-i18n="slack.channels.h2">What it is</span>
+        <span role="columnheader" data-i18n="slack.channels.h3">Use it for</span>
+      </div>
+      <div class="chan-row" role="row">
+        <span class="chan-name" role="rowheader">#all-amplify</span>
+        <span role="cell" data-i18n="chan.all.what">The whole cohort and instructors</span>
+        <span role="cell" data-i18n="chan.all.when">Introductions, questions that help everyone, wins, articles — and your Week 1 homework post</span>
+      </div>
+      <div class="chan-row" role="row">
+        <span class="chan-name" role="rowheader">#module-1 … #module-8</span>
+        <span role="cell" data-i18n="chan.mod.what">One channel per class</span>
+        <span role="cell" data-i18n="chan.mod.when">Slides, homework templates, and recordings for that class</span>
+      </div>
+      <div class="chan-row" role="row">
+        <span class="chan-name" role="rowheader" data-i18n="chan.priv.name">your-name (private channel)</span>
+        <span role="cell" data-i18n="chan.priv.what">Only you and the instructors</span>
+        <span role="cell" data-i18n="chan.priv.when">Homework submissions, feedback, and anything personal or sensitive</span>
+      </div>
+    </div>
+    <p class="hint" data-i18n="slack.etiquette.t">House rules: post publicly by default (your question helps a colleague), reply in threads, both languages are welcome everywhere, and @mention only when you need someone specific.</p>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="slack.flow.t">How homework flows</h3>
+    <ol class="flow">
+      <li><strong data-i18n="slack.flow.s1t">Get it</strong><span data-i18n="slack.flow.s1d">The assignment is posted in the module channel after class.</span></li>
+      <li><strong data-i18n="slack.flow.s2t">Do it</strong><span data-i18n="slack.flow.s2d">Work on it in your Claude project, on your own problem.</span></li>
+      <li><strong data-i18n="slack.flow.s3t">Submit it</strong><span data-i18n="slack.flow.s3d">Upload the file to your private channel, titled FirstNameLastName_Assignment1.</span></li>
+      <li><strong data-i18n="slack.flow.s4t">Get feedback</strong><span data-i18n="slack.flow.s4d">Instructors reply in a thread — feedback stays attached to your work, not lost in a chat.</span></li>
+    </ol>
+  </div>
+
+  <div class="quiz" id="quiz-channel" data-quiz="channel"></div>
+</section>
+
+<!-- ============================ 3 · CLAUDE ============================ -->
+<section id="claude" class="section">
+  <h2 data-i18n="claude.h2">3 · Claude — your AI teammate</h2>
+  <p class="section-lead" data-i18n="claude.lead">Every student gets a Claude Teams account. Today you only need three things: install, log in, and find Projects. In Class 2 we compare Chat, Cowork, and Code (the CLI) — the right tool for the job.</p>
+
+  <div class="grid3">
+    <div class="card card-step"><span class="step-n">1</span>
+      <h3 data-i18n="claude.s1.t">Accept the Teams invite</h3>
+      <p data-i18n="claude.s1.d">Your instructor sent you an invite to the AMPLIFY Claude Teams plan. Accept it with the email you gave us — that account is your course login.</p>
+    </div>
+    <div class="card card-step"><span class="step-n">2</span>
+      <h3 data-i18n="claude.s2.t">Install the desktop app</h3>
+      <p><span data-i18n="claude.s2.d">Get the app for macOS or Windows from</span> <a href="https://claude.ai/download" target="_blank" rel="noopener" data-i18n="claude.s2.link">claude.ai/download</a>. <span data-i18n="claude.s2.d2">Mobile apps exist too — install whatever you like.</span></p>
+    </div>
+    <div class="card card-step"><span class="step-n">3</span>
+      <h3 data-i18n="claude.s3.t">Log in and look around</h3>
+      <p data-i18n="claude.s3.d">Open the app, log in with your Teams account, and spend ten minutes clicking around. The map below shows you what matters.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-accent">
+    <h3 data-i18n="claude.rule.t">The project rule: do your project work inside your project</h3>
+    <p data-i18n="claude.rule.d">We create one project for every student. Open it from Projects in the sidebar and start there whenever you touch your course problem — your files, context, and best prompts stay together, so Claude gets better every week. Working on something else? The main workspace is fine.</p>
+  </div>
+
+  <div class="card mock-card">
+    <h3 data-i18n="mock.t">Find your way around — click the pulsing dots</h3>
+    <div class="mockwin" aria-label="Claude desktop app mockup">
+      <div class="mock-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="mock-title">Claude</span></div>
+      <div class="mock-body">
+        <div class="mock-sidebar">
+          <div class="spotwrap"><span class="mock-side-item" data-i18n="mock.side.search">Search chats…</span>
+            <button class="spot" data-spot="search" aria-label="Spot: search"><span></span></button>
+            <div class="spot-card" data-spot-card="search"><strong data-i18n="mock.spot.search.t">Search</strong><span data-i18n="mock.spot.search.d">Every conversation you've had is searchable here — months from now you'll find that prompt you half-remember.</span></div>
+          </div>
+          <div class="spotwrap"><span class="mock-side-item mock-new" data-i18n="mock.side.new">+ New chat</span>
+            <button class="spot" data-spot="new" aria-label="Spot: new chat"><span></span></button>
+            <div class="spot-card" data-spot-card="new"><strong data-i18n="mock.spot.new.t">New chat</strong><span data-i18n="mock.spot.new.d">A fresh conversation. Use this in the main workspace for quick, non-project questions.</span></div>
+          </div>
+          <div class="mock-hist">
+            <span class="mock-side-item" data-i18n="mock.side.chat1">LF coverage table draft</span>
+            <span class="mock-side-item" data-i18n="mock.side.chat2">Week 1 homework questions</span>
+            <span class="mock-side-item" data-i18n="mock.side.chat3">Summary of WHO guideline</span>
+          </div>
+          <div class="spotwrap mock-bottom">
+            <span class="mock-side-item mock-projects" data-i18n="mock.side.projects">▸ Projects</span>
+            <button class="spot" data-spot="projects" aria-label="Spot: projects"><span></span></button>
+            <div class="spot-card" data-spot-card="projects"><strong data-i18n="mock.spot.projects.t">Projects — your course home</strong><span data-i18n="mock.spot.projects.d">One project per student, created by your instructors. Your problem, files, and reusable prompts live here. Start here for all project work.</span></div>
+          </div>
+          <span class="mock-side-item mock-settings" data-i18n="mock.side.settings">⚙ Settings (Claude Teams)</span>
+        </div>
+        <div class="mock-main">
+          <div class="mock-msg user" data-i18n="mock.chat.user">Summarize this year's district coverage data for the national review…</div>
+          <div class="spotwrap">
+            <div class="mock-msg bot" data-i18n="mock.chat.bot">Here is a district-level coverage table. Two districts show coverage above 100%…</div>
+            <button class="spot spot-right" data-spot="chat" aria-label="Spot: conversation"><span></span></button>
+            <div class="spot-card spot-card-right" data-spot-card="chat"><strong data-i18n="mock.spot.chat.t">The conversation</strong><span data-i18n="mock.spot.chat.d">Where you prompt. Paste context, attach files, and iterate — P-T-C-F-I lives here.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="hint" data-i18n="mock.hint">(Illustration — the real app looks a little different, but the parts are these.)</p>
+  </div>
+
+  <h3 class="subhead" data-i18n="claude.next.t">Coming in Class 2 — the right tool for the job</h3>
+  <div class="grid3">
+    <div class="card card-tool"><span class="tool-chip t-chat">Chat</span>
+      <p data-i18n="claude.chat.d">Ask, think, draft. A conversation in a window — what you used today.</p>
+    </div>
+    <div class="card card-tool"><span class="tool-chip t-cowork">Cowork</span>
+      <p data-i18n="claude.cowork.d">Hand Claude a whole task: it works in your files and apps, then reports back.</p>
+    </div>
+    <div class="card card-tool"><span class="tool-chip t-code">Code (CLI)</span>
+      <p data-i18n="claude.code.d">Claude works directly in your terminal and project files — power tools for real builds.</p>
+    </div>
+  </div>
+  <p class="section-lead" data-i18n="claude.next.note">For today: be logged in, find Projects, poke around. Familiar beats perfect — we go deep next class.</p>
+
+  <div class="callout callout-red">
+    <h3 data-i18n="red.t">Red lines — what never goes into Claude (or any public AI tool)</h3>
+    <ul class="red-list">
+      <li data-i18n="red.l1">Patient names, phone numbers, or registers that identify people</li>
+      <li data-i18n="red.l2">Passwords, API keys, or credentials of any kind</li>
+      <li data-i18n="red.l3">Unpublished strategy documents or confidential drafts</li>
+    </ul>
+    <p class="red-safe" data-i18n="red.safe">Safe: published guidelines, public ESPEN data, anonymised aggregate numbers, your own drafts.</p>
+  </div>
+
+  <div class="quiz" id="quiz-redline" data-quiz="redline"></div>
+</section>
+
+<!-- ============================ 4 · PROBLEM ============================ -->
+<section id="problem" class="section">
+  <h2 data-i18n="problem.h2">4 · Your problem statement — the spine of the course</h2>
+  <p class="section-lead" data-i18n="problem.lead">You came with a problem from the AMPLIFY Problem Statement Form. That problem is not a side assignment — it is the course. Every class adds one capability to it, and in Class 8 you present the working solution.</p>
+
+  <div class="card">
+    <h3 data-i18n="problem.tl.t">What your problem gains, class by class</h3>
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <div class="card">
+    <div class="checklist-head">
+      <div>
+        <h3 data-i18n="ps.t">Is your problem statement course-ready?</h3>
+        <p class="hint" data-i18n="ps.hint">The six checks from the form's final section. Tick what is true today.</p>
+      </div>
+      <div class="meter">
+        <span id="ps-score" class="meter-num">0/6</span>
+        <span id="ps-label" class="meter-label" data-i18n="ps.keep">Keep shaping it</span>
+      </div>
+    </div>
+    <ul class="checklist">
+      <li><label><input type="checkbox" data-ps="c1"><span data-i18n="ps.c1">Someone who has never worked in my programme could understand the task and why it matters</span></label></li>
+      <li><label><input type="checkbox" data-ps="c2"><span data-i18n="ps.c2">It describes a real occasion — not only what usually happens</span></label></li>
+      <li><label><input type="checkbox" data-ps="c3"><span data-i18n="ps.c3">It has numbers: how often, how long, how many districts or files</span></label></li>
+      <li><label><input type="checkbox" data-ps="c4"><span data-i18n="ps.c4">It says what goes wrong, and what that causes</span></label></li>
+      <li><label><input type="checkbox" data-ps="c5"><span data-i18n="ps.c5">It is my own work, and I can work on it during the course</span></label></li>
+      <li><label><input type="checkbox" data-ps="c6"><span data-i18n="ps.c6">An anonymised example is attached — or I explain why not</span></label></li>
+    </ul>
+    <p class="hint" id="ps-hint" data-i18n="ps.hint0"></p>
+  </div>
+
+  <div class="grid2">
+    <div class="card card-weak">
+      <h3 data-i18n="ws.weak.t">A weak answer</h3>
+      <blockquote data-i18n="ws.weak.q">"Data management is a big challenge in our programme. Reports are often late and there are many errors. AI can help us improve data quality and efficiency."</blockquote>
+      <p class="verdict v-bad" data-i18n="ws.weak.v">Which data? Which report? How late? Nothing here to build a project on.</p>
+    </div>
+    <div class="card card-strong">
+      <h3 data-i18n="ws.strong.t">A strong answer (abridged)</h3>
+      <blockquote><span data-i18n="ws.strong.q">"Task: compile 38 district MDA treatment files into the national annual report — Excel files, WhatsApp photos, phone calls. It takes my data officer and me about three weeks a year. Last year one district reported 112% coverage and I only caught it after the chart went to a partner; we sent a correction and missed the deadline by three weeks."</span></blockquote>
+      <p class="verdict v-good" data-i18n="ws.strong.v">A named task, real occasions, numbers, consequences — we can build on this.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-accent">
+    <h3 data-i18n="mvp.t">Think minimum viable product</h3>
+    <p data-i18n="mvp.d">Your problem statement does not have to be perfect — it has to work, and you have to understand why and how it works. We sharpen it every single class; each one gets you one step closer to a solution.</p>
+  </div>
+
+  <div class="card link-card">
+    <h3 data-i18n="pb.t">Not there yet? Use the Problem Builder</h3>
+    <p data-i18n="pb.d">The AMPLIFY Problem Builder is an AI coach for your statement: it critiques your draft, asks the follow-up questions, and scores your readiness. Export the result and paste it into the official form.</p>
+    <a class="btn primary" href="../index.html" data-i18n="pb.cta">Open the Problem Builder →</a>
+  </div>
+</section>
+
+<!-- ============================ 5 · PROMPT ============================ -->
+<section id="prompt" class="section">
+  <h2 data-i18n="prompt.h2">5 · The art of the perfect prompt</h2>
+  <p class="section-lead" data-i18n="prompt.lead">Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of "done".</p>
+
+  <div class="ptcfi-grid">
+    <div class="card pt pt-P"><span class="pt-letter">P</span>
+      <h3 data-i18n="pt.P.t">Persona</h3>
+      <p data-i18n="pt.P.d">Who is asking? Give the AI an expert perspective to think from.</p>
+      <p class="pt-e" data-i18n="pt.P.e">"You are an NTD monitoring & evaluation officer…"</p>
+    </div>
+    <div class="card pt pt-T"><span class="pt-letter">T</span>
+      <h3 data-i18n="pt.T.t">Task</h3>
+      <p data-i18n="pt.T.d">What exactly should be done? One clear verb: summarize, compare, draft, check.</p>
+      <p class="pt-e" data-i18n="pt.T.e">"Summarize coverage by district for 2025."</p>
+    </div>
+    <div class="card pt pt-C"><span class="pt-letter">C</span>
+      <h3 data-i18n="pt.C.t">Context</h3>
+      <p data-i18n="pt.C.d">Why and for whom? Audience, purpose, constraints, what data you have.</p>
+      <p class="pt-e" data-i18n="pt.C.e">"For the national programme review; aggregate district data only."</p>
+    </div>
+    <div class="card pt pt-F"><span class="pt-letter">F</span>
+      <h3 data-i18n="pt.F.t">Format</h3>
+      <p data-i18n="pt.F.d">How should it look? Table, bullets, one page, formal French…</p>
+      <p class="pt-e" data-i18n="pt.F.e">"A table plus three bullets, formal."</p>
+    </div>
+    <div class="card pt pt-I"><span class="pt-letter">I</span>
+      <h3 data-i18n="pt.I.t">Iterate</h3>
+      <p data-i18n="pt.I.d">Was it right? Evaluate, refine, run again. Good prompting is a loop, not a wish.</p>
+      <p class="pt-e" data-i18n="pt.I.e">"Flag coverage over 100%; ask me before finalizing."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="worked.t">A worked example — colour-coded</h3>
+    <div class="worked" id="worked"></div>
+    <p class="hint" data-i18n="worked.note">Spot the parts: persona → task → context → format → iterate. Still room to improve — "easy-to-read format" is vague. Say what columns you want.</p>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="ba.t">Same request, two prompts — see the difference</h3>
+    <div class="ba-toggle" role="group" aria-label="Prompt comparison">
+      <button id="ba-bad" class="ba-btn active" type="button" data-i18n="ba.bad.label">✗ Vague</button>
+      <button id="ba-good" class="ba-btn" type="button" data-i18n="ba.good.label">✓ Structured</button>
+    </div>
+    <div class="ba-box">
+      <div class="ba-prompt" id="ba-prompt"></div>
+      <div class="ba-out" id="ba-out"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="ph.t">Three phrases worth memorizing</h3>
+    <ul class="phrases">
+      <li data-i18n="ph.1">"Think through this with me step by step."</li>
+      <li data-i18n="ph.2">"That's helpful, but I need it specific to my context: …"</li>
+      <li data-i18n="ph.3">"Ask me questions to clarify my goal and surface my assumptions — don't decide for me."</li>
+    </ul>
+  </div>
+
+  <div class="card builder-card">
+    <h3 data-i18n="pb2.t">Prompt builder — write your first structured prompt</h3>
+    <p class="hint" data-i18n="pb2.hint">Fill the five parts, watch your prompt assemble, then copy it into Claude and iterate. The defaults are just ideas — your real task beats any example.</p>
+    <div class="builder">
+      <div class="builder-form" id="builder-form">
+        <label><span class="b-letter bl-P">P</span><span class="b-label" data-i18n="pt.P.t">Persona</span>
+          <input type="text" id="b-P" data-i18n-ph="pb2.ph.P" placeholder="You are an NTD M&E officer…"></label>
+        <label><span class="b-letter bl-T">T</span><span class="b-label" data-i18n="pt.T.t">Task</span>
+          <input type="text" id="b-T" data-i18n-ph="pb2.ph.T" placeholder="Summarize MDA coverage by district for 2025…"></label>
+        <label><span class="b-letter bl-C">C</span><span class="b-label" data-i18n="pt.C.t">Context</span>
+          <input type="text" id="b-C" data-i18n-ph="pb2.ph.C" placeholder="For the national programme review; I have aggregate district data…"></label>
+        <label><span class="b-letter bl-F">F</span><span class="b-label" data-i18n="pt.F.t">Format</span>
+          <input type="text" id="b-F" data-i18n-ph="pb2.ph.F" placeholder="A one-page table plus three bullets, formal…"></label>
+        <label><span class="b-letter bl-I">I</span><span class="b-label" data-i18n="pt.I.t">Iterate</span>
+          <input type="text" id="b-I" data-i18n-ph="pb2.ph.I" placeholder="Flag coverage over 100% or under 65%; ask me before finalizing…"></label>
+      </div>
+      <div class="builder-out">
+        <pre id="builder-out"></pre>
+        <button class="btn primary" id="builder-copy" type="button" data-i18n="pb2.copy">Copy prompt</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="quiz-missing" data-quiz="missing"></div>
+
+  <div class="callout callout-accent skill-callout">
+    <h3 data-i18n="sk.t">Could we build a skill for the perfect prompt?</h3>
+    <p data-i18n="sk.d">Yes — and that is exactly the plan. A skill is a saved, reusable set of instructions you can call on demand instead of retyping. The builder above is the draft of that skill: the P-T-C-F-I anatomy plus your house rules. Today you learn it by hand.</p>
+    <p data-i18n="sk.d2">In Class 2 we turn your best prompts into a real skill, hunt for existing skills (they are shared, for example, on GitHub), and you learn to tell reusable prompts from one-offs. Homework prep: bring one task you repeat every week — that is your first skill candidate.</p>
+  </div>
+</section>
+
+<!-- ============================ 6 · HOMEWORK ============================ -->
+<section id="homework" class="section">
+  <h2 data-i18n="homework.h2">Homework — due before Class 2</h2>
+  <p class="section-lead" data-i18n="homework.sub">Four steps, all on Slack. Class 2 opens with one of you presenting.</p>
+
+  <div class="hw-grid">
+    <div class="card card-hw"><span class="step-n">1</span>
+      <h3 data-i18n="hw.1.t">Introduce yourself on #all-amplify</h3>
+      <p data-i18n="hw.1.d">Name, role, country — and one sentence on the problem you are working on.</p>
+    </div>
+    <div class="card card-hw"><span class="step-n">2</span>
+      <h3 data-i18n="hw.2.t">Post your problem</h3>
+      <p data-i18n="hw.2.d">Paste your problem statement — from the form, or exported from the Problem Builder.</p>
+    </div>
+    <div class="card card-hw"><span class="step-n">3</span>
+      <h3 data-i18n="hw.3.t">Reply to two classmates</h3>
+      <p data-i18n="hw.3.d">One thing you find interesting about their problem, and one question back.</p>
+    </div>
+    <div class="card card-hw"><span class="step-n">4</span>
+      <h3 data-i18n="hw.4.t">Run the prompt builder on a real task</h3>
+      <p data-i18n="hw.4.d">Pick something you actually did this week. Build the prompt, run it in Claude (inside your project), and note what changed.</p>
+    </div>
+  </div>
+  <p class="hint homework-note" data-i18n="hw.note">Submissions go to your private channel, titled FirstNameLastName_Assignment1. Homework is required to stay in the course.</p>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section">
+  <h2 data-i18n="faq.h">Quick answers</h2>
+  <details class="faq"><summary data-i18n="faq.q1">What if I miss a live class?</summary><p data-i18n="faq.a1">Watch the recording in the module channel, do the homework anyway, and ask on Slack. Don't disappear — the course moves every two weeks.</p></details>
+  <details class="faq"><summary data-i18n="faq.q2">What if Claude gives me something wrong?</summary><p data-i18n="faq.a2">Treat it as a prompt problem first: iterate (the I in P-T-C-F-I is you). Verify every number against a source. If it keeps happening, post the prompt and output on Slack — debugging prompts is a group sport.</p></details>
+  <details class="faq"><summary data-i18n="faq.q3">Can I work in French?</summary><p data-i18n="faq.a3">Yes. Write to Claude and on Slack in whichever language you think in; instructors read both. (This page toggles with EN/FR at the top.)</p></details>
+  <details class="faq"><summary data-i18n="faq.q4">Where do I find everything?</summary><p data-i18n="faq.a4">One place: Slack. Slides, templates, recordings, and homework feedback all live there — this page is the only exception.</p></details>
+</section>
+
+</main>
+
+<footer class="footnote">
+  <p data-i18n="ft.credit">AMPLIFY 2027 · Sightsavers × ESPEN · Cohort 2</p>
+  <p data-i18n="ft.note">This page is itself a Class 1 demo: a plain HTML file, no backend. View its source, and bring your questions to class.</p>
+  <p class="ft-links">
+    <a href="../" data-i18n="ft.link0">← Back to AMPLIFY</a> ·
+    <a href="https://amplifycourse.vercel.app" target="_blank" rel="noopener" data-i18n="ft.link1">Problem Builder</a> ·
+    <a href="https://claude.ai/download" target="_blank" rel="noopener" data-i18n="ft.link2">Download Claude</a> ·
+    <a href="https://slack.com/help" target="_blank" rel="noopener" data-i18n="ft.link3">Slack Help Center</a> ·
+    <a href="https://support.google.com/meet" target="_blank" rel="noopener" data-i18n="ft.link4">Google Meet Help</a>
+  </p>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
