@@ -478,7 +478,6 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       <div class="kicker">Short course</div>
       <h1>Choose the <em>right visual</em> for ESPEN data</h1>
       <p class="lede">A 20-minute guide to picking the chart that answers your question — with a quick-reference table and ESPEN-specific rules you can use the next time you brief your programme.</p>
-      <p class="lede" style="margin-top:.6rem;font-size:.95em;color:var(--muted)">Excerpted from the full <a href="espen-mcp-academy.html">ESPEN MCP Academy</a> (full course). This page keeps only the sections you asked for: the interactive chooser, quick reference, and chart rules.</p>
     </section>
 
     <!-- ======== 01 WHAT ======== -->
@@ -567,10 +566,8 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
           <div class="prompt" id="ch-ask">Using the ESPEN connector, I want to show [YOUR QUESTION] for [COUNTRY] to [AUDIENCE]. Before pulling any data, recommend the best chart type and explain why, name one alternative you rejected and why, and list the ESPEN tables and columns you'd use. Wait for my go-ahead before building it.</div>
         </div>
       </div>
-      <label class="mark" style="justify-self:start"><input type="checkbox" id="done-charts" data-track> I've picked a chart for each panel of my capstone</label>
     </section>
 
-    <!-- ======== 05 CAPSTONE ======== -->
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -614,173 +611,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     el.appendChild(b);
   }
 
-  /* ---------- quiz ---------- */
-  var quiz = [
-    { q: 'Your LF coverage chart drops to 0% in the most recent year. What should you conclude first?',
-      o: ['MDA stopped in every district', 'The year may not be fully reported yet', 'The connector is broken'], a: 1,
-      e: 'Recent years are often incomplete. Check the year before, and look at endemicity labels before calling it a real stop.' },
-    { q: 'You need current programme status for a country. Which source is the wrong one?',
-      o: ['list_countries', 'The country summary table in query_disease_data', 'The IU-level disease tables'], a: 0,
-      e: 'list_countries only covers 2013–2018. Use it to look up ISO2 codes, not for current status.' },
-    { q: 'A query for site-level data returns a 403. What does that mean?',
-      o: ['There is no site-level data for that country', 'Your key lacks the access role for that table', 'You misspelled the country'], a: 1,
-      e: 'A 403 is an access-level question for the ESPEN team, not missing data.' }
-  ];
-  var qRoot = document.getElementById('quiz');
-  quiz.forEach(function (item, i) {
-    var d = document.createElement('div'); d.className = 'q';
-    d.innerHTML = '<p>' + (i + 1) + '. ' + item.q + '</p><div class="opts"></div><div class="fb" aria-live="polite"></div>';
-    var opts = d.querySelector('.opts'), fb = d.querySelector('.fb');
-    item.o.forEach(function (txt, j) {
-      var b = document.createElement('button'); b.type = 'button'; b.textContent = txt;
-      b.addEventListener('click', function () {
-        opts.querySelectorAll('button').forEach(function (x) { x.classList.remove('right', 'wrong'); });
-        b.classList.add(j === item.a ? 'right' : 'wrong');
-        fb.textContent = (j === item.a ? 'Correct. ' : 'Not quite. ') + item.e;
-        if (j === item.a) { var s = store.get('quiz') || {}; s[i] = true; store.set('quiz', s); checkQuiz(); }
-      });
-      opts.appendChild(b);
-    });
-    qRoot.appendChild(d);
-  });
-  var quizBox = document.createElement('label'); quizBox.className = 'mark';
-  quizBox.innerHTML = '<input type="checkbox" id="done-quiz" data-track> I\'ve finished Module 01 and the quiz';
-  qRoot.appendChild(quizBox);
-  function checkQuiz() { var s = store.get('quiz') || {}; if (s[0] && s[1] && s[2]) { var c = document.getElementById('done-quiz'); if (!c.checked) { c.checked = true; c.dispatchEvent(new Event('change')); } } }
 
-  /* ---------- activities ---------- */
-  var acts = [
-    { t: 'First contact', s: 'Prove the connector works and see what it can reach.', k: 'Connection',
-      g: 'Get Claude to list the data the ESPEN connector can reach, translated into programme language.',
-      p: 'What ESPEN data can you see? Summarise it for an NTD programme manager: which diseases, which levels (country, district, site), and which other datasets like forecasts, medicines and reporting forms. Don\'t list every endpoint.',
-      good: ['Names all five PC-NTDs plus loiasis', 'Mentions country, IU, sub-IU and site levels', 'Mentions forecasts, medicines and JAP reporting', 'Flags which data needs extra access'],
-      watch: ['An error here is a setup problem. See Module 02 before going further.'],
-      x: 'Ask which datasets are only reachable by table name.' },
-    { t: 'Find your country', s: 'Resolve names to codes and read endemicity labels.', k: 'Lookup',
-      g: 'Find your country\'s ISO2 code and its endemicity status for each PC-NTD, and learn why that status is out of date.',
-      p: 'Look up [COUNTRY] in ESPEN. Give me its ISO2 code and the endemicity and programme status for each PC-NTD. Tell me which years that status covers.',
-      good: ['Gives the ISO2 code', 'Lists status for each disease', 'Says list_countries covers 2013–2018 only'],
-      watch: ['Some countries (for example Nigeria) aren\'t in list_countries but do have full data in the disease tables.', 'Try a variant spelling: "Ivory Coast", "DRC", "Cameroun".'],
-      x: 'Ask for the same status from the country summary table for the latest year, and compare.' },
-    { t: 'One number, cited', s: 'Get a single figure with its source.', k: 'Citing',
-      g: 'Get one trustworthy number with the table and year it came from.',
-      p: 'How many people were treated for lymphatic filariasis in [COUNTRY] in the latest complete year? Tell me which ESPEN table and year the number comes from, and how you decided that year is complete.',
-      good: ['A single number with the table name and year', 'An explanation of why that year was chosen', 'Plain language, no API jargon'],
-      watch: ['If the latest year shows 0 or a sharp drop, Claude should step back a year and say why.'],
-      x: 'Ask for the same figure for oncho, and compare population requiring vs treated.' },
-    { t: 'Read a trend', s: 'Chart ten years of coverage and spot gaps.', k: 'Charting',
-      g: 'Produce a ten-year trend chart and read it correctly, including incomplete years.',
-      p: 'Show me a chart of LF epidemiological coverage and people treated in [COUNTRY] over the last 10 years, using country-level data. Put coverage and counts on separate charts. Mark any year that looks incompletely reported.',
-      good: ['Two charts, not one dual-axis chart', 'Incomplete years visibly marked', 'A sentence on what the trend shows', 'Source line with table and years'],
-      watch: ['Coverage columns are named differently by level: Cov at IU level, Coverage at country level.'],
-      x: 'Add the WHO 65% effective-coverage threshold as a reference line.' },
-    { t: 'Districts below threshold', s: 'Drop to IU level and filter.', k: 'Filtering',
-      g: 'Find districts (IUs) whose last MDA round missed the effective-coverage threshold, and interpret zeros carefully.',
-      p: 'Which districts in [COUNTRY] had LF epidemiological coverage below 65% in the latest complete year? Show district, region, coverage and endemicity. Before pulling data, tell me which table and columns you\'ll use. For any district at 0%, explain the possible reasons.',
-      good: ['Claude shows its plan before fetching', 'Only needed columns are pulled', 'Zeros are explained using endemicity labels', 'Count of districts and the year are stated'],
-      watch: ['A 0 can mean "not needed", "stopped after TAS" or "not reported yet".'],
-      x: 'Repeat for SCH. Use the SAC rows for coverage and the Total rows for whether MDA happened.' },
-    { t: 'Reporting check', s: 'Read JAP submission status correctly.', k: 'Reporting',
-      g: 'Summarise a country\'s Joint Application Package history and the status of each component.',
-      p: 'Has [COUNTRY] submitted its JAP for recent cycles? Show a table of years by component (JRSM, JRF, EPIRF, AWP, TEMF) with each status. Check component status, not just the package status.',
-      good: ['A years × components table', 'Component-level status, not only package-level', 'Notes that JRF lags the cycle year by about two years'],
-      watch: ['A package marked complete can still have a component missing.'],
-      x: 'Turn the table into a colour-coded grid. You\'ll reuse it in the capstone.' },
-    { t: 'Look ahead', s: 'Forecasts and co-endemic districts.', k: 'Forecasting',
-      g: 'Read elimination forecasts and find where diseases overlap.',
-      p: 'What do ESPEN forecasts say about when [COUNTRY] reaches elimination targets for LF and oncho? Then list districts that are co-endemic for LF, oncho and SCH. Present the overlap as a starting point for discussion, not a recommendation.',
-      good: ['Forecast years per disease with their source table', 'Co-endemic districts listed', 'No programme recommendations stated as fact'],
-      watch: ['Start with the country forecast table; only drop to district forecasts if needed.'],
-      x: 'Ask how medicine shipments in recent years compare with the forecast\'s needs.' },
-    { t: 'Make a map', s: 'District endemicity on real boundaries.', k: 'Mapping',
-      g: 'Create a district map coloured by endemicity, using boundaries from the same year as the data.',
-      p: 'Make a map of [COUNTRY]\'s districts coloured by oncho endemicity for the latest complete year. Use ESPEN boundaries from the same year as the data. Hovering a district should show its name, region, endemicity, epidemiological coverage and cumulative rounds. Report how many districts matched.',
-      good: ['Boundaries and data from the same year', 'Match rate reported', 'Clear legend with plain-language labels', 'Hover details work'],
-      watch: ['"Endemic (under post-intervention surveillance)" should be shown as "Post-intervention surveillance (formerly endemic)".'],
-      x: 'Make a second map showing effective rounds completed. You\'re ready for the capstone.' }
-  ];
-  var aRoot = document.getElementById('acts'); if(aRoot){
-  acts.forEach(function (a, i) {
-    var id = 'done-act' + (i + 1);
-    var d = document.createElement('details'); d.className = 'act'; d.id = 'act' + (i + 1);
-    d.innerHTML =
-      '<summary><span class="lvl">' + (i + 1) + '</span><div><h3>' + a.t + '</h3><p>' + a.s + '</p></div><span class="meta"><span class="skill">' + a.k + '</span><span class="chev" aria-hidden="true">▶</span></span></summary>' +
-      '<div class="body"><p class="goal"><strong>Goal.</strong> ' + a.g + '</p>' +
-      '<div class="prompt"></div>' +
-      '<div class="cols"><div><h4>What good looks like</h4><ul>' + a.good.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' +
-      '<div><h4>Watch out for</h4><ul>' + a.watch.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul><h4 style="margin-top:14px">Stretch</h4><ul><li>' + a.x + '</li></ul></div></div>' +
-      '<label class="mark"><input type="checkbox" id="' + id + '" data-track> Mark activity ' + (i + 1) + ' complete</label></div>';
-    d.querySelector('.prompt').textContent = a.p;
-    addCopy(d.querySelector('.prompt'));
-    aRoot.appendChild(d);
-  });
-  aRoot.firstChild.open = true;
-
-  /* ---------- progress ---------- */
-  var tracks = Array.prototype.slice.call(document.querySelectorAll('[data-track]'));
-  var saved = store.get('done') || {};
-  function render() {
-    var n = tracks.filter(function (c) { return c.checked; }).length;
-    document.getElementById('progText').textContent = n + ' of ' + tracks.length;
-    document.getElementById('progBar').style.width = (n / tracks.length * 100) + '%';
-    tracks.forEach(function (c) { var act = c.closest('.act'); if (act) act.classList.toggle('done', c.checked); });
-  }
-  tracks.forEach(function (c) {
-    c.checked = !!saved[c.id];
-    c.addEventListener('change', function () { saved[c.id] = c.checked; store.set('done', saved); render(); });
-  });
-  render();
-
-  /* ---------- idea canvas ---------- */
-  var form = document.getElementById('canvas'), out = document.getElementById('cv-out');
-  function v(id) { return document.getElementById(id).value.trim(); }
-  function writePrompt() {
-    out.textContent = 'Using the ESPEN connector, build ' + v('cv-output') + ' for ' + (v('cv-country') || '[COUNTRY]') + '.\n\n' +
-      'Audience: ' + v('cv-audience') + '.\n' +
-      'The question: ' + (v('cv-need') || '[your question]') + '\n' +
-      'It should help them: ' + (v('cv-decision') || '[the decision]') + '.\n' +
-      'Years: ' + (v('cv-years') || 'the latest complete year') + '.\n\n' +
-      'Before pulling any data, show me your plan: which ESPEN tables and columns you\'ll use. Check the latest year is complete, explain any zeros, and cite the table and year for every figure.';
-    addCopy(out);
-  }
-  form.addEventListener('submit', function (e) { e.preventDefault(); writePrompt(); toast('Prompt updated'); });
-  writePrompt();
-
-  addCopy(document.getElementById('capPrompt'));
-
-  /* ---------- rubric ---------- */
-  var crit = [
-    ['Complete', 'All eight panels are present and populated for every relevant disease.'],
-    ['Accurate', 'District counts match the country summary, or differences are explained.'],
-    ['Honest about the data', 'Incomplete years are marked; zeros are interpreted, not assumed.'],
-    ['Traceable', 'Every panel names its ESPEN table and years; snapshot date shown.'],
-    ['Readable', 'The programme team gets the picture in two minutes, on a laptop or a phone.'],
-    ['Tells the story', 'Three clear takeaways a programme manager could act on or question.']
-  ];
-  var rRoot = document.getElementById('rubric'), scores = store.get('rubric') || {};
-  crit.forEach(function (c, i) {
-    var d = document.createElement('div'); d.className = 'crit';
-    d.innerHTML = '<div><h4>' + c[0] + '</h4><p>' + c[1] + '</p></div><div class="score" role="group" aria-label="Score for ' + c[0] + '"></div>';
-    var g = d.querySelector('.score');
-    [0, 1, 2, 3].forEach(function (n) {
-      var b = document.createElement('button'); b.type = 'button'; b.textContent = n; b.setAttribute('aria-pressed', scores[i] === n ? 'true' : 'false');
-      b.addEventListener('click', function () { scores[i] = n; store.set('rubric', scores); g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); total(); });
-      g.appendChild(b);
-    });
-    rRoot.appendChild(d);
-  });
-  function total() {
-    var keys = Object.keys(scores), t = keys.reduce(function (s, k) { return s + scores[k]; }, 0);
-    document.getElementById('rubTotal').textContent = t;
-    var band = keys.length < crit.length ? 'Score all six criteria to see your level.' :
-      t >= 16 ? 'Hero. Ready to share with your programme team.' :
-      t >= 12 ? 'Strong. Fix the lowest-scoring criterion, then share.' :
-      t >= 7 ? 'Getting there. Revisit activities 3–5 and the caveats.' : 'Early draft. Work back through M1 and M2.';
-    document.getElementById('rubBand').textContent = band;
-  }
-  total();
-
-  /* ---------- chart chooser ---------- */
   var tip = document.createElement('div'); tip.className = 'vtip'; tip.setAttribute('aria-hidden', 'true'); document.body.appendChild(tip);
   document.addEventListener('pointermove', function (e) {
     var t = e.target.closest && e.target.closest('[data-tip]');
