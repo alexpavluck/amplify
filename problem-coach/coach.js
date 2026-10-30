@@ -55,7 +55,7 @@
       s2_lead: "What do you start with? List everything that comes in before you can do this task.",
       s2_item: "Input", s2_add: "+ Add another input", remove: "Remove",
       s2_what: "What comes in", s2_whathint: "e.g. district treatment summaries",
-      s2_from: "From whom or which system", s2_format: "Format", s2_formatOther: "Describe the format",
+      s2_from: "From whom or which system", s2_fromhint: "e.g. district NTD focal persons, DHIS2", s2_format: "Format", s2_formatOther: "Describe the format",
       s2_often: "How often", s2_oftenhint: "e.g. after each MDA round",
       s2_pd: "Does it contain personal data (names, phone numbers, patient details)?",
       formats: { excel: "Excel", dhis2: "DHIS2 export", paper: "Paper", photo: "Photo", pdf: "PDF", email_text: "Email text", whatsapp: "WhatsApp", phone: "Phone call", other: "Other" },
@@ -66,7 +66,7 @@
       s3_what: "What you produce", s3_whathint: "e.g. coverage table and two charts in the annual report",
       s3_for: "For whom", s3_forhint: "a role is fine, e.g. programme manager",
       s3_format: "Format", s3_formathint: "e.g. Word report, slides, Excel table, map",
-      s3_when: "Deadline or frequency", s3_used: "What they use it for", s3_usedhint: "the decision or action it supports",
+      s3_when: "Deadline or frequency", s3_whenhint: "e.g. every February, before the technical meeting", s3_used: "What they use it for", s3_usedhint: "the decision or action it supports",
       // stage 4
       s4_lead: "Between what comes in and what goes out, where does it get hard? Tell us about the last time it went wrong.",
       s4_hard: "The hardest step", s4_hardhint: "the step that is slowest, most error-prone or most frustrating",
@@ -148,7 +148,7 @@
       s2_lead: "Avec quoi commencez-vous ? Listez tout ce qui arrive avant que vous puissiez faire cette tâche.",
       s2_item: "Entrée", s2_add: "+ Ajouter une entrée", remove: "Supprimer",
       s2_what: "Ce qui arrive", s2_whathint: "ex. résumés de traitement des districts",
-      s2_from: "De qui ou de quel système", s2_format: "Format", s2_formatOther: "Décrivez le format",
+      s2_from: "De qui ou de quel système", s2_fromhint: "ex. points focaux MTN des districts, DHIS2", s2_format: "Format", s2_formatOther: "Décrivez le format",
       s2_often: "À quelle fréquence", s2_oftenhint: "ex. après chaque campagne TDM",
       s2_pd: "Contient-elle des données personnelles (noms, téléphones, détails de patients) ?",
       formats: { excel: "Excel", dhis2: "Export DHIS2", paper: "Papier", photo: "Photo", pdf: "PDF", email_text: "Texte d'e-mail", whatsapp: "WhatsApp", phone: "Appel téléphonique", other: "Autre" },
@@ -158,7 +158,7 @@
       s3_what: "Ce que vous produisez", s3_whathint: "ex. tableau de couverture et deux graphiques dans le rapport annuel",
       s3_for: "Pour qui", s3_forhint: "une fonction suffit, ex. gestionnaire du programme",
       s3_format: "Format", s3_formathint: "ex. rapport Word, diapositives, tableau Excel, carte",
-      s3_when: "Échéance ou fréquence", s3_used: "À quoi cela leur sert", s3_usedhint: "la décision ou l'action que cela soutient",
+      s3_when: "Échéance ou fréquence", s3_whenhint: "ex. chaque février, avant la réunion technique", s3_used: "À quoi cela leur sert", s3_usedhint: "la décision ou l'action que cela soutient",
       s4_lead: "Entre ce qui entre et ce qui sort, où est-ce que ça bloque ? Racontez la dernière fois où cela s'est mal passé.",
       s4_hard: "L'étape la plus difficile", s4_hardhint: "l'étape la plus lente, la plus sujette aux erreurs ou la plus frustrante",
       s4_ex: "La dernière fois que cela s'est mal passé", s4_exhint: "une vraie occasion, 2 à 4 phrases",
@@ -391,7 +391,7 @@
         <div class="row-head"><span class="h3">${t("s2_item")} ${i + 1}</span>${state.inputs.length > 1 ? `<button type="button" class="link" data-remove="inputs.${i}">${t("remove")}</button>` : ""}</div>
         ${fText(`inputs.${i}.what`, t("s2_what"), t("s2_whathint"))}
         <div class="grid2" style="margin-top:.9rem">
-          ${fText(`inputs.${i}.from`, t("s2_from"), "")}
+          ${fText(`inputs.${i}.from`, t("s2_from"), t("s2_fromhint"))}
           ${fText(`inputs.${i}.how_often`, t("s2_often"), t("s2_oftenhint"))}
         </div>
         ${fChoice(`inputs.${i}.format`, t("s2_format"), fmts)}
@@ -412,7 +412,7 @@
           ${fText(`outputs.${i}.format`, t("s3_format"), t("s3_formathint"))}
         </div>
         <div class="grid2" style="margin-top:.9rem">
-          ${fText(`outputs.${i}.deadline_or_frequency`, t("s3_when"), "")}
+          ${fText(`outputs.${i}.deadline_or_frequency`, t("s3_when"), t("s3_whenhint"))}
           ${fText(`outputs.${i}.used_for`, t("s3_used"), t("s3_usedhint"))}
         </div>
       </div>`).join("");

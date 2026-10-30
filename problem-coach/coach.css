@@ -108,13 +108,23 @@ button,input,select,textarea{font:inherit;color:inherit}
 .field{display:flex;flex-direction:column;gap:.35rem}
 .field + .field{margin-top:1.25rem}
 .field > label,.field > .label{font-weight:600;font-size:var(--fs-body)}
+/* Choice groups are fieldsets: drop the browser border and inset legend. */
+fieldset.field{border:0;margin:0;padding:0;min-width:0}
+fieldset.field > legend{float:left;width:100%;padding:0;margin-bottom:.35rem;line-height:1.35}
+fieldset.field > legend + *{clear:both}
+fieldset.field > .hint{clear:both;display:block}
+fieldset.field > .choices{clear:both;padding-top:.25rem}
 .hint{font-size:var(--fs-small);color:var(--ink-2)}
 input[type=text],textarea,select{width:100%;border:1px solid var(--line);border-radius:var(--radius);padding:.65rem .8rem;background:#fff;line-height:1.45}
 textarea{min-height:7rem;resize:vertical}
 textarea.short{min-height:4.5rem}
 input[type=text]:focus,textarea:focus,select:focus{outline:2px solid var(--sky);outline-offset:0;border-color:var(--sky)}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:start}
-.grid2 > .field + .field{margin-top:0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:stretch}
+.grid2 > .field + .field,.row .grid2 > .field + .field{margin-top:0}
+/* Paired fields: keep the boxes on one line even when hint lengths differ. */
+.grid2 > .field{height:100%}
+.grid2 > .field > input,.grid2 > .field > textarea{margin-top:auto}
+@media (max-width:640px){.grid2 > .field{height:auto}.grid2 > .field > input{margin-top:0}}
 .grid2 + .field{margin-top:1.25rem}
 #agreeMsg:empty{display:none}
 @media (max-width:640px){.grid2{grid-template-columns:minmax(0,1fr)}}
@@ -129,7 +139,7 @@ input[type=text]:focus,textarea:focus,select:focus{outline:2px solid var(--sky);
 .row{border:1px solid var(--line-soft);border-radius:8px;padding:1rem;background:var(--muted)}
 .row-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
 .row-head .h3{font-size:1rem}
-.row .field + .field{margin-top:.9rem}
+.row .field + .field,.row .grid2 + .field{margin-top:.9rem}
 .row input[type=text],.row textarea,.row select{background:#fff}
 
 /* buttons */
