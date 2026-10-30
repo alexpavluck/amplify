@@ -113,7 +113,10 @@ input[type=text],textarea,select{width:100%;border:1px solid var(--line);border-
 textarea{min-height:7rem;resize:vertical}
 textarea.short{min-height:4.5rem}
 input[type=text]:focus,textarea:focus,select:focus{outline:2px solid var(--sky);outline-offset:0;border-color:var(--sky)}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:start}
+.grid2 > .field + .field{margin-top:0}
+.grid2 + .field{margin-top:1.25rem}
+#agreeMsg:empty{display:none}
 @media (max-width:640px){.grid2{grid-template-columns:minmax(0,1fr)}}
 .choices{display:flex;flex-wrap:wrap;gap:.5rem}
 .choice{position:relative}
