@@ -1,0 +1,89 @@
+{
+  "type": "object",
+  "description": "Feedback for one coaching round on one stage. Used as the input_schema of the forced submit_feedback tool.",
+  "required": ["stage", "verdict", "criteria", "feedback", "questions", "red_flags"],
+  "additionalProperties": false,
+  "properties": {
+    "stage": { "type": "integer", "minimum": 1, "maximum": 6 },
+    "verdict": {
+      "type": "string",
+      "enum": ["ready", "needs_work"],
+      "description": "ready = all required criteria met or partial. Advisory only; the learner can always move on."
+    },
+    "criteria": {
+      "type": "array",
+      "description": "One entry per rubric criterion for this stage (IDs from spec/02-rubric.md).",
+      "items": {
+        "type": "object",
+        "required": ["id", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Z][0-9]_[a-z_]+$" },
+          "status": { "type": "string", "enum": ["met", "partial", "missing"] },
+          "note": { "type": "string", "maxLength": 200, "description": "Short internal reason. Shown to facilitators, not learners." }
+        }
+      }
+    },
+    "strength": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "One sentence on what works, quoting the learner. Omit if nothing specific."
+    },
+    "feedback": {
+      "type": "string",
+      "maxLength": 700,
+      "description": "Learner-facing feedback in the learner's language. Under 120 words. No rewritten answers."
+    },
+    "questions": {
+      "type": "array",
+      "maxItems": 2,
+      "items": { "type": "string", "maxLength": 250 },
+      "description": "0-2 questions, most useful first."
+    },
+    "improved_since_last": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Rounds 2-3 only: what got better since the previous round."
+    },
+    "red_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "message"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string", "enum": ["personal_data", "not_own_work", "too_big", "no_sample", "other"] },
+          "message": { "type": "string", "maxLength": 300 }
+        }
+      }
+    },
+    "suggested_skills": {
+      "type": "array",
+      "maxItems": 2,
+      "description": "Stage 6 only. Skills that look missing, with the reason tied to the learner's inputs/outputs.",
+      "items": {
+        "type": "object",
+        "required": ["id", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "reason": { "type": "string", "maxLength": 250 }
+        }
+      }
+    },
+    "uncovered_needs": {
+      "type": "array",
+      "maxItems": 2,
+      "description": "Stage 6 only. AI skills the problem clearly needs that no catalog skill describes. These are outside the course; the app marks them 'Not covered'. Empty in most cases.",
+      "items": {
+        "type": "object",
+        "required": ["skill", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "skill": { "type": "string", "maxLength": 100 },
+          "reason": { "type": "string", "maxLength": 250 }
+        }
+      }
+    }
+  }
+}

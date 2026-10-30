@@ -122,6 +122,11 @@ button{font:inherit;color:inherit}
 .core-tile svg{width:76px;height:76px}
 .core-label{font-weight:600;font-size:var(--fs-body);line-height:1.25;background:var(--ground);padding:.35rem .75rem;border-radius:8px}
 .core-label span{display:block;font-weight:400;color:var(--ink-2);font-size:var(--fs-small)}
+.core-label .core-link{display:inline-block;margin-top:.35rem;font-size:var(--fs-small);font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+.core-label .core-link span{display:inline;color:inherit}
+.coach-cta{margin-top:2.5rem;padding:1.5rem;border-radius:10px;background:var(--ground);border-left:4px solid var(--gold);max-width:40em}
+.coach-cta p{margin-bottom:1rem;color:var(--ink-2)}
+.coach-cta p.h3{color:var(--ink);margin-bottom:.5rem}
 .hub-list{list-style:none}
 .hub-card{
   position:absolute;left:var(--x);top:var(--y);
@@ -277,6 +282,7 @@ button{font:inherit;color:inherit}
     <nav class="nav-links" aria-label="Main">
       <a href="#sessions">Sessions</a>
       <a href="#problem">Your problem</a>
+      <a href="problem-coach/">Problem Coach</a>
       <a href="#pilot">Cohort 1</a>
     </nav>
     <a class="btn btn-ink" href="#short-courses">AMPLIFY: Short courses</a>
@@ -296,7 +302,7 @@ button{font:inherit;color:inherit}
   <div class="wrap hub-wrap" id="sessions">
     <div class="head head-center">
       <h2 class="h2" data-rise>Learn AI on a problem you own.</h2>
-      <p class="lead" data-rise style="--rd:.08s">AMPLIFY 2027 is an eight-session course for staff of national NTD programmes. You bring one real task from your own work. Every session sharpens it or builds the AI skill to solve it, and you finish by presenting the solution.</p>
+      <p class="lead" data-rise style="--rd:.08s">AMPLIFY 2027 is an eight-session course for staff of national NTD programmes. You bring one real task from your own work. Every session sharpens it or builds the AI skill to solve it, and you finish by presenting the solution. Not sure how to describe yours yet? <a href="problem-coach/">Start with the Problem Coach</a>.</p>
     </div>
     <div class="hub" id="hub">
       <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -320,7 +326,7 @@ button{font:inherit;color:inherit}
             <path class="spark" fill="#EFBF29" d="M50 36 Q51.9 48.1 64 50 Q51.9 51.9 50 64 Q48.1 51.9 36 50 Q48.1 48.1 50 36 Z"/>
           </svg>
         </div>
-        <p class="core-label">Your problem<span>at the centre of every session</span></p>
+        <p class="core-label">Your problem<span>at the centre of every session</span><a class="core-link" href="problem-coach/">Shape yours with the Problem Coach <span aria-hidden="true">→</span></a></p>
       </div>
 
       <ol class="hub-list" aria-label="The eight sessions">
@@ -384,6 +390,11 @@ button{font:inherit;color:inherit}
         <li data-rise style="--rd:.24s"><b>Knowledge management</b>You bring information together from different places and get it to the people who need it, when they need it, including through training.</li>
         <li data-rise style="--rd:.3s"><b>Project management</b>You plan, track and coordinate the work itself.</li>
       </ul>
+      <div class="coach-cta" data-rise style="--rd:.36s">
+        <p class="h3">Build your problem brief with the Problem Coach</p>
+        <p>A friendly AI coach asks you questions, one section at a time, while you describe your task, what comes in, what goes out and where it gets hard. You leave with a requirements brief that shows which sessions teach the skills you need, and which needs the course does not cover. About 20–30 minutes, in English or French.</p>
+        <a class="btn btn-gold" href="problem-coach/">Open the Problem Coach <span class="arr" aria-hidden="true">→</span></a>
+      </div>
     </div>
     <div class="example">
       <div class="ex ex-weak" data-rise>

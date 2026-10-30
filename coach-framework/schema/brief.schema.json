@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BriefState",
+  "description": "Everything the learner has entered, plus coaching history. Stored in localStorage and sent to /api/coach and /api/brief.",
+  "type": "object",
+  "required": ["version", "meta", "problem", "inputs", "outputs", "gap", "success", "fit", "constraints", "skills", "coaching", "flags"],
+  "properties": {
+    "version": { "const": "1.0" },
+    "meta": {
+      "type": "object",
+      "required": ["session_id", "locale"],
+      "properties": {
+        "session_id": { "type": "string" },
+        "name": { "type": "string" },
+        "country": { "type": "string" },
+        "programme_role": { "type": "string" },
+        "cohort": { "type": "string" },
+        "locale": { "enum": ["en", "fr"] },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "problem": {
+      "type": "object",
+      "properties": {
+        "task": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "area": { "enum": ["data", "communication", "knowledge", "project_management", ""] },
+        "area_secondary": { "enum": ["data", "communication", "knowledge", "project_management", ""] }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "what": { "type": "string" },
+          "from": { "type": "string" },
+          "format": { "enum": ["excel", "dhis2", "paper", "photo", "pdf", "email_text", "whatsapp", "phone", "other"] },
+          "format_other": { "type": "string" },
+          "how_often": { "type": "string" },
+          "personal_data": { "enum": ["yes", "no", "not_sure"] }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "what": { "type": "string" },
+          "for_whom": { "type": "string" },
+          "format": { "type": "string" },
+          "deadline_or_frequency": { "type": "string" },
+          "used_for": { "type": "string" }
+        }
+      }
+    },
+    "gap": {
+      "type": "object",
+      "properties": {
+        "hardest_step": { "type": "string", "maxLength": 1000 },
+        "recent_example": { "type": "string", "maxLength": 2000 },
+        "consequence": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "success": {
+      "type": "object",
+      "properties": {
+        "measure": { "type": "string", "maxLength": 500 },
+        "baseline": { "type": "string" },
+        "target": { "type": "string" }
+      }
+    },
+    "fit": {
+      "type": "object",
+      "properties": {
+        "own_work": { "type": "boolean" },
+        "recurring": { "type": "boolean" },
+        "sample_available": { "enum": ["yes", "no", "need_permission"] }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "connectivity": { "enum": ["reliable", "unreliable", "mostly_offline"] },
+        "tools": { "type": "array", "items": { "type": "string" } },
+        "permission": { "type": "string" }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "Current skills map. IDs from schema/skills-catalog.json.",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "needed": { "type": "boolean" },
+          "have": { "type": "boolean" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "skills_history": {
+      "type": "array",
+      "description": "Snapshots of the skills map, one per revisit (e.g. after each module).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "saved_at": { "type": "string", "format": "date-time" },
+          "after_module": { "type": "string" },
+          "skills": { "type": "array" }
+        }
+      }
+    },
+    "coaching": {
+      "type": "object",
+      "description": "Keyed by stage number as a string ('1'..'6'). Each value is the list of CoachResponse objects in round order.",
+      "additionalProperties": { "type": "array", "maxItems": 3 }
+    },
+    "flags": {
+      "type": "array",
+      "description": "Required criteria left unmet when the learner moved on, plus any red flags. Filled by the frontend from the last CoachResponse of each stage.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage": { "type": "integer" },
+          "criterion_or_flag": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      }
+    }
+  }
+}

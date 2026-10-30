@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMPLIFY Problem Coach</title>
+<meta name="description" content="A friendly AI coach that helps you turn one real work problem into a requirements brief, mapped to the AMPLIFY course sessions.">
+<link rel="icon" type="image/png" href="amplify-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="coach.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="/" aria-label="AMPLIFY home"><img class="nav-logo" src="amplify-logo.png" alt="AMPLIFY" width="384" height="80"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#sessions" data-i18n="nav.sessions">Sessions</a>
+      <a href="/#problem" data-i18n="nav.problem">Your problem</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="eyebrow">AMPLIFY · Problem Coach</p>
+      <h1 class="h1" data-i18n="title">Turn one real work problem into a brief you can build on.</h1>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <aside class="rail" aria-label="Progress">
+      <ol class="steps" id="steps"></ol>
+      <div class="rail-tools">
+        <button type="button" class="link" id="saveProgress" data-i18n="tools.save">Download my progress</button>
+        <label class="link file-link"><span data-i18n="tools.load">Load saved progress</span><input type="file" id="loadProgress" accept="application/json,.json" hidden></label>
+        <button type="button" class="link danger" id="resetAll" data-i18n="tools.reset">Start again</button>
+      </div>
+      <p class="saved" id="savedNote" aria-live="polite"></p>
+    </aside>
+
+    <div class="stage" id="stage" tabindex="-1"></div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>AMPLIFY · Making AI work for NTD programme leaders</span>
+    <a href="/" data-i18n="foot.back">Back to amplify-course.com</a>
+  </div>
+</footer>
+
+<noscript><p class="wrap">The Problem Coach needs JavaScript.</p></noscript>
+<script src="catalog.js"></script>
+<script src="coach.js"></script>
+</body>
+</html>

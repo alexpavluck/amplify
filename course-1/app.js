@@ -138,9 +138,9 @@ en: {
   "ws.strong.v": "A named task, real occasions, numbers, consequences — we can build on this.",
   "mvp.t": "Think minimum viable product",
   "mvp.d": "Your problem statement does not have to be perfect — it has to work, and you have to understand why and how it works. We sharpen it every single class; each one gets you one step closer to a solution.",
-  "pb.t": "Not there yet? Use the Problem Builder",
-  "pb.d": "The AMPLIFY Problem Builder is an AI coach for your statement: it critiques your draft, asks the follow-up questions, and scores your readiness. Export the result and paste it into the official form.",
-  "pb.cta": "Open the Problem Builder →",
+  "pb.t": "Not there yet? Use the Problem Coach",
+  "pb.d": "The AMPLIFY Problem Coach is a friendly AI coach for your problem: you write each section, it asks the follow-up questions, and you leave with a requirements brief mapped to the course sessions, including any skills the course does not cover.",
+  "pb.cta": "Open the Problem Coach →",
 
   "prompt.h2": "5 · The art of the perfect prompt",
   "prompt.lead": "Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of \"done\".",
@@ -184,7 +184,7 @@ en: {
   "hw.1.t": "Introduce yourself on #all-amplify",
   "hw.1.d": "Name, role, country — and one sentence on the problem you are working on.",
   "hw.2.t": "Post your problem",
-  "hw.2.d": "Paste your problem statement — from the form, or exported from the Problem Builder.",
+  "hw.2.d": "Paste your problem statement — from the form, or exported from the Problem Coach.",
   "hw.3.t": "Reply to two classmates",
   "hw.3.d": "One thing you find interesting about their problem, and one question back.",
   "hw.4.t": "Run the prompt builder on a real task",
@@ -203,7 +203,7 @@ en: {
 
   "ft.credit": "AMPLIFY 2027 · Sightsavers × ESPEN · Cohort 2",
   "ft.note": "This page is itself a Class 1 demo: a plain HTML file, no backend. View its source, and bring your questions to class.",
-  "ft.link1": "Problem Builder", "ft.link2": "Download Claude",
+  "ft.link1": "Problem Coach", "ft.link2": "Download Claude",
   "ft.link3": "Slack Help Center", "ft.link4": "Google Meet Help",
 
   "quiz.channel.title": "Skill check — Where does it go?",
@@ -352,9 +352,9 @@ fr: {
   "ws.strong.v": "Une tâche nommée, des occasions réelles, des chiffres, des conséquences — on peut construire là-dessus.",
   "mvp.t": "Pensez « produit minimum viable »",
   "mvp.d": "Votre énoncé du problème n'a pas à être parfait — il doit fonctionner, et vous devez comprendre pourquoi et comment il fonctionne. Nous l'affinons à chaque cours ; chacun vous rapproche d'une solution.",
-  "pb.t": "Ce n'est pas encore le cas ? Utilisez le Problem Builder",
-  "pb.d": "L'AMPLIFY Problem Builder est un coach IA pour votre énoncé : il critique votre brouillon, pose les questions de suivi et note votre état de préparation. Exportez le résultat et collez-le dans le formulaire officiel.",
-  "pb.cta": "Ouvrir le Problem Builder →",
+  "pb.t": "Ce n'est pas encore le cas ? Utilisez le Coach de problème",
+  "pb.d": "Le Coach de problème AMPLIFY est un coach IA bienveillant : vous rédigez chaque section, il pose les questions de suivi, et vous repartez avec une note d'exigences reliée aux sessions du cours, y compris les compétences que le cours ne couvre pas.",
+  "pb.cta": "Ouvrir le Coach de problème →",
 
   "prompt.h2": "5 · L'art du prompt parfait",
   "prompt.lead": "Avant qu'un outil ne compte, ceci compte. L'IA ne lit pas dans votre tête — vague en entrée, vague en sortie. Considérez Claude comme un·e collègue brillant·e qui n'a jamais vu votre programme : il lui faut une direction, du contexte et une définition claire de « terminé ».",
@@ -398,7 +398,7 @@ fr: {
   "hw.1.t": "Présentez-vous sur #all-amplify",
   "hw.1.d": "Nom, rôle, pays — et une phrase sur le problème sur lequel vous travaillez.",
   "hw.2.t": "Publiez votre problème",
-  "hw.2.d": "Collez votre énoncé du problème — du formulaire, ou exporté depuis le Problem Builder.",
+  "hw.2.d": "Collez votre énoncé du problème — du formulaire, ou exporté depuis le Coach de problème.",
   "hw.3.t": "Répondez à deux camarades",
   "hw.3.d": "Une chose qui vous intéresse dans leur problème, et une question en retour.",
   "hw.4.t": "Testez le constructeur de prompts sur une vraie tâche",
@@ -417,7 +417,7 @@ fr: {
 
   "ft.credit": "AMPLIFY 2027 · Sightsavers × ESPEN · Cohorte 2",
   "ft.note": "Cette page est elle-même une démo du cours 1 : un simple fichier HTML, sans serveur. Regardez son code source et apportez vos questions en classe.",
-  "ft.link1": "Problem Builder", "ft.link2": "Télécharger Claude",
+  "ft.link1": "Coach de problème", "ft.link2": "Télécharger Claude",
   "ft.link3": "Centre d'aide Slack", "ft.link4": "Aide Google Meet",
 
   "quiz.channel.title": "Test de compétences — Où va ce message ?",
