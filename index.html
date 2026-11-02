@@ -270,7 +270,33 @@ button{font:inherit;color:inherit}
   .js [data-rise]{opacity:1;transform:none}
   .js .hub .hub-card{opacity:1;translate:0 0;scale:1}
   .js .hub .hub-lines{opacity:1}
+.mentor-banner{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--gold);
+  color:var(--ink);
+  border:1px solid #D9AD1F;
+  border-radius:12px;
+  padding:1rem 1.2rem;
+  margin:1.5rem 0 1.9rem;
 }
+.mentor-banner .mb-icon{
+  flex:0 0 38px;width:38px;height:38px;
+  display:grid;place-items:center;
+  background:var(--ink);color:var(--gold);
+  border-radius:50%;font-size:1rem;line-height:1;
+}
+.mentor-banner .mb-body{line-height:1.35}
+.mentor-banner .mb-eyebrow{
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);opacity:.65;margin-bottom:.2rem;
+}
+.mentor-banner .mb-title{font-weight:700;font-size:1.05rem;letter-spacing:-.015em;color:var(--ink)}
+.mentor-banner .mb-sub{font-size:var(--fs-small);color:rgba(11,15,26,.72);margin-top:.2rem}
+@media (max-width:520px){
+  .mentor-banner{align-items:flex-start;padding:1rem 1.05rem}
+  .mentor-banner .mb-icon{flex-basis:32px;width:32px;height:32px;font-size:.85rem}
+}
+
 </style>
 </head>
 <body>
@@ -291,9 +317,9 @@ button{font:inherit;color:inherit}
 
 <main id="main">
 <span id="top"></span>
-
 <!-- ══ HERO + HUB ══ -->
 <section class="hero">
+
   <div class="wrap">
     <h1 class="display" data-rise>AMPLIFY · Making AI work for NTD programme leaders</h1>
     <p class="lead hero-sub" data-rise style="--rd:.08s">Four months · two 90-minute sessions a month · NTD domain specific training</p>
@@ -421,6 +447,14 @@ button{font:inherit;color:inherit}
 <section class="section" id="pilot">
   <div class="wrap">
     <h2 class="h2 pilot-h" data-rise>AMPLIFY Cohort 1 (2026): sixteen NTD professionals.</h2>
+    <div class="mentor-banner" data-rise style="--rd:.06s" role="status" aria-label="Peer mentor announcement">
+      <div class="mb-icon" aria-hidden="true">★</div>
+      <div class="mb-body">
+        <div class="mb-eyebrow">Cohort 1 → Cohort 2</div>
+        <div class="mb-title">Five students from Cohort 1 will return as peer mentors for Cohort 2!</div>
+        <div class="mb-sub">We’re excited to see participants supporting each other.</div>
+      </div>
+    </div>
     <div class="pilot-top">
       <div class="head">
         <p class="lead" data-rise style="--rd:.08s">Our first cohort ran from March to September 2026: seven monthly modules in English and French, built entirely on the free tiers of AI tools. Each participant was nominated by their national NTD programme to be its AI focal point.</p>
