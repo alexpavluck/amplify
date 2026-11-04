@@ -1163,6 +1163,8 @@ async function callPromptCoach(promptText, panelBase) {
       data = await res.json();
     } catch (e) { res = null; }
     if (!res || !res.ok) {
+      const errText = res ? (data && (data.error?.message || JSON.stringify(data).slice(0,200))) : 'no response';
+      console.warn('prompt coach fallback:', res && res.status, errText);
       // heuristic locally (same as server mock)
       const heur = (() => {
         const s = p.toLowerCase(); const has=(re)=>re.test(s);

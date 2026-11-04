@@ -115,8 +115,6 @@ module.exports = async (req, res) => {
   const lang = body.lang === "fr" ? "fr" : "en";
   const sessionId = String(body.session_id || "anon").slice(0, 64);
 
-  // Access control mirrors coach/brief: if ACCESS_CODES set, require it; otherwise open.
-  if (!checkAccess(body.access_code)) return sendError(res, 403, "That cohort code isn't recognised. Check it with your instructor.");
   if (!prompt) return sendError(res, 400, "Write a prompt first.");
   if (prompt.length > 4000) return sendError(res, 400, "Prompt is too long — keep it under 4000 characters.");
   if (overLimit(sessionId, clientIp(req))) return sendError(res, 429, "You've reached the limit for this session. Try again shortly.");
