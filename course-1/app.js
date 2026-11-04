@@ -118,20 +118,65 @@ en: {
   "problem.strip3": "3–4 · Connect data",
   "problem.strip4": "5–8 · Build & pitch",
   "seed.t": "Find your problem in three prompts",
-  "seed.hint": "About 30 minutes in Claude. Run the three prompts in order, in the same chat. Fill in the [brackets] before you send.",
+  "seed.hint": "About 30 minutes. Run the three prompts in order, in the same Claude chat, and record what you find in the boxes here. Your answers save in this browser as you type. At the end, download your problem file.",
   "seed.s1.t": "Let the AI interview you",
   "seed.s1.time": "about 15 min",
-  "seed.s1.d": "This gets you talking about your actual work before you jump to a solution.",
+  "seed.s1.d": "This gets you talking about your actual work before you jump to a solution. Fill in the three boxes — they go straight into the prompt.",
+  "seed.f.role": "Your role",
+  "seed.f.role.ph": "e.g. M&E officer",
+  "seed.f.prog": "Programme / disease",
+  "seed.f.prog.ph": "e.g. trachoma elimination",
+  "seed.f.place": "Country / district",
+  "seed.f.place.ph": "e.g. Kenya, Turkana",
   "seed.p1": "I work as a [role] on [programme/disease] in [country/district]. I’m starting a course where I’ll use AI to work on a real problem from my job, but I don’t know what that problem is yet. Interview me to help me find it. Ask me one question at a time about my normal working week: tasks that are repetitive, slow, frustrating, or that I keep putting off. Don’t suggest solutions or AI tools. After about 6 questions, stop and tell me you’re done.",
+  "seed.s1.notes": "What did the interview bring up? Note the 2–3 tasks that came up most.",
   "seed.s2.t": "Turn the answers into options",
   "seed.s2.time": "about 5 min",
   "seed.p2": "Based on my answers, describe 3 possible problems I could work on. For each one, write one plain sentence: who struggles, with which task, and why it matters. Don’t mention AI or technology. Then ask me which one feels most real to me.",
+  "seed.s2.paste": "Paste Claude's three options here",
+  "seed.s2.pick": "Which one feels most real to you?",
+  "seed.s2.opt": "Option",
   "seed.s3.t": "Write it yourself, then check it",
   "seed.s3.time": "about 10 min",
-  "seed.s3.d": "Before you use this prompt, write this sentence yourself, filling in the blanks:",
-  "seed.s3.tpl": "When I ___ (task), I struggle with ___ because ___. It happens ___ (how often). If it went better, ___ would benefit.",
-  "seed.s3.then": "Then paste your sentence into this prompt:",
+  "seed.s3.d": "Fill in the blanks in your own words — your sentence builds itself below.",
+  "seed.f.task": "When I… (task)",
+  "seed.f.task.ph": "compile the district MDA reports",
+  "seed.f.struggle": "I struggle with…",
+  "seed.f.struggle.ph": "files arriving in different formats",
+  "seed.f.because": "because…",
+  "seed.f.because.ph": "each district uses its own template",
+  "seed.f.often": "It happens… (how often)",
+  "seed.f.often.ph": "every quarter",
+  "seed.f.benefit": "If it went better, … would benefit",
+  "seed.f.benefit.ph": "the national programme team",
+  "seed.s3.yours": "Your sentence",
+  "seed.s3.then": "Now copy the check prompt — your sentence is already in it — and send it in the same chat:",
   "seed.p3": "Here is my problem in my own words: [paste]. Don’t rewrite it. Check it against three questions: (1) Does this happen regularly, not just once? (2) Do I already have information or materials that go into it? (3) Can I roughly picture what a better result would look like? If any of these is unclear, ask me one question about it.",
+  "seed.s3.reply": "What did Claude say? Paste its reply.",
+  "seed.s3.final": "Your problem statement — leave it as is, or edit it if Claude's question changed your thinking",
+  "seed.copy": "Copy prompt",
+  "seed.ex.t": "Download your problem file",
+  "seed.ex.d": "Your instructors review this file and give you feedback. Keep it safe: in session 2 you upload it, and the next section builds on your problem statement.",
+  "seed.ex.name": "Your name",
+  "seed.ex.name.ph": "First and last name",
+  "seed.ex.s1": "Step 1 · Interview",
+  "seed.ex.s2": "Step 2 · Options",
+  "seed.ex.s3": "Step 3 · Your problem",
+  "seed.ex.done": "done",
+  "seed.ex.todo": "not finished",
+  "seed.ex.btn": "Download my problem file",
+  "seed.ex.note": "Saves a web page (.html). Open it in any browser to check it, then post it on Slack as your homework.",
+  "seed.ex.missing": "Some steps aren't finished yet — the file will show them as incomplete.",
+  "seed.ex.toast": "Problem file downloaded.",
+  "seed.rep.title": "Problem file",
+  "seed.rep.sub": "Interactive learning session 1 — Foundations",
+  "seed.rep.student": "Student",
+  "seed.rep.date": "Exported",
+  "seed.rep.prompt": "Prompt sent to Claude",
+  "seed.rep.chosen": "Option chosen",
+  "seed.rep.empty": "(not filled in)",
+  "seed.rep.final": "Problem statement",
+  "seed.rep.foot": "Created on amplify-course.com. Keep this file — you will upload it in session 2.",
 
   "prompt.h2": "4 · The art of the perfect prompt — the core skill of the course",
   "prompt.lead": "Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of \"done\". This section is the meat of Class 1. Take your time here.",
@@ -376,20 +421,65 @@ fr: {
   "problem.strip3": "3–4 · Relier les données",
   "problem.strip4": "5–8 · Construire & pitcher",
   "seed.t": "Trouvez votre problème en trois prompts",
-  "seed.hint": "Environ 30 minutes dans Claude. Lancez les trois prompts dans l'ordre, dans la même conversation. Complétez les [crochets] avant d'envoyer.",
+  "seed.hint": "Environ 30 minutes. Lancez les trois prompts dans l'ordre, dans la même conversation Claude, et notez ce que vous trouvez dans les cases ci-dessous. Vos réponses sont enregistrées dans ce navigateur au fil de la saisie. À la fin, téléchargez votre fichier problème.",
   "seed.s1.t": "Laissez l'IA vous interviewer",
   "seed.s1.time": "environ 15 min",
-  "seed.s1.d": "Cela vous fait parler de votre vrai travail avant de sauter à une solution.",
+  "seed.s1.d": "Cela vous fait parler de votre vrai travail avant de sauter à une solution. Remplissez les trois cases — elles s'insèrent directement dans le prompt.",
+  "seed.f.role": "Votre rôle",
+  "seed.f.role.ph": "ex. chargé·e de suivi-évaluation",
+  "seed.f.prog": "Programme / maladie",
+  "seed.f.prog.ph": "ex. élimination du trachome",
+  "seed.f.place": "Pays / district",
+  "seed.f.place.ph": "ex. Niger, Maradi",
   "seed.p1": "Je travaille comme [rôle] sur [programme/maladie] dans [pays/district]. Je commence un cours où j'utiliserai l'IA pour travailler sur un vrai problème de mon travail, mais je ne sais pas encore quel est ce problème. Interviewe-moi pour m'aider à le trouver. Pose-moi une question à la fois sur ma semaine de travail habituelle : les tâches répétitives, lentes, frustrantes, ou que je repousse sans cesse. Ne propose ni solutions ni outils d'IA. Après environ 6 questions, arrête-toi et dis-moi que tu as terminé.",
+  "seed.s1.notes": "Qu'est-ce que l'entretien a fait ressortir ? Notez les 2 ou 3 tâches qui sont revenues le plus.",
   "seed.s2.t": "Transformez les réponses en options",
   "seed.s2.time": "environ 5 min",
   "seed.p2": "À partir de mes réponses, décris 3 problèmes possibles sur lesquels je pourrais travailler. Pour chacun, écris une phrase simple : qui a des difficultés, avec quelle tâche, et pourquoi c'est important. Ne mentionne ni l'IA ni la technologie. Ensuite, demande-moi lequel me paraît le plus réel.",
+  "seed.s2.paste": "Collez ici les trois options de Claude",
+  "seed.s2.pick": "Laquelle vous paraît la plus réelle ?",
+  "seed.s2.opt": "Option",
   "seed.s3.t": "Écrivez-le vous-même, puis vérifiez-le",
   "seed.s3.time": "environ 10 min",
-  "seed.s3.d": "Avant d'utiliser ce prompt, écrivez vous-même cette phrase en complétant les blancs :",
-  "seed.s3.tpl": "Quand je ___ (tâche), j'ai du mal avec ___ parce que ___. Cela arrive ___ (à quelle fréquence). Si cela se passait mieux, ___ en bénéficierait.",
-  "seed.s3.then": "Puis collez votre phrase dans ce prompt :",
+  "seed.s3.d": "Complétez les blancs avec vos propres mots — votre phrase se construit ci-dessous.",
+  "seed.f.task": "Quand je… (tâche)",
+  "seed.f.task.ph": "compile les rapports CPM des districts",
+  "seed.f.struggle": "j'ai du mal avec…",
+  "seed.f.struggle.ph": "des fichiers qui arrivent dans des formats différents",
+  "seed.f.because": "parce que…",
+  "seed.f.because.ph": "chaque district utilise son propre modèle",
+  "seed.f.often": "Cela arrive… (à quelle fréquence)",
+  "seed.f.often.ph": "chaque trimestre",
+  "seed.f.benefit": "Si cela se passait mieux, … en bénéficierait",
+  "seed.f.benefit.ph": "l'équipe nationale du programme",
+  "seed.s3.yours": "Votre phrase",
+  "seed.s3.then": "Copiez maintenant le prompt de vérification — votre phrase y est déjà — et envoyez-le dans la même conversation :",
   "seed.p3": "Voici mon problème avec mes propres mots : [coller]. Ne le réécris pas. Vérifie-le avec trois questions : (1) Est-ce que cela arrive régulièrement, pas une seule fois ? (2) Ai-je déjà des informations ou des documents qui y entrent ? (3) Puis-je imaginer à peu près à quoi ressemblerait un meilleur résultat ? Si l'un de ces points n'est pas clair, pose-moi une question à ce sujet.",
+  "seed.s3.reply": "Qu'a répondu Claude ? Collez sa réponse.",
+  "seed.s3.final": "Votre énoncé du problème — laissez-le tel quel, ou modifiez-le si la question de Claude a fait évoluer votre réflexion",
+  "seed.copy": "Copier le prompt",
+  "seed.ex.t": "Téléchargez votre fichier problème",
+  "seed.ex.d": "Vos formateurs examinent ce fichier et vous font un retour. Gardez-le : à la session 2, vous le téléversez et la section suivante s'appuie sur votre énoncé du problème.",
+  "seed.ex.name": "Votre nom",
+  "seed.ex.name.ph": "Prénom et nom",
+  "seed.ex.s1": "Étape 1 · Entretien",
+  "seed.ex.s2": "Étape 2 · Options",
+  "seed.ex.s3": "Étape 3 · Votre problème",
+  "seed.ex.done": "terminé",
+  "seed.ex.todo": "à finir",
+  "seed.ex.btn": "Télécharger mon fichier problème",
+  "seed.ex.note": "Enregistre une page web (.html). Ouvrez-la dans n'importe quel navigateur pour la vérifier, puis publiez-la sur Slack comme devoir.",
+  "seed.ex.missing": "Certaines étapes ne sont pas terminées — le fichier les indiquera comme incomplètes.",
+  "seed.ex.toast": "Fichier problème téléchargé.",
+  "seed.rep.title": "Fichier problème",
+  "seed.rep.sub": "Session d'apprentissage interactive 1 — Fondamentaux",
+  "seed.rep.student": "Participant·e",
+  "seed.rep.date": "Exporté le",
+  "seed.rep.prompt": "Prompt envoyé à Claude",
+  "seed.rep.chosen": "Option choisie",
+  "seed.rep.empty": "(non rempli)",
+  "seed.rep.final": "Énoncé du problème",
+  "seed.rep.foot": "Créé sur amplify-course.com. Gardez ce fichier — vous le téléverserez à la session 2.",
 
   "prompt.h2": "4 · L'art du prompt parfait — la compétence clé du cours",
   "prompt.lead": "Avant qu'un outil ne compte, ceci compte. L'IA ne lit pas dans votre tête — vague en entrée, vague en sortie. Considérez Claude comme un·e collègue brillant·e qui n'a jamais vu votre programme : il lui faut une direction, du contexte et une définition claire de « terminé ». Cette section est le cœur du cours 1. Prenez-y le temps.",
@@ -703,6 +793,8 @@ const DEFAULTS = () => ({
   builder: { P: "", T: "", C: "", F: "", I: "" },
   lab: { P: 0, T: 0, C: 1, F: 0, I: 0 },
   autopsy: 1,
+  seed: { name: "", role: "", prog: "", place: "", notes: "", options: "", chosen: "",
+          task: "", struggle: "", because: "", often: "", benefit: "", reply: "", final: "" },
 });
 let S = DEFAULTS();
 
@@ -718,6 +810,7 @@ function load() {
     S.builder = Object.assign(DEFAULTS().builder, (raw && raw.builder) || {});
     S.lab = Object.assign(DEFAULTS().lab, (raw && raw.lab) || {});
     S.autopsy = raw && raw.autopsy ? raw.autopsy : 1;
+    S.seed = Object.assign(DEFAULTS().seed, (raw && raw.seed) || {});
     S.quizzes = {};
     for (const id of Object.keys(QUIZZES)) S.quizzes[id] = Object.assign({}, raw && raw.quizzes && raw.quizzes[id]);
   } catch { S = DEFAULTS(); }
@@ -999,14 +1092,152 @@ async function copyText(text) {
   return ok;
 }
 
-/* "Find your problem in three prompts" — copy the prompt in the current language */
-function wireSeedCopy() {
-  $$("[data-copy]").forEach((btn) => {
+/* ---------------------------------------------------------------- 5 · find your problem (three prompts + problem file) */
+const SEED_TOKENS = {
+  en: { role: "[role]", prog: "[programme/disease]", place: "[country/district]", paste: "[paste]" },
+  fr: { role: "[rôle]", prog: "[programme/maladie]", place: "[pays/district]", paste: "[coller]" },
+};
+const seedVal = (k) => String(S.seed[k] || "").trim().replace(/[.\s]+$/, "");
+const blank = (k) => seedVal(k) || "___";
+
+function seedSentence() {
+  if (S.lang === "fr") {
+    return "Quand je " + blank("task") + ", j'ai du mal avec " + blank("struggle") + " parce que " + blank("because") +
+      ". Cela arrive " + blank("often") + ". Si cela se passait mieux, " + blank("benefit") + " en bénéficierait.";
+  }
+  return "When I " + blank("task") + ", I struggle with " + blank("struggle") + " because " + blank("because") +
+    ". It happens " + blank("often") + ". If it went better, " + blank("benefit") + " would benefit.";
+}
+function seedPrompt(n) {
+  const tok = SEED_TOKENS[S.lang] || SEED_TOKENS.en;
+  if (n === 1) {
+    let p = t("seed.p1");
+    ["role", "prog", "place"].forEach((k) => { if (seedVal(k)) p = p.replace(tok[k], seedVal(k)); });
+    return p;
+  }
+  if (n === 3) {
+    const q = S.lang === "fr" ? ["« ", " »"] : ["“", "”"];
+    return t("seed.p3").replace(tok.paste + ".", q[0] + seedSentence() + q[1]);
+  }
+  return t("seed.p2");
+}
+const SEED_PARTS = ["task", "struggle", "because", "often", "benefit"];
+function seedStepsDone() {
+  const has = (k) => !!seedVal(k);
+  return [
+    ["role", "prog", "place", "notes"].every(has),
+    has("options") && !!S.seed.chosen,
+    SEED_PARTS.every(has) && has("reply"),
+  ];
+}
+function seedFinal() { return String(S.seed.final || "").trim() || seedSentence(); }
+
+function setupSeedFromState() {
+  $$("[data-seed]").forEach((el) => {
+    const k = el.dataset.seed;
+    if (el.type === "radio") el.checked = S.seed[k] === el.value;
+    else el.value = S.seed[k] || "";
+  });
+}
+function renderSeed() {
+  const p1 = $("#seed-p1"); if (!p1) return;
+  p1.textContent = seedPrompt(1);
+  $("#seed-p2").textContent = seedPrompt(2);
+  $("#seed-p3").textContent = seedPrompt(3);
+  $("#seed-sentence").textContent = seedSentence();
+  $("#seed-final").placeholder = seedSentence();
+  const done = seedStepsDone();
+  $$("[data-seed-status]").forEach((el) => {
+    const ok = done[+el.dataset.seedStatus - 1];
+    el.classList.toggle("ok", ok);
+    el.querySelector(".st").textContent = ok ? "✓ " + t("seed.ex.done") : t("seed.ex.todo");
+  });
+  $("#seed-missing").hidden = done.every(Boolean);
+}
+function wireSeed() {
+  const root = $(".seed"); if (!root) return;
+  root.addEventListener("input", (e) => {
+    const el = e.target.closest("[data-seed]"); if (!el) return;
+    S.seed[el.dataset.seed] = el.value;
+    save();
+    renderSeed();
+  });
+  $$("[data-seed-copy]").forEach((btn) => {
     btn.addEventListener("click", async () => {
-      await copyText(t(btn.dataset.copy));
+      await copyText(seedPrompt(+btn.dataset.seedCopy));
       showToast(t("toast.copy"));
     });
   });
+  $("#seed-export").addEventListener("click", exportProblemFile);
+}
+
+function problemFileData() {
+  const s = S.seed, done = seedStepsDone();
+  return {
+    format: "amplify-problem-file", version: 1, session: 1,
+    exportedAt: new Date().toISOString(), lang: S.lang,
+    student: { name: s.name.trim() },
+    stepsComplete: { interview: done[0], options: done[1], statement: done[2] },
+    interview: { role: s.role.trim(), programme: s.prog.trim(), place: s.place.trim(), notes: s.notes.trim(), prompt: seedPrompt(1) },
+    options: { pasted: s.options.trim(), chosen: s.chosen ? +s.chosen : null, prompt: seedPrompt(2) },
+    statement: {
+      parts: Object.fromEntries(SEED_PARTS.map((k) => [k, s[k].trim()])),
+      sentence: seedSentence(), checkPrompt: seedPrompt(3), claudeReply: s.reply.trim(),
+      final: seedFinal(),
+    },
+  };
+}
+function problemFileHtml(d) {
+  const val = (x) => x ? '<div class="v">' + esc(x) + "</div>" : '<div class="v empty">' + esc(t("seed.rep.empty")) + "</div>";
+  const row = (label, x) => '<div class="row"><div class="k">' + esc(label) + "</div>" + val(x) + "</div>";
+  const prompt = (x) => '<details><summary>' + esc(t("seed.rep.prompt")) + "</summary><pre>" + esc(x) + "</pre></details>";
+  const status = (ok) => '<span class="badge ' + (ok ? "ok" : "todo") + '">' + esc(ok ? "✓ " + t("seed.ex.done") : t("seed.ex.todo")) + "</span>";
+  const date = new Date(d.exportedAt).toLocaleString(d.lang === "fr" ? "fr-FR" : "en-GB", { dateStyle: "long", timeStyle: "short" });
+  const json = JSON.stringify(d).replace(/</g, "\\u003c");
+  return '<!doctype html><html lang="' + d.lang + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
+    "<title>AMPLIFY 2027 · " + esc(t("seed.rep.title")) + (d.student.name ? " · " + esc(d.student.name) : "") + "</title><style>" +
+    ":root{--fg:#1d2433;--muted:#5d6678;--line:#dfe3ea;--accent:#2f55d4;--soft:#eef2fc;--ok:#1f7a4d;--warn:#a35a00}" +
+    "*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}" +
+    "main{max-width:760px;margin:0 auto;padding:32px 16px 48px}header{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:20px}" +
+    ".eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}h1{margin:4px 0 2px;font-size:26px}" +
+    ".meta{color:var(--muted);font-size:14px}.final{background:var(--soft);border:1px solid var(--accent);border-radius:10px;padding:14px 16px;margin:0 0 20px}" +
+    ".final .k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700}.final p{margin:6px 0 0;font-size:17px}" +
+    "section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px}" +
+    "h2{font-size:17px;margin:0 0 10px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}" +
+    ".badge{font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px}.badge.ok{background:#e3f4ea;color:var(--ok)}.badge.todo{background:#fdf0dd;color:var(--warn)}" +
+    ".row{padding:8px 0;border-top:1px dotted var(--line)}.row:first-of-type{border-top:0}.k{font-size:13px;color:var(--muted);font-weight:600}" +
+    ".v{white-space:pre-wrap;overflow-wrap:anywhere}.v.empty{color:var(--warn);font-style:italic}" +
+    "details{margin-top:8px;font-size:13px;color:var(--muted)}pre{white-space:pre-wrap;background:#f4f6f9;border-radius:8px;padding:10px;font:13px/1.5 inherit}" +
+    "footer{color:var(--muted);font-size:13px;margin-top:20px}@media print{body{background:#fff}details{display:none}}" +
+    "</style></head><body><main><header><div class=\"eyebrow\">AMPLIFY 2027 · " + esc(t("seed.rep.sub")) + "</div>" +
+    "<h1>" + esc(t("seed.rep.title")) + "</h1><div class=\"meta\">" + esc(t("seed.rep.student")) + ": <strong>" + esc(d.student.name || t("seed.rep.empty")) + "</strong> · " +
+    esc(t("seed.rep.date")) + ": " + esc(date) + "</div></header>" +
+    '<div class="final"><div class="k">' + esc(t("seed.rep.final")) + "</div><p>" + esc(d.statement.final) + "</p></div>" +
+    "<section><h2>1 · " + esc(t("seed.s1.t")) + status(d.stepsComplete.interview) + "</h2>" +
+    row(t("seed.f.role"), d.interview.role) + row(t("seed.f.prog"), d.interview.programme) + row(t("seed.f.place"), d.interview.place) +
+    row(t("seed.s1.notes"), d.interview.notes) + prompt(d.interview.prompt) + "</section>" +
+    "<section><h2>2 · " + esc(t("seed.s2.t")) + status(d.stepsComplete.options) + "</h2>" +
+    row(t("seed.s2.paste"), d.options.pasted) + row(t("seed.rep.chosen"), d.options.chosen ? t("seed.s2.opt") + " " + d.options.chosen : "") +
+    prompt(d.options.prompt) + "</section>" +
+    "<section><h2>3 · " + esc(t("seed.s3.t")) + status(d.stepsComplete.statement) + "</h2>" +
+    SEED_PARTS.map((k) => row(t("seed.f." + k), d.statement.parts[k])).join("") +
+    row(t("seed.s3.yours"), d.statement.sentence) + row(t("seed.s3.reply"), d.statement.claudeReply) +
+    prompt(d.statement.checkPrompt) + "</section>" +
+    "<footer>" + esc(t("seed.rep.foot")) + "</footer></main>" +
+    '<script type="application/json" id="amplify-problem-data">' + json + "</script></body></html>";
+}
+function exportProblemFile() {
+  const d = problemFileData();
+  const slug = d.student.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") || "student";
+  const blob = new Blob([problemFileHtml(d)], { type: "text/html;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "AMPLIFY-problem-file-session1-" + slug + ".html";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  showToast(t("seed.ex.toast"));
 }
 
 
@@ -1239,6 +1470,7 @@ function renderDynamic() {
   renderLab();
   renderAutopsy();
   updatePsMeter();
+  renderSeed();
   QUIZ_IDS.forEach(renderQuiz);
   updateNavChecks();
 }
@@ -1254,7 +1486,8 @@ function init() {
   wireChecklist();
   wireSelfCheck();
   wireBuilder();
-  wireSeedCopy();
+  setupSeedFromState();
+  wireSeed();
   wireBA();
   wireLab();
   wireAutopsy();
