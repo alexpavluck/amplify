@@ -93,6 +93,12 @@ p { margin: 0; }
 code, .mono { font-family: var(--mono); font-size: .88em; }
 code { background: var(--sunk); padding: .1em .35em; border-radius: 4px; }
 
+.shell {
+ max-width: 1180px; margin: 0 auto;
+ display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px;
+ padding-block: 40px 96px;
+}
+.map { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; display: grid; gap: 20px; }
 @media (max-width: 900px) { .shell { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 64px; } }
 .brand-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .brand-row > div:first-child { display: grid; gap: 4px; }
