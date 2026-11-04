@@ -101,8 +101,8 @@ code { background: var(--sunk); padding: .1em .35em; border-radius: 4px; }
 .map { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; display: grid; gap: 20px; }
 @media (max-width: 900px) { .shell { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 64px; } }
 .brand-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-.brand-row > div:first-child { display: grid; gap: 4px; }
-.brand-row > .lang-toggle { display: inline-flex; align-self: flex-start; justify-self: start; width: fit-content; max-width: 100%; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: .85rem; background: var(--surface); }
+.brand-row > div:first-child { display: grid; gap: 4px; flex: 1; min-width: 0; }
+.brand-row > .lang-toggle { display: inline-flex; align-self: flex-start; flex: none; white-space: nowrap; justify-self: start; width: fit-content; max-width: 100%; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: .85rem; background: var(--surface); }
 .lang-toggle button {
   border: 0; background: transparent; color: var(--muted); padding: .3rem .8rem;
   cursor: pointer; font: inherit;
@@ -451,19 +451,19 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    </div>
   </div>
   <div class="progress" aria-live="polite">
-   <div class="row"><span>Your progress</span><span id="progText">1 section</span></div>
+   <div class="row"><span><span class="lang-en">Your progress</span><span class="lang-fr">Votre progression</span></span><span id="progText"><span class="lang-en">1 section</span><span class="lang-fr">1 section</span></span></div>
    <div class="bar"><i id="progBar"></i></div>
   </div>
     <nav>
    <ol>
-    <li><a href="#charts"><span class="n">01</span><span>Choose the right chart</span></a></li>
-    <li><a href="#charts"><span class="n">↗</span><span>Interactive chooser</span></a></li>
+    <li><a href="#charts"><span class="n">01</span><span><span class="lang-en">Choose the right chart</span><span class="lang-fr">Choisir le bon graphique</span></span></a></li>
+    <li><a href="#charts"><span class="n">↗</span><span><span class="lang-en">Interactive chooser</span><span class="lang-fr">Sélecteur interactif</span></span></a></li>
    </ol>
   </nav>
   <nav aria-label="Back">
    <ol>
-    <li><a href="../../"><span class="n">←</span><span>Back to AMPLIFY</span></a></li>
-    <li><a href="../../shortcourses/openrouter/"><span class="n">↗</span><span>OpenRouter + OMP short course</span></a></li>
+    <li><a href="../../"><span class="n">←</span><span><span class="lang-en">Back to AMPLIFY</span><span class="lang-fr">Retour à AMPLIFY</span></span></a></li>
+    <li><a href="../../shortcourses/openrouter/"><span class="n">↗</span><span><span class="lang-en">OpenRouter + OMP short course</span><span class="lang-fr">Cours court OpenRouter + OMP</span></span></a></li>
    </ol>
   </nav>
  </aside>
@@ -471,9 +471,9 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
  <main>
   <!-- ======== 00 START ======== -->
     <section id="start" class="hero">
-   <div class="kicker">Short course</div>
-   <h1>Choose the <em>right visual</em> for programme data</h1>
-   <p class="lede">A 20-minute guide to picking the chart that answers your question — with a quick-reference table and programme-specific rules you can use the next time you brief your programme.</p>
+   <div class="kicker"><span class="lang-en">Short course</span><span class="lang-fr">Cours court</span></div>
+   <h1><span class="lang-en">Choose the <em>right visual</em> for programme data</span><span class="lang-fr">Choisissez le <em>bon visuel</em> pour les données de programme</span></h1>
+   <p class="lede"><span class="lang-en">A 20-minute guide to picking the chart that answers your question — with a quick-reference table and programme-specific rules you can use the next time you brief your programme.</span><span class="lang-fr">Un guide de 20 minutes pour choisir le graphique qui répond à votre question — avec un tableau récapitulatif et des règles spécifiques au programme à utiliser lors de votre prochain briefing.</span></p>
   </section>
 
   <!-- ======== 01 WHAT ======== -->
