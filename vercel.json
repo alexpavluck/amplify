@@ -1,5 +1,9 @@
 {
   "functions": {
     "api/prompt.js": { "maxDuration": 30 }
-  }
+  },
+  "redirects": [
+    { "source": "/problem-coach", "destination": "/", "permanent": true },
+    { "source": "/problem-coach/:path*", "destination": "/", "permanent": true }
+  ]
 }
