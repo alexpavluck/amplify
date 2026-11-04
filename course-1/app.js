@@ -111,20 +111,6 @@ en: {
 
   "problem.h2": "4 · Your problem — a starting draft",
   "problem.lead": "You don't need a perfect problem statement to start. You need something real enough to try today's prompting on — and honest enough to improve. Every class in AMPLIFY sharpens the same problem, so today's draft is the raw material, not the final answer.",
-  "problem.why.t": "Why “fuzzy problem” → fuzzy everything",
-  "problem.why.hint": "AI is a prediction engine: it fills every gap you leave with its best guess. A crisp problem stops the guessing.",
-  "problem.why.b1t": "No boundary",
-  "problem.why.b1d": "Without one named task, every prompt drifts. “Help with data” could mean cleaning, checking, writing, or plotting — Claude has to guess.",
-  "problem.why.b2t": "No verdict",
-  "problem.why.b2d": "If you can't say what “done” looks like (a table for the review, by Friday, flags over 100%), you can't tell if the output is right.",
-  "problem.why.b3t": "No loop",
-  "problem.why.b3d": "A real occasion (“last year District X reported 112%”) gives you something to check. Without it, there is nothing to iterate on — the I in P-T-C-F-I has nowhere to land.",
-  "problem.gtg.t": "What “good enough for today” looks like",
-  "problem.gtg.hint": "If you can say these three things, you can start. You'll deepen each one as the course goes on.",
-  "problem.gtg.i1": "One named task you actually do — e.g. “compile 38 district MDA files into the national report,” not “data management.”",
-  "problem.gtg.i2": "One real occasion — the last time you did it, what arrived, what went wrong.",
-  "problem.gtg.i3": "One consequence or number — how late, how long, what the error cost.",
-  "problem.gtg.foot": "That's it. Bring that to class and to Slack. We do not grade polish on Day 1 — we grade honesty and specificity.",
   "problem.sharpen.t": "It sharpens every class — you don't have to get it all now",
   "problem.sharpen.d": "Class 1 you name it. Class 2 you learn to prompt it. Classes 3–4 you connect it to your real data. Classes 5–7 you build the checks, the dashboard, and the pitch. Class 8 you present. Each layer reveals what you were missing — so we keep the problem statement draft and revisit it. Perfection now would just hide the next lesson.",
   "problem.strip1": "1 · Name it",
@@ -253,8 +239,6 @@ en: {
   "quiz.channel.sub": "Five messages just came in. Choose the right home for each.",
   "quiz.redline.title": "Skill check — Can this go in?",
   "quiz.redline.sub": "Five things someone wants to paste into Claude. Safe, or red line?",
-  "quiz.problemWhy.title": "Skill check — Why the problem matters",
-  "quiz.problemWhy.sub": "Two questions on why a crisp problem saves every other step.",
   "quiz.missing.title": "Skill check — What's missing?",
   "quiz.missing.sub": "Four prompts from the field. Which P-T-C-F-I element is missing?",
   "quiz.pass": "Skill check passed",
@@ -370,20 +354,6 @@ fr: {
 
   "problem.h2": "4 · Votre problème — un premier brouillon",
   "problem.lead": "Vous n'avez pas besoin d'un énoncé parfait pour commencer. Il vous faut quelque chose d'assez réel pour tester le prompting d'aujourd'hui — et d'assez honnête pour l'améliorer. Chaque cours d'AMPLIFY affine le même problème ; le brouillon d'aujourd'hui est la matière première, pas la réponse finale.",
-  "problem.why.t": "Pourquoi « problème flou » → tout flou",
-  "problem.why.hint": "L'IA est un moteur de prédiction : elle remplit chaque vide avec sa meilleure supposition. Un problème net arrête les suppositions.",
-  "problem.why.b1t": "Pas de frontière",
-  "problem.why.b1d": "Sans une tâche nommée, chaque prompt dérive. « Aide avec les données » peut vouloir dire nettoyer, vérifier, rédiger ou tracer — Claude doit deviner.",
-  "problem.why.b2t": "Pas de verdict",
-  "problem.why.b2d": "Si vous ne pouvez pas dire à quoi ressemble « terminé » (un tableau pour la revue, pour vendredi, signale >100 %), vous ne pouvez pas dire si la sortie est juste.",
-  "problem.why.b3t": "Pas de boucle",
-  "problem.why.b3d": "Une occasion réelle (« l'an dernier, le district X a rapporté 112 % ») vous donne de quoi vérifier. Sans elle, il n'y a rien à itérer — le I de P-T-C-F-I n'a nulle part où atterrir.",
-  "problem.gtg.t": "À quoi ressemble « assez bien pour aujourd'hui »",
-  "problem.gtg.hint": "Si vous pouvez dire ces trois choses, vous pouvez commencer. Vous approfondirez chacune au fil du cours.",
-  "problem.gtg.i1": "Une tâche nommée que vous faites vraiment — ex. « compiler 38 fichiers MDA de district dans le rapport national », pas « gestion des données ».",
-  "problem.gtg.i2": "Une occasion réelle — la dernière fois que vous l'avez fait, ce qui est arrivé, ce qui a échoué.",
-  "problem.gtg.i3": "Une conséquence ou un chiffre — combien de retard, combien de temps, ce que l'erreur a coûté.",
-  "problem.gtg.foot": "C'est tout. Apportez cela en cours et sur Slack. On ne note pas le poli au jour 1 — on note l'honnêteté et la précision.",
   "problem.sharpen.t": "Il s'affine à chaque cours — pas besoin de tout avoir maintenant",
   "problem.sharpen.d": "Cours 1 vous le nommez. Cours 2 vous apprenez à le prompter. Cours 3–4 vous le reliez à vos vraies données. Cours 5–7 vous construisez les contrôles, le tableau de bord et l'argumentaire. Cours 8 vous présentez. Chaque couche révèle ce qui manquait — nous gardons donc le brouillon et y revenons. Vouloir la perfection maintenant cacherait la prochaine leçon.",
   "problem.strip1": "1 · Le nommer",
@@ -512,8 +482,6 @@ fr: {
   "quiz.channel.sub": "Cinq messages viennent d'arriver. Choisissez la bonne maison pour chacun.",
   "quiz.redline.title": "Test de compétences — Peut-on l'envoyer ?",
   "quiz.redline.sub": "Cinq choses que quelqu'un veut coller dans Claude. Autorisé, ou ligne rouge ?",
-  "quiz.problemWhy.title": "Test — Pourquoi le problème compte",
-  "quiz.problemWhy.sub": "Deux questions sur pourquoi un problème net sauve toutes les autres étapes.",
   "quiz.missing.title": "Test de compétences — Qu'est-ce qui manque ?",
   "quiz.missing.sub": "Quatre prompts du terrain. Quel élément du P-T-C-F-I manque ?",
   "quiz.pass": "Test réussi",
@@ -675,17 +643,6 @@ redline: {
       expl: bi("Published, public, safe.", "Publié, public, sans risque.") },
   ],
 },
-problemWhy: {
-  title: "quiz.problemWhy.title", sub: "quiz.problemWhy.sub",
-  questions: [
-    { q: bi("Why does a vague problem make prompting harder?", "Pourquoi un problème vague rend-il le prompting plus difficile ?"),
-      opts: [bi("The model already knows your programme", "Le modèle connaît déjà votre programme"), bi("The model fills your gaps with guesses — you can't iterate", "Le modèle remplit vos vides avec des suppositions — vous ne pouvez pas itérer"), bi("The model will ask you to call IT", "Le modèle vous demandera d'appeler l'IT")], correct: 1,
-      expl: bi("An LLM predicts plausible next words; every gap you leave is a guess you have to fix later. A named task + one real occasion gives the model anchors and you a check.", "Un LLM prédit les prochains mots plausibles ; chaque vide est une supposition à corriger. Une tâche nommée + une occasion réelle donnent des ancres au modèle et une vérification à vous.") },
-    { q: bi("What's “good enough for today”?", "Qu'est-ce qui est « assez bien pour aujourd'hui » ?"),
-      opts: [bi("A polished three-page problem brief", "Une note de problème de trois pages polie"), bi("One named task + one real occasion + one number or consequence", "Une tâche nommée + une occasion réelle + un chiffre ou une conséquence"), bi("A solution idea like “we need a dashboard”", "Une idée de solution du type « il nous faut un tableau de bord »")], correct: 1,
-      expl: bi("Three sentences you can actually say out loud. You'll deepen each one as the course goes on; perfection now just hides the next lesson.", "Trois phrases que vous pouvez vraiment dire à voix haute. Vous les approfondirez au fil du cours ; la perfection maintenant cache la prochaine leçon.") },
-  ],
-},
 missing: {
   title: "quiz.missing.title", sub: "quiz.missing.sub",
   questions: [
@@ -711,7 +668,7 @@ const DEFAULTS = () => ({
   lang: "en",
   checks: {},
   ps: {},
-  quizzes: { channel: {}, redline: {}, missing: {}, problemWhy: {} },
+  quizzes: { channel: {}, redline: {}, missing: {} },
   ba: "bad",
   builder: { P: "", T: "", C: "", F: "", I: "" },
   lab: { P: 0, T: 0, C: 1, F: 0, I: 0 },
@@ -806,7 +763,7 @@ function updateRings() {
 }
 
 /* ---------------------------------------------------------------- nav skill-checks chip */
-const QUIZ_IDS = ["channel", "redline", "missing", "problemWhy"];
+const QUIZ_IDS = ["channel", "redline", "missing"];
 function quizPassed(id) {
   return QUIZZES[id].questions.every((_, i) => S.quizzes[id][i]);
 }
