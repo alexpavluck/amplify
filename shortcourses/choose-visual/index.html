@@ -93,26 +93,16 @@ p { margin: 0; }
 code, .mono { font-family: var(--mono); font-size: .88em; }
 code { background: var(--sunk); padding: .1em .35em; border-radius: 4px; }
 
-.shell {
- max-width: 1180px; margin: 0 auto;
- display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px;
- padding-block: 40px 96px;
-}
 @media (max-width: 900px) { .shell { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 64px; } }
 .brand-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-.brand-row > div { display: grid; gap: 4px; }
-.brand .eyebrow { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.brand b { font: 800 22px/1.1 var(--display); }
-.lang-toggle {
-  display: inline-flex; justify-self: start; width: fit-content; max-width: 100%;
-  border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: .85rem;
-  background: var(--surface);
-}
+.brand-row > div:first-child { display: grid; gap: 4px; }
+.brand-row > .lang-toggle { display: inline-flex; align-self: flex-start; justify-self: start; width: fit-content; max-width: 100%; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: .85rem; background: var(--surface); }
 .lang-toggle button {
   border: 0; background: transparent; color: var(--muted); padding: .3rem .8rem;
   cursor: pointer; font: inherit;
 }
 .lang-toggle button[aria-pressed="true"] { background: var(--accent); color: #fff; font-weight: 600; }
+.progress { display: grid; gap: 8px; }
 .progress .row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .bar { height: 8px; background: var(--sunk); border-radius: 99px; overflow: hidden; }
 .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 99px; transition: width .5s cubic-bezier(.22,.8,.3,1); box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 45%, transparent); }
