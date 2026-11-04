@@ -820,8 +820,9 @@ function updateRings() {
     el.style.strokeDasharray = c;
     el.style.strokeDashoffset = c * (1 - frac);
   });
-  $("#ring-label").textContent = n + "/" + CHECK_IDS.length;
-  $("#ring-label-big").textContent = n + "/" + CHECK_IDS.length;
+  const rl = $("#ring-label"); if (rl) rl.textContent = n + "/" + CHECK_IDS.length;
+  const rlb = $("#ring-label-big"); if (rlb) rlb.textContent = n + "/" + CHECK_IDS.length;
+  const mb = $("#map-bar"); if (mb) mb.style.width = (frac * 100) + "%";
 }
 
 /* ---------------------------------------------------------------- nav skill-checks chip */
@@ -1250,7 +1251,7 @@ function wireSpots() {
 /* ---------------------------------------------------------------- scroll: progress bar + scrollspy */
 function wireScroll() {
   const bar = $("#progress-bar");
-  const links = $$(".mainnav a");
+  const links = $$(".map ol a, .mainnav a");
   const sections = links
     .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
     .filter(Boolean);

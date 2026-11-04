@@ -48,7 +48,31 @@ body.fr .lang-en.block { display: none; }
 .sponsor-bar a.sponsor-text:hover { color: var(--accent); }
 @media (max-width: 560px) { .sponsor-bar { flex-wrap: wrap; } .sponsor-bar .sponsor-text { white-space: normal; text-align: center; } }
 
-/* ---------- Top bar ---------- */
+/* ---------- Shell / course map (choose-visual pattern) ---------- */
+.shell { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px; padding: 40px 1.4rem 96px; }
+@media (max-width: 900px) { .shell { grid-template-columns: minmax(0,1fr); gap: 28px; padding-block: 24px 64px; } }
+.map { position: sticky; top: 24px; align-self: start; display: grid; gap: 20px; }
+@media (max-width: 900px) { .map { position: static; } }
+.map .brand-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.map .brand-row > div { display: grid; gap: 4px; }
+.map .brand { font-weight: 800; font-size: 1.05rem; text-decoration: none; color: var(--fg); display: flex; align-items: center; gap: .5rem; }
+.map .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); flex: none; }
+.map .eyebrow { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.map ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-left: 2px solid var(--border); }
+.map li a { display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: baseline; padding: 7px 10px; margin-left: -2px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; color: var(--fg); text-decoration: none; font-size: 14.5px; transition: background .15s, color .15s, border-color .15s; }
+.map li a .n { font: 500 12px/1 var(--mono); color: var(--muted); }
+.map li a:hover { background: var(--surface-2); }
+.map li a.active { border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); color: var(--accent); font-weight: 600; }
+.map li a.active .n { color: var(--accent); }
+.map .map-foot { font-size: .8rem; color: var(--muted); }
+.map .map-foot a { color: var(--accent); }
+@media (max-width: 900px) {
+  .map ol { grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); border-left: 0; gap: 6px; }
+  .map li a { border: 1px solid var(--border); border-radius: 8px; margin: 0; background: var(--surface); }
+  .map li a.active { border-color: var(--accent); }
+}
+
+/* ---------- Top bar (legacy, kept for deck) ---------- */
 .topbar {
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; gap: 1rem;

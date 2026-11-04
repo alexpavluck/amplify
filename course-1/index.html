@@ -10,37 +10,51 @@
 <body>
 <div id="progress-bar" aria-hidden="true"></div>
 
-<header class="topbar">
-  <div class="brand">
-    <div class="brand-mark" aria-hidden="true">▲</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
     <div>
-      <h1 data-i18n="brand.title">AMPLIFY 2027</h1>
+      <div class="brand" style="gap:8px">
+        <div class="brand-mark" aria-hidden="true">▲</div>
+        <div>
+          <div class="eyebrow">AMPLIFY 2027</div>
+          <b data-i18n="brand.title">Course 1 · Foundations</b>
+        </div>
+      </div>
       <p class="tagline" data-i18n="brand.tagline">Course 1 · Foundations — Sightsavers</p>
     </div>
   </div>
-  <nav class="mainnav" aria-label="Course sections">
-    <a href="#setup" data-i18n="nav.setup">Course setup</a>
-    <a href="#slack" data-i18n="nav.slack">Slack</a>
-    <a href="#claude" data-i18n="nav.claude">Claude</a>
-    <a href="#problem" data-i18n="nav.problem">Your problem</a>
-    <a href="#prompt" data-i18n="nav.prompt">Perfect prompt</a>
-    <a href="#homework" data-i18n="nav.homework">Homework</a>
-    <span class="nav-checks" id="nav-checks">Skill checks 0/3</span>
-  </nav>
-  <div class="topbar-actions">
-    <div class="lang-toggle" role="group" aria-label="Language / Langue">
-      <button id="lang-en" class="lang-btn active" type="button" aria-pressed="true">EN</button>
-      <button id="lang-fr" class="lang-btn" type="button" aria-pressed="false">FR</button>
-    </div>
-    <a class="ring-wrap" href="#setup" id="ring-link" aria-label="Setup progress">
-      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
-        <circle class="ring-bg" cx="22" cy="22" r="17"></circle>
-        <circle class="ring-fg" id="ring-fg" cx="22" cy="22" r="17"></circle>
-      </svg>
-      <span class="ring-label" id="ring-label">0/6</span>
-    </a>
+
+  <div class="lang-toggle" role="group" aria-label="Language / Langue">
+    <button id="lang-en" class="lang-btn active" type="button" aria-pressed="true">EN</button>
+    <button id="lang-fr" class="lang-btn" type="button" aria-pressed="false">FR</button>
   </div>
-</header>
+
+  <div class="progress" aria-hidden="true">
+    <div class="row"><span id="ring-label">0/6</span><span>setup</span></div>
+    <div class="bar"><i id="map-bar" style="width:0"></i></div>
+  </div>
+  <a class="ring-wrap" href="#setup" id="ring-link" aria-label="Setup progress">
+    <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+      <circle class="ring-bg" cx="22" cy="22" r="17"></circle>
+      <circle class="ring-fg" id="ring-fg" cx="22" cy="22" r="17"></circle>
+    </svg>
+  </a>
+
+  <ol>
+    <li><a href="#setup"><span class="n">01</span> <span data-i18n="nav.setup">Course setup</span></a></li>
+    <li><a href="#slack"><span class="n">02</span> <span data-i18n="nav.slack">Slack</span></a></li>
+    <li><a href="#claude"><span class="n">03</span> <span data-i18n="nav.claude">Claude</span></a></li>
+    <li><a href="#problem"><span class="n">04</span> <span data-i18n="nav.problem">Your problem</span></a></li>
+    <li><a href="#prompt"><span class="n">05</span> <span data-i18n="nav.prompt">Perfect prompt</span></a></li>
+    <li><a href="#homework"><span class="n">06</span> <span data-i18n="nav.homework">Homework</span></a></li>
+  </ol>
+
+  <div class="map-foot">
+    <span class="nav-checks" id="nav-checks">Skill checks 0/3</span>
+    <span><a href="../">← amplify-course.com</a> · <a href="../problem-coach/">Problem Coach</a></span>
+  </div>
+</nav>
 
 <main>
 
@@ -585,8 +599,6 @@
   <details class="faq"><summary data-i18n="faq.q4">Where do I find everything?</summary><p data-i18n="faq.a4">One place: Slack. Slides, templates, recordings, and homework feedback all live there — this page is the only exception.</p></details>
 </section>
 
-</main>
-
 <footer class="footnote">
   <p data-i18n="ft.credit">AMPLIFY 2027 · Sightsavers · Cohort 2</p>
   <p data-i18n="ft.note">This page is itself a Class 1 demo: a plain HTML file, no backend. View its source, and bring your questions to class.</p>
@@ -598,6 +610,9 @@
     <a href="https://support.google.com/meet" target="_blank" rel="noopener" data-i18n="ft.link4">Google Meet Help</a>
   </p>
 </footer>
+
+</main>
+</div><!-- /.shell -->
 
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="app.js"></script>

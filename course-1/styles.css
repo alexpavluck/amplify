@@ -35,6 +35,45 @@ body {
   background: var(--accent); z-index: 50; transition: width .1s linear;
 }
 
+/* ---------------- shell / map (left rail) — ported from choose-visual 92-135, adapted to course-1 palette */
+.shell {
+  max-width: 1120px; margin: 0 auto;
+  display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px;
+  padding-block: 24px 96px;
+  padding-left: max(22px, env(safe-area-inset-left, 0px));
+  padding-right: max(22px, env(safe-area-inset-right, 0px));
+}
+@media (max-width: 900px) { .shell { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 64px; } }
+.map { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; display: grid; gap: 20px; }
+@media (max-width: 900px) { .map { position: static; } }
+.brand-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.brand-row > div { display: grid; gap: 4px; }
+.brand-row .eyebrow { font: 500 11px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.brand-row b { font: 800 22px/1.1 system-ui, sans-serif; }
+.progress { display: grid; gap: 8px; }
+.progress .row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 99px; transition: width .5s cubic-bezier(.22,.8,.3,1); }
+.map ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-left: 2px solid var(--border); }
+.map li a {
+  display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: baseline;
+  padding: 7px 10px; margin-left: -2px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0;
+  color: var(--fg); text-decoration: none; font-size: 14.5px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.map li a .n { font: 500 12px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--muted); }
+.map li a:hover { background: var(--accent-soft); }
+.map li a.active { border-left-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.map li a.active .n { color: var(--accent); }
+.map .map-foot { font-size: 12.5px; color: var(--muted); display: grid; gap: 6px; }
+.map .map-foot a { color: var(--accent); }
+@media (max-width: 900px) {
+  .map ol { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); border-left: 0; gap: 6px; }
+  .map li a { border: 1px solid var(--border); border-radius: 8px; margin: 0; background: var(--surface); }
+  .map li a.active { border-color: var(--accent); }
+}
+main .section { scroll-margin-top: 24px; }
+
 /* ---------------- top bar ---------------- */
 .topbar {
   display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
@@ -81,8 +120,8 @@ body {
   font: 700 .66rem system-ui; color: var(--fg); pointer-events: none;
 }
 
-/* ---------------- layout ---------------- */
-main { max-width: 1060px; margin: 0 auto; padding: 0 22px; }
+.shell > main { min-width: 0; }
+main { max-width: 1060px; margin: 0 auto; padding: 0; }
 .section { padding: 30px 0 10px; }
 .section h2 { margin: 0 0 6px; font-size: 1.5rem; letter-spacing: -.01em; }
 .section-lead { color: var(--muted); margin: 0 0 18px; max-width: 72ch; }
