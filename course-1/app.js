@@ -109,7 +109,7 @@ en: {
   "mock.chat.bot": "Here is a district-level coverage table. Two districts show coverage above 100%…",
   "mock.hint": "(Illustration — the real app looks a little different, but the parts are these.)",
 
-  "problem.h2": "4 · Your problem — a starting draft",
+  "problem.h2": "5 · Your problem — a starting draft",
   "problem.lead": "You don't need a perfect problem statement to start. You need something real enough to try today's prompting on — and honest enough to improve. Every class in AMPLIFY sharpens the same problem, so today's draft is the raw material, not the final answer.",
   "problem.sharpen.t": "It sharpens every class — you don't have to get it all now",
   "problem.sharpen.d": "Class 1 you name it. Class 2 you learn to prompt it. Classes 3–4 you connect it to your real data. Classes 5–7 you build the checks, the dashboard, and the pitch. Class 8 you present. Each layer reveals what you were missing — so we keep the problem statement draft and revisit it. Perfection now would just hide the next lesson.",
@@ -117,8 +117,23 @@ en: {
   "problem.strip2": "2 · Prompt it",
   "problem.strip3": "3–4 · Connect data",
   "problem.strip4": "5–8 · Build & pitch",
+  "seed.t": "Find your problem in three prompts",
+  "seed.hint": "About 30 minutes in Claude. Run the three prompts in order, in the same chat. Fill in the [brackets] before you send.",
+  "seed.s1.t": "Let the AI interview you",
+  "seed.s1.time": "about 15 min",
+  "seed.s1.d": "This gets you talking about your actual work before you jump to a solution.",
+  "seed.p1": "I work as a [role] on [programme/disease] in [country/district]. I’m starting a course where I’ll use AI to work on a real problem from my job, but I don’t know what that problem is yet. Interview me to help me find it. Ask me one question at a time about my normal working week: tasks that are repetitive, slow, frustrating, or that I keep putting off. Don’t suggest solutions or AI tools. After about 6 questions, stop and tell me you’re done.",
+  "seed.s2.t": "Turn the answers into options",
+  "seed.s2.time": "about 5 min",
+  "seed.p2": "Based on my answers, describe 3 possible problems I could work on. For each one, write one plain sentence: who struggles, with which task, and why it matters. Don’t mention AI or technology. Then ask me which one feels most real to me.",
+  "seed.s3.t": "Write it yourself, then check it",
+  "seed.s3.time": "about 10 min",
+  "seed.s3.d": "Before you use this prompt, write this sentence yourself, filling in the blanks:",
+  "seed.s3.tpl": "When I ___ (task), I struggle with ___ because ___. It happens ___ (how often). If it went better, ___ would benefit.",
+  "seed.s3.then": "Then paste your sentence into this prompt:",
+  "seed.p3": "Here is my problem in my own words: [paste]. Don’t rewrite it. Check it against three questions: (1) Does this happen regularly, not just once? (2) Do I already have information or materials that go into it? (3) Can I roughly picture what a better result would look like? If any of these is unclear, ask me one question about it.",
 
-  "prompt.h2": "5 · The art of the perfect prompt — the core skill of the course",
+  "prompt.h2": "4 · The art of the perfect prompt — the core skill of the course",
   "prompt.lead": "Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of \"done\". This section is the meat of Class 1. Take your time here.",
   "prompt.why.t": "Why prompting is the whole game",
   "prompt.why.p1": "A large language model doesn't “know” your districts, your template versions, or your deadline. It predicts the most plausible next words given what you gave it. When you leave a gap — no audience, no format, no check — it fills it with a confident guess. That's where hallucinations and generic waffle come from.",
@@ -352,7 +367,7 @@ fr: {
   "mock.chat.bot": "Voici un tableau de couverture par district. Deux districts dépassent 100 % de couverture…",
   "mock.hint": "(Illustration — la vraie application est un peu différente, mais les éléments sont ceux-là.)",
 
-  "problem.h2": "4 · Votre problème — un premier brouillon",
+  "problem.h2": "5 · Votre problème — un premier brouillon",
   "problem.lead": "Vous n'avez pas besoin d'un énoncé parfait pour commencer. Il vous faut quelque chose d'assez réel pour tester le prompting d'aujourd'hui — et d'assez honnête pour l'améliorer. Chaque cours d'AMPLIFY affine le même problème ; le brouillon d'aujourd'hui est la matière première, pas la réponse finale.",
   "problem.sharpen.t": "Il s'affine à chaque cours — pas besoin de tout avoir maintenant",
   "problem.sharpen.d": "Cours 1 vous le nommez. Cours 2 vous apprenez à le prompter. Cours 3–4 vous le reliez à vos vraies données. Cours 5–7 vous construisez les contrôles, le tableau de bord et l'argumentaire. Cours 8 vous présentez. Chaque couche révèle ce qui manquait — nous gardons donc le brouillon et y revenons. Vouloir la perfection maintenant cacherait la prochaine leçon.",
@@ -360,8 +375,23 @@ fr: {
   "problem.strip2": "2 · Le prompter",
   "problem.strip3": "3–4 · Relier les données",
   "problem.strip4": "5–8 · Construire & pitcher",
+  "seed.t": "Trouvez votre problème en trois prompts",
+  "seed.hint": "Environ 30 minutes dans Claude. Lancez les trois prompts dans l'ordre, dans la même conversation. Complétez les [crochets] avant d'envoyer.",
+  "seed.s1.t": "Laissez l'IA vous interviewer",
+  "seed.s1.time": "environ 15 min",
+  "seed.s1.d": "Cela vous fait parler de votre vrai travail avant de sauter à une solution.",
+  "seed.p1": "Je travaille comme [rôle] sur [programme/maladie] dans [pays/district]. Je commence un cours où j'utiliserai l'IA pour travailler sur un vrai problème de mon travail, mais je ne sais pas encore quel est ce problème. Interviewe-moi pour m'aider à le trouver. Pose-moi une question à la fois sur ma semaine de travail habituelle : les tâches répétitives, lentes, frustrantes, ou que je repousse sans cesse. Ne propose ni solutions ni outils d'IA. Après environ 6 questions, arrête-toi et dis-moi que tu as terminé.",
+  "seed.s2.t": "Transformez les réponses en options",
+  "seed.s2.time": "environ 5 min",
+  "seed.p2": "À partir de mes réponses, décris 3 problèmes possibles sur lesquels je pourrais travailler. Pour chacun, écris une phrase simple : qui a des difficultés, avec quelle tâche, et pourquoi c'est important. Ne mentionne ni l'IA ni la technologie. Ensuite, demande-moi lequel me paraît le plus réel.",
+  "seed.s3.t": "Écrivez-le vous-même, puis vérifiez-le",
+  "seed.s3.time": "environ 10 min",
+  "seed.s3.d": "Avant d'utiliser ce prompt, écrivez vous-même cette phrase en complétant les blancs :",
+  "seed.s3.tpl": "Quand je ___ (tâche), j'ai du mal avec ___ parce que ___. Cela arrive ___ (à quelle fréquence). Si cela se passait mieux, ___ en bénéficierait.",
+  "seed.s3.then": "Puis collez votre phrase dans ce prompt :",
+  "seed.p3": "Voici mon problème avec mes propres mots : [coller]. Ne le réécris pas. Vérifie-le avec trois questions : (1) Est-ce que cela arrive régulièrement, pas une seule fois ? (2) Ai-je déjà des informations ou des documents qui y entrent ? (3) Puis-je imaginer à peu près à quoi ressemblerait un meilleur résultat ? Si l'un de ces points n'est pas clair, pose-moi une question à ce sujet.",
 
-  "prompt.h2": "5 · L'art du prompt parfait — la compétence clé du cours",
+  "prompt.h2": "4 · L'art du prompt parfait — la compétence clé du cours",
   "prompt.lead": "Avant qu'un outil ne compte, ceci compte. L'IA ne lit pas dans votre tête — vague en entrée, vague en sortie. Considérez Claude comme un·e collègue brillant·e qui n'a jamais vu votre programme : il lui faut une direction, du contexte et une définition claire de « terminé ». Cette section est le cœur du cours 1. Prenez-y le temps.",
   "prompt.why.t": "Pourquoi le prompting est tout le jeu",
   "prompt.why.p1": "Un grand modèle de langue ne « connaît » pas vos districts, vos versions de modèles ou votre date limite. Il prédit les prochains mots les plus plausibles vu ce que vous lui avez donné. Quand vous laissez un vide — pas de public, pas de format, pas de vérification — il le remplit avec une supposition confiante. C'est là que naissent les hallucinations et les discours génériques.",
@@ -950,17 +980,32 @@ function wireBuilder() {
   $("#builder-copy").addEventListener("click", async () => {
     const text = builderPlainText();
     if (!text) return;
-    let ok = false;
-    try { await navigator.clipboard.writeText(text); ok = true; } catch (e) { /* fallback below */ }
-    if (!ok) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-      ta.remove();
-    }
-    showToast(ok ? t("toast.copy") : t("toast.copy"));
+    await copyText(text);
+    showToast(t("toast.copy"));
+  });
+}
+
+async function copyText(text) {
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch (e) { /* fallback below */ }
+  if (!ok) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    ta.remove();
+  }
+  return ok;
+}
+
+/* "Find your problem in three prompts" — copy the prompt in the current language */
+function wireSeedCopy() {
+  $$("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      await copyText(t(btn.dataset.copy));
+      showToast(t("toast.copy"));
+    });
   });
 }
 
@@ -1209,6 +1254,7 @@ function init() {
   wireChecklist();
   wireSelfCheck();
   wireBuilder();
+  wireSeedCopy();
   wireBA();
   wireLab();
   wireAutopsy();

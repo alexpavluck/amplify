@@ -548,3 +548,10 @@ details.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
   .topbar, #progress-bar, .quiz, .spot, #toast { display: none !important; }
   body { background: #fff; }
 }
+/* Section 4 · Find your problem in three prompts */
+.seed { margin: 22px 0 6px; }
+.seed > h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.seed .card-step { margin: 12px 0; }
+.seed-time { font-weight: 400; font-size: .8rem; color: var(--muted); margin-left: 6px; white-space: nowrap; }
+.seed-prompt { font-size: .86rem; background: var(--surface-2, var(--bg)); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; white-space: pre-wrap; }
+.seed blockquote { margin: 8px 0; }
