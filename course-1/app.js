@@ -109,41 +109,50 @@ en: {
   "mock.chat.bot": "Here is a district-level coverage table. Two districts show coverage above 100%…",
   "mock.hint": "(Illustration — the real app looks a little different, but the parts are these.)",
 
-  "problem.h2": "4 · Your problem statement — the spine of the course",
-  "problem.lead": "You came with a problem from the AMPLIFY Problem Statement Form. That problem is not a side assignment — it is the course. Every class adds one capability to it, and in Class 8 you present the working solution.",
-  "problem.tl.t": "What your problem gains, class by class",
-  "ps.t": "Is your problem statement course-ready?",
-  "ps.hint": "The six checks from the form's final section. Tick what is true today.",
-  "ps.hint0": "Tick what is true today — the meter updates as you go.",
-  "ps.keep": "Keep shaping it", "ps.ready": "Ready to post!",
-  "ps.c1": "Someone who has never worked in my programme could understand the task and why it matters",
-  "ps.c2": "It describes a real occasion — not only what usually happens",
-  "ps.c3": "It has numbers: how often, how long, how many districts or files",
-  "ps.c4": "It says what goes wrong, and what that causes",
-  "ps.c5": "It is my own work, and I can work on it during the course",
-  "ps.c6": "An anonymised example is attached — or I explain why not",
-  "ps.h.c1": "Start with question 4 of the form: walk us through the last time you did this task, step by step.",
-  "ps.h.c2": "Recall one specific time — a real round, a real week — and write what actually happened, step by step.",
-  "ps.h.c3": "Add numbers: how often you do it, how long it takes, how many districts or files.",
-  "ps.h.c4": "Say what actually goes wrong, and what that costs — with one real moment.",
-  "ps.h.c5": "Name the part that is yours — if it needs a colleague's data or approval, say exactly what you'll ask them for.",
-  "ps.h.c6": "Attach an anonymised example file, or explain why you can't.",
-  "ps.h.generic": "Read it out loud as if to a new colleague — every sentence should tell us something we can build on.",
-  "ps.h.done": "Ready — post it on #all-amplify, and reply to two classmates.",
-  "ws.weak.t": "A weak answer",
-  "ws.weak.q": "\"Data management is a big challenge in our programme. Reports are often late and there are many errors. AI can help us improve data quality and efficiency.\"",
-  "ws.weak.v": "Which data? Which report? How late? Nothing here to build a project on.",
-  "ws.strong.t": "A strong answer (abridged)",
-  "ws.strong.q": "\"Task: compile 38 district MDA treatment files into the national annual report — Excel files, WhatsApp photos, phone calls. It takes my data officer and me about three weeks a year. Last year one district reported 112% coverage and I only caught it after the chart went to a partner; we sent a correction and missed the deadline by three weeks.\"",
-  "ws.strong.v": "A named task, real occasions, numbers, consequences — we can build on this.",
-  "mvp.t": "Think minimum viable product",
-  "mvp.d": "Your problem statement does not have to be perfect — it has to work, and you have to understand why and how it works. We sharpen it every single class; each one gets you one step closer to a solution.",
-  "pb.t": "Not there yet? Use the Problem Coach",
-  "pb.d": "The AMPLIFY Problem Coach is a friendly AI coach for your problem: you write each section, it asks the follow-up questions, and you leave with a requirements brief mapped to the course sessions, including any skills the course does not cover.",
+  "problem.h2": "4 · Your problem — a starting draft",
+  "problem.lead": "You don't need a perfect problem statement to start. You need something real enough to try today's prompting on — and honest enough to improve. Every class in AMPLIFY sharpens the same problem, so today's draft is the raw material, not the final answer.",
+  "problem.why.t": "Why “fuzzy problem” → fuzzy everything",
+  "problem.why.hint": "AI is a prediction engine: it fills every gap you leave with its best guess. A crisp problem stops the guessing.",
+  "problem.why.b1t": "No boundary",
+  "problem.why.b1d": "Without one named task, every prompt drifts. “Help with data” could mean cleaning, checking, writing, or plotting — Claude has to guess.",
+  "problem.why.b2t": "No verdict",
+  "problem.why.b2d": "If you can't say what “done” looks like (a table for the review, by Friday, flags over 100%), you can't tell if the output is right.",
+  "problem.why.b3t": "No loop",
+  "problem.why.b3d": "A real occasion (“last year District X reported 112%”) gives you something to check. Without it, there is nothing to iterate on — the I in P-T-C-F-I has nowhere to land.",
+  "problem.gtg.t": "What “good enough for today” looks like",
+  "problem.gtg.hint": "If you can say these three things, you can start. The Problem Coach helps you deepen each one later.",
+  "problem.gtg.i1": "One named task you actually do — e.g. “compile 38 district MDA files into the national report,” not “data management.”",
+  "problem.gtg.i2": "One real occasion — the last time you did it, what arrived, what went wrong.",
+  "problem.gtg.i3": "One consequence or number — how late, how long, what the error cost.",
+  "problem.gtg.foot": "That's it. Bring that to class and to Slack. We do not grade polish on Day 1 — we grade honesty and specificity.",
+  "problem.sharpen.t": "It sharpens every class — you don't have to get it all now",
+  "problem.sharpen.d": "Class 1 you name it. Class 2 you learn to prompt it. Classes 3–4 you connect it to your real data. Classes 5–7 you build the checks, the dashboard, and the pitch. Class 8 you present. Each layer reveals what you were missing — so we keep the problem statement draft and revisit it. Perfection now would just hide the next lesson.",
+  "problem.strip1": "1 · Name it",
+  "problem.strip2": "2 · Prompt it",
+  "problem.strip3": "3–4 · Connect data",
+  "problem.strip4": "5–8 · Build & pitch",
+  "pb.t": "Shape it with the Problem Coach",
+  "pb.d": "The AMPLIFY Problem Coach is a friendly AI coach that lives at amplify-course.com/problem-coach. You write each section in your own words; it asks the follow-ups, scores you gently against a rubric, and you leave with a requirements brief mapped to the course sessions — including the skills the course doesn't cover.",
+  "pb.meta": "~25 min · saves as you go · export a Word/PDF brief for your homework post · works in English or French · your words never leave the coach without your click.",
   "pb.cta": "Open the Problem Coach →",
+  "pb.hint": "Already filled the old Problem Statement Form? Paste those answers into the Coach — it will tell you what is course-ready and what to deepen first.",
 
-  "prompt.h2": "5 · The art of the perfect prompt",
-  "prompt.lead": "Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of \"done\".",
+  "prompt.h2": "5 · The art of the perfect prompt — the core skill of the course",
+  "prompt.lead": "Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of \"done\". This section is the meat of Class 1. Take your time here.",
+  "prompt.why.t": "Why prompting is the whole game",
+  "prompt.why.p1": "A large language model doesn't “know” your districts, your template versions, or your deadline. It predicts the most plausible next words given what you gave it. When you leave a gap — no audience, no format, no check — it fills it with a confident guess. That's where hallucinations and generic waffle come from.",
+  "prompt.chain1": "You omit detail",
+  "prompt.chain2": "Model guesses",
+  "prompt.chain3": "Sounds right, isn't",
+  "prompt.chain4": "You ship it",
+  "prompt.chain5": "Rework later",
+  "prompt.why.p2": "Prompting is specifying just enough reality that the model doesn't need to invent. Persona tells it whose judgment to use; Task names the verb; Context gives the facts it cannot know; Format says what “done” looks like; Iterate is your safety net — the check you own, not the model.",
+  "prompt.why.c1t": "Persona = lens",
+  "prompt.why.c1d": "\"As an NTD M&E officer\" is not flattery — it steers tone, vocabulary, and what to prioritise (coverage thresholds, not generic advice).",
+  "prompt.why.c2t": "Context = facts you hold",
+  "prompt.why.c2d": "Audience, purpose, constraints, the data you actually have. The model never has these unless you give them.",
+  "prompt.why.c3t": "Iterate = trust",
+  "prompt.why.c3d": "The only reliable anti-hallucination step is yours: \"flag anything over 100%; ask me before finalising.\" Build it into the prompt.",
   "pt.P.t": "Persona",
   "pt.P.d": "Who is asking? Give the AI an expert perspective to think from.",
   "pt.P.e": "\"You are an NTD monitoring & evaluation officer…\"",
@@ -179,6 +188,50 @@ en: {
   "sk.d": "Yes — and that is exactly the plan. A skill is a saved, reusable set of instructions you can call on demand instead of retyping. The builder above is the draft of that skill: the P-T-C-F-I anatomy plus your house rules. Today you learn it by hand.",
   "sk.d2": "In Class 2 we turn your best prompts into a real skill, hunt for existing skills (they are shared, for example, on GitHub), and you learn to tell reusable prompts from one-offs. Homework prep: bring one task you repeat every week — that is your first skill candidate.",
 
+  
+  "lab.t": "Lab — watch the output sharpen as you add detail",
+  "lab.hint": "Start vague. Layer P-T-C-F-I one tap at a time and watch the mock output go from generic to usable. (No AI call — just the mechanics.)",
+  "lab.chip.P": "Persona",
+  "lab.chip.T": "Task",
+  "lab.chip.C": "Context",
+  "lab.chip.F": "Format",
+  "lab.chip.I": "Iterate",
+  "lab.preview.prompt": "Your prompt now:",
+  "lab.output.none": "No prompt yet — add a layer above.",
+  "autopsy.t": "Autopsy — three real prompts from the field",
+  "autopsy.hint": "Open a case, spot what's missing, check your eye against the coach's. No typing — just diagnosis.",
+  "pb2.coach": "Coach my prompt →",
+  "coach.head": "AI coach feedback",
+  "coach.verdict.strong": "Strong prompt",
+  "coach.verdict.decent": "Decent — one fix would sharpen it",
+  "coach.verdict.needs_work": "Needs work",
+  "coach.rewrite.t": "Suggested rewrite",
+  "coach.use": "Use this draft",
+  "coach.loading": "Checking…",
+  "coach.error": "Couldn't reach the coach — try again. Your prompt is still copied below.",
+  "coach.offline": "Offline demo — heuristic feedback (no AI call).",
+  "free.t": "Try it on any prompt — paste what you'd actually send",
+  "free.hint": "Not using the builder? Paste a real prompt from your work (or draft one from scratch) and get the same P-T-C-F-I diagnosis. AI-backed when online; heuristic offline.",
+  "free.ph": "Paste or write your prompt here — e.g. 'Summarize this district report for the review meeting…'",
+  "free.cta": "Check this prompt",
+  "sk.t": "Could we build a skill for the perfect prompt?",
+
+  
+  "acar.t": "Problems outlive prompts — get the problem right first",
+  "acar.d": "\"Prompt engineering focuses on crafting the optimal textual input... In contrast, problem formulation emphasizes defining the problem by delineating its focus, scope, and boundaries.\" Your three-sentence draft in this section is problem formulation — the part that doesn't expire when the model changes. P-T-C-F-I in the next section is how you turn that formulated problem into language the model can act on.",
+  "acar.cite": "— O. A. Acar, Harvard Business Review (2023), via MIT Sloan: ",
+  "ptypes.t": "Six prompt types you'll meet (beyond P-T-C-F-I)",
+  "ptypes.hint": "P-T-C-F-I is how you compose. These are flavours you'll recognise on Slack, GitHub, and in the wild — most are just P-T-C-F-I done briefly. Spot which you already use.",
+  "ptypes.h.type": "Type", "ptypes.h.when": "When to use", "ptypes.h.ex": "Example",
+  "ptypes.zero.t": "Zero-shot", "ptypes.zero.d": "Simple instruction, no examples. Good for one-off summaries.", "ptypes.zero.ex": "\"Summarize this article in 5 bullets.\"",
+  "ptypes.few.t": "Few-shot", "ptypes.few.badge": "Try this", "ptypes.few.d": "Give 2–3 examples of the form/tone you want, then ask for the next in the same style. Your best shortcut to consistency.", "ptypes.few.ex": "\"Here are 2 example district summaries. Write a third in the same style: [District A: ...] [District B: ...]\"",
+  "ptypes.instr.t": "Instructional", "ptypes.instr.d": "Direct verb + constraints (write / compare / keep under X words).", "ptypes.instr.ex": "\"Write an executive summary. Keep it under 100 words, formal French.\"",
+  "ptypes.role.t": "Role-based", "ptypes.role.d": "Persona on purpose — \"as an M&E officer...\" steers lens and vocabulary.", "ptypes.role.ex": "\"You are an MBA professor preparing a lecture outline...\"",
+  "ptypes.ctx.t": "Contextual", "ptypes.ctx.d": "Background + audience before the ask. That is your C.", "ptypes.ctx.ex": "\"This is for community volunteers. Rephrase in simple language.\"",
+  "ptypes.sys.t": "System / Meta", "ptypes.sys.d": "Behind-the-scenes rules for tone/scope (\"always cite sources, never guess\"). You won't write these in Class 1 — but you'll recognise them in skills.", "ptypes.sys.ex": "\"Always respond formally and cite real sources. Never guess.\"",
+  "ptypes.foot": "Few-shot is the gem here: paste 2 good outputs you like, add \"write the next like these.\" We'll use it in Class 2 when you turn a prompt into a reusable skill.",
+
+  "ps.keep": "Keep shaping it", "ps.ready": "Ready to post!",
   "homework.h2": "Homework — due before Class 2",
   "homework.sub": "Four steps, all on Slack. Class 2 opens with one of you presenting.",
   "hw.1.t": "Introduce yourself on #all-amplify",
@@ -210,6 +263,8 @@ en: {
   "quiz.channel.sub": "Five messages just came in. Choose the right home for each.",
   "quiz.redline.title": "Skill check — Can this go in?",
   "quiz.redline.sub": "Five things someone wants to paste into Claude. Safe, or red line?",
+  "quiz.problemWhy.title": "Skill check — Why the problem matters",
+  "quiz.problemWhy.sub": "Two questions on why a crisp problem saves every other step.",
   "quiz.missing.title": "Skill check — What's missing?",
   "quiz.missing.sub": "Four prompts from the field. Which P-T-C-F-I element is missing?",
   "quiz.pass": "Skill check passed",
@@ -323,41 +378,50 @@ fr: {
   "mock.chat.bot": "Voici un tableau de couverture par district. Deux districts dépassent 100 % de couverture…",
   "mock.hint": "(Illustration — la vraie application est un peu différente, mais les éléments sont ceux-là.)",
 
-  "problem.h2": "4 · Votre énoncé du problème — la colonne vertébrale du cours",
-  "problem.lead": "Vous êtes venu·e avec un problème tiré du formulaire AMPLIFY de description du problème. Ce problème n'est pas un devoir annexe — c'est le cours. Chaque cours y ajoute une capacité, et au cours 8, vous présentez la solution qui fonctionne.",
-  "problem.tl.t": "Ce que votre problème gagne, cours après cours",
-  "ps.t": "Votre énoncé est-il prêt pour le cours ?",
-  "ps.hint": "Les six critères de la dernière section du formulaire. Cochez ce qui est vrai aujourd'hui.",
-  "ps.hint0": "Cochez ce qui est vrai aujourd'hui — la jauge se met à jour au fur et à mesure.",
-  "ps.keep": "Continuez à le façonner", "ps.ready": "Prêt à publier !",
-  "ps.c1": "Quelqu'un qui n'a jamais travaillé dans mon programme peut comprendre la tâche et pourquoi elle compte",
-  "ps.c2": "Il décrit une occasion réelle — pas seulement ce qui arrive d'habitude",
-  "ps.c3": "Il contient des chiffres : à quelle fréquence, combien de temps, combien de districts ou de fichiers",
-  "ps.c4": "Il dit ce qui échoue, et ce que cela entraîne",
-  "ps.c5": "C'est mon propre travail, et je peux m'y consacrer pendant le cours",
-  "ps.c6": "Un exemple anonymisé est joint — ou j'explique pourquoi ce n'est pas possible",
-  "ps.h.c1": "Commencez par la question 4 du formulaire : racontez-nous la dernière fois que vous avez fait cette tâche, étape par étape.",
-  "ps.h.c2": "Rappelez-vous une occasion précise — une vraie campagne, une vraie semaine — et écrivez ce qui s'est réellement passé, étape par étape.",
-  "ps.h.c3": "Ajoutez des chiffres : à quelle fréquence, combien de temps, combien de districts ou de fichiers.",
-  "ps.h.c4": "Dites ce qui échoue réellement et ce que cela coûte — avec un moment réel.",
-  "ps.h.c5": "Nommez la partie qui est vôtre — s'il vous faut des données ou l'accord d'un collègue, dites exactement ce que vous lui demanderez.",
-  "ps.h.c6": "Joignez un exemple anonymisé, ou expliquez pourquoi vous ne pouvez pas.",
-  "ps.h.generic": "Lisez-le à voix haute comme à un·e nouveau·velle collègue — chaque phrase doit nous apprendre quelque chose d'exploitable.",
-  "ps.h.done": "Prêt — publiez-le sur #all-amplify, et répondez à deux camarades.",
-  "ws.weak.t": "Une réponse faible",
-  "ws.weak.q": "« La gestion des données est un grand défi dans notre programme. Les rapports arrivent souvent en retard et il y a beaucoup d'erreurs. L'IA peut nous aider à améliorer la qualité et l'efficacité des données. »",
-  "ws.weak.v": "Quelles données ? Quel rapport ? Combien de retard ? Rien sur quoi construire un projet.",
-  "ws.strong.t": "Une réponse solide (abrégée)",
-  "ws.strong.q": "« Tâche : compiler les fichiers de traitement CPM de 38 districts en un rapport national annuel — fichiers Excel, photos WhatsApp, appels. Il nous faut environ trois semaines par an avec un agent de données. L'an dernier, un district a rapporté 112 % de couverture et je ne l'ai repéré qu'après l'envoi du graphique à un partenaire ; nous avons envoyé une correction et dépassé la date limite de trois semaines. »",
-  "ws.strong.v": "Une tâche nommée, des occasions réelles, des chiffres, des conséquences — on peut construire là-dessus.",
-  "mvp.t": "Pensez « produit minimum viable »",
-  "mvp.d": "Votre énoncé du problème n'a pas à être parfait — il doit fonctionner, et vous devez comprendre pourquoi et comment il fonctionne. Nous l'affinons à chaque cours ; chacun vous rapproche d'une solution.",
-  "pb.t": "Ce n'est pas encore le cas ? Utilisez le Coach de problème",
-  "pb.d": "Le Coach de problème AMPLIFY est un coach IA bienveillant : vous rédigez chaque section, il pose les questions de suivi, et vous repartez avec une note d'exigences reliée aux sessions du cours, y compris les compétences que le cours ne couvre pas.",
+  "problem.h2": "4 · Votre problème — un premier brouillon",
+  "problem.lead": "Vous n'avez pas besoin d'un énoncé parfait pour commencer. Il vous faut quelque chose d'assez réel pour tester le prompting d'aujourd'hui — et d'assez honnête pour l'améliorer. Chaque cours d'AMPLIFY affine le même problème ; le brouillon d'aujourd'hui est la matière première, pas la réponse finale.",
+  "problem.why.t": "Pourquoi « problème flou » → tout flou",
+  "problem.why.hint": "L'IA est un moteur de prédiction : elle remplit chaque vide avec sa meilleure supposition. Un problème net arrête les suppositions.",
+  "problem.why.b1t": "Pas de frontière",
+  "problem.why.b1d": "Sans une tâche nommée, chaque prompt dérive. « Aide avec les données » peut vouloir dire nettoyer, vérifier, rédiger ou tracer — Claude doit deviner.",
+  "problem.why.b2t": "Pas de verdict",
+  "problem.why.b2d": "Si vous ne pouvez pas dire à quoi ressemble « terminé » (un tableau pour la revue, pour vendredi, signale >100 %), vous ne pouvez pas dire si la sortie est juste.",
+  "problem.why.b3t": "Pas de boucle",
+  "problem.why.b3d": "Une occasion réelle (« l'an dernier, le district X a rapporté 112 % ») vous donne de quoi vérifier. Sans elle, il n'y a rien à itérer — le I de P-T-C-F-I n'a nulle part où atterrir.",
+  "problem.gtg.t": "À quoi ressemble « assez bien pour aujourd'hui »",
+  "problem.gtg.hint": "Si vous pouvez dire ces trois choses, vous pouvez commencer. Le Coach de problème vous aidera à approfondir chacune ensuite.",
+  "problem.gtg.i1": "Une tâche nommée que vous faites vraiment — ex. « compiler 38 fichiers MDA de district dans le rapport national », pas « gestion des données ».",
+  "problem.gtg.i2": "Une occasion réelle — la dernière fois que vous l'avez fait, ce qui est arrivé, ce qui a échoué.",
+  "problem.gtg.i3": "Une conséquence ou un chiffre — combien de retard, combien de temps, ce que l'erreur a coûté.",
+  "problem.gtg.foot": "C'est tout. Apportez cela en cours et sur Slack. On ne note pas le poli au jour 1 — on note l'honnêteté et la précision.",
+  "problem.sharpen.t": "Il s'affine à chaque cours — pas besoin de tout avoir maintenant",
+  "problem.sharpen.d": "Cours 1 vous le nommez. Cours 2 vous apprenez à le prompter. Cours 3–4 vous le reliez à vos vraies données. Cours 5–7 vous construisez les contrôles, le tableau de bord et l'argumentaire. Cours 8 vous présentez. Chaque couche révèle ce qui manquait — nous gardons donc le brouillon et y revenons. Vouloir la perfection maintenant cacherait la prochaine leçon.",
+  "problem.strip1": "1 · Le nommer",
+  "problem.strip2": "2 · Le prompter",
+  "problem.strip3": "3–4 · Relier les données",
+  "problem.strip4": "5–8 · Construire & pitcher",
+  "pb.t": "Façonnez-le avec le Coach de problème",
+  "pb.d": "Le Coach de problème AMPLIFY est un coach IA bienveillant qui vit sur amplify-course.com/problem-coach. Vous écrivez chaque section avec vos mots ; il pose les relances, vous note doucement selon une rubrique, et vous repartez avec une note d'exigences reliée aux sessions du cours — y compris les compétences que le cours ne couvre pas.",
+  "pb.meta": "~25 min · sauvegarde automatique · export Word/PDF pour votre devoir · en anglais ou en français · vos mots ne quittent le coach que si vous le décidez.",
   "pb.cta": "Ouvrir le Coach de problème →",
+  "pb.hint": "Vous avez déjà rempli l'ancien formulaire ? Collez ces réponses dans le Coach — il vous dira ce qui est prêt pour le cours et quoi approfondir d'abord.",
 
-  "prompt.h2": "5 · L'art du prompt parfait",
-  "prompt.lead": "Avant qu'un outil ne compte, ceci compte. L'IA ne lit pas dans votre tête — vague en entrée, vague en sortie. Considérez Claude comme un·e collègue brillant·e qui n'a jamais vu votre programme : il lui faut une direction, du contexte et une définition claire de « terminé ».",
+  "prompt.h2": "5 · L'art du prompt parfait — la compétence clé du cours",
+  "prompt.lead": "Avant qu'un outil ne compte, ceci compte. L'IA ne lit pas dans votre tête — vague en entrée, vague en sortie. Considérez Claude comme un·e collègue brillant·e qui n'a jamais vu votre programme : il lui faut une direction, du contexte et une définition claire de « terminé ». Cette section est le cœur du cours 1. Prenez-y le temps.",
+  "prompt.why.t": "Pourquoi le prompting est tout le jeu",
+  "prompt.why.p1": "Un grand modèle de langue ne « connaît » pas vos districts, vos versions de modèles ou votre date limite. Il prédit les prochains mots les plus plausibles vu ce que vous lui avez donné. Quand vous laissez un vide — pas de public, pas de format, pas de vérification — il le remplit avec une supposition confiante. C'est là que naissent les hallucinations et les discours génériques.",
+  "prompt.chain1": "Vous omettez un détail",
+  "prompt.chain2": "Le modèle devine",
+  "prompt.chain3": "Semble juste, ne l'est pas",
+  "prompt.chain4": "Vous l'expédiez",
+  "prompt.chain5": "On retravaille plus tard",
+  "prompt.why.p2": "Prompter, c'est donner juste assez de réalité pour que le modèle n'ait pas besoin d'inventer. Persona dit quel jugement adopter ; Task nomme le verbe ; Context donne les faits qu'il ne peut pas connaître ; Format dit à quoi ressemble « terminé » ; Iterate est votre filet — la vérification qui vous appartient, pas au modèle.",
+  "prompt.why.c1t": "Persona = lentille",
+  "prompt.why.c1d": "« En tant qu'agent S&E MNT » n'est pas de la flatterie — cela oriente le ton, le vocabulaire et quoi prioriser (seuils de couverture, pas conseils génériques).",
+  "prompt.why.c2t": "Context = faits que vous détenez",
+  "prompt.why.c2d": "Public, objectif, contraintes, données que vous avez vraiment. Le modèle ne les a jamais sauf si vous les donnez.",
+  "prompt.why.c3t": "Iterate = confiance",
+  "prompt.why.c3d": "La seule étape anti-hallucination fiable est la vôtre : « signale tout >100 % ; demande-moi avant de finaliser. » Intégrez-la au prompt.",
   "pt.P.t": "Persona",
   "pt.P.d": "Qui demande ? Donnez à l'IA un point de vue d'expert pour réfléchir.",
   "pt.P.e": "« Tu es un agent de suivi & évaluation des MNT… »",
@@ -393,6 +457,50 @@ fr: {
   "sk.d": "Oui — et c'est exactement le plan. Un skill est un ensemble d'instructions enregistré et réutilisable, appelable à la demande au lieu de retaper. Le constructeur ci-dessus en est l'ébauche : l'anatomie P-T-C-F-I plus vos règles de maison. Aujourd'hui, vous l'apprenez à la main.",
   "sk.d2": "Au cours 2, nous transformons vos meilleurs prompts en un vrai skill, nous cherchons des skills existants (ils sont partagés, par exemple, sur GitHub), et vous apprenez à distinguer les prompts réutilisables des prompts uniques. Préparation des devoirs : apportez une tâche que vous répétez chaque semaine — c'est votre premier candidat skill.",
 
+  
+  "lab.t": "Labo — voyez le résultat s'affiner à mesure que vous ajoutez du détail",
+  "lab.hint": "Partez du vague. Ajoutez P-T-C-F-I un cran à la fois et voyez la sortie fictive passer du générique à l'utilisable. (Pas d'appel IA — juste la mécanique.)",
+  "lab.chip.P": "Persona",
+  "lab.chip.T": "Tâche",
+  "lab.chip.C": "Contexte",
+  "lab.chip.F": "Format",
+  "lab.chip.I": "Itérer",
+  "lab.preview.prompt": "Votre prompt maintenant :",
+  "lab.output.none": "Pas encore de prompt — ajoutez une couche ci-dessus.",
+  "autopsy.t": "Autopsie — trois vrais prompts du terrain",
+  "autopsy.hint": "Ouvrez un cas, repérez ce qui manque, comparez à l'œil du coach. Pas de saisie — juste du diagnostic.",
+  "pb2.coach": "Coacher mon prompt →",
+  "coach.head": "Retour du coach IA",
+  "coach.verdict.strong": "Prompt solide",
+  "coach.verdict.decent": "Correct — un correctif l'affinerait",
+  "coach.verdict.needs_work": "À retravailler",
+  "coach.rewrite.t": "Réécriture suggérée",
+  "coach.use": "Utiliser ce brouillon",
+  "coach.loading": "Vérification…",
+  "coach.error": "Impossible de joindre le coach — réessayez. Votre prompt est toujours ci-dessous.",
+  "coach.offline": "Démo hors ligne — retour heuristique (pas d'appel IA).",
+  "free.t": "Essayez sur n'importe quel prompt — collez ce que vous enverriez vraiment",
+  "free.hint": "Vous n'utilisez pas le constructeur ? Collez un vrai prompt de votre travail et obtenez le même diagnostic P-T-C-F-I. Avec IA quand en ligne ; heuristique sinon.",
+  "free.ph": "Collez ou écrivez votre prompt ici — ex. « Résume ce rapport de district pour la revue… »",
+  "free.cta": "Vérifier ce prompt",
+  "sk.t": "Peut-on construire un skill pour le prompt parfait ?",
+
+  
+  "acar.t": "Les problèmes survivent aux prompts — cadrer d'abord le problème",
+  "acar.d": "\"Le prompt engineering consiste à rédiger l'entrée textuelle optimale... À l'inverse, la formulation du problème consiste à définir le problème en délimitant son objet, sa portée et ses limites.\" Votre brouillon de trois phrases dans cette section est de la formulation de problème — la partie qui ne périt pas quand le modèle change. P-T-C-F-I dans la section suivante est la façon de transformer ce problème formulé en langage que le modèle peut exécuter.",
+  "acar.cite": "— O. A. Acar, Harvard Business Review (2023), via MIT Sloan : ",
+  "ptypes.t": "Six types de prompts que vous croiserez (au-delà de P-T-C-F-I)",
+  "ptypes.hint": "P-T-C-F-I est comment vous composez. Ce sont des saveurs que vous reconnaîtrez sur Slack, GitHub et ailleurs — la plupart ne sont que du P-T-C-F-I bref. Repérez ceux que vous utilisez déjà.",
+  "ptypes.h.type": "Type", "ptypes.h.when": "Quand l'utiliser", "ptypes.h.ex": "Exemple",
+  "ptypes.zero.t": "Zero-shot", "ptypes.zero.d": "Instruction simple, sans exemples. Idéal pour un résumé ponctuel.", "ptypes.zero.ex": "\"Résume cet article en 5 puces.\"",
+  "ptypes.few.t": "Few-shot", "ptypes.few.badge": "Essayez", "ptypes.few.d": "Donnez 2–3 exemples de la forme/ton souhaité, puis demandez le suivant dans le même style. Votre meilleur raccourci vers la cohérence.", "ptypes.few.ex": "\"Voici 2 résumés de district exemples. Rédigez un troisième dans le même style : [District A : ...] [District B : ...]\"",
+  "ptypes.instr.t": "Instructionnel", "ptypes.instr.d": "Verbe direct + contraintes (rédiger / comparer / en moins de X mots).", "ptypes.instr.ex": "\"Rédigez un résumé exécutif. Tenez en moins de 100 mots, français formel.\"",
+  "ptypes.role.t": "Basé sur le rôle", "ptypes.role.d": "Persona à dessein — « en tant qu'agent S&E... » oriente la perspective et le vocabulaire.", "ptypes.role.ex": "\"Vous êtes un professeur de MBA préparant un plan de cours...\"",
+  "ptypes.ctx.t": "Contextuel", "ptypes.ctx.d": "Contexte + public avant la demande. C'est votre C.", "ptypes.ctx.ex": "\"Ceci est pour des volontaires communautaires. Reformulez en langage simple.\"",
+  "ptypes.sys.t": "Système / Méta", "ptypes.sys.d": "Règles en arrière-plan pour le ton/la portée (« toujours citer les sources, ne jamais deviner »). Vous n'écrirez pas cela en cours 1 — mais vous les reconnaîtrez dans les skills.", "ptypes.sys.ex": "\"Toujours répondre formellement et citer des sources réelles. Ne jamais deviner.\"",
+  "ptypes.foot": "Le few-shot est la pépite : collez 2 bons résultats que vous aimez, ajoutez « rédige le suivant comme ceux-ci ». Nous l'utiliserons en cours 2 pour transformer un prompt en skill réutilisable.",
+
+  "ps.keep": "Continuez à le façonner", "ps.ready": "Prêt à publier !",
   "homework.h2": "Devoirs — à rendre avant le cours 2",
   "homework.sub": "Quatre étapes, toutes sur Slack. Le cours 2 commence par la présentation de l'un ou de l'une d'entre vous.",
   "hw.1.t": "Présentez-vous sur #all-amplify",
@@ -424,6 +532,8 @@ fr: {
   "quiz.channel.sub": "Cinq messages viennent d'arriver. Choisissez la bonne maison pour chacun.",
   "quiz.redline.title": "Test de compétences — Peut-on l'envoyer ?",
   "quiz.redline.sub": "Cinq choses que quelqu'un veut coller dans Claude. Autorisé, ou ligne rouge ?",
+  "quiz.problemWhy.title": "Test — Pourquoi le problème compte",
+  "quiz.problemWhy.sub": "Deux questions sur pourquoi un problème net sauve toutes les autres étapes.",
   "quiz.missing.title": "Test de compétences — Qu'est-ce qui manque ?",
   "quiz.missing.sub": "Quatre prompts du terrain. Quel élément du P-T-C-F-I manque ?",
   "quiz.pass": "Test réussi",
@@ -497,6 +607,49 @@ const BUILDER_LABELS = {
   I: { label: bi("Before finalizing:", "Avant de finaliser :"), empty: bi("( Iterate — your checks and loop )", "( Itérer — vos vérifications et votre boucle )") },
 };
 
+
+const LAB_BASE = bi("How can AI help my NTD programme?", "Comment l'IA peut-elle aider mon programme MNT ?");
+const LAB_LAYERS = {
+  P: bi("You are an NTD M&E officer for the national programme.", "Tu es un·e agent·e de S&E des MNT pour le programme national."),
+  T: bi("Summarize 2025 MDA coverage by district and flag districts below 65%.", "Résume la couverture CPM 2025 par district et signale les districts sous 65 %."),
+  C: bi("I have the district workbook with aggregate numbers. This goes to the annual review; no patient-level data.", "J'ai le classeur des districts avec des chiffres agrégés. C'est pour la revue annuelle ; pas de données patients."),
+  F: bi("One table: district, coverage %, flag — then 3 bullets for the review. In French.", "Un tableau : district, couverture %, signal — puis 3 puces pour la revue. En français."),
+  I: bi("Check every district against last year before finalising; ask me if any number looks impossible.", "Compare chaque district à l'an dernier avant de finaliser ; demande-moi si un chiffre semble impossible."),
+};
+const LAB_OUTPUTS = {
+  0: bi(["Generic advice: \"AI can streamline your data…\"", "No district, no number, no table — nothing to ship."], ["Conseil générique : « L'IA peut fluidifier vos données… »", "Aucun district, aucun chiffre, aucun tableau — rien à livrer."]),
+  1: bi(["A bit more focused, still guessing your format and thresholds.", "The model picks a tone but you still can't paste the result."], ["Un peu plus ciblé, mais le modèle devine encore votre format et vos seuils.", "Le modèle choisit un ton, mais vous ne pouvez toujours pas livrer le résultat."]),
+  2: bi(["A table appears, but without context the numbers aren't trusted.", "You can see the shape of the answer, but will check everything by hand anyway."], ["Un tableau apparaît, mais sans contexte les chiffres ne sont pas fiables.", "Vous voyez la forme de la réponse, mais vous revérifierez tout à la main."]),
+  3: bi(["Now the audience and purpose are clear — the answer uses your programme's language.", "Coverage thresholds appear, but format is still vague."], ["Le public et l'objectif sont clairs — la réponse utilise le langage de votre programme.", "Les seuils de couverture apparaissent, mais le format reste vague."]),
+  4: bi(["Columns, language, and length match the review. Ready to paste near-final.", "Add the iterate check and it's shippable."], ["Colonnes, langue et longueur correspondent à la revue. Prêt à coller en quasi-définitif.", "Ajoutez la boucle de vérification et c'est livrable."]),
+  5: bi(["Table + flags + 3 bullets, in French, verified against last year — flagged 112% before it reached a partner.", "Ship with confidence; the loop is built in."], ["Tableau + signaux + 3 puces, en français, vérifié vs l'an dernier — 112 % signalé avant d'atteindre un partenaire.", "Livrez en confiance ; la boucle est intégrée."]),
+};
+
+const AUTOPSY = [
+  {
+    q: bi("“Clean my data.”", "« Nettoie mes données. »"),
+    prompt: bi("Clean my data. The file is attached.", "Nettoie mes données. Le fichier est joint."),
+    missing: "T",
+    why: bi("Persona is implied, but what does “clean” mean here? Deduplicate? Fix 112% coverage? Recode district names? No verb, no “done”. The model will pick the cheapest reading.", "Le persona est implicite, mais que veut dire « nettoyer » ? Dédupliquer ? Corriger 112 % de couverture ? Recoder les districts ? Pas de verbe, pas de « terminé ». Le modèle choisira la lecture la plus simple."),
+    fix: bi("Add one verb and one check: “Find coverage >100% or <65%, flag the rows, and list what you changed before finalising.”", "Ajoutez un verbe et une vérification : « Trouve les couvertures >100 % ou <65 %, signale les lignes et liste ce que tu as changé avant de finaliser. »"),
+  },
+  {
+    q: bi("“You are an NTD expert. I have 38 district Excel files, two templates, 9 WhatsApp photos, for the national review in 2 weeks.”", "« Tu es un expert MNT. J'ai 38 fichiers Excel de district, deux modèles, 9 photos WhatsApp, pour la revue nationale dans 2 semaines. »"),
+    prompt: bi("You are an NTD expert. I have 38 district Excel files (two template versions), 9 WhatsApp photos of paper forms, phone call notes. This is for the national programme review in two weeks. Coverage thresholds are 65% effective, flag >100%.", "Tu es un expert MNT. J'ai 38 fichiers Excel de district (deux versions de modèle), 9 photos WhatsApp de fiches papier, des notes d'appels. C'est pour la revue nationale dans deux semaines. Seuils : 65 % efficace, signaler >100 %."),
+    missing: "T",
+    why: bi("Rich Persona + Context, but no Task — what should it actually do? Draft a plan? Build the table? List missing files? Without a verb, the model summarises and stops.", "Persona + Contexte riches, mais pas de tâche — que doit-il faire ? Rédiger un plan ? Construire le tableau ? Lister les fichiers manquants ? Sans verbe, le modèle résume et s'arrête."),
+    fix: bi("Name the verb: “Compile a checklist of expected vs received files, then draft the coverage table shell I'll fill.”", "Nommez le verbe : « Dressez une checklist attendu vs reçu, puis ébauchez le squelette du tableau de couverture à remplir. »"),
+  },
+  {
+    q: bi("“You are an NTD M&E officer for the Burkina Faso programme. Summarize 2025 MDA coverage by district. I have the district workbook. For the annual review, formal French. One table plus 3 bullets.”", "« Tu es un agent S&E des MNT du Burkina Faso. Résume la couverture CPM 2025 par district. J'ai le classeur des districts. Pour la revue annuelle, français formel. Un tableau plus 3 puces. »"),
+    prompt: bi("You are an NTD M&E officer for the Burkina Faso national programme. Summarize 2025 MDA coverage by district. I have the district workbook with aggregate numbers. This goes to the annual programme review. Return one table (district, coverage %, flag) plus 3 bullets for the review, formal French.", "Tu es un agent S&E des MNT du Burkina Faso. Résume la couverture CPM 2025 par district. J'ai le classeur des districts avec des chiffres agrégés. C'est pour la revue annuelle. Rends un tableau (district, couverture %, signal) + 3 puces pour la revue, français formel."),
+    missing: "I",
+    why: bi("P-T-C-F all present — this already delivers. The missing piece is the safety net: no instruction to check 112% vs last year or to ask before finalising, so an error slides straight to the partner.", "P-T-C-F tous présents — ça délivre déjà. Il manque le filet de sécurité : pas d'instruction de vérifier 112 % vs l'an dernier ou de demander avant de finaliser, donc une erreur glisse jusqu'au partenaire."),
+    fix: bi("Close the loop: “Before finalising, compare each district to 2024 and flag anything >100% or <65%; ask me if a number looks impossible.”", "Fermez la boucle : « Avant de finaliser, compare chaque district à 2024 et signale tout >100 % ou <65 % ; demande-moi si un chiffre semble impossible. »"),
+  },
+];
+
+
 const CHAN_PRIV = bi("Your private channel", "Votre canal privé");
 const SAFE_OPT = bi("Safe — paste away", "Autorisé — allez-y");
 const REDLINE_OPT = bi("No — red line", "Non — ligne rouge");
@@ -542,6 +695,17 @@ redline: {
       expl: bi("Published, public, safe.", "Publié, public, sans risque.") },
   ],
 },
+problemWhy: {
+  title: "quiz.problemWhy.title", sub: "quiz.problemWhy.sub",
+  questions: [
+    { q: bi("Why does a vague problem make prompting harder?", "Pourquoi un problème vague rend-il le prompting plus difficile ?"),
+      opts: [bi("The model already knows your programme", "Le modèle connaît déjà votre programme"), bi("The model fills your gaps with guesses — you can't iterate", "Le modèle remplit vos vides avec des suppositions — vous ne pouvez pas itérer"), bi("The model will ask you to call IT", "Le modèle vous demandera d'appeler l'IT")], correct: 1,
+      expl: bi("An LLM predicts plausible next words; every gap you leave is a guess you have to fix later. A named task + one real occasion gives the model anchors and you a check.", "Un LLM prédit les prochains mots plausibles ; chaque vide est une supposition à corriger. Une tâche nommée + une occasion réelle donnent des ancres au modèle et une vérification à vous.") },
+    { q: bi("What's “good enough for today”?", "Qu'est-ce qui est « assez bien pour aujourd'hui » ?"),
+      opts: [bi("A polished three-page problem brief", "Une note de problème de trois pages polie"), bi("One named task + one real occasion + one number or consequence", "Une tâche nommée + une occasion réelle + un chiffre ou une conséquence"), bi("A solution idea like “we need a dashboard”", "Une idée de solution du type « il nous faut un tableau de bord »")], correct: 1,
+      expl: bi("Three sentences you can actually say out loud. The Problem Coach deepens each one later; perfection now just hides the next lesson.", "Trois phrases que vous pouvez vraiment dire à voix haute. Le Coach approfondit ensuite ; la perfection maintenant cache la prochaine leçon.") },
+  ],
+},
 missing: {
   title: "quiz.missing.title", sub: "quiz.missing.sub",
   questions: [
@@ -562,14 +726,16 @@ missing: {
 };
 
 /* ---------------------------------------------------------------- state */
-const LS_KEY = "c1_state_v1";
+const LS_KEY = "c1_state_v2";
 const DEFAULTS = () => ({
   lang: "en",
-  checks: {},                                   // setup checklist ids → 1
-  ps: {},                                      // self-check ids → 1
-  quizzes: { channel: {}, redline: {}, missing: {} }, // q index → 1
+  checks: {},
+  ps: {},
+  quizzes: { channel: {}, redline: {}, missing: {}, problemWhy: {} },
   ba: "bad",
   builder: { P: "", T: "", C: "", F: "", I: "" },
+  lab: { P: 0, T: 0, C: 1, F: 0, I: 0 },
+  autopsy: 1,
 });
 let S = DEFAULTS();
 
@@ -583,6 +749,8 @@ function load() {
     S.checks = Object.assign({}, (raw && raw.checks) || {});
     S.ps = Object.assign({}, (raw && raw.ps) || {});
     S.builder = Object.assign(DEFAULTS().builder, (raw && raw.builder) || {});
+    S.lab = Object.assign(DEFAULTS().lab, (raw && raw.lab) || {});
+    S.autopsy = raw && raw.autopsy ? raw.autopsy : 1;
     S.quizzes = {};
     for (const id of Object.keys(QUIZZES)) S.quizzes[id] = Object.assign({}, raw && raw.quizzes && raw.quizzes[id]);
   } catch { S = DEFAULTS(); }
@@ -657,7 +825,7 @@ function updateRings() {
 }
 
 /* ---------------------------------------------------------------- nav skill-checks chip */
-const QUIZ_IDS = ["channel", "redline", "missing"];
+const QUIZ_IDS = ["channel", "redline", "missing", "problemWhy"];
 function quizPassed(id) {
   return QUIZZES[id].questions.every((_, i) => S.quizzes[id][i]);
 }
@@ -670,11 +838,11 @@ function updateNavChecks() {
 
 /* ---------------------------------------------------------------- quizzes */
 function renderQuiz(id) {
-  const def = QUIZZES[id];
+  const def = QUIZZES[id]; if (!def) return;
+  const el = $("#quiz-" + id); if (!el) return;
   const st = S.quizzes[id];
   const done = def.questions.filter((_, i) => st[i]).length;
   const all = done === def.questions.length;
-  const el = $("#quiz-" + id);
   el.innerHTML =
     '<div class="quiz-head"><div><h3>' + esc(t(def.title)) + '</h3>' +
     '<p class="hint">' + esc(t(def.sub)) + '</p></div>' +
@@ -701,7 +869,8 @@ function renderQuiz(id) {
 }
 function wireQuizzes() {
   QUIZ_IDS.forEach((id) => {
-    $("#quiz-" + id).addEventListener("click", (e) => {
+    const root = $("#quiz-" + id); if (!root) return;
+    root.addEventListener("click", (e) => {
       const btn = e.target.closest(".q-opt");
       if (!btn || btn.disabled) return;
       const item = btn.closest(".q-item");
@@ -728,7 +897,8 @@ function wireQuizzes() {
 
 /* ---------------------------------------------------------------- timeline */
 function renderTimeline() {
-  $("#timeline").innerHTML = TIMELINE.map((verb, i) =>
+  const tl = $("#timeline"); if (!tl) return;
+  tl.innerHTML = TIMELINE.map((verb, i) =>
     '<div class="tl-step' + (i === 0 ? " now" : "") + '">' +
     '<span class="tl-class">' + esc(v(TL_CLASS)) + " " + (i + 1) + (i === 0 ? " · " + esc(v(TL_TODAY)) : "") + "</span>" +
     '<p class="tl-verb">' + esc(v(verb)) + "</p>" +
@@ -782,23 +952,31 @@ function wireSelfCheck() {
   });
 }
 function setupSelfCheckFromState() {
-  $$('input[data-ps]').forEach((box) => { box.checked = !!S.ps[box.dataset.ps]; });
+  const els = $$('input[data-ps]'); if (!els.length) return;
+  els.forEach((box) => { box.checked = !!S.ps[box.dataset.ps]; });
 }
 function updatePsMeter() {
+  const elScore = $("#ps-score"); if (!elScore) return;
   const n = PS_IDS.filter((id) => S.ps[id]).length;
   const full = n === PS_IDS.length;
-  $("#ps-score").textContent = n + "/" + PS_IDS.length;
-  $("#ps-score").classList.toggle("full", full);
-  $("#ps-label").classList.toggle("full", full);
-  $("#ps-label").textContent = t(full ? "ps.ready" : "ps.keep");
+  elScore.textContent = n + "/" + PS_IDS.length;
+  elScore.classList.toggle("full", full);
+  const elLabel = $("#ps-label"); if (elLabel) { elLabel.classList.toggle("full", full); elLabel.textContent = t(full ? "ps.ready" : "ps.keep"); }
   const firstMissing = PS_IDS.find((id) => !S.ps[id]);
   const specific = firstMissing && (DICT[S.lang]["ps.h." + firstMissing] || DICT.en["ps.h." + firstMissing]);
-  $("#ps-hint").textContent = full ? t("ps.h.done") : t(specific ? "ps.h." + firstMissing : "ps.h.generic");
+  const hint = $("#ps-hint"); if (hint) hint.textContent = full ? t("ps.h.done") : t(specific ? "ps.h." + firstMissing : "ps.h.generic");
 }
 
 /* ---------------------------------------------------------------- prompt builder */
+function renderBuilderMeter() {
+  const m = $("#builder-meter"); if (!m) return;
+  const keys = ["P","T","C","F","I"];
+  const filled = keys.filter((k) => (S.builder[k]||"").trim().length > 3).length;
+  m.innerHTML = '<span class="meter-mini">' + filled + '/5 \u00b7 ' + (filled===5 ? t("ps.ready") : t("ps.keep")) + '</span>' + '<div class="meter-bar"><span style="width:'+ (filled/5*100) +'%"></span></div>';
+}
 function renderBuilderOut() {
-  const out = $("#builder-out");
+  const out = $("#builder-out"); if (!out) return;
+  renderBuilderMeter();
   const lines = ["P", "T", "C", "F", "I"].map((k) => {
     const val = (S.builder[k] || "").trim();
     const lab = v(BUILDER_LABELS[k].label);
@@ -847,6 +1025,210 @@ function wireBuilder() {
     showToast(ok ? t("toast.copy") : t("toast.copy"));
   });
 }
+
+
+/* ---------------------------------------------------------------- Prompt Lab */
+function renderLab() {
+  const chipRow = $("#lab-chips"); if (!chipRow) return;
+  // reflect state onto chips
+  $$("#lab-chips .lab-chip").forEach((b) => {
+    const k = b.dataset.lab;
+    b.classList.toggle("active", !!S.lab[k]);
+  });
+  const order = ["P","T","C","F","I"];
+  const active = order.filter((k) => S.lab[k]);
+  const parts = [];
+  if (!active.length) parts.push(v(LAB_BASE));
+  else {
+    active.forEach((k) => parts.push(v(LAB_LAYERS[k])));
+  }
+  const txt = parts.join(" ");
+  const built = $("#lab-built");
+  const out = $("#lab-output");
+  const pro = $("#lab-prompt-text");
+  if (built) built.textContent = txt;
+  if (pro) pro.textContent = txt;
+  if (out) {
+    const lvl = active.length;
+    const lines = v(LAB_OUTPUTS[lvl] || LAB_OUTPUTS[5]);
+    out.innerHTML = '<h4>' + esc(lvl >= 4 ? v(BA_GOOD_TITLE) : v(BA_GENERIC_TITLE)) + '</h4><ul>' + lines.map((x)=>"<li>"+esc(x)+"</li>").join("") + "</ul>";
+    out.className = "lab-output " + (lvl >= 4 ? "focused" : lvl >= 2 ? "" : "generic");
+  }
+}
+function wireLab() {
+  const chips = $$("#lab-chips .lab-chip");
+  if (!chips.length) return;
+  chips.forEach((b) => {
+    b.addEventListener("click", () => {
+      const k = b.dataset.lab;
+      S.lab[k] = S.lab[k] ? 0 : 1;
+      save();
+      renderLab();
+    });
+  });
+  renderLab();
+}
+
+/* ---------------------------------------------------------------- Prompt Autopsy */
+function renderAutopsy() {
+  const pane = $("#autopsy-pane"); if (!pane) return;
+  const idx = (S.autopsy || 1) - 1;
+  const c = AUTOPSY[idx];
+  if (!c) return;
+  $$("#autopsy-tabs .au-tab").forEach((b) => {
+    const on = +b.dataset.au === S.autopsy;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-selected", String(on));
+  });
+  pane.innerHTML =
+    '<div class="au-prompt"><span class="au-label">Prompt</span><p class="au-q">' + esc(v(c.prompt)) + '</p></div>' +
+    '<div class="au-choices" role="group" aria-label="What is missing?">' +
+    ["P","T","C","F","I"].map((ltr)=>
+      '<button type="button" class="au-choice" data-pick="'+ltr+'"><span class="b-letter bl-'+ltr+'">'+ltr+'</span> '+esc(t("pt."+ltr+".t"))+'</button>'
+    ).join("") +
+    '</div><div class="au-feedback" id="au-feedback" hidden></div>';
+  // wire choices
+  $$(".au-choice").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const pick = btn.dataset.pick;
+      const fb = $("#au-feedback");
+      const ok = pick === c.missing;
+      fb.hidden = false;
+      fb.className = "au-feedback " + (ok ? "ok" : "bad");
+      fb.innerHTML = ok
+        ? '<strong>✓ '+esc(t("quiz.pass"))+' — '+esc(c.missing)+' '+esc(t("pt."+c.missing+".t"))+'</strong><p>'+esc(v(c.why))+'</p><p class="au-fix"><em>'+esc(v(c.fix))+'</em></p>'
+        : '<strong>✗ '+esc(t("q.try"))+' — '+esc(t("pt."+pick+".t"))+' is not the biggest gap here.</strong><p>'+esc(v(c.why))+'</p><p class="au-fix"><em>'+esc(v(c.fix))+'</em></p>';
+      fb.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  });
+}
+function wireAutopsy() {
+  const tabs = $$("#autopsy-tabs .au-tab");
+  if (!tabs.length) return;
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      S.autopsy = +tab.dataset.au;
+      save();
+      renderAutopsy();
+    });
+  });
+  renderAutopsy();
+}
+
+/* ---------------------------------------------------------------- Prompt coach (AI) */
+let _promptBusy = false;
+function scoreClass(s) { return s === 2 ? "good" : s === 1 ? "mid" : "bad"; }
+function renderCoachPanel(panelId, data) {
+  const pane = $("#" + panelId); if (!pane) return;
+  if (!data) { pane.hidden = true; return; }
+  pane.hidden = false;
+  const verdictEl = pane.querySelector(".coach-verdict");
+  const scoresEl = pane.querySelector(".coach-scores");
+  const fbEl = pane.querySelector(".coach-feedback");
+  const sugEl = pane.querySelector(".coach-suggestions");
+  const rwEl = pane.querySelector("#coach-rewrite, #free-rewrite");
+  const verdictKey = "coach.verdict." + data.verdict;
+  if (verdictEl) { verdictEl.textContent = t(verdictKey); verdictEl.className = "coach-verdict v-" + data.verdict; }
+  if (scoresEl) {
+    scoresEl.innerHTML = ["P","T","C","F","I"].map((k) => {
+      const sc = data.scores[k] ?? 0;
+      return '<span class="ptcf-score s-'+scoreClass(sc)+'">'+k+' '+sc+'/2</span>';
+    }).join("");
+  }
+  if (fbEl) fbEl.textContent = data.feedback || "";
+  if (sugEl) sugEl.innerHTML = (data.suggestions || []).map((s)=>"<li>"+esc(s)+"</li>").join("");
+  if (rwEl) rwEl.textContent = data.rewrite || "";
+}
+
+async function callPromptCoach(promptText, panelBase) {
+  if (_promptBusy) return;
+  const p = String(promptText || "").trim();
+  if (!p) { showToast(t("coach.error")); return; }
+  const btn = panelBase === "builder" ? $("#builder-coach") : $("#free-coach");
+  const statusEl = $("#free-status");
+  _promptBusy = true;
+  if (btn) { btn.disabled = true; btn.textContent = t("coach.loading"); }
+  if (statusEl) statusEl.textContent = t("coach.loading");
+  try {
+    const sid = (S._sid || (S._sid = Math.random().toString(36).slice(2,10), save(), S._sid));
+    // try API, fall back to heuristic mock on failure
+    let res, data;
+    try {
+      res = await fetch("/api/prompt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: p, problem_hint: builderPlainText().slice(0,600), lang: S.lang, session_id: sid }),
+      });
+      data = await res.json();
+    } catch (e) { res = null; }
+    if (!res || !res.ok) {
+      // heuristic locally (same as server mock)
+      const heur = (() => {
+        const s = p.toLowerCase(); const has=(re)=>re.test(s);
+        const P = has(/you are|you're|act as|as an|expert|officer/)?1:0;
+        const T = has(/summar|draft|compare|check|flag|write|create|extract|analyse|analyze|clean|compile|turn.*into/)? (s.length>60?2:1):0;
+        const C = has(/for |because|so that|audience|review|report|district|data|programme|program/) ? (has(/for (the|my|our)/)?2:1):0;
+        const F = has(/table|bullet|paragraph|format|in french|en fran|one page|slide|list/)?2:0;
+        const I = has(/flag|check|verify|ask me|before final|double-check/)?2:0;
+        const tot=P+T+C+F+I;
+        return { scores:{P,T,C,F,I}, verdict: tot>=7?"strong":tot>=4?"decent":"needs_work", feedback: 'Heuristic check — "'+p.slice(0,48)+'" — '+(F?'format helps':'add format + a check so the model stops guessing')+'.', suggestions: [(["P","T","C","F","I"].filter((k)=>({P,T,C,F,I}[k]<2)).slice(0,2).join(" & ")||"Iterate")+' — name audience, verb, and what “done” looks like.'], rewrite: "You are an NTD M&E officer.\nTask: "+p.slice(0,120)+" [add audience + purpose].\nReturn: a table plus 3 bullets, in [English/French].\nBefore finalising, flag coverage >100% and ask me if a number looks off." };
+      })();
+      data = heur;
+      if (statusEl) statusEl.textContent = t("coach.offline");
+    } else {
+      if (statusEl) statusEl.textContent = "";
+      if (data && data.error) throw new Error(data.error.message || "coach error");
+    }
+    const panelId = panelBase === "builder" ? "builder-coach-panel" : "free-coach-panel";
+    renderCoachPanel(panelId, data);
+    const rwDetails = document.querySelector("#" + panelId + " .coach-rewrite");
+    if (rwDetails && data.verdict !== "strong") rwDetails.open = true;
+  } catch (err) {
+    showToast(t("coach.error"));
+  } finally {
+    _promptBusy = false;
+    if (btn) { btn.disabled = false; btn.textContent = panelBase === "builder" ? t("pb2.coach") : t("free.cta"); }
+    if (statusEl && !statusEl.textContent.includes("Offline")) statusEl.textContent = "";
+  }
+}
+
+function wirePromptCoach() {
+  const bBtn = $("#builder-coach");
+  if (bBtn) bBtn.addEventListener("click", async () => {
+    const txt = builderPlainText() || ["P","T","C","F","I"].map((k)=>$("#b-"+k)?.value?.trim()).filter(Boolean).join(" \n");
+    if (!txt || !txt.trim()) { showToast(t("coach.error")); return; }
+    await callPromptCoach(txt, "builder");
+  });
+  const useBtn = $("#coach-use");
+  if (useBtn) useBtn.addEventListener("click", () => {
+    const src = $("#coach-rewrite"); if (!src || !src.textContent.trim()) return;
+    // Fill builder fields naively: put whole rewrite into Task field for demo, or split if possible
+    const txt = src.textContent.trim();
+    // Try to parse blocks: Persona/Task/Context/Format/Before finalizing
+    const mP = txt.match(/Persona:\s*([^\n]+)/i);
+    const mT = txt.match(/Task:\s*([^\n]+)/i);
+    const mC = txt.match(/Context:\s*([^\n]+)/i);
+    const mF = txt.match(/Format:\s*([^\n]+)/i);
+    const mI = txt.match(/Before finalizing:\s*([^\n]+)/i);
+    if (mP) $("#b-P").value = S.builder.P = mP[1].trim();
+    if (mT) $("#b-T").value = S.builder.T = mT[1].trim();
+    if (mC) $("#b-C").value = S.builder.C = mC[1].trim();
+    if (mF) $("#b-F").value = S.builder.F = mF[1].trim();
+    if (mI) $("#b-I").value = S.builder.I = mI[1].trim();
+    if (!mP && !mT && !mC) {
+      // fallback: drop whole text into Task
+      $("#b-T").value = S.builder.T = txt.slice(0,200);
+    }
+    save(); renderBuilderOut();
+    showToast(t("toast.copy"));
+  });
+  const fBtn = $("#free-coach");
+  if (fBtn) fBtn.addEventListener("click", async () => {
+    const txt = $("#free-prompt")?.value || "";
+    await callPromptCoach(txt, "free");
+  });
+}
+
 
 /* ---------------------------------------------------------------- Claude UI hotspots */
 function wireSpots() {
@@ -898,6 +1280,8 @@ function renderDynamic() {
   renderWorked();
   renderBA();
   renderBuilderOut();
+  renderLab();
+  renderAutopsy();
   updatePsMeter();
   QUIZ_IDS.forEach(renderQuiz);
   updateNavChecks();
@@ -915,6 +1299,9 @@ function init() {
   wireSelfCheck();
   wireBuilder();
   wireBA();
+  wireLab();
+  wireAutopsy();
+  wirePromptCoach();
   wireSpots();
   wireQuizzes();
   wireScroll();

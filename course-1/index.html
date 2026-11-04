@@ -270,67 +270,92 @@
   <div class="quiz" id="quiz-redline" data-quiz="redline"></div>
 </section>
 
-<!-- ============================ 4 · PROBLEM ============================ -->
+<!-- ============================ 4 · PROBLEM (starting draft) ============================ -->
 <section id="problem" class="section">
-  <h2 data-i18n="problem.h2">4 · Your problem statement — the spine of the course</h2>
-  <p class="section-lead" data-i18n="problem.lead">You came with a problem from the AMPLIFY Problem Statement Form. That problem is not a side assignment — it is the course. Every class adds one capability to it, and in Class 8 you present the working solution.</p>
+  <h2 data-i18n="problem.h2">4 · Your problem — a starting draft</h2>
+  <p class="section-lead" data-i18n="problem.lead">You don't need a perfect problem statement to start. You need something real enough to try today's prompting on — and honest enough to improve. Every class in AMPLIFY sharpens the same problem, so today's draft is the raw material, not the final answer.</p>
 
-  <div class="card">
-    <h3 data-i18n="problem.tl.t">What your problem gains, class by class</h3>
-    <div class="timeline" id="timeline"></div>
+  <div class="card card-why">
+    <h3 data-i18n="problem.why.t">Why "fuzzy problem" → fuzzy everything</h3>
+    <p class="hint" data-i18n="problem.why.hint">AI is a prediction engine: it fills every gap you leave with its best guess. A crisp problem stops the guessing.</p>
+    <div class="why-chain" aria-hidden="true">
+      <div class="why-step"><span class="why-dot bad"></span><span>Vague problem</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot bad"></span><span>Vague prompt</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot bad"></span><span>Generic answer</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot warn"></span><span>Can't verify</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot bad"></span><span>Rework &amp; delay</span></div>
+    </div>
+    <div class="grid3 why-grid">
+      <div class="why-card"><strong data-i18n="problem.why.b1t">No boundary</strong><p data-i18n="problem.why.b1d">Without one named task, every prompt drifts. "Help with data" could mean cleaning, checking, writing, or plotting — Claude has to guess.</p></div>
+      <div class="why-card"><strong data-i18n="problem.why.b2t">No verdict</strong><p data-i18n="problem.why.b2d">If you can't say what "done" looks like (a table for the review, by Friday, flags over 100%), you can't tell if the output is right.</p></div>
+      <div class="why-card"><strong data-i18n="problem.why.b3t">No loop</strong><p data-i18n="problem.why.b3d">A real occasion ("last year District X reported 112%") gives you something to check. Without it, there is nothing to iterate on — the I in P-T-C-F-I has nowhere to land.</p></div>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="checklist-head">
-      <div>
-        <h3 data-i18n="ps.t">Is your problem statement course-ready?</h3>
-        <p class="hint" data-i18n="ps.hint">The six checks from the form's final section. Tick what is true today.</p>
-      </div>
-      <div class="meter">
-        <span id="ps-score" class="meter-num">0/6</span>
-        <span id="ps-label" class="meter-label" data-i18n="ps.keep">Keep shaping it</span>
-      </div>
-    </div>
-    <ul class="checklist">
-      <li><label><input type="checkbox" data-ps="c1"><span data-i18n="ps.c1">Someone who has never worked in my programme could understand the task and why it matters</span></label></li>
-      <li><label><input type="checkbox" data-ps="c2"><span data-i18n="ps.c2">It describes a real occasion — not only what usually happens</span></label></li>
-      <li><label><input type="checkbox" data-ps="c3"><span data-i18n="ps.c3">It has numbers: how often, how long, how many districts or files</span></label></li>
-      <li><label><input type="checkbox" data-ps="c4"><span data-i18n="ps.c4">It says what goes wrong, and what that causes</span></label></li>
-      <li><label><input type="checkbox" data-ps="c5"><span data-i18n="ps.c5">It is my own work, and I can work on it during the course</span></label></li>
-      <li><label><input type="checkbox" data-ps="c6"><span data-i18n="ps.c6">An anonymised example is attached — or I explain why not</span></label></li>
+  <div class="card card-gtg">
+    <h3 data-i18n="problem.gtg.t">What "good enough for today" looks like</h3>
+    <p class="hint" data-i18n="problem.gtg.hint">If you can say these three things, you can start. The Problem Coach helps you deepen each one later.</p>
+    <ul class="mini-check">
+      <li><span class="mc-n">1</span><span data-i18n="problem.gtg.i1"><strong>One named task you actually do</strong> — e.g. "compile 38 district MDA files into the national report," not "data management."</span></li>
+      <li><span class="mc-n">2</span><span data-i18n="problem.gtg.i2"><strong>One real occasion</strong> — the last time you did it, what arrived, what went wrong.</span></li>
+      <li><span class="mc-n">3</span><span data-i18n="problem.gtg.i3"><strong>One consequence or number</strong> — how late, how long, what the error cost.</span></li>
     </ul>
-    <p class="hint" id="ps-hint" data-i18n="ps.hint0"></p>
-  </div>
-
-  <div class="grid2">
-    <div class="card card-weak">
-      <h3 data-i18n="ws.weak.t">A weak answer</h3>
-      <blockquote data-i18n="ws.weak.q">"Data management is a big challenge in our programme. Reports are often late and there are many errors. AI can help us improve data quality and efficiency."</blockquote>
-      <p class="verdict v-bad" data-i18n="ws.weak.v">Which data? Which report? How late? Nothing here to build a project on.</p>
-    </div>
-    <div class="card card-strong">
-      <h3 data-i18n="ws.strong.t">A strong answer (abridged)</h3>
-      <blockquote><span data-i18n="ws.strong.q">"Task: compile 38 district MDA treatment files into the national annual report — Excel files, WhatsApp photos, phone calls. It takes my data officer and me about three weeks a year. Last year one district reported 112% coverage and I only caught it after the chart went to a partner; we sent a correction and missed the deadline by three weeks."</span></blockquote>
-      <p class="verdict v-good" data-i18n="ws.strong.v">A named task, real occasions, numbers, consequences — we can build on this.</p>
-    </div>
+    <p class="hint" data-i18n="problem.gtg.foot">That's it. Bring that to class and to Slack. We do not grade polish on Day 1 — we grade honesty and specificity.</p>
   </div>
 
   <div class="callout callout-accent">
-    <h3 data-i18n="mvp.t">Think minimum viable product</h3>
-    <p data-i18n="mvp.d">Your problem statement does not have to be perfect — it has to work, and you have to understand why and how it works. We sharpen it every single class; each one gets you one step closer to a solution.</p>
+    <h3 data-i18n="problem.sharpen.t">It sharpens every class — you don't have to get it all now</h3>
+    <p data-i18n="problem.sharpen.d">Class 1 you name it. Class 2 you learn to prompt it. Classes 3–4 you connect it to your real data. Classes 5–7 you build the checks, the dashboard, and the pitch. Class 8 you present. Each layer reveals what you were missing — so we keep the problem statement draft and revisit it. Perfection now would just hide the next lesson.</p>
+    <div class="sharpen-strip" aria-label="Sharpening across the course">
+      <span class="ss-step now" data-i18n="problem.strip1">1 · Name it</span>
+      <span class="ss-arrow">→</span>
+      <span class="ss-step" data-i18n="problem.strip2">2 · Prompt it</span>
+      <span class="ss-arrow">→</span>
+      <span class="ss-step" data-i18n="problem.strip3">3–4 · Connect data</span>
+      <span class="ss-arrow">→</span>
+      <span class="ss-step" data-i18n="problem.strip4">5–8 · Build &amp; pitch</span>
+    </div>
   </div>
 
-  <div class="card link-card">
-    <h3 data-i18n="pb.t">Not there yet? Use the Problem Coach</h3>
-    <p data-i18n="pb.d">The AMPLIFY Problem Coach is a friendly AI coach for your problem: you write each section, it asks the follow-up questions, and you leave with a requirements brief mapped to the course sessions, including any skills the course does not cover.</p>
-    <a class="btn primary" href="../problem-coach/" data-i18n="pb.cta">Open the Problem Coach →</a>
+  <div class="card link-card link-card-featured">
+    <div class="link-card-copy">
+      <h3 data-i18n="pb.t">Shape it with the Problem Coach</h3>
+      <p data-i18n="pb.d">The AMPLIFY Problem Coach is a friendly AI coach that lives at <a href="../problem-coach/">amplify-course.com/problem-coach</a>. You write each section in your own words; it asks the follow-ups, scores you gently against a rubric, and you leave with a requirements brief mapped to the course sessions — including the skills the course doesn't cover.</p>
+      <p class="hint" data-i18n="pb.meta">~25 min · saves as you go · export a Word/PDF brief for your homework post · works in English or French · your words never leave the coach without your click.</p>
+    </div>
+    <a class="btn primary btn-lg" href="../problem-coach/" data-i18n="pb.cta">Open the Problem Coach →</a>
+    <p class="hint" data-i18n="pb.hint">Already filled the old Problem Statement Form? Paste those answers into the Coach — it will tell you what is course-ready and what to deepen first.</p>
   </div>
-</section>
+
+  <div class="callout callout-accent">
+    <h3 data-i18n="acar.t">Problems outlive prompts — get the problem right first</h3>
+    <p data-i18n="acar.d">"Prompt engineering focuses on crafting the optimal textual input... In contrast, problem formulation emphasizes defining the problem by delineating its focus, scope, and boundaries." Your three-sentence draft in this section is problem formulation — the part that doesn't expire when the model changes. P-T-C-F-I in the next section is how you turn that formulated problem into language the model can act on.</p>
+    <p class="hint"><span data-i18n="acar.cite">— O. A. Acar, Harvard Business Review (2023), via MIT Sloan: </span><a href="https://hbr.org/2023/06/ai-prompt-engineering-isnt-the-future" target="_blank" rel="noopener">AI Prompt Engineering Isn't the Future</a> · <a href="https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/" target="_blank" rel="noopener">MIT Sloan summary</a></p>
+  </div>
+
 
 <!-- ============================ 5 · PROMPT ============================ -->
 <section id="prompt" class="section">
   <h2 data-i18n="prompt.h2">5 · The art of the perfect prompt</h2>
   <p class="section-lead" data-i18n="prompt.lead">Before any tool matters, this matters. AI does not read your mind — vague in, vague out. Think of Claude as a brilliant new colleague who has never seen your programme: it needs direction, context, and a clear definition of "done".</p>
+
+  <div class="card card-why">
+    <h3 data-i18n="prompt.why.t">Why prompting is the whole game</h3>
+    <p data-i18n="prompt.why.p1">A large language model doesn't "know" your districts, your template versions, or your deadline. It predicts the most plausible next words given what you gave it. When you leave a gap — no audience, no format, no check — it fills it with a confident guess. That's where hallucinations and generic waffle come from.</p>
+    <div class="why-chain" aria-hidden="true">
+      <div class="why-step"><span class="why-dot bad"></span><span data-i18n="prompt.chain1">You omit detail</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot warn"></span><span data-i18n="prompt.chain2">Model guesses</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot bad"></span><span data-i18n="prompt.chain3">Sounds right, isn't</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot bad"></span><span data-i18n="prompt.chain4">You ship it</span><span class="why-arrow">→</span></div>
+      <div class="why-step"><span class="why-dot bad"></span><span data-i18n="prompt.chain5">Rework later</span></div>
+    </div>
+    <p class="hint" data-i18n="prompt.why.p2"><strong>Prompting is specifying just enough reality that the model doesn't need to invent.</strong> Persona tells it whose judgment to use; Task names the verb; Context gives the facts it cannot know; Format says what "done" looks like; Iterate is your safety net — the check you own, not the model.</p>
+    <div class="grid3 why-grid">
+      <div class="why-card"><strong data-i18n="prompt.why.c1t">Persona = lens</strong><p data-i18n="prompt.why.c1d">"As an NTD M&E officer" is not flattery — it steers tone, vocabulary, and what to prioritise (coverage thresholds, not generic advice).</p></div>
+      <div class="why-card"><strong data-i18n="prompt.why.c2t">Context = facts you hold</strong><p data-i18n="prompt.why.c2d">Audience, purpose, constraints, the data you actually have. The model never has these unless you give them.</p></div>
+      <div class="why-card"><strong data-i18n="prompt.why.c3t">Iterate = trust</strong><p data-i18n="prompt.why.c3d">The only reliable anti-hallucination step is yours: "flag anything over 100%; ask me before finalising." Build it into the prompt.</p></div>
+    </div>
+  </div>
 
   <div class="ptcfi-grid">
     <div class="card pt pt-P"><span class="pt-letter">P</span>
@@ -359,6 +384,53 @@
       <p class="pt-e" data-i18n="pt.I.e">"Flag coverage over 100%; ask me before finalizing."</p>
     </div>
   </div>
+  <div class="card ptypes-card">
+    <h3 data-i18n="ptypes.t">Six prompt types you'll meet (beyond P-T-C-F-I)</h3>
+    <p class="hint" data-i18n="ptypes.hint">P-T-C-F-I is how you compose. These are flavours you'll recognise on Slack, GitHub, and in the wild — most are just P-T-C-F-I done briefly. Spot which you already use.</p>
+    <div class="ptypes-wrap">
+      <table class="ptypes-table">
+        <thead>
+          <tr>
+            <th data-i18n="ptypes.h.type">Type</th>
+            <th data-i18n="ptypes.h.when">When to use</th>
+            <th data-i18n="ptypes.h.ex">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong data-i18n="ptypes.zero.t">Zero-shot</strong></td>
+            <td data-i18n="ptypes.zero.d">Simple instruction, no examples. Good for one-off summaries.</td>
+            <td><code data-i18n="ptypes.zero.ex">"Summarize this article in 5 bullets."</code></td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="ptypes.few.t">Few-shot</strong> <span class="chip chip-accent" data-i18n="ptypes.few.badge">Try this</span></td>
+            <td data-i18n="ptypes.few.d">Give 2–3 examples of the form/tone you want, then ask for the next in the same style. Your best shortcut to consistency.</td>
+            <td><code data-i18n="ptypes.few.ex">"Here are 2 example district summaries. Write a third in the same style: [District A: ...] [District B: ...]"</code></td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="ptypes.instr.t">Instructional</strong></td>
+            <td data-i18n="ptypes.instr.d">Direct verb + constraints (write / compare / keep under X words).</td>
+            <td><code data-i18n="ptypes.instr.ex">"Write an executive summary. Keep it under 100 words, formal French."</code></td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="ptypes.role.t">Role-based</strong></td>
+            <td data-i18n="ptypes.role.d">Persona on purpose — "as an M&E officer..." steers lens and vocabulary.</td>
+            <td><code data-i18n="ptypes.role.ex">"You are an MBA professor preparing a lecture outline..."</code></td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="ptypes.ctx.t">Contextual</strong></td>
+            <td data-i18n="ptypes.ctx.d">Background + audience before the ask. That is your C.</td>
+            <td><code data-i18n="ptypes.ctx.ex">"This is for community volunteers. Rephrase in simple language."</code></td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="ptypes.sys.t">System / Meta</strong></td>
+            <td data-i18n="ptypes.sys.d">Behind-the-scenes rules for tone/scope ("always cite sources, never guess"). You won't write these in Class 1 — but you'll recognise them in skills.</td>
+            <td><code data-i18n="ptypes.sys.ex">"Always respond formally and cite real sources. Never guess."</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <div class="card">
     <h3 data-i18n="worked.t">A worked example — colour-coded</h3>
@@ -378,6 +450,24 @@
     </div>
   </div>
 
+  <!-- NEW: Prompt Lab — interactive layering -->
+  <div class="card lab-card">
+    <h3 data-i18n="lab.t">Lab — watch the output sharpen as you add detail</h3>
+    <p class="hint" data-i18n="lab.hint">Start vague. Layer P-T-C-F-I one tap at a time and watch the mock output go from generic to usable. (No AI call — just the mechanics.)</p>
+    <p class="lab-prompt"><code id="lab-prompt-text">How can AI help my NTD programme?</code></p>
+    <div class="lab-chips" id="lab-chips" role="group" aria-label="Add prompt parts">
+      <button type="button" class="lab-chip" data-lab="P"><span class="b-letter bl-P">P</span> <span data-i18n="lab.chip.P">Persona</span></button>
+      <button type="button" class="lab-chip" data-lab="T"><span class="b-letter bl-T">T</span> <span data-i18n="lab.chip.T">Task</span></button>
+      <button type="button" class="lab-chip active" data-lab="C"><span class="b-letter bl-C">C</span> <span data-i18n="lab.chip.C">Context</span></button>
+      <button type="button" class="lab-chip" data-lab="F"><span class="b-letter bl-F">F</span> <span data-i18n="lab.chip.F">Format</span></button>
+      <button type="button" class="lab-chip" data-lab="I"><span class="b-letter bl-I">I</span> <span data-i18n="lab.chip.I">Iterate</span></button>
+    </div>
+    <div class="lab-preview">
+      <div class="lab-prompt-preview"><strong data-i18n="lab.preview.prompt">Your prompt now:</strong> <span id="lab-built"></span></div>
+      <div class="lab-output" id="lab-output"></div>
+    </div>
+  </div>
+
   <div class="card">
     <h3 data-i18n="ph.t">Three phrases worth memorizing</h3>
     <ul class="phrases">
@@ -387,9 +477,21 @@
     </ul>
   </div>
 
+  <!-- NEW: Prompt Autopsy — tap to dissect -->
+  <div class="card autopsy-card">
+    <h3 data-i18n="autopsy.t">Autopsy — three real prompts from the field</h3>
+    <p class="hint" data-i18n="autopsy.hint">Open a case, spot what's missing, check your eye against the coach's. No typing — just diagnosis.</p>
+    <div class="autopsy-tabs" id="autopsy-tabs" role="tablist">
+      <button type="button" class="au-tab active" data-au="1" role="tab" aria-selected="true">Case 1</button>
+      <button type="button" class="au-tab" data-au="2" role="tab">Case 2</button>
+      <button type="button" class="au-tab" data-au="3" role="tab">Case 3</button>
+    </div>
+    <div class="autopsy-pane" id="autopsy-pane"></div>
+  </div>
+
   <div class="card builder-card">
     <h3 data-i18n="pb2.t">Prompt builder — write your first structured prompt</h3>
-    <p class="hint" data-i18n="pb2.hint">Fill the five parts, watch your prompt assemble, then copy it into Claude and iterate. The defaults are just ideas — your real task beats any example.</p>
+    <p class="hint" data-i18n="pb2.hint">Fill the five parts, watch your prompt assemble, then copy it into Claude — or ask the AI coach to score it. Your real task beats any example.</p>
     <div class="builder">
       <div class="builder-form" id="builder-form">
         <label><span class="b-letter bl-P">P</span><span class="b-label" data-i18n="pt.P.t">Persona</span>
@@ -404,9 +506,38 @@
           <input type="text" id="b-I" data-i18n-ph="pb2.ph.I" placeholder="Flag coverage over 100% or under 65%; ask me before finalizing…"></label>
       </div>
       <div class="builder-out">
+        <div class="builder-meter" id="builder-meter"></div>
         <pre id="builder-out"></pre>
-        <button class="btn primary" id="builder-copy" type="button" data-i18n="pb2.copy">Copy prompt</button>
+        <div class="builder-actions">
+          <button class="btn primary" id="builder-copy" type="button" data-i18n="pb2.copy">Copy prompt</button>
+          <button class="btn" id="builder-coach" type="button" data-i18n="pb2.coach">Coach my prompt →</button>
+        </div>
+        <div class="coach-panel" id="builder-coach-panel" hidden>
+          <div class="coach-head"><strong data-i18n="coach.head">AI coach feedback</strong> <span class="coach-verdict" id="coach-verdict"></span></div>
+          <div class="coach-scores" id="coach-scores"></div>
+          <p class="coach-feedback" id="coach-feedback"></p>
+          <ul class="coach-suggestions" id="coach-suggestions"></ul>
+          <details class="coach-rewrite"><summary data-i18n="coach.rewrite.t">Suggested rewrite</summary><pre id="coach-rewrite"></pre><button class="btn small" id="coach-use" type="button" data-i18n="coach.use">Use this draft</button></details>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- NEW: Free-form prompt coach -->
+  <div class="card coach-free-card">
+    <h3 data-i18n="free.t">Try it on any prompt — paste what you'd actually send</h3>
+    <p class="hint" data-i18n="free.hint">Not using the builder? Paste a real prompt from your work (or draft one from scratch) and get the same P-T-C-F-I diagnosis. AI-backed when online; heuristic offline.</p>
+    <textarea id="free-prompt" rows="4" data-i18n-ph="free.ph" placeholder="Paste or write your prompt here — e.g. 'Summarize this district report for the review meeting…'"></textarea>
+    <div class="free-actions">
+      <button class="btn primary" id="free-coach" type="button" data-i18n="free.cta">Check this prompt</button>
+      <span class="hint" id="free-status"></span>
+    </div>
+    <div class="coach-panel" id="free-coach-panel" hidden>
+      <div class="coach-head"><strong data-i18n="coach.head">AI coach feedback</strong> <span class="coach-verdict" id="free-verdict"></span></div>
+      <div class="coach-scores" id="free-scores"></div>
+      <p class="coach-feedback" id="free-feedback"></p>
+      <ul class="coach-suggestions" id="free-suggestions"></ul>
+      <details class="coach-rewrite"><summary data-i18n="coach.rewrite.t">Suggested rewrite</summary><pre id="free-rewrite"></pre></details>
     </div>
   </div>
 
