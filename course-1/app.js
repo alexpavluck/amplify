@@ -1,4 +1,4 @@
-/* AMPLIFY 2027 · Course 1 — Foundations.
+/* AMPLIFY 2027 · Interactive learning session 1 — Foundations.
    Static page logic: EN/FR i18n, setup checklist, three skill-check quizzes,
    Claude UI hotspots, problem-statement self-check, prompt builder. No backend. */
 "use strict";
@@ -7,13 +7,13 @@
 const DICT = {
 en: {
   "brand.title": "AMPLIFY 2027",
-  "brand.tagline": "Course 1 · Foundations — Sightsavers",
+  "brand.tagline": "Interactive learning session 1 · Foundations — Sightsavers",
   "nav.setup": "Course setup", "nav.slack": "Slack", "nav.claude": "Claude",
   "nav.problem": "Your problem", "nav.prompt": "Perfect prompt", "nav.homework": "Homework",
   "nav.checks": "Skill checks",
 
   "hero.kicker": "Sightsavers · Cohort 2 · 2027",
-  "hero.title": "Course 1 — Foundations",
+  "hero.title": "Interactive learning session 1 — Foundations",
   "hero.lead": "Welcome to AMPLIFY. Over four months you will take one real problem from your own work and build a working AI-assisted solution to it — ending with a group presentation. This first class gets you set up on the tools, shows you how the course runs, and teaches the habit everything else is built on: writing prompts that get you what you actually want.",
   "hero.chip.freq": "Every 2 weeks", "hero.chip.dur": "90 minutes",
   "hero.chip.meet": "Google Meet", "hero.chip.count": "Class 1 of 8",
@@ -268,13 +268,13 @@ en: {
 
 fr: {
   "brand.title": "AMPLIFY 2027",
-  "brand.tagline": "Cours 1 · Fondamentaux — Sightsavers",
+  "brand.tagline": "Session d'apprentissage interactive 1 · Fondamentaux — Sightsavers",
   "nav.setup": "Organisation", "nav.slack": "Slack", "nav.claude": "Claude",
   "nav.problem": "Votre problème", "nav.prompt": "Prompt parfait", "nav.homework": "Devoirs",
   "nav.checks": "Tests",
 
   "hero.kicker": "Sightsavers · Cohorte 2 · 2027",
-  "hero.title": "Cours 1 — Fondamentaux",
+  "hero.title": "Session d'apprentissage interactive 1 — Fondamentaux",
   "hero.lead": "Bienvenue à AMPLIFY. Pendant quatre mois, vous prendrez un problème réel de votre travail et vous lui construirez une solution assistée par IA — jusqu'à la présentation de groupe. Ce premier cours vous installe sur les outils, vous montre comment le cours fonctionne, et vous transmet l'habitude sur laquelle tout le reste repose : écrire des prompts qui vous donnent ce que vous voulez vraiment.",
   "hero.chip.freq": "Toutes les 2 semaines", "hero.chip.dur": "90 minutes",
   "hero.chip.meet": "Google Meet", "hero.chip.count": "Cours 1 sur 8",

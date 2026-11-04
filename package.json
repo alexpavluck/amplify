@@ -1,7 +1,7 @@
 {
   "name": "amplify-course",
   "private": true,
-  "description": "amplify-course.com: static course pages plus the Course 1 Prompt Coach API (api/).",
+  "description": "amplify-course.com: static course pages plus the Prompt Coach API (api/) for interactive learning session 1.",
   "scripts": {
     "dev": "node scripts/dev-server.mjs"
   },

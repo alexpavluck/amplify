@@ -1,4 +1,4 @@
-/* POST /api/prompt — AMPLIFY Prompt Coach for Course 1.
+/* POST /api/prompt — AMPLIFY Prompt Coach for interactive learning session 1.
    GET  /api/prompt — public config ({ access_required, mock }).
    The learner submits a free-form prompt; the coach scores P-T-C-F-I,
    explains what's missing, and suggests a tighter version. */
@@ -9,7 +9,7 @@ const {
 
 const MAX_ROUNDS = 6; // per-session soft cap for this light endpoint
 
-const SYSTEM = `You are the AMPLIFY Prompt Coach for Course 1 — Foundations (Sightsavers, NTD programmes in Africa).
+const SYSTEM = `You are the AMPLIFY Prompt Coach for Interactive learning session 1 — Foundations (Sightsavers, NTD programmes in Africa).
 
 The learner has written a prompt they would send to Claude (or any LLM) to work on part of their real programme problem. Your job is to coach that prompt — not to answer it.
 
