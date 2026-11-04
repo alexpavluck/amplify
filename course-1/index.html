@@ -504,7 +504,7 @@
 
   <div class="card builder-card">
     <h3 data-i18n="pb2.t">Prompt builder — write your first structured prompt</h3>
-    <p class="hint" data-i18n="pb2.hint">Fill the five parts, watch your prompt assemble, then copy it into Claude — or ask the AI coach to score it. Your real task beats any example.</p>
+    <p class="hint" data-i18n="pb2.hint">Fill the five parts, watch your prompt assemble, then copy it into Claude and iterate. Your real task beats any example.</p>
     <div class="builder">
       <div class="builder-form" id="builder-form">
         <label><span class="b-letter bl-P">P</span><span class="b-label" data-i18n="pt.P.t">Persona</span>
@@ -523,14 +523,6 @@
         <pre id="builder-out"></pre>
         <div class="builder-actions">
           <button class="btn primary" id="builder-copy" type="button" data-i18n="pb2.copy">Copy prompt</button>
-          <button class="btn" id="builder-coach" type="button" data-i18n="pb2.coach">Coach my prompt →</button>
-        </div>
-        <div class="coach-panel" id="builder-coach-panel" hidden>
-          <div class="coach-head"><strong data-i18n="coach.head">AI coach feedback</strong> <span class="coach-verdict" id="coach-verdict"></span></div>
-          <div class="coach-scores" id="coach-scores"></div>
-          <p class="coach-feedback" id="coach-feedback"></p>
-          <ul class="coach-suggestions" id="coach-suggestions"></ul>
-          <details class="coach-rewrite"><summary data-i18n="coach.rewrite.t">Suggested rewrite</summary><pre id="coach-rewrite"></pre><button class="btn small" id="coach-use" type="button" data-i18n="coach.use">Use this draft</button></details>
         </div>
       </div>
     </div>

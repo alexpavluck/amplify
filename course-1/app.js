@@ -200,13 +200,11 @@ en: {
   "lab.output.none": "No prompt yet — add a layer above.",
   "autopsy.t": "Autopsy — three real prompts from the field",
   "autopsy.hint": "Open a case, spot what's missing, check your eye against the coach's. No typing — just diagnosis.",
-  "pb2.coach": "Coach my prompt →",
   "coach.head": "AI coach feedback",
   "coach.verdict.strong": "Strong prompt",
   "coach.verdict.decent": "Decent — one fix would sharpen it",
   "coach.verdict.needs_work": "Needs work",
   "coach.rewrite.t": "Suggested rewrite",
-  "coach.use": "Use this draft",
   "coach.loading": "Checking…",
   "coach.error": "Couldn't reach the coach — try again. Your prompt is still copied below.",
   "coach.offline": "Offline demo — heuristic feedback (no AI call).",
@@ -469,13 +467,11 @@ fr: {
   "lab.output.none": "Pas encore de prompt — ajoutez une couche ci-dessus.",
   "autopsy.t": "Autopsie — trois vrais prompts du terrain",
   "autopsy.hint": "Ouvrez un cas, repérez ce qui manque, comparez à l'œil du coach. Pas de saisie — juste du diagnostic.",
-  "pb2.coach": "Coacher mon prompt →",
   "coach.head": "Retour du coach IA",
   "coach.verdict.strong": "Prompt solide",
   "coach.verdict.decent": "Correct — un correctif l'affinerait",
   "coach.verdict.needs_work": "À retravailler",
   "coach.rewrite.t": "Réécriture suggérée",
-  "coach.use": "Utiliser ce brouillon",
   "coach.loading": "Vérification…",
   "coach.error": "Impossible de joindre le coach — réessayez. Votre prompt est toujours ci-dessous.",
   "coach.offline": "Démo hors ligne — retour heuristique (pas d'appel IA).",
@@ -1127,7 +1123,7 @@ function renderCoachPanel(panelId, data) {
   const scoresEl = pane.querySelector(".coach-scores");
   const fbEl = pane.querySelector(".coach-feedback");
   const sugEl = pane.querySelector(".coach-suggestions");
-  const rwEl = pane.querySelector("#coach-rewrite, #free-rewrite");
+  const rwEl = pane.querySelector("#free-rewrite");
   const verdictKey = "coach.verdict." + data.verdict;
   if (verdictEl) { verdictEl.textContent = t(verdictKey); verdictEl.className = "coach-verdict v-" + data.verdict; }
   if (scoresEl) {
@@ -1145,7 +1141,7 @@ async function callPromptCoach(promptText, panelBase) {
   if (_promptBusy) return;
   const p = String(promptText || "").trim();
   if (!p) { showToast(t("coach.error")); return; }
-  const btn = panelBase === "builder" ? $("#builder-coach") : $("#free-coach");
+  const btn = $("#free-coach");
   const statusEl = $("#free-status");
   _promptBusy = true;
   if (btn) { btn.disabled = true; btn.textContent = t("coach.loading"); }
@@ -1182,7 +1178,7 @@ async function callPromptCoach(promptText, panelBase) {
       if (statusEl) statusEl.textContent = "";
       if (data && data.error) throw new Error(data.error.message || "coach error");
     }
-    const panelId = panelBase === "builder" ? "builder-coach-panel" : "free-coach-panel";
+    const panelId = "free-coach-panel";
     renderCoachPanel(panelId, data);
     const rwDetails = document.querySelector("#" + panelId + " .coach-rewrite");
     if (rwDetails && data.verdict !== "strong") rwDetails.open = true;
@@ -1190,41 +1186,12 @@ async function callPromptCoach(promptText, panelBase) {
     showToast(t("coach.error"));
   } finally {
     _promptBusy = false;
-    if (btn) { btn.disabled = false; btn.textContent = panelBase === "builder" ? t("pb2.coach") : t("free.cta"); }
+    if (btn) { btn.disabled = false; btn.textContent = t("free.cta"); }
     if (statusEl && !statusEl.textContent.includes("Offline")) statusEl.textContent = "";
   }
 }
 
 function wirePromptCoach() {
-  const bBtn = $("#builder-coach");
-  if (bBtn) bBtn.addEventListener("click", async () => {
-    const txt = builderPlainText() || ["P","T","C","F","I"].map((k)=>$("#b-"+k)?.value?.trim()).filter(Boolean).join(" \n");
-    if (!txt || !txt.trim()) { showToast(t("coach.error")); return; }
-    await callPromptCoach(txt, "builder");
-  });
-  const useBtn = $("#coach-use");
-  if (useBtn) useBtn.addEventListener("click", () => {
-    const src = $("#coach-rewrite"); if (!src || !src.textContent.trim()) return;
-    // Fill builder fields naively: put whole rewrite into Task field for demo, or split if possible
-    const txt = src.textContent.trim();
-    // Try to parse blocks: Persona/Task/Context/Format/Before finalizing
-    const mP = txt.match(/Persona:\s*([^\n]+)/i);
-    const mT = txt.match(/Task:\s*([^\n]+)/i);
-    const mC = txt.match(/Context:\s*([^\n]+)/i);
-    const mF = txt.match(/Format:\s*([^\n]+)/i);
-    const mI = txt.match(/Before finalizing:\s*([^\n]+)/i);
-    if (mP) $("#b-P").value = S.builder.P = mP[1].trim();
-    if (mT) $("#b-T").value = S.builder.T = mT[1].trim();
-    if (mC) $("#b-C").value = S.builder.C = mC[1].trim();
-    if (mF) $("#b-F").value = S.builder.F = mF[1].trim();
-    if (mI) $("#b-I").value = S.builder.I = mI[1].trim();
-    if (!mP && !mT && !mC) {
-      // fallback: drop whole text into Task
-      $("#b-T").value = S.builder.T = txt.slice(0,200);
-    }
-    save(); renderBuilderOut();
-    showToast(t("toast.copy"));
-  });
   const fBtn = $("#free-coach");
   if (fBtn) fBtn.addEventListener("click", async () => {
     const txt = $("#free-prompt")?.value || "";
