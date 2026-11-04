@@ -7,12 +7,12 @@
 const DICT = {
 en: {
   "brand.title": "AMPLIFY 2027",
-  "brand.tagline": "Course 1 · Foundations — Sightsavers × ESPEN",
+  "brand.tagline": "Course 1 · Foundations — Sightsavers",
   "nav.setup": "Course setup", "nav.slack": "Slack", "nav.claude": "Claude",
   "nav.problem": "Your problem", "nav.prompt": "Perfect prompt", "nav.homework": "Homework",
   "nav.checks": "Skill checks",
 
-  "hero.kicker": "Sightsavers × ESPEN · Cohort 2 · 2027",
+  "hero.kicker": "Sightsavers · Cohort 2 · 2027",
   "hero.title": "Course 1 — Foundations",
   "hero.lead": "Welcome to AMPLIFY. Over four months you will take one real problem from your own work and build a working AI-assisted solution to it — ending with a group presentation. This first class gets you set up on the tools, shows you how the course runs, and teaches the habit everything else is built on: writing prompts that get you what you actually want.",
   "hero.chip.freq": "Every 2 weeks", "hero.chip.dur": "90 minutes",
@@ -88,13 +88,13 @@ en: {
   "red.l1": "Patient names, phone numbers, or registers that identify people",
   "red.l2": "Passwords, API keys, or credentials of any kind",
   "red.l3": "Unpublished strategy documents or confidential drafts",
-  "red.safe": "Safe: published guidelines, public ESPEN data, anonymised aggregate numbers, your own drafts.",
+  "red.safe": "Safe: published guidelines, public programme data, anonymised aggregate numbers, your own drafts.",
 
   "mock.t": "Find your way around — click the pulsing dots",
   "mock.side.search": "Search chats…", "mock.side.new": "+ New chat",
   "mock.side.chat1": "LF coverage table draft",
   "mock.side.chat2": "Week 1 homework questions",
-  "mock.side.chat3": "Summary of WHO guideline",
+  "mock.side.chat3": "Summary of programme guideline",
   "mock.side.projects": "▸ Projects",
   "mock.side.settings": "⚙ Settings (Claude Teams)",
   "mock.spot.search.t": "Search",
@@ -201,7 +201,7 @@ en: {
   "faq.q4": "Where do I find everything?",
   "faq.a4": "One place: Slack. Slides, templates, recordings, and homework feedback all live there — this page is the only exception.",
 
-  "ft.credit": "AMPLIFY 2027 · Sightsavers × ESPEN · Cohort 2",
+  "ft.credit": "AMPLIFY 2027 · Sightsavers · Cohort 2",
   "ft.note": "This page is itself a Class 1 demo: a plain HTML file, no backend. View its source, and bring your questions to class.",
   "ft.link1": "Problem Coach", "ft.link2": "Download Claude",
   "ft.link3": "Slack Help Center", "ft.link4": "Google Meet Help",
@@ -220,12 +220,12 @@ en: {
 
 fr: {
   "brand.title": "AMPLIFY 2027",
-  "brand.tagline": "Cours 1 · Fondamentaux — Sightsavers × ESPEN",
+  "brand.tagline": "Cours 1 · Fondamentaux — Sightsavers",
   "nav.setup": "Organisation", "nav.slack": "Slack", "nav.claude": "Claude",
   "nav.problem": "Votre problème", "nav.prompt": "Prompt parfait", "nav.homework": "Devoirs",
   "nav.checks": "Tests",
 
-  "hero.kicker": "Sightsavers × ESPEN · Cohorte 2 · 2027",
+  "hero.kicker": "Sightsavers · Cohorte 2 · 2027",
   "hero.title": "Cours 1 — Fondamentaux",
   "hero.lead": "Bienvenue à AMPLIFY. Pendant quatre mois, vous prendrez un problème réel de votre travail et vous lui construirez une solution assistée par IA — jusqu'à la présentation de groupe. Ce premier cours vous installe sur les outils, vous montre comment le cours fonctionne, et vous transmet l'habitude sur laquelle tout le reste repose : écrire des prompts qui vous donnent ce que vous voulez vraiment.",
   "hero.chip.freq": "Toutes les 2 semaines", "hero.chip.dur": "90 minutes",
@@ -301,14 +301,14 @@ fr: {
   "red.l1": "Noms de patients, numéros de téléphone ou registres qui identifient des personnes",
   "red.l2": "Mots de passe, clés API ou identifiants, quel qu'ils soient",
   "red.l3": "Documents stratégiques non publiés ou brouillons confidentiels",
-  "red.safe": "Autorisé : directives publiées, données publiques ESPEN, chiffres agrégés anonymisés, vos propres brouillons.",
+  "red.safe": "Autorisé : directives publiées, données publiques du programme, chiffres agrégés anonymisés, vos propres brouillons.",
 
   "mock.t": "Repérez-vous — cliquez sur les points qui pulsent",
   "mock.side.search": "Rechercher des discussions…",
   "mock.side.new": "+ Nouvelle discussion",
   "mock.side.chat1": "Brouillon du tableau de couverture LF",
   "mock.side.chat2": "Questions sur le devoir de la semaine 1",
-  "mock.side.chat3": "Résumé de la directive OMS",
+  "mock.side.chat3": "Résumé d'une directive publiée",
   "mock.side.projects": "▸ Projets",
   "mock.side.settings": "⚙ Paramètres (Claude Teams)",
   "mock.spot.search.t": "Recherche",
@@ -415,7 +415,7 @@ fr: {
   "faq.q4": "Où trouver tout ?",
   "faq.a4": "À un seul endroit : Slack. Diapositives, modèles, enregistrements et retours sur les devoirs y vivent — cette page est la seule exception.",
 
-  "ft.credit": "AMPLIFY 2027 · Sightsavers × ESPEN · Cohorte 2",
+  "ft.credit": "AMPLIFY 2027 · Sightsavers · Cohorte 2",
   "ft.note": "Cette page est elle-même une démo du cours 1 : un simple fichier HTML, sans serveur. Regardez son code source et apportez vos questions en classe.",
   "ft.link1": "Coach de problème", "ft.link2": "Télécharger Claude",
   "ft.link3": "Centre d'aide Slack", "ft.link4": "Aide Google Meet",
@@ -525,7 +525,7 @@ channel: {
 redline: {
   title: "quiz.redline.title", sub: "quiz.redline.sub",
   questions: [
-    { q: bi("Anonymised district coverage numbers, downloaded from the public ESPEN portal.", "Des chiffres de couverture par district anonymisés, téléchargés depuis le portail public ESPEN."),
+    { q: bi("Anonymised district coverage numbers, downloaded from a public programme portal.", "Des chiffres de couverture par district anonymisés, téléchargés depuis un portail public du programme."),
       opts: [SAFE_OPT, REDLINE_OPT], correct: 0,
       expl: bi("Public, aggregate, anonymised — good to go.", "Public, agrégé, anonymisé — aucun problème.") },
     { q: bi("A photo of a paper treatment register with patient names.", "La photo d'un registre de traitement papier avec des noms de patients."),
@@ -537,7 +537,7 @@ redline: {
     { q: bi("Your national programme's draft strategic plan, not yet published.", "Le projet de plan stratégique national de votre programme, pas encore publié."),
       opts: [SAFE_OPT, REDLINE_OPT], correct: 1,
       expl: bi("Unpublished, confidential material — red line.", "Contenu confidentiel non publié — ligne rouge.") },
-    { q: bi("A published WHO guideline PDF.", "Le PDF d'une directive OMS publiée."),
+    { q: bi("A published programme guideline PDF.", "Le PDF d'une directive publiée."),
       opts: [SAFE_OPT, REDLINE_OPT], correct: 0,
       expl: bi("Published, public, safe.", "Publié, public, sans risque.") },
   ],
@@ -545,7 +545,7 @@ redline: {
 missing: {
   title: "quiz.missing.title", sub: "quiz.missing.sub",
   questions: [
-    { q: bi("\"Summarize this 20-page WHO guideline in simple words for community volunteers, in three short paragraphs.\"", "« Résume cette directive OMS de 20 pages en mots simples pour des agents communautaires, en trois courts paragraphes. »"),
+    { q: bi("\"Summarize this 20-page programme guideline in simple words for community volunteers, in three short paragraphs.\"", "« Résume cette directive de 20 pages en mots simples pour des agents communautaires, en trois courts paragraphes. »"),
       opts: [bi("Persona", "Persona"), bi("Task", "Tâche"), bi("Context", "Contexte"), bi("Format", "Format"), bi("Iterate", "Itérer")], correct: 0,
       expl: bi("Task, context, and format are there — but who should the AI be? Add a persona.", "La tâche, le contexte et le format sont là — mais qui l'IA doit-elle être ? Ajoutez un persona.") },
     { q: bi("\"You are an M&E officer. Turn this year's coverage data into a one-page table.\"", "« Tu es un agent de suivi & évaluation. Transforme les données de couverture de cette année en un tableau d'une page. »"),

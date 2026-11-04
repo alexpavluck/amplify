@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ESPEN MCP Academy</title>
+<title>Programme Data Academy</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
   --sh-sm: 0 1px 2px rgb(16 45 65 / .05), 0 3px 10px -3px rgb(16 45 65 / .08);
   --sh-md: 0 2px 6px rgb(16 45 65 / .05), 0 16px 32px -16px rgb(16 45 65 / .22);
   --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
-  /* chart tokens: ESPEN brand blues with an orange complement (CVD-safe pair), sequential blue ramp for ordered categories */
+  /* chart tokens: Programme brand blues with an orange complement (CVD-safe pair), sequential blue ramp for ordered categories */
   --s1: #1A7CAF; --s2: #D86422; --dim: #AEC4D1;
   --q1: #7CC4E4; --q2: #3CABDD; --q3: #1A7CAF; --q4: #0E4A68;
   --st-good: #0ca30c; --st-warn: #fab219; --st-bad: #d03b3b; --st-none: #CBD8DF;
@@ -446,7 +446,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       <div class="brand-row">
         <div>
           <span class="eyebrow">Self-paced course</span>
-          <b>ESPEN MCP Academy</b>
+          <b>Programme Data Academy</b>
         </div>
         <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch theme">
           <svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -461,7 +461,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <nav>
       <ol>
         <li><a href="#start"><span class="n">00</span><span>Start here</span></a></li>
-        <li><a href="#what"><span class="n">01</span><span>What the ESPEN MCP is</span></a></li>
+        <li><a href="#what"><span class="n">01</span><span>What the programme data connector is</span></a></li>
         <li><a href="#setup"><span class="n">02</span><span>Get it and set it up <span class="tag">Soon</span></span></a></li>
         <li><a href="#training"><span class="n">03</span><span>Training and idea pathway</span></a></li>
         <li><a href="#practice"><span class="n">04</span><span>Practice ladder</span></a></li>
@@ -477,7 +477,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <section id="start" class="hero">
       <div class="kicker">00 · Start here</div>
       <h1>From first question to a <em>country dashboard</em>.</h1>
-      <p class="lede">This course teaches NTD programme staff, partners and analysts to use the ESPEN MCP: the connector that lets Claude read WHO AFRO ESPEN data and turn it into answers, charts, maps and dashboards. No coding needed. Work through it in order, or jump to the part you need.</p>
+      <p class="lede">This course teaches NTD programme staff, partners and analysts to use the programme data connector: the tool that lets Claude read national programme data and turn it into answers, charts, maps and dashboards. No coding needed. Work through it in order, or jump to the part you need.</p>
       <div class="ladder" role="list">
         <a role="listitem" href="#what"><span class="step">Step 1 · Learn</span><strong>Understand it</strong><span>What it is, what data it reaches, what it can't tell you.</span></a>
         <a role="listitem" href="#setup"><span class="step">Step 2 · Access</span><strong>Get set up</strong><span>Request a key, install, test the connection.</span></a>
@@ -497,16 +497,15 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <!-- ======== 01 WHAT ======== -->
     <section id="what">
       <div class="kicker">01 · Learn</div>
-      <h2>What the ESPEN MCP is</h2>
+      <h2>What the programme data connector is</h2>
       <div class="prose">
-        <p><strong>ESPEN</strong> is the WHO Regional Office for Africa's Expanded Special Project for Elimination of Neglected Tropical Diseases, launched in 2016. It supports countries to control and eliminate the five NTDs treated with preventive chemotherapy: <strong>lymphatic filariasis (LF), onchocerciasis, schistosomiasis (SCH), soil-transmitted helminths (STH) and trachoma</strong>. It also holds loiasis and WASH data.</p>
-        <p>Much of ESPEN's value is its data. It assembles what countries report through the joint reporting forms into one consistent picture, down to each implementation unit (IU, usually a district): where each disease is endemic, where mass drug administration (MDA) happened, how well it went, and what comes next.</p>
-        <p>The <strong>MCP</strong> (Model Context Protocol) connector plugs that data straight into Claude. You ask a question in plain language; Claude picks the right ESPEN tables, pulls only the columns it needs, and analyses, charts or maps the result. It can also combine ESPEN data with your own spreadsheets and documents.</p>
+        <p>The national programme holds data for the five NTDs managed through preventive chemotherapy: <strong>lymphatic filariasis (LF), onchocerciasis, schistosomiasis (SCH), soil-transmitted helminths (STH) and trachoma</strong>, plus loiasis and WASH indicators. That data is reported through joint reporting forms and assembled into a consistent picture down to each implementation unit (IU, usually a district): where each disease is endemic, where mass drug administration (MDA) happened, how well it went, and what comes next.</p>
+        <p>The <strong>data connector</strong> plugs that programme data straight into Claude. You ask a question in plain language; Claude picks the right tables, pulls only the columns it needs, and analyses, charts or maps the result. It can also combine programme data with your own spreadsheets and documents.</p>
       </div>
 
-      <div class="flow" aria-label="How a question flows through the ESPEN MCP">
+      <div class="flow" aria-label="How a question flows through the data connector">
         <svg viewBox="0 0 860 150" role="img" aria-labelledby="flowT">
-          <title id="flowT">You ask Claude a question. Claude calls the ESPEN MCP, which reads ESPEN data. Claude returns an answer, chart, map or dashboard.</title>
+          <title id="flowT">You ask Claude a question. Claude calls the data connector, which reads programme data. Claude returns an answer, chart, map or dashboard.</title>
           <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0,0 L10,5 L0,10 z"/></marker></defs>
           <rect class="box" x="4" y="30" width="150" height="90" rx="10"/>
           <text class="t" x="20" y="64">You</text>
@@ -517,11 +516,11 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
           <text class="s" x="230" y="86">Plans the query,</text>
           <text class="s" x="230" y="103">checks, analyses</text>
           <rect class="box hl" x="444" y="30" width="170" height="90" rx="10"/>
-          <text class="t" x="460" y="64">ESPEN MCP</text>
+          <text class="t" x="460" y="64">Data Connector</text>
           <text class="s" x="460" y="86">Five read-only</text>
           <text class="s" x="460" y="103">tools</text>
           <rect class="box" x="674" y="30" width="180" height="90" rx="10"/>
-          <text class="t" x="690" y="64">ESPEN data</text>
+          <text class="t" x="690" y="64">Programme data</text>
           <text class="s" x="690" y="86">Country, IU, forecasts,</text>
           <text class="s" x="690" y="103">medicines, reporting</text>
           <path class="arrow" d="M156,62 L210,62" marker-end="url(#ah)"/>
@@ -534,11 +533,11 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
         </svg>
       </div>
 
-      <h3>Three ways to reach ESPEN data</h3>
+      <h3>Three ways to reach programme data</h3>
       <p class="prose" style="color:var(--muted)">The connector doesn't replace the Portal or the Dimagi Open Chat Studio. Each suits a different job.</p>
       <div class="tbl">
         <table>
-          <thead><tr><th></th><th>ESPEN Portal</th><th>Dimagi Open Chat Studio</th><th>ESPEN MCP (this course)</th></tr></thead>
+          <thead><tr><th></th><th>Data Portal</th><th>Dimagi Open Chat Studio</th><th>Data Connector (this course)</th></tr></thead>
           <tbody>
             <tr><td>Best for</td><td>Downloading CSVs and shapefiles by hand</td><td>Finding Portal materials and quick summaries</td><td>Analysis, combining sources, building maps, briefs and dashboards</td></tr>
             <tr><td>Suits</td><td>People with an Excel or GIS workflow</td><td>Quick lookups</td><td>People who want Claude to do the work end to end</td></tr>
@@ -589,20 +588,20 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <section id="setup">
       <div class="kicker">02 · Access <span class="soon">Coming soon</span></div>
       <h2>Get it and set it up</h2>
-      <p class="lede">Public access to the ESPEN MCP is being prepared. The steps below show what setup will look like so you can get ready. Exact links, request forms and dates will be added here when they're confirmed.</p>
+      <p class="lede">Public access to the programme data connector is being prepared. The steps below show what setup will look like so you can get ready. Exact links, request forms and dates will be added here when they're confirmed.</p>
       <div class="panel">
         <ol class="steps">
           <li><div><h4>Get a Claude account</h4><p>You'll use Claude in the desktop app or on the web. Check with your organisation which plan you should use.</p></div><span class="status ready">Available now</span></li>
-          <li><div><h4>Request an ESPEN API key</h4><p>Each user needs a personal key from the ESPEN team. Some datasets (site-level and district medicine data) need an extra access role; say if your work needs them.</p></div><span class="status tbc">Form coming soon</span></li>
-          <li><div><h4>Install the ESPEN plugin</h4><p>The plugin adds the connector plus two guided skills: <em>getting started</em> and <em>guided data analysis</em>. You'll enter your key as <code>ESPEN_API_KEY</code> during install.</p></div><span class="status tbc">Coming soon</span></li>
-          <li><div><h4>Turn the connector on</h4><p>In a chat, check the connector toggle in the chat's settings so Claude can use the ESPEN tools.</p></div><span class="status tbc">Coming soon</span></li>
-          <li><div><h4>Test the connection</h4><p>Ask: <em>"What ESPEN data can you see?"</em> Claude should list diseases, levels and datasets. This is Activity 1 on the practice ladder.</p></div><span class="status tbc">Coming soon</span></li>
+          <li><div><h4>Request a programme API key</h4><p>Each user needs a personal key from the programme data team. Some datasets (site-level and district medicine data) need an extra access role; say if your work needs them.</p></div><span class="status tbc">Form coming soon</span></li>
+          <li><div><h4>Install the Connector plugin</h4><p>The plugin adds the connector plus two guided skills: <em>getting started</em> and <em>guided data analysis</em>. You'll enter your key as <code>PROGRAMME_API_KEY</code> during install.</p></div><span class="status tbc">Coming soon</span></li>
+          <li><div><h4>Turn the connector on</h4><p>In a chat, check the connector toggle in the chat's settings so Claude can use the programme data tools.</p></div><span class="status tbc">Coming soon</span></li>
+          <li><div><h4>Test the connection</h4><p>Ask: <em>"What programme data can you see?"</em> Claude should list diseases, levels and datasets. This is Activity 1 on the practice ladder.</p></div><span class="status tbc">Coming soon</span></li>
         </ol>
       </div>
       <div class="grid3">
-        <div class="panel"><h4>Connection or sign-in error</h4><p style="font-size:15px;color:var(--muted)">Check the key was entered at install and hasn't expired. No key yet? Request one from the ESPEN team.</p></div>
-        <div class="panel"><h4>ESPEN tools don't appear</h4><p style="font-size:15px;color:var(--muted)">The plugin is installed but the connector is off for this chat. Turn it on in the chat's settings.</p></div>
-        <div class="panel"><h4>"403" on one dataset</h4><p style="font-size:15px;color:var(--muted)">That table needs an access role you don't have. It's an access question for the ESPEN team, not missing data.</p></div>
+        <div class="panel"><h4>Connection or sign-in error</h4><p style="font-size:15px;color:var(--muted)">Check the key was entered at install and hasn't expired. No key yet? Request one from the programme data team.</p></div>
+        <div class="panel"><h4>Programme tools don't appear</h4><p style="font-size:15px;color:var(--muted)">The plugin is installed but the connector is off for this chat. Turn it on in the chat's settings.</p></div>
+        <div class="panel"><h4>"403" on one dataset</h4><p style="font-size:15px;color:var(--muted)">That table needs an access role you don't have. It's an access question for the programme data team, not missing data.</p></div>
       </div>
       <div class="note"><b>While you wait</b><p>Read Module 01, take the quiz, and fill in an idea canvas in Module 03. You'll arrive at your first session with a real question ready to build.</p></div>
     </section>
@@ -627,7 +626,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       <div class="sessions">
         <div><span class="when">Session 1</span><div><h4>Orientation and first query</h4><p>What the connector is, setup together, and everyone's first real answer for their own country.</p></div><span class="len">60 min</span></div>
         <div><span class="when">Session 2</span><div><h4>Asking good questions</h4><p>Turning a programme need into a clear request. Plan first, name the years, name the audience.</p></div><span class="len">90 min</span></div>
-        <div><span class="when">Session 3</span><div><h4>Reading ESPEN data correctly</h4><p>Recency gaps, ambiguous zeros, endemicity labels, SCH and STH age groups, country spelling traps.</p></div><span class="len">90 min</span></div>
+        <div><span class="when">Session 3</span><div><h4>Reading programme data correctly</h4><p>Recency gaps, ambiguous zeros, endemicity labels, SCH and STH age groups, country spelling traps.</p></div><span class="len">90 min</span></div>
         <div><span class="when">Session 4</span><div><h4>Building outputs lab</h4><p>Hands-on: trend chart, district map, one-page brief. Bring your idea canvas.</p></div><span class="len">2 hours</span></div>
         <div><span class="when">Session 5</span><div><h4>Capstone clinic and showcase</h4><p>Work on your country dashboard with coaches, then demo it to the cohort for feedback.</p></div><span class="len">2 hours</span></div>
         <div><span class="when">Ongoing</span><div><h4>Office hours and peer review</h4><p>Drop-in help, and a reviewer for any tool before it's shared outside your team.</p></div><span class="len">Weekly</span></div>
@@ -640,7 +639,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
           <ul class="rules">
             <li>Ask Claude to show its plan (tables and columns) before it pulls data.</li>
             <li>Check the latest year is complete before saying anything about "now".</li>
-            <li>Cite the ESPEN table and year beside every number you share.</li>
+            <li>Cite the programme table and year beside every number you share.</li>
             <li>Cross-check district counts against the country summary table.</li>
             <li>Use the year's own district boundaries when mapping.</li>
           </ul>
@@ -695,7 +694,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <section id="practice">
       <div class="kicker">04 · Practise</div>
       <h2>The practice ladder</h2>
-      <p class="lede">Eight activities, each building on the last. Copy the prompt, swap in your country, run it in Claude with the ESPEN connector on, and check your result against "What good looks like". Tick each one off when you're done; your progress is saved in this browser.</p>
+      <p class="lede">Eight activities, each building on the last. Copy the prompt, swap in your country, run it in Claude with the programme data connector on, and check your result against "What good looks like". Tick each one off when you're done; your progress is saved in this browser.</p>
       <div class="acts" id="acts"></div>
     </section>
 
@@ -703,7 +702,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <section id="charts">
       <div class="kicker">05 · Visualise</div>
       <h2>Choose the right chart</h2>
-      <p class="lede">The right chart depends on the question, not on the data you happen to have. Answer two or three questions below and the chooser recommends a chart, shows an example, and writes the prompt to build it with the ESPEN connector.</p>
+      <p class="lede">The right chart depends on the question, not on the data you happen to have. Answer two or three questions below and the chooser recommends a chart, shows an example, and writes the prompt to build it with the programme data connector.</p>
 
       <div class="panel chooser" id="chooser">
         <div class="qbar">
@@ -724,9 +723,9 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
           </div>
           <div class="alts" id="ch-alts"></div>
 
-          <h3 style="margin-top:6px">Build it with the ESPEN MCP</h3>
+          <h3 style="margin-top:6px">Build it with the data connector</h3>
           <ol class="howto">
-            <li>Open a new chat in Claude with the ESPEN connector turned on.</li>
+            <li>Open a new chat in Claude with the programme data connector turned on.</li>
             <li>Set your country and disease below, then copy the prompt and paste it in.</li>
             <li>Check Claude's plan (tables and columns) before it pulls data, then compare the chart with the checklist above.</li>
           </ol>
@@ -750,7 +749,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       <h3>Quick reference</h3>
       <div class="tbl">
         <table class="cheat">
-          <thead><tr><th>If your question is…</th><th>Use</th><th>ESPEN example</th><th>Not</th></tr></thead>
+          <thead><tr><th>If your question is…</th><th>Use</th><th>Programme example</th><th>Not</th></tr></thead>
           <tbody>
             <tr><td>How has it changed over time?</td><td>Line chart</td><td>LF coverage 2014 to latest year</td><td>Bars for 10+ years; a second y-axis</td></tr>
             <tr><td>Which is biggest or smallest?</td><td>Ranked bar</td><td>Districts by oncho coverage</td><td>Pie chart; unsorted bars</td></tr>
@@ -769,10 +768,10 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
       <div class="grid2">
         <div class="panel">
-          <h4>Chart rules for ESPEN data</h4>
+          <h4>Chart rules for programme data</h4>
           <ul class="rules">
             <li>One y-axis per chart. Put coverage (%) and people treated (counts) on separate charts.</li>
-            <li>Start percentage axes at 0 and draw the WHO threshold as a reference line.</li>
+            <li>Start percentage axes at 0 and draw the programme coverage threshold as a reference line.</li>
             <li>Dash or flag the latest year if it looks incompletely reported.</li>
             <li>Use shades of one colour for ordered categories like endemicity; a different colour only when categories are unrelated.</li>
             <li>Label lines directly and always give a legend; never rely on colour alone.</li>
@@ -782,7 +781,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
         <div class="panel">
           <h4>Not sure? Ask Claude to choose</h4>
           <p style="font-size:15px;color:var(--muted)">Describe the question and audience and let Claude propose the chart before it builds anything.</p>
-          <div class="prompt" id="ch-ask">Using the ESPEN connector, I want to show [YOUR QUESTION] for [COUNTRY] to [AUDIENCE]. Before pulling any data, recommend the best chart type and explain why, name one alternative you rejected and why, and list the ESPEN tables and columns you'd use. Wait for my go-ahead before building it.</div>
+          <div class="prompt" id="ch-ask">Using the programme data connector, I want to show [YOUR QUESTION] for [COUNTRY] to [AUDIENCE]. Before pulling any data, recommend the best chart type and explain why, name one alternative you rejected and why, and list the programme tables and columns you'd use. Wait for my go-ahead before building it.</div>
         </div>
       </div>
       <label class="mark" style="justify-self:start"><input type="checkbox" id="done-charts" data-track> I've picked a chart for each panel of my capstone</label>
@@ -797,7 +796,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       </div>
 
       <h3>Required panels</h3>
-      <p class="prose" style="color:var(--muted)">A layout to aim for. Each panel lists the ESPEN source to pull from. Boxes are placeholders; your dashboard fills them with your country's data. Not sure which chart suits a panel? Run it through the <a href="#charts">chart chooser</a>.</p>
+      <p class="prose" style="color:var(--muted)">A layout to aim for. Each panel lists the programme data source to pull from. Boxes are placeholders; your dashboard fills them with your country's data. Not sure which chart suits a panel? Run it through the <a href="#charts">chart chooser</a>.</p>
       <div class="wire" aria-label="Dashboard wireframe">
         <div class="w-head"><div><span class="lbl">Header</span><b>Country name · data snapshot date · latest complete year</b></div><p>Includes a one-line recency caveat</p></div>
         <div class="w-kpi">
@@ -830,7 +829,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       </div>
 
       <h3>Starter prompt</h3>
-      <div class="prompt" id="capPrompt">I want to build an interactive NTD country dashboard for [COUNTRY] using the ESPEN connector. Audience: the national NTD programme team.
+      <div class="prompt" id="capPrompt">I want to build an interactive NTD country dashboard for [COUNTRY] using the programme data connector. Audience: the national NTD programme team.
 
 Include: (1) endemicity status for LF, oncho, SCH, STH, trachoma and loiasis; (2) how district endemicity has changed year by year for each disease; (3) MDA coverage, people treated and effective rounds over time; (4) elimination forecasts; (5) JAP, JRF, JRSM and EPIRF submissions by year; (6) medicine shipments; (7) a filterable district table; (8) three key takeaways, caveats and sources.
 
@@ -865,21 +864,21 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
         <dt>IU</dt><dd>Implementation unit. The level at which MDA is planned and reported, usually a district.</dd>
         <dt>MDA</dt><dd>Mass drug administration: treating a whole eligible population, whether or not each person is infected.</dd>
         <dt>Epi coverage</dt><dd>Epidemiological coverage: people treated as a share of the total population of the IU.</dd>
-        <dt>Effective round</dt><dd>An MDA round that met WHO's threshold: 65% epidemiological coverage for LF and oncho, 75% of school-age children for SCH and STH.</dd>
+        <dt>Effective round</dt><dd>An MDA round that met the programme coverage threshold: 65% epidemiological coverage for LF and oncho, 75% of school-age children for SCH and STH.</dd>
         <dt>TAS</dt><dd>Transmission assessment survey. Passing it lets an LF district stop MDA and move to surveillance.</dd>
         <dt>IA</dt><dd>Impact assessment. "Endemic (pending IA)" means MDA has stopped and the district awaits a survey.</dd>
-        <dt>JAP</dt><dd>Joint Application Package: a country's annual submission to WHO, bundling the forms below.</dd>
+        <dt>JAP</dt><dd>Joint Application Package: a country's annual submission, bundling the forms below.</dd>
         <dt>JRSM</dt><dd>Joint Request for Selected PC Medicines: how a country requests donated medicines.</dd>
         <dt>JRF</dt><dd>Joint Reporting Form: treatment and coverage results. Lags the cycle year by about two years.</dd>
         <dt>EPIRF</dt><dd>Epidemiological Reporting Form: survey results such as prevalence and TAS outcomes.</dd>
         <dt>AWP / TEMF</dt><dd>Annual work plan, and the treatment and medicine forecasting component of the JAP.</dd>
-        <dt>ISO2</dt><dd>Two-letter country code (for example GH for Ghana). Most ESPEN tools prefer it to the country name.</dd>
+        <dt>ISO2</dt><dd>Two-letter country code (for example GH for Ghana). Most programme tools prefer it to the country name.</dd>
       </dl>
     </section>
 
     <footer>
-      <p>ESPEN MCP Academy · course draft, October 2026. Setup steps and training dates are placeholders until confirmed.</p>
-      <p>ESPEN data comes from country reports compiled by WHO AFRO. Always cite the ESPEN table and year when sharing figures.</p>
+      <p>Programme Data Academy · course draft, October 2026. Setup steps and training dates are placeholders until confirmed.</p>
+      <p>Programme data comes from country reports. Always cite the programme table and year when sharing figures.</p>
     </footer>
   </main>
 </div>
@@ -888,8 +887,8 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
 <script>
 (function () {
   var store = {
-    get: function (k) { try { return JSON.parse(localStorage.getItem('espen-academy:' + k)); } catch (e) { return null; } },
-    set: function (k, v) { try { localStorage.setItem('espen-academy:' + k, JSON.stringify(v)); } catch (e) {} }
+    get: function (k) { try { return JSON.parse(localStorage.getItem('programme-academy:' + k)); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem('programme-academy:' + k, JSON.stringify(v)); } catch (e) {} }
   };
   var toastEl = document.getElementById('toast'), toastT;
   function toast(msg) { toastEl.textContent = msg; toastEl.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('on'); }, 1600); }
@@ -936,7 +935,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       e: 'list_countries only covers 2013–2018. Use it to look up ISO2 codes, not for current status.' },
     { q: 'A query for site-level data returns a 403. What does that mean?',
       o: ['There is no site-level data for that country', 'Your key lacks the access role for that table', 'You misspelled the country'], a: 1,
-      e: 'A 403 is an access-level question for the ESPEN team, not missing data.' }
+      e: 'A 403 is an access-level question for the programme data team, not missing data.' }
   ];
   var qRoot = document.getElementById('quiz');
   quiz.forEach(function (item, i) {
@@ -963,20 +962,20 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
   /* ---------- activities ---------- */
   var acts = [
     { t: 'First contact', s: 'Prove the connector works and see what it can reach.', k: 'Connection',
-      g: 'Get Claude to list the data the ESPEN connector can reach, translated into programme language.',
-      p: 'What ESPEN data can you see? Summarise it for an NTD programme manager: which diseases, which levels (country, district, site), and which other datasets like forecasts, medicines and reporting forms. Don\'t list every endpoint.',
+      g: 'Get Claude to list the data the programme connector can reach, translated into programme language.',
+      p: 'What programme data can you see? Summarise it for an NTD programme manager: which diseases, which levels (country, district, site), and which other datasets like forecasts, medicines and reporting forms. Don\'t list every endpoint.',
       good: ['Names all five PC-NTDs plus loiasis', 'Mentions country, IU, sub-IU and site levels', 'Mentions forecasts, medicines and JAP reporting', 'Flags which data needs extra access'],
       watch: ['An error here is a setup problem. See Module 02 before going further.'],
       x: 'Ask which datasets are only reachable by table name.' },
     { t: 'Find your country', s: 'Resolve names to codes and read endemicity labels.', k: 'Lookup',
       g: 'Find your country\'s ISO2 code and its endemicity status for each PC-NTD, and learn why that status is out of date.',
-      p: 'Look up [COUNTRY] in ESPEN. Give me its ISO2 code and the endemicity and programme status for each PC-NTD. Tell me which years that status covers.',
+      p: 'Look up [COUNTRY] in the programme dataset. Give me its ISO2 code and the endemicity and programme status for each PC-NTD. Tell me which years that status covers.',
       good: ['Gives the ISO2 code', 'Lists status for each disease', 'Says list_countries covers 2013–2018 only'],
       watch: ['Some countries (for example Nigeria) aren\'t in list_countries but do have full data in the disease tables.', 'Try a variant spelling: "Ivory Coast", "DRC", "Cameroun".'],
       x: 'Ask for the same status from the country summary table for the latest year, and compare.' },
     { t: 'One number, cited', s: 'Get a single figure with its source.', k: 'Citing',
       g: 'Get one trustworthy number with the table and year it came from.',
-      p: 'How many people were treated for lymphatic filariasis in [COUNTRY] in the latest complete year? Tell me which ESPEN table and year the number comes from, and how you decided that year is complete.',
+      p: 'How many people were treated for lymphatic filariasis in [COUNTRY] in the latest complete year? Tell me which programme table and year the number comes from, and how you decided that year is complete.',
       good: ['A single number with the table name and year', 'An explanation of why that year was chosen', 'Plain language, no API jargon'],
       watch: ['If the latest year shows 0 or a sharp drop, Claude should step back a year and say why.'],
       x: 'Ask for the same figure for oncho, and compare population requiring vs treated.' },
@@ -985,7 +984,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       p: 'Show me a chart of LF epidemiological coverage and people treated in [COUNTRY] over the last 10 years, using country-level data. Put coverage and counts on separate charts. Mark any year that looks incompletely reported.',
       good: ['Two charts, not one dual-axis chart', 'Incomplete years visibly marked', 'A sentence on what the trend shows', 'Source line with table and years'],
       watch: ['Coverage columns are named differently by level: Cov at IU level, Coverage at country level.'],
-      x: 'Add the WHO 65% effective-coverage threshold as a reference line.' },
+      x: 'Add the programme 65% effective-coverage threshold as a reference line.' },
     { t: 'Districts below threshold', s: 'Drop to IU level and filter.', k: 'Filtering',
       g: 'Find districts (IUs) whose last MDA round missed the effective-coverage threshold, and interpret zeros carefully.',
       p: 'Which districts in [COUNTRY] had LF epidemiological coverage below 65% in the latest complete year? Show district, region, coverage and endemicity. Before pulling data, tell me which table and columns you\'ll use. For any district at 0%, explain the possible reasons.',
@@ -1000,13 +999,13 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       x: 'Turn the table into a colour-coded grid. You\'ll reuse it in the capstone.' },
     { t: 'Look ahead', s: 'Forecasts and co-endemic districts.', k: 'Forecasting',
       g: 'Read elimination forecasts and find where diseases overlap.',
-      p: 'What do ESPEN forecasts say about when [COUNTRY] reaches elimination targets for LF and oncho? Then list districts that are co-endemic for LF, oncho and SCH. Present the overlap as a starting point for discussion, not a recommendation.',
+      p: 'What do the programme forecasts say about when [COUNTRY] reaches elimination targets for LF and oncho? Then list districts that are co-endemic for LF, oncho and SCH. Present the overlap as a starting point for discussion, not a recommendation.',
       good: ['Forecast years per disease with their source table', 'Co-endemic districts listed', 'No programme recommendations stated as fact'],
       watch: ['Start with the country forecast table; only drop to district forecasts if needed.'],
       x: 'Ask how medicine shipments in recent years compare with the forecast\'s needs.' },
     { t: 'Make a map', s: 'District endemicity on real boundaries.', k: 'Mapping',
       g: 'Create a district map coloured by endemicity, using boundaries from the same year as the data.',
-      p: 'Make a map of [COUNTRY]\'s districts coloured by oncho endemicity for the latest complete year. Use ESPEN boundaries from the same year as the data. Hovering a district should show its name, region, endemicity, epidemiological coverage and cumulative rounds. Report how many districts matched.',
+      p: 'Make a map of [COUNTRY]\'s districts coloured by oncho endemicity for the latest complete year. Use district boundaries from the same year as the data. Hovering a district should show its name, region, endemicity, epidemiological coverage and cumulative rounds. Report how many districts matched.',
       good: ['Boundaries and data from the same year', 'Match rate reported', 'Clear legend with plain-language labels', 'Hover details work'],
       watch: ['"Endemic (under post-intervention surveillance)" should be shown as "Post-intervention surveillance (formerly endemic)".'],
       x: 'Make a second map showing effective rounds completed. You\'re ready for the capstone.' }
@@ -1047,12 +1046,12 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
   var form = document.getElementById('canvas'), out = document.getElementById('cv-out');
   function v(id) { return document.getElementById(id).value.trim(); }
   function writePrompt() {
-    out.textContent = 'Using the ESPEN connector, build ' + v('cv-output') + ' for ' + (v('cv-country') || '[COUNTRY]') + '.\n\n' +
+    out.textContent = 'Using the programme data connector, build ' + v('cv-output') + ' for ' + (v('cv-country') || '[COUNTRY]') + '.\n\n' +
       'Audience: ' + v('cv-audience') + '.\n' +
       'The question: ' + (v('cv-need') || '[your question]') + '\n' +
       'It should help them: ' + (v('cv-decision') || '[the decision]') + '.\n' +
       'Years: ' + (v('cv-years') || 'the latest complete year') + '.\n\n' +
-      'Before pulling any data, show me your plan: which ESPEN tables and columns you\'ll use. Check the latest year is complete, explain any zeros, and cite the table and year for every figure.';
+      'Before pulling any data, show me your plan: which programme tables and columns you\'ll use. Check the latest year is complete, explain any zeros, and cite the table and year for every figure.';
     addCopy(out);
   }
   form.addEventListener('submit', function (e) { e.preventDefault(); writePrompt(); toast('Prompt updated'); });
@@ -1065,7 +1064,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
     ['Complete', 'All eight panels are present and populated for every relevant disease.'],
     ['Accurate', 'District counts match the country summary, or differences are explained.'],
     ['Honest about the data', 'Incomplete years are marked; zeros are interpreted, not assumed.'],
-    ['Traceable', 'Every panel names its ESPEN table and years; snapshot date shown.'],
+    ['Traceable', 'Every panel names its programme table and years; snapshot date shown.'],
     ['Readable', 'The programme team gets the picture in two minutes, on a laptop or a phone.'],
     ['Tells the story', 'Three clear takeaways a programme manager could act on or question.']
   ];
@@ -1117,7 +1116,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
   function barPath(x, y, w, h, r) { r = Math.min(r, w, h / 2); return 'M' + x + ',' + y + 'H' + r1(x + w - r) + 'Q' + r1(x + w) + ',' + y + ' ' + r1(x + w) + ',' + (y + r) + 'V' + (y + h - r) + 'Q' + r1(x + w) + ',' + (y + h) + ' ' + r1(x + w - r) + ',' + (y + h) + 'H' + x + 'Z'; }
   function range(a, b) { var o = []; for (var i = a; i <= b; i++) o.push(i); return o; }
 
-  // Sample data. Invented for the examples; never real ESPEN figures.
+  // Sample data. Invented for the examples; never real programme figures.
   var YRS = range(2014, 2024);
   var LF = [48, 55, 61, 64, 69, 67, 41, 62, 70, 73, 36], ON = [72, 74, 71, 76, 78, 75, 52, 70, 77, 79, 40];
   var LF_T = [3.1, 3.4, 3.8, 3.9, 4.3, 4.1, 2.6, 3.8, 4.2, 4.4, 2.1].map(function (v) { return v * 1e6; });
@@ -1283,7 +1282,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
     fc: ['query_disease_data', 'Forecast table for the disease'],
     japs: ['list_japs', 'JAP submissions and the status of each component']
   };
-  var CHECK = 'Before pulling any data, show me your plan: which ESPEN tables and columns you\'ll use.';
+  var CHECK = 'Before pulling any data, show me your plan: which programme tables and columns you\'ll use.';
   function manyNote(a) { return a.items === 'many' ? ' There are many districts, so show the 15 that matter most in the chart and put every district in a sortable table below it.' : ''; }
 
   var RECS = {
@@ -1295,17 +1294,17 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
         var ser = [{ name: 'LF', v: cnt ? LF_T : LF, cls: 'st1', fill: 'f1', dashFrom: 10 }];
         if (few) ser.push({ name: 'Oncho', v: cnt ? ON_T : ON, cls: 'st2', fill: 'f2', dashFrom: 10 });
         var chart = lineChart(cnt ? { x: YRS, series: ser, max: 5e6, ticks: [0, 2.5e6, 5e6], fmt: big, label: 'Line chart of people treated over time' }
-          : { x: YRS, series: ser, max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'WHO 65% threshold' }, label: 'Line chart of coverage over time' });
+          : { x: YRS, series: ser, max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'programme 65% threshold' }, label: 'Line chart of coverage over time' });
         return fig((cnt ? 'People treated' : 'Epidemiological coverage') + (few ? ', LF and onchocerciasis' : ', LF'), 'Country level, 2014–2024',
           chart + legend((few ? [['ln b1', 'LF'], ['ln b2', 'Onchocerciasis']] : []).concat([['dash', 'Dashed: 2024 likely incomplete']])));
       },
-      dos: ['Up to four lines; label each one at its end', 'Dash the latest year if it looks incompletely reported', 'Draw the WHO threshold as a dashed reference line', 'Hover shows the exact value and year'],
+      dos: ['Up to four lines; label each one at its end', 'Dash the latest year if it looks incompletely reported', 'Draw the programme coverage threshold as a dashed reference line', 'Hover shows the exact value and year'],
       donts: ['Bars for ten or more years (they hide the trend)', 'A second y-axis for a different measure', 'Joining a gap year as if it were reported'],
       src: ['country'],
       prompt: function (a) {
         var meas = a.unit === 'count' ? 'people treated for {D}' : '{D} epidemiological coverage (%)';
-        return 'Using the ESPEN connector, make a line chart of ' + meas + ' in {C} from 2014 to the latest year available, using the country-level table for {D}. Years on the x-axis and a single y-axis starting at 0.' +
-          (a.unit === 'count' ? '' : ' Add a dashed reference line at the WHO effective-coverage threshold for {D}.') +
+        return 'Using the programme data connector, make a line chart of ' + meas + ' in {C} from 2014 to the latest year available, using the country-level table for {D}. Years on the x-axis and a single y-axis starting at 0.' +
+          (a.unit === 'count' ? '' : ' Add a dashed reference line at the programme effective-coverage threshold for {D}.') +
           (a.n === 'few' ? ' Add the other diseases or regions I need to compare, up to four lines in total, each labelled directly at its end, plus a legend.' : '') +
           ' If the latest year looks incompletely reported, draw it as a dashed segment and say why. Add hover tooltips and a source line naming the table and years. ' + CHECK;
       },
@@ -1316,14 +1315,14 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       why: 'Coverage (%) and people treated (counts) have different scales. Two charts that share the same years let readers compare them without a misleading second axis.',
       draw: function () {
         return fig('LF coverage and people treated', 'Country level, 2014–2024 · same years, separate axes',
-          '<div class="fig-pair">' + lineChart({ x: YRS, h: 170, series: [{ name: 'Coverage', v: LF, cls: 'st1', fill: 'f1', dashFrom: 10 }], max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'WHO 65% threshold' }, r: 76, label: 'Coverage over time' }) +
+          '<div class="fig-pair">' + lineChart({ x: YRS, h: 170, series: [{ name: 'Coverage', v: LF, cls: 'st1', fill: 'f1', dashFrom: 10 }], max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'programme 65% threshold' }, r: 76, label: 'Coverage over time' }) +
           lineChart({ x: YRS, h: 170, series: [{ name: 'Treated', v: LF_T, cls: 'st1', fill: 'f1', dashFrom: 10 }], max: 5e6, ticks: [0, 2.5e6, 5e6], fmt: big, r: 76, label: 'People treated over time' }) + '</div>',
           'Dashed: 2024 likely incomplete');
       },
       dos: ['Stack the charts so the years line up', 'Same colour for the same disease in both', 'Flag incomplete years on both charts'],
       donts: ['One chart with two y-axes (it invents correlations)', 'Squeezing counts onto a 0–100 scale'],
       src: ['country'],
-      prompt: 'Using the ESPEN connector, make two line charts for {D} in {C}, stacked one above the other with the same years (2014 to the latest year available) on the x-axis: (1) epidemiological coverage in %, with a dashed line at the WHO effective-coverage threshold; (2) people treated, as counts. Do not use a second y-axis. Use the country-level table for {D}. Mark any year that looks incompletely reported on both charts. Add hover tooltips and a source line naming the table and years. ' + CHECK,
+      prompt: 'Using the programme data connector, make two line charts for {D} in {C}, stacked one above the other with the same years (2014 to the latest year available) on the x-axis: (1) epidemiological coverage in %, with a dashed line at the programme effective-coverage threshold; (2) people treated, as counts. Do not use a second y-axis. Use the country-level table for {D}. Mark any year that looks incompletely reported on both charts. Add hover tooltips and a source line naming the table and years. ' + CHECK,
       alts: ['line', 'stat']
     },
     smallmult: {
@@ -1340,7 +1339,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Same y-axis on every panel', 'Order panels meaningfully (by region or by latest value)', 'Calculate regional coverage from totals, not by averaging district %'],
       donts: ['Different scales per panel', 'Eight colours on one chart'],
       src: ['iu'],
-      prompt: 'Using the ESPEN connector, make small multiples of {D} epidemiological coverage in {C}: one small line chart per region, from 2016 to the latest year available, all on the same 0–100% y-axis and arranged in a grid. Build regional figures from the district (IU) table as people treated divided by total population, not an average of district percentages, and tell me how you did it. Add the WHO threshold as a faint reference line in each panel and flag incomplete years. Add hover tooltips and a source line. ' + CHECK,
+      prompt: 'Using the programme data connector, make small multiples of {D} epidemiological coverage in {C}: one small line chart per region, from 2016 to the latest year available, all on the same 0–100% y-axis and arranged in a grid. Build regional figures from the district (IU) table as people treated divided by total population, not an average of district percentages, and tell me how you did it. Add the programme coverage threshold as a faint reference line in each panel and flag incomplete years. Add hover tooltips and a source line. ' + CHECK,
       alts: ['heatmap', 'line']
     },
     barh: {
@@ -1355,7 +1354,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       donts: ['A pie chart for comparing values', 'Alphabetical order', 'A different colour per bar'],
       src: ['iu'],
       prompt: function (a) {
-        return 'Using the ESPEN connector, make a horizontal bar chart of {D} epidemiological coverage by district (IU) in {C} for the latest complete year, using the IU-level table for {D}. Sort bars from highest to lowest, use one colour, and start the axis at 0.' + manyNote(a) +
+        return 'Using the programme data connector, make a horizontal bar chart of {D} epidemiological coverage by district (IU) in {C} for the latest complete year, using the IU-level table for {D}. Sort bars from highest to lowest, use one colour, and start the axis at 0.' + manyNote(a) +
           ' Explain any districts at 0% using their endemicity status. Add hover tooltips with district, region and coverage, and a source line with table and year. ' + CHECK;
       },
       alts: ['barref', 'mapnum', 'table']
@@ -1365,14 +1364,14 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       why: 'Bars for each district with the threshold drawn across them. Bars that miss get a contrasting colour, and the legend names it, so misses stand out without relying on colour alone.',
       draw: function () {
         return fig('Districts against the 65% threshold', 'LF epidemiological coverage, latest complete year',
-          hbars({ items: DISTRICTS.map(function (d) { return { l: d[0], v: d[1], cls: d[1] < 65 ? 'f2' : 'f1' }; }), max: 100, ticks: [0, 25, 50, 75, 100], ref: { v: 65, label: 'WHO 65%' }, label: 'Bar chart of district coverage with a 65% threshold line' }) +
+          hbars({ items: DISTRICTS.map(function (d) { return { l: d[0], v: d[1], cls: d[1] < 65 ? 'f2' : 'f1' }; }), max: 100, ticks: [0, 25, 50, 75, 100], ref: { v: 65, label: 'Programme 65%' }, label: 'Bar chart of district coverage with a 65% threshold line' }) +
           legend([['b1', 'Met threshold'], ['b2', 'Below threshold']]), '5 of 12 districts below 65%');
       },
       dos: ['State how many missed, out of how many', 'Use the right threshold: 65% for LF and oncho, 75% of school-age children for SCH and STH', 'Name the year beside the title'],
       donts: ['Red and green as the only signal', 'Counting districts that didn\'t need MDA as misses'],
       src: ['iu'],
       prompt: function (a) {
-        return 'Using the ESPEN connector, make a horizontal bar chart of {D} epidemiological coverage by district (IU) in {C} for the latest complete year, sorted high to low. Draw a dashed vertical line at the WHO effective-coverage threshold for {D}. Colour bars below the threshold in a contrasting colour and add a legend, so the meaning isn\'t carried by colour alone. Report how many districts were below the threshold out of how many had MDA that year, and leave out districts that didn\'t need MDA.' + manyNote(a) +
+        return 'Using the programme data connector, make a horizontal bar chart of {D} epidemiological coverage by district (IU) in {C} for the latest complete year, sorted high to low. Draw a dashed vertical line at the programme effective-coverage threshold for {D}. Colour bars below the threshold in a contrasting colour and add a legend, so the meaning isn\'t carried by colour alone. Report how many districts were below the threshold out of how many had MDA that year, and leave out districts that didn\'t need MDA.' + manyNote(a) +
           ' Add hover tooltips and a source line with table and year. ' + CHECK;
       },
       alts: ['barh', 'mapnum', 'dumbbell']
@@ -1390,7 +1389,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       donts: ['Two separate bar charts side by side', 'Stacking treated on top of requiring (double-counts)'],
       src: ['iu'],
       prompt: function (a) {
-        return 'Using the ESPEN connector, make a dumbbell chart for {C} comparing population requiring MDA with population treated for {D}, one row per district (IU), for the latest complete year. Use two shades of one colour for the two dots, joined by a line, and sort rows by the size of the gap. Add a legend, hover tooltips showing both numbers and the coverage, and a source line.' + manyNote(a) + ' ' + CHECK;
+        return 'Using the programme data connector, make a dumbbell chart for {C} comparing population requiring MDA with population treated for {D}, one row per district (IU), for the latest complete year. Use two shades of one colour for the two dots, joined by a line, and sort rows by the size of the gap. Add a legend, hover tooltips showing both numbers and the coverage, and a source line.' + manyNote(a) + ' ' + CHECK;
       },
       alts: ['barref', 'barh']
     },
@@ -1406,7 +1405,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['No more than four plain-language categories', 'Same category order and colours in every bar', 'Counts and % on hover; totals checked against the summary table'],
       donts: ['Pie charts with more than three slices', 'Unrelated colours for ordered categories'],
       src: ['iu', 'summary'],
-      prompt: 'Using the ESPEN connector, make a 100% stacked horizontal bar chart for {C}: one bar per PC-NTD (LF, oncho, SCH, STH, trachoma), split by the share of districts in each endemicity status for the latest complete year. Group statuses into no more than four plain-language categories, ordered from "needs MDA" to "not endemic", and use shades of one colour (darkest = needs MDA). Leave a thin gap between segments, add a legend and hover tooltips with counts and %, and cross-check district totals against the country summary table. ' + CHECK,
+      prompt: 'Using the programme data connector, make a 100% stacked horizontal bar chart for {C}: one bar per PC-NTD (LF, oncho, SCH, STH, trachoma), split by the share of districts in each endemicity status for the latest complete year. Group statuses into no more than four plain-language categories, ordered from "needs MDA" to "not endemic", and use shades of one colour (darkest = needs MDA). Leave a thin gap between segments, add a legend and hover tooltips with counts and %, and cross-check district totals against the country summary table. ' + CHECK,
       alts: ['stack100', 'mapcat']
     },
     stack100: {
@@ -1421,7 +1420,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Keep the "needs MDA" band at the bottom so its shrinking is easy to see', 'Note any year the district total changes (boundary splits)', 'Same colours as your other status charts'],
       donts: ['A separate pie for each year', 'More than four categories'],
       src: ['iu', 'summary'],
-      prompt: 'Using the ESPEN connector, make a stacked column chart showing, for each year from 2016 to the latest complete year, how {C}\'s districts are split by {D} endemicity status. Group statuses into no more than four plain-language categories ordered from "needs MDA" to "not endemic", put "needs MDA" at the bottom, and use shades of one colour. Show the number of districts per category on hover, add a legend, and note any year where the district total changes (for example a boundary split). ' + CHECK,
+      prompt: 'Using the programme data connector, make a stacked column chart showing, for each year from 2016 to the latest complete year, how {C}\'s districts are split by {D} endemicity status. Group statuses into no more than four plain-language categories ordered from "needs MDA" to "not endemic", put "needs MDA" at the bottom, and use shades of one colour. Show the number of districts per category on hover, add a legend, and note any year where the district total changes (for example a boundary split). ' + CHECK,
       alts: ['stackh', 'mapcat']
     },
     mapcat: {
@@ -1436,7 +1435,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Boundaries from the same year as the data; report the match rate', 'Grey for "no data", never the same as "not endemic"', 'Plain-language status labels in the legend'],
       donts: ['Rainbow colours', 'Boundaries from a different year', 'A map when people need exact rankings'],
       src: ['iu', 'bounds'],
-      prompt: 'Using the ESPEN connector, make a district map of {C} coloured by {D} endemicity for the latest complete year. Use ESPEN district boundaries from the same year as the data and report how many districts matched. Group statuses into no more than four plain-language categories with shades of one colour, and grey for no data. Hovering a district should show its name, region and status. Add a legend and a source line. ' + CHECK,
+      prompt: 'Using the programme data connector, make a district map of {C} coloured by {D} endemicity for the latest complete year. Use Programme district boundaries from the same year as the data and report how many districts matched. Group statuses into no more than four plain-language categories with shades of one colour, and grey for no data. Hovering a district should show its name, region and status. Add a legend and a source line. ' + CHECK,
       alts: ['stackh', 'table']
     },
     mapnum: {
@@ -1448,10 +1447,10 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
           hexMap(function (ri, c, k) { return 30 + (ri * 17 + c * 29 + k * 7) % 62; }, function (v) { return 'fq' + (covBand(v) + 1); }, function (v) { return v + '% coverage'; }, 'Map of districts shaded by coverage band') +
           legend(lab.map(function (l, i) { return ['bq' + (i + 1), l]; })));
       },
-      dos: ['Four or five bands, light to dark', 'Put a band edge at the WHO threshold', 'Districts without MDA in grey, not shown as 0%'],
+      dos: ['Four or five bands, light to dark', 'Put a band edge at the programme coverage threshold', 'Districts without MDA in grey, not shown as 0%'],
       donts: ['A continuous rainbow scale', 'Mapping raw counts (big districts dominate)'],
       src: ['iu', 'bounds'],
-      prompt: 'Using the ESPEN connector, make a district map of {C} coloured by {D} epidemiological coverage for the latest complete year. Use ESPEN district boundaries from the same year as the data and report how many districts matched. Group coverage into four bands with a band edge at the WHO effective-coverage threshold for {D}, using light-to-dark shades of one colour, and grey for districts with no MDA that year (don\'t show them as 0%). Hovering a district should show its name, region and coverage. Add a legend and a source line. ' + CHECK,
+      prompt: 'Using the programme data connector, make a district map of {C} coloured by {D} epidemiological coverage for the latest complete year. Use Programme district boundaries from the same year as the data and report how many districts matched. Group coverage into four bands with a band edge at the programme effective-coverage threshold for {D}, using light-to-dark shades of one colour, and grey for districts with no MDA that year (don\'t show them as 0%). Hovering a district should show its name, region and coverage. Add a legend and a source line. ' + CHECK,
       alts: ['barref', 'heatmap']
     },
     forecast: {
@@ -1459,14 +1458,14 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       why: 'A solid line for reported years and a dashed line for the forecast, with the target year marked. It makes clear which part is data and which is projection.',
       draw: function () {
         var x = range(2014, 2030), v = [64, 62, 60, 57, 52, 47, 47, 44, 38, 33, 30, 26, 21, 16, 11, 6, 0];
-        return fig('Districts requiring LF MDA', 'Reported 2014–2024, ESPEN forecast to 2030',
+        return fig('Districts requiring LF MDA', 'Reported 2014–2024, programme forecast to 2030',
           lineChart({ x: x, series: [{ name: 'Districts', v: v, cls: 'st1', fill: 'f1', dashFrom: 11, dashNote: 'forecast' }], max: 70, ticks: [0, 20, 40, 60], fmt: String, mark: { i: 10, label: 'Forecast →' }, r: 74, label: 'Line chart of districts requiring MDA with forecast to 2030' }),
           'Solid: reported · Dashed: forecast');
       },
       dos: ['Say what the forecast assumes in a sentence', 'Mark where reported data ends', 'Cite both the reported and forecast tables'],
       donts: ['Drawing the forecast exactly like real data', 'Presenting the forecast as a commitment'],
       src: ['country', 'fc'],
-      prompt: 'Using the ESPEN connector, make a line chart for {C} showing the number of districts requiring {D} MDA from 2014 to the latest complete year, then the ESPEN forecast to the target year. Draw reported years as a solid line and forecast years as a dashed line, with a vertical marker where the forecast starts and a label for the target year. Explain the forecast\'s main assumptions in two sentences under the chart. Add hover tooltips and source lines for both the reported and forecast tables. ' + CHECK,
+      prompt: 'Using the programme data connector, make a line chart for {C} showing the number of districts requiring {D} MDA from 2014 to the latest complete year, then the programme forecast to the target year. Draw reported years as a solid line and forecast years as a dashed line, with a vertical marker where the forecast starts and a label for the target year. Explain the forecast\'s main assumptions in two sentences under the chart. Add hover tooltips and source lines for both the reported and forecast tables. ' + CHECK,
       alts: ['line', 'stack100']
     },
     stat: {
@@ -1479,7 +1478,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Name the year; use the latest complete one', 'Give a comparison (last year, or the target)', 'Put the source right under the number'],
       donts: ['A one-bar chart or a two-slice pie', 'Calling a partial year "this year"'],
       src: ['country'],
-      prompt: 'Using the ESPEN connector, make a headline number tile for {C}: people treated for {D} in the latest complete year. Show the number large, the year, the change from the year before, and a small sparkline of the last ten years. Explain how you decided which year is the latest complete one, and put the table and year underneath. ' + CHECK,
+      prompt: 'Using the programme data connector, make a headline number tile for {C}: people treated for {D} in the latest complete year. Show the number large, the year, the change from the year before, and a small sparkline of the last ten years. Explain how you decided which year is the latest complete one, and put the table and year underneath. ' + CHECK,
       alts: ['line', 'twoline']
     },
     statusgrid: {
@@ -1489,7 +1488,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['A symbol and a legend in every status, not colour alone', 'Component status, not only package status', 'Mark JRF years that aren\'t due yet'],
       donts: ['A table of text statuses nobody scans', 'Treating "not yet due" as missing'],
       src: ['japs'],
-      prompt: 'Using the ESPEN connector (list_japs), make a status grid for {C}: rows are JAP components (JRSM, JRF, EPIRF, AWP, TEMF), columns are the last six cycle years. Each cell shows the component\'s own status with a colour and a symbol (✓ accepted, … submitted, ✕ missing, – not yet due), plus a legend. JRF lags the cycle year by about two years, so mark those cells as not yet due rather than missing. Add hover tooltips with the exact status text. ' + CHECK,
+      prompt: 'Using the programme data connector (list_japs), make a status grid for {C}: rows are JAP components (JRSM, JRF, EPIRF, AWP, TEMF), columns are the last six cycle years. Each cell shows the component\'s own status with a colour and a symbol (✓ accepted, … submitted, ✕ missing, – not yet due), plus a legend. JRF lags the cycle year by about two years, so mark those cells as not yet due rather than missing. Add hover tooltips with the exact status text. ' + CHECK,
       alts: ['heatmap', 'table']
     },
     heatmap: {
@@ -1499,7 +1498,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Light to dark in one colour, in a few bands', 'Leave years without MDA blank, not 0', 'Sort rows by region or by latest value'],
       donts: ['A line per district', 'Rainbow colour scales'],
       src: ['iu'],
-      prompt: 'Using the ESPEN connector, make a heatmap of {D} epidemiological coverage in {C}: one row per district (IU) that had MDA in any year, one column per year from 2016 to the latest complete year. Shade cells in four coverage bands with light-to-dark shades of one colour, put a band edge at the WHO threshold, leave years without MDA blank (not 0), and sort rows by region. Add a legend, hover tooltips and a source line. If there are more than 40 districts, start with the 40 with the most missed rounds and tell me. ' + CHECK,
+      prompt: 'Using the programme data connector, make a heatmap of {D} epidemiological coverage in {C}: one row per district (IU) that had MDA in any year, one column per year from 2016 to the latest complete year. Shade cells in four coverage bands with light-to-dark shades of one colour, put a band edge at the programme coverage threshold, leave years without MDA blank (not 0), and sort rows by region. Add a legend, hover tooltips and a source line. If there are more than 40 districts, start with the 40 with the most missed rounds and tell me. ' + CHECK,
       alts: ['smallmult', 'mapnum']
     },
     scatter: {
@@ -1509,7 +1508,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Label only the few dots worth discussing', 'Add the threshold as a reference line', 'Describe the pattern; don\'t claim cause'],
       donts: ['Reading a link as cause and effect', 'Colouring every dot differently'],
       src: ['iu'],
-      prompt: 'Using the ESPEN connector, make a scatter plot for {C} with one dot per district (IU): cumulative effective {D} MDA rounds on the x-axis and epidemiological coverage in the latest complete year on the y-axis (0–100%). Add a dashed line at the WHO effective-coverage threshold, hover tooltips with district and region, and label only the three most unusual districts. Describe the pattern in one sentence without claiming cause and effect. ' + CHECK,
+      prompt: 'Using the programme data connector, make a scatter plot for {C} with one dot per district (IU): cumulative effective {D} MDA rounds on the x-axis and epidemiological coverage in the latest complete year on the y-axis (0–100%). Add a dashed line at the programme effective-coverage threshold, hover tooltips with district and region, and label only the three most unusual districts. Describe the pattern in one sentence without claiming cause and effect. ' + CHECK,
       alts: ['barref', 'table']
     },
     table: {
@@ -1525,7 +1524,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       dos: ['Right-align numbers', 'A dash for "no data", never 0', 'Filters for region and status, plus search'],
       donts: ['Hundreds of rows with no filter', 'Mixing years in one column without saying so'],
       src: ['iu'],
-      prompt: 'Using the ESPEN connector, build an interactive table for {C} with one row per district (IU): region, {D} endemicity, latest complete year, epidemiological coverage, cumulative rounds and effective rounds. Let me filter by region and status, search by district name, and sort any column. Right-align numbers, show a dash for no data rather than 0, and add a source line with table and year. ' + CHECK,
+      prompt: 'Using the programme data connector, build an interactive table for {C} with one row per district (IU): region, {D} endemicity, latest complete year, epidemiological coverage, cumulative rounds and effective rounds. Let me filter by region and status, search by district name, and sort any column. Right-align numbers, show a dash for no data rather than 0, and add a source line with table and year. ' + CHECK,
       alts: ['barh', 'mapcat']
     }
   };

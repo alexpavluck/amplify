@@ -30,7 +30,7 @@
  --sh-sm: 0 1px 2px rgb(16 45 65 / .05), 0 3px 10px -3px rgb(16 45 65 / .08);
  --sh-md: 0 2px 6px rgb(16 45 65 / .05), 0 16px 32px -16px rgb(16 45 65 / .22);
  --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
- /* chart tokens: ESPEN brand blues with an orange complement (CVD-safe pair), sequential blue ramp for ordered categories */
+ /* chart tokens: Programme brand blues with an orange complement (CVD-safe pair), sequential blue ramp for ordered categories */
  --s1: #1A7CAF; --s2: #D86422; --dim: #AEC4D1;
  --q1: #7CC4E4; --q2: #3CABDD; --q3: #1A7CAF; --q4: #0E4A68;
  --st-good: #0ca30c; --st-warn: #fab219; --st-bad: #d03b3b; --st-none: #CBD8DF;
@@ -159,7 +159,7 @@ h4 { font-size: 16px; font-weight: 700; }
 .ladder strong { font: 700 16px/1.2 var(--display); }
 .ladder span { font-size: 13px; color: var(--muted); line-height: 1.4; }
 @media (max-width: 760px) { .ladder { grid-template-columns: minmax(0, 1fr); } .ladder a { border-right: 0; border-bottom: 1px solid var(--line); } .ladder a:last-child { border-bottom: 0; } }
-.who { display: flex; flex-wrap: wrap; gap: 8px; }
+.course-meta { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font-size: 13px; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
 
 /* panels & cards */
@@ -446,7 +446,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    <div class="brand-row">
     <div>
      <span class="eyebrow">Self-paced course</span>
-     <b>ESPEN MCP Academy</b>
+     <b>Programme Data Academy</b>
     </div>
     <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch theme">
      <svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -476,15 +476,15 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
   <!-- ======== 00 START ======== -->
     <section id="start" class="hero">
    <div class="kicker">Short course</div>
-   <h1>Choose the <em>right visual</em> for ESPEN data</h1>
-   <p class="lede">A 20-minute guide to picking the chart that answers your question — with a quick-reference table and ESPEN-specific rules you can use the next time you brief your programme.</p>
+   <h1>Choose the <em>right visual</em> for programme data</h1>
+   <p class="lede">A 20-minute guide to picking the chart that answers your question — with a quick-reference table and programme-specific rules you can use the next time you brief your programme.</p>
   </section>
 
   <!-- ======== 01 WHAT ======== -->
           <section id="charts">
    <div class="kicker">05 · Visualise</div>
    <h2>Choose the right chart</h2>
-   <p class="lede">The right chart depends on the question, not on the data you happen to have. Answer two or three questions below and the chooser recommends a chart, shows an example, and writes the prompt to build it from your downloaded ESPEN file.</p>
+   <p class="lede">The right chart depends on the question, not on the data you happen to have. Answer two or three questions below and the chooser recommends a chart, shows an example, and writes the prompt to build it from your downloaded programme file.</p>
 
    <div class="panel chooser" id="chooser">
     <div class="qbar">
@@ -507,7 +507,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
      <h3 style="margin-top:6px">Build it</h3>
      <ol class="howto">
-      <li><span>Download the IU-level dataset for your disease and country from <a href="https://espen.afro.who.int" target="_blank" rel="noopener">the ESPEN portal</a> (choose IU level, the disease, and all years; export as CSV).</span></li>
+      <li><span>Download the IU-level dataset for your disease and country from <a href="#" >your programme data portal</a> (choose IU level, the disease, and all years; export as CSV).</span></li>
       <li><span>Set your country and disease below, then add the file to your Claude chat along with the prompt.</span></li>
       <li><span>Check the columns Claude plans to use before it builds, then compare the chart with the checklist above.</span></li>
      </ol>
@@ -530,7 +530,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    <h3>Quick reference</h3>
    <div class="tbl">
     <table class="cheat">
-     <thead><tr><th>If your question is…</th><th>Use</th><th>ESPEN example</th><th>Not</th></tr></thead>
+     <thead><tr><th>If your question is…</th><th>Use</th><th>Programme example</th><th>Not</th></tr></thead>
      <tbody>
       <tr><td>How has it changed over time?</td><td>Line chart</td><td>LF coverage 2014 to latest year</td><td>Bars for 10+ years; a second y-axis</td></tr>
       <tr><td>Which is biggest or smallest?</td><td>Ranked bar</td><td>Districts by oncho coverage</td><td>Pie chart; unsorted bars</td></tr>
@@ -549,10 +549,10 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
    <div class="grid2">
     <div class="panel">
-     <h4>Chart rules for ESPEN data</h4>
+     <h4>Chart rules for programme data</h4>
      <ul class="rules">
       <li>One y-axis per chart. Put coverage (%) and people treated (counts) on separate charts.</li>
-      <li>Start percentage axes at 0 and draw the WHO threshold as a reference line.</li>
+      <li>Start percentage axes at 0 and draw the programme threshold as a reference line.</li>
       <li>Dash or flag the latest year if it looks incompletely reported.</li>
       <li>Use shades of one colour for ordered categories like endemicity; a different colour only when categories are unrelated.</li>
       <li>Label lines directly and always give a legend; never rely on colour alone.</li>
@@ -562,7 +562,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <div class="panel">
      <h4>Not sure? Ask Claude to choose</h4>
      <p style="font-size:15px;color:var(--muted)">Describe the question and audience and let Claude propose the chart before it builds anything.</p>
-     <div class="prompt" id="ch-ask">I have attached the IU-level ESPEN dataset for [COUNTRY] and [YOUR DISEASE]. I want to show [YOUR QUESTION] to [AUDIENCE]. Using only this file, recommend the best chart type and explain why, name one alternative you rejected and why, and list the columns you'd use. Wait for my go-ahead before building it.</div>
+     <div class="prompt" id="ch-ask">I have attached the IU-level programme dataset for [COUNTRY] and [YOUR DISEASE]. I want to show [YOUR QUESTION] to [AUDIENCE]. Using only this file, recommend the best chart type and explain why, name one alternative you rejected and why, and list the columns you'd use. Wait for my go-ahead before building it.</div>
     </div>
    </div>
   </section>
@@ -572,8 +572,8 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 <script>
 (function () {
  var store = {
-  get: function (k) { try { return JSON.parse(localStorage.getItem('espen-academy:' + k)); } catch (e) { return null; } },
-  set: function (k, v) { try { localStorage.setItem('espen-academy:' + k, JSON.stringify(v)); } catch (e) {} }
+  get: function (k) { try { return JSON.parse(localStorage.getItem('programme-data-academy:' + k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem('programme-data-academy:' + k, JSON.stringify(v)); } catch (e) {} }
  };
  var toastEl = document.getElementById('toast'), toastT;
  function toast(msg) { toastEl.textContent = msg; toastEl.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('on'); }, 1600); }
@@ -635,7 +635,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
  function barPath(x, y, w, h, r) { r = Math.min(r, w, h / 2); return 'M' + x + ',' + y + 'H' + r1(x + w - r) + 'Q' + r1(x + w) + ',' + y + ' ' + r1(x + w) + ',' + (y + r) + 'V' + (y + h - r) + 'Q' + r1(x + w) + ',' + (y + h) + ' ' + r1(x + w - r) + ',' + (y + h) + 'H' + x + 'Z'; }
  function range(a, b) { var o = []; for (var i = a; i <= b; i++) o.push(i); return o; }
 
- // Sample data. Invented for the examples; never real ESPEN figures.
+ // Sample data. Invented sample data; never real programme figures.
  var YRS = range(2014, 2024);
  var LF = [48, 55, 61, 64, 69, 67, 41, 62, 70, 73, 36], ON = [72, 74, 71, 76, 78, 75, 52, 70, 77, 79, 40];
  var LF_T = [3.1, 3.4, 3.8, 3.9, 4.3, 4.1, 2.6, 3.8, 4.2, 4.4, 2.1].map(function (v) { return v * 1e6; });
@@ -813,17 +813,17 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     var ser = [{ name: 'LF', v: cnt ? LF_T : LF, cls: 'st1', fill: 'f1', dashFrom: 10 }];
     if (few) ser.push({ name: 'Oncho', v: cnt ? ON_T : ON, cls: 'st2', fill: 'f2', dashFrom: 10 });
     var chart = lineChart(cnt ? { x: YRS, series: ser, max: 5e6, ticks: [0, 2.5e6, 5e6], fmt: big, label: 'Line chart of people treated over time' }
-     : { x: YRS, series: ser, max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'WHO 65% threshold' }, label: 'Line chart of coverage over time' });
+     : { x: YRS, series: ser, max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'programme 65% threshold' }, label: 'Line chart of coverage over time' });
     return fig((cnt ? 'People treated' : 'Epidemiological coverage') + (few ? ', LF and onchocerciasis' : ', LF'), 'Country level, 2014–2024',
      chart + legend((few ? [['ln b1', 'LF'], ['ln b2', 'Onchocerciasis']] : []).concat([['dash', 'Dashed: 2024 likely incomplete']])));
    },
-   dos: ['Up to four lines; label each one at its end', 'Dash the latest year if it looks incompletely reported', 'Draw the WHO threshold as a dashed reference line', 'Hover shows the exact value and year'],
+   dos: ['Up to four lines; label each one at its end', 'Dash the latest year if it looks incompletely reported', 'Draw the programme threshold as a dashed reference line', 'Hover shows the exact value and year'],
    donts: ['Bars for ten or more years (they hide the trend)', 'A second y-axis for a different measure', 'Joining a gap year as if it were reported'],
    src: ['country'],
    prompt: function (a) {
     var meas = a.unit === 'count' ? 'people treated for {D}' : '{D} epidemiological coverage (%)';
     return 'The IU-level dataset for {D} in {C} is attached — using this file only, make a line chart of ' + meas + ' in {C} from 2014 to the latest year available, using the attached file\'s yearly rows. Years on the x-axis and a single y-axis starting at 0.' +
-     (a.unit === 'count' ? '' : ' Add a dashed reference line at the WHO effective-coverage threshold for {D}.') +
+     (a.unit === 'count' ? '' : ' Add a dashed reference line at the programme effective-coverage threshold for {D}.') +
      (a.n === 'few' ? ' Add the other diseases or regions I need to compare, up to four lines in total, each labelled directly at its end, plus a legend.' : '') +
      ' If the latest year looks incompletely reported, draw it as a dashed segment and say why. Add hover tooltips and a source line naming the table and years. ' + CHECK;
    },
@@ -834,14 +834,14 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    why: 'Coverage (%) and people treated (counts) have different scales. Two charts that share the same years let readers compare them without a misleading second axis.',
    draw: function () {
     return fig('LF coverage and people treated', 'Country level, 2014–2024 · same years, separate axes',
-     '<div class="fig-pair">' + lineChart({ x: YRS, h: 170, series: [{ name: 'Coverage', v: LF, cls: 'st1', fill: 'f1', dashFrom: 10 }], max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'WHO 65% threshold' }, r: 76, label: 'Coverage over time' }) +
+     '<div class="fig-pair">' + lineChart({ x: YRS, h: 170, series: [{ name: 'Coverage', v: LF, cls: 'st1', fill: 'f1', dashFrom: 10 }], max: 100, ticks: [0, 50, 100], ref: { v: 65, label: 'programme 65% threshold' }, r: 76, label: 'Coverage over time' }) +
      lineChart({ x: YRS, h: 170, series: [{ name: 'Treated', v: LF_T, cls: 'st1', fill: 'f1', dashFrom: 10 }], max: 5e6, ticks: [0, 2.5e6, 5e6], fmt: big, r: 76, label: 'People treated over time' }) + '</div>',
      'Dashed: 2024 likely incomplete');
    },
    dos: ['Stack the charts so the years line up', 'Same colour for the same disease in both', 'Flag incomplete years on both charts'],
    donts: ['One chart with two y-axes (it invents correlations)', 'Squeezing counts onto a 0–100 scale'],
    src: ['country'],
-   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make two line charts for {D} in {C}, stacked one above the other with the same years (2014 to the latest year available) on the x-axis: (1) epidemiological coverage in %, with a dashed line at the WHO effective-coverage threshold; (2) people treated, as counts. Do not use a second y-axis. Use the attached file\'s yearly rows. Mark any year that looks incompletely reported on both charts. Add hover tooltips and a source line naming the table and years. ' + CHECK,
+   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make two line charts for {D} in {C}, stacked one above the other with the same years (2014 to the latest year available) on the x-axis: (1) epidemiological coverage in %, with a dashed line at the programme effective-coverage threshold; (2) people treated, as counts. Do not use a second y-axis. Use the attached file\'s yearly rows. Mark any year that looks incompletely reported on both charts. Add hover tooltips and a source line naming the table and years. ' + CHECK,
    alts: ['line', 'stat']
   },
   smallmult: {
@@ -858,7 +858,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    dos: ['Same y-axis on every panel', 'Order panels meaningfully (by region or by latest value)', 'Calculate regional coverage from totals, not by averaging district %'],
    donts: ['Different scales per panel', 'Eight colours on one chart'],
    src: ['iu'],
-   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make small multiples of {D} epidemiological coverage in {C}: one small line chart per region, from 2016 to the latest year available, all on the same 0–100% y-axis and arranged in a grid. Build regional figures from the district (IU) table as people treated divided by total population, not an average of district percentages, and tell me how you did it. Add the WHO threshold as a faint reference line in each panel and flag incomplete years. Add hover tooltips and a source line. ' + CHECK,
+   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make small multiples of {D} epidemiological coverage in {C}: one small line chart per region, from 2016 to the latest year available, all on the same 0–100% y-axis and arranged in a grid. Build regional figures from the district (IU) table as people treated divided by total population, not an average of district percentages, and tell me how you did it. Add the programme threshold as a faint reference line in each panel and flag incomplete years. Add hover tooltips and a source line. ' + CHECK,
    alts: ['heatmap', 'line']
   },
   barh: {
@@ -883,14 +883,14 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    why: 'Bars for each district with the threshold drawn across them. Bars that miss get a contrasting colour, and the legend names it, so misses stand out without relying on colour alone.',
    draw: function () {
     return fig('Districts against the 65% threshold', 'LF epidemiological coverage, latest complete year',
-     hbars({ items: DISTRICTS.map(function (d) { return { l: d[0], v: d[1], cls: d[1] < 65 ? 'f2' : 'f1' }; }), max: 100, ticks: [0, 25, 50, 75, 100], ref: { v: 65, label: 'WHO 65%' }, label: 'Bar chart of district coverage with a 65% threshold line' }) +
+     hbars({ items: DISTRICTS.map(function (d) { return { l: d[0], v: d[1], cls: d[1] < 65 ? 'f2' : 'f1' }; }), max: 100, ticks: [0, 25, 50, 75, 100], ref: { v: 65, label: 'programme 65%' }, label: 'Bar chart of district coverage with a 65% threshold line' }) +
      legend([['b1', 'Met threshold'], ['b2', 'Below threshold']]), '5 of 12 districts below 65%');
    },
    dos: ['State how many missed, out of how many', 'Use the right threshold: 65% for LF and oncho, 75% of school-age children for SCH and STH', 'Name the year beside the title'],
    donts: ['Red and green as the only signal', 'Counting districts that didn\'t need MDA as misses'],
    src: ['iu'],
    prompt: function (a) {
-    return 'The IU-level dataset for {D} in {C} is attached — using this file only, make a horizontal bar chart of {D} epidemiological coverage by district (IU) in {C} for the latest complete year, sorted high to low. Draw a dashed vertical line at the WHO effective-coverage threshold for {D}. Colour bars below the threshold in a contrasting colour and add a legend, so the meaning isn\'t carried by colour alone. Report how many districts were below the threshold out of how many had MDA that year, and leave out districts that didn\'t need MDA.' + manyNote(a) +
+    return 'The IU-level dataset for {D} in {C} is attached — using this file only, make a horizontal bar chart of {D} epidemiological coverage by district (IU) in {C} for the latest complete year, sorted high to low. Draw a dashed vertical line at the programme effective-coverage threshold for {D}. Colour bars below the threshold in a contrasting colour and add a legend, so the meaning isn\'t carried by colour alone. Report how many districts were below the threshold out of how many had MDA that year, and leave out districts that didn\'t need MDA.' + manyNote(a) +
      ' Add hover tooltips and a source line with table and year. ' + CHECK;
    },
    alts: ['barh', 'mapnum', 'dumbbell']
@@ -914,7 +914,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
   },
   stackh: {
    name: '100% stacked bar',
-   why: 'Each bar is a whole split into parts, such as each disease\'s districts by endemicity status. Ordered categories use shades of one colour, darkest for the most burden.',
+   why: 'Each bar is an entire bar split into parts, such as each disease\'s districts by endemicity status. Ordered categories use shades of one colour, darkest for the most burden.',
    draw: function () {
     var rows = [['LF', [18, 6, 22, 70]], ['Oncho', [34, 4, 9, 69]], ['SCH', [61, 12, 0, 43]], ['STH', [52, 9, 6, 49]], ['Trachoma', [5, 3, 14, 94]]];
     return fig('Districts by endemicity status', 'All PC-NTDs, latest complete year · 116 districts',
@@ -966,10 +966,10 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
      hexMap(function (ri, c, k) { return 30 + (ri * 17 + c * 29 + k * 7) % 62; }, function (v) { return 'fq' + (covBand(v) + 1); }, function (v) { return v + '% coverage'; }, 'Map of districts shaded by coverage band') +
      legend(lab.map(function (l, i) { return ['bq' + (i + 1), l]; })));
    },
-   dos: ['Four or five bands, light to dark', 'Put a band edge at the WHO threshold', 'Districts without MDA in grey, not shown as 0%'],
+   dos: ['Four or five bands, light to dark', 'Put a band edge at the programme threshold', 'Districts without MDA in grey, not shown as 0%'],
    donts: ['A continuous rainbow scale', 'Mapping raw counts (big districts dominate)'],
    src: ['iu', 'bounds'],
-   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a district map of {C} coloured by {D} epidemiological coverage for the latest complete year. Use the district names as given in the file and note any year where the district total changes (for example a boundary split). Group coverage into four bands with a band edge at the WHO effective-coverage threshold for {D}, using light-to-dark shades of one colour, and grey for districts with no MDA that year (don\'t show them as 0%). Hovering a district should show its name, region and coverage. Add a legend and a source line. ' + CHECK,
+   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a district map of {C} coloured by {D} epidemiological coverage for the latest complete year. Use the district names as given in the file and note any year where the district total changes (for example a boundary split). Group coverage into four bands with a band edge at the programme effective-coverage threshold for {D}, using light-to-dark shades of one colour, and grey for districts with no MDA that year (don\'t show them as 0%). Hovering a district should show its name, region and coverage. Add a legend and a source line. ' + CHECK,
    alts: ['barref', 'heatmap']
   },
   forecast: {
@@ -977,14 +977,14 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    why: 'A solid line for reported years and a dashed line for the forecast, with the target year marked. It makes clear which part is data and which is projection.',
    draw: function () {
     var x = range(2014, 2030), v = [64, 62, 60, 57, 52, 47, 47, 44, 38, 33, 30, 26, 21, 16, 11, 6, 0];
-    return fig('Districts requiring LF MDA', 'Reported 2014–2024, ESPEN forecast to 2030',
+    return fig('Districts requiring LF MDA', 'Reported 2014–2024, programme forecast to 2030',
      lineChart({ x: x, series: [{ name: 'Districts', v: v, cls: 'st1', fill: 'f1', dashFrom: 11, dashNote: 'forecast' }], max: 70, ticks: [0, 20, 40, 60], fmt: String, mark: { i: 10, label: 'Forecast →' }, r: 74, label: 'Line chart of districts requiring MDA with forecast to 2030' }),
      'Solid: reported · Dashed: forecast');
    },
    dos: ['Say what the forecast assumes in a sentence', 'Mark where reported data ends', 'Cite both the reported and forecast tables'],
    donts: ['Drawing the forecast exactly like real data', 'Presenting the forecast as a commitment'],
    src: ['country', 'fc'],
-   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a line chart for {C} showing the number of districts requiring {D} MDA from 2014 to the latest complete year, then the ESPEN forecast to the target year. Draw reported years as a solid line and forecast years as a dashed line, with a vertical marker where the forecast starts and a label for the target year. Explain the forecast\'s main assumptions in two sentences under the chart. Add hover tooltips and source lines for both the reported and forecast tables. ' + CHECK,
+   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a line chart for {C} showing the number of districts requiring {D} MDA from 2014 to the latest complete year, then the programme forecast to the target year. Draw reported years as a solid line and forecast years as a dashed line, with a vertical marker where the forecast starts and a label for the target year. Explain the forecast\'s main assumptions in two sentences under the chart. Add hover tooltips and source lines for both the reported and forecast tables. ' + CHECK,
    alts: ['line', 'stack100']
   },
   stat: {
@@ -1007,7 +1007,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    dos: ['A symbol and a legend in every status, not colour alone', 'Component status, not only package status', 'Mark JRF years that aren\'t due yet'],
    donts: ['A table of text statuses nobody scans', 'Treating "not yet due" as missing'],
    src: ['japs'],
-   prompt: 'The IU-level ESPEN dataset notes for {C} are attached — using this file only, make a status grid for {C}: rows are JAP components (JRSM, JRF, EPIRF, AWP, TEMF), columns are the last six cycle years. Each cell shows the component\'s own status with a colour and a symbol (✓ accepted, … submitted, ✕ missing, – not yet due), plus a legend. JRF lags the cycle year by about two years, so mark those cells as not yet due rather than missing. Add hover tooltips with the exact status text. ' + CHECK,
+   prompt: 'The IU-level programme dataset notes for {C} are attached — using this file only, make a status grid for {C}: rows are JAP components (JRSM, JRF, EPIRF, AWP, TEMF), columns are the last six cycle years. Each cell shows the component\'s own status with a colour and a symbol (✓ accepted, … submitted, ✕ missing, – not yet due), plus a legend. JRF lags the cycle year by about two years, so mark those cells as not yet due rather than missing. Add hover tooltips with the exact status text. ' + CHECK,
    alts: ['heatmap', 'table']
   },
   heatmap: {
@@ -1017,7 +1017,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    dos: ['Light to dark in one colour, in a few bands', 'Leave years without MDA blank, not 0', 'Sort rows by region or by latest value'],
    donts: ['A line per district', 'Rainbow colour scales'],
    src: ['iu'],
-   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a heatmap of {D} epidemiological coverage in {C}: one row per district (IU) that had MDA in any year, one column per year from 2016 to the latest complete year. Shade cells in four coverage bands with light-to-dark shades of one colour, put a band edge at the WHO threshold, leave years without MDA blank (not 0), and sort rows by region. Add a legend, hover tooltips and a source line. If there are more than 40 districts, start with the 40 with the most missed rounds and tell me. ' + CHECK,
+   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a heatmap of {D} epidemiological coverage in {C}: one row per district (IU) that had MDA in any year, one column per year from 2016 to the latest complete year. Shade cells in four coverage bands with light-to-dark shades of one colour, put a band edge at the programme threshold, leave years without MDA blank (not 0), and sort rows by region. Add a legend, hover tooltips and a source line. If there are more than 40 districts, start with the 40 with the most missed rounds and tell me. ' + CHECK,
    alts: ['smallmult', 'mapnum']
   },
   scatter: {
@@ -1027,7 +1027,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
    dos: ['Label only the few dots worth discussing', 'Add the threshold as a reference line', 'Describe the pattern; don\'t claim cause'],
    donts: ['Reading a link as cause and effect', 'Colouring every dot differently'],
    src: ['iu'],
-   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a scatter plot for {C} with one dot per district (IU): cumulative effective {D} MDA rounds on the x-axis and epidemiological coverage in the latest complete year on the y-axis (0–100%). Add a dashed line at the WHO effective-coverage threshold, hover tooltips with district and region, and label only the three most unusual districts. Describe the pattern in one sentence without claiming cause and effect. ' + CHECK,
+   prompt: 'The IU-level dataset for {D} in {C} is attached — using this file only, make a scatter plot for {C} with one dot per district (IU): cumulative effective {D} MDA rounds on the x-axis and epidemiological coverage in the latest complete year on the y-axis (0–100%). Add a dashed line at the programme effective-coverage threshold, hover tooltips with district and region, and label only the three most unusual districts. Describe the pattern in one sentence without claiming cause and effect. ' + CHECK,
    alts: ['barref', 'table']
   },
   table: {

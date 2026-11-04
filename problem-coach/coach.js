@@ -218,7 +218,7 @@
     },
   };
 
-  const TOOLS = ["Excel", "Google Sheets", "Word", "PowerPoint", "DHIS2", "ESPEN", "Claude", "ChatGPT", "Gemini", "WhatsApp"];
+  const TOOLS = ["Excel", "Google Sheets", "Word", "PowerPoint", "DHIS2", "Programme database", "Claude", "ChatGPT", "Gemini", "WhatsApp"];
 
   /* ───────────── state ───────────── */
   const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : "s-" + Date.now() + "-" + Math.random().toString(16).slice(2));

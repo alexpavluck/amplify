@@ -139,7 +139,7 @@ window.COACH_FRAMEWORK = {
           5
         ],
         "coverage": "partial",
-        "coverage_note": "You work with ESPEN data through a connector (session 4) and build a data-to-action framework (session 5); there is no dedicated analysis session.",
+        "coverage_note": "You work with programme data through a connector (session 4) and build a data-to-action framework (session 5); there is no dedicated analysis session.",
         "signals": [
           "coverage calculations",
           "trend comparisons",
@@ -231,9 +231,9 @@ window.COACH_FRAMEWORK = {
       },
       {
         "id": "connectors",
-        "problem_phrase": "My data and documents sit in Drive, email or ESPEN and I keep copying them across",
-        "problem_phrase_fr": "Mes données et documents sont dans Drive, la messagerie ou ESPEN et je les copie sans cesse",
-        "skill": "Connect the AI to Drive, email and ESPEN data so it works on live information",
+        "problem_phrase": "My data and documents sit in Drive, email or a programme database and I keep copying them across",
+        "problem_phrase_fr": "Mes données et documents sont dans Drive, la messagerie ou une base de données programme et je les copie sans cesse",
+        "skill": "Connect the AI to Drive, email and programme data so it works on live information",
         "sessions": [
           4
         ],
@@ -242,7 +242,7 @@ window.COACH_FRAMEWORK = {
         "signals": [
           "Google Drive",
           "email",
-          "ESPEN",
+          "programme database",
           "DHIS2",
           "shared folders"
         ]
