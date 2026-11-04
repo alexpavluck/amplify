@@ -4,6 +4,7 @@
   },
   "redirects": [
     { "source": "/problem-coach", "destination": "/", "permanent": true },
+    { "source": "/problem-coach/", "destination": "/", "permanent": true },
     { "source": "/problem-coach/:path*", "destination": "/", "permanent": true }
   ]
 }
