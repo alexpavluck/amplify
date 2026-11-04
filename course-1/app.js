@@ -210,9 +210,6 @@ en: {
   "sk.t": "Could we build a skill for the perfect prompt?",
 
   
-  "acar.t": "Problems outlive prompts — get the problem right first",
-  "acar.d": "\"Prompt engineering focuses on crafting the optimal textual input... In contrast, problem formulation emphasizes defining the problem by delineating its focus, scope, and boundaries.\" Your three-sentence draft in this section is problem formulation — the part that doesn't expire when the model changes. P-T-C-F-I in the next section is how you turn that formulated problem into language the model can act on.",
-  "acar.cite": "— O. A. Acar, Harvard Business Review (2023), via MIT Sloan: ",
   "ptypes.t": "Six prompt types you'll meet (beyond P-T-C-F-I)",
   "ptypes.hint": "P-T-C-F-I is how you compose. These are flavours you'll recognise on Slack, GitHub, and in the wild — most are just P-T-C-F-I done briefly. Spot which you already use.",
   "ptypes.h.type": "Type", "ptypes.h.when": "When to use", "ptypes.h.ex": "Example",
@@ -472,9 +469,6 @@ fr: {
   "sk.t": "Peut-on construire un skill pour le prompt parfait ?",
 
   
-  "acar.t": "Les problèmes survivent aux prompts — cadrer d'abord le problème",
-  "acar.d": "\"Le prompt engineering consiste à rédiger l'entrée textuelle optimale... À l'inverse, la formulation du problème consiste à définir le problème en délimitant son objet, sa portée et ses limites.\" Votre brouillon de trois phrases dans cette section est de la formulation de problème — la partie qui ne périt pas quand le modèle change. P-T-C-F-I dans la section suivante est la façon de transformer ce problème formulé en langage que le modèle peut exécuter.",
-  "acar.cite": "— O. A. Acar, Harvard Business Review (2023), via MIT Sloan : ",
   "ptypes.t": "Six types de prompts que vous croiserez (au-delà de P-T-C-F-I)",
   "ptypes.hint": "P-T-C-F-I est comment vous composez. Ce sont des saveurs que vous reconnaîtrez sur Slack, GitHub et ailleurs — la plupart ne sont que du P-T-C-F-I bref. Repérez ceux que vous utilisez déjà.",
   "ptypes.h.type": "Type", "ptypes.h.when": "Quand l'utiliser", "ptypes.h.ex": "Exemple",
