@@ -357,8 +357,6 @@ blockquote { margin: 6px 0; padding: 2px 14px; border-left: 3px solid var(--bord
 .ss-step { padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); font-weight: 600; }
 .ss-step.now { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 .ss-arrow { color: var(--muted); }
-.link-card-featured { display: grid; gap: 12px; border-color: var(--accent); background: var(--accent-soft); }
-.link-card-featured .btn-lg { justify-self: start; padding: 10px 18px; font-size: .95rem; }
 .lab-card .lab-prompt { margin: 8px 0; font-size: .86rem; }
 .lab-card .lab-prompt code { background: var(--bg); border: 1px solid var(--border); padding: 6px 10px; border-radius: 8px; display: inline-block; max-width: 100%; white-space: wrap; }
 .lab-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }

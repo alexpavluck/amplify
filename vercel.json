@@ -1,7 +1,5 @@
 {
   "functions": {
-    "api/coach.js": { "maxDuration": 60 },
-    "api/brief.js": { "maxDuration": 120 },
     "api/prompt.js": { "maxDuration": 30 }
   }
 }

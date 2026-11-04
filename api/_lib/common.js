@@ -1,5 +1,5 @@
-/* Shared helpers for the Problem Coach routes (/api/coach, /api/brief).
-   Env vars: ANTHROPIC_API_KEY (required), COACH_MODEL, BRIEF_MODEL,
+/* Shared helpers for the API routes (/api/prompt).
+   Env vars: ANTHROPIC_API_KEY (required), COACH_MODEL,
    ACCESS_CODES (comma-separated; when set, a matching code is required),
    MAX_CALLS_PER_SESSION (default 30), COACH_MOCK=1 (canned replies, no API calls). */
 const AnthropicModule = require("@anthropic-ai/sdk");
