@@ -39,6 +39,13 @@
       <span class="lang-en">Work top to bottom. Tick every box — your progress is saved in this browser, so you can pause and come back. All terminal blocks have a <strong>Copy</strong> button.</span>
       <span class="lang-fr">Avancez de haut en bas. Cochez chaque case — votre progression est enregistrée dans ce navigateur, vous pouvez faire une pause et revenir. Tous les blocs de terminal ont un bouton <strong>Copier</strong>.</span>
     </p>
+    <div class="os-pick">
+      <span class="lang-en">My computer runs:</span><span class="lang-fr">Mon ordinateur est sous :</span>
+      <div class="os-toggle" role="group" aria-label="Operating system / Système d'exploitation">
+        <button type="button" data-os="win" aria-pressed="true">Windows</button>
+        <button type="button" data-os="mac" aria-pressed="false">macOS</button>
+      </div>
+    </div>
   </section>
 
   <!-- ================= PART 1 ================= -->
@@ -85,47 +92,89 @@
   </div>
 
   <!-- ================= PART 2 ================= -->
-  <h2 id="part-install">2 · <span class="lang-en">Install OMP on Windows</span><span class="lang-fr">Installer OMP sous Windows</span></h2>
+  <h2 id="part-install">2 · <span class="lang-en">Install OMP</span><span class="lang-fr">Installer OMP</span> <span class="os-win">(Windows)</span><span class="os-mac">(macOS)</span></h2>
   <p>
     <span class="lang-en">OMP is the agent harness: the program that runs in your terminal, talks to OpenRouter, and can read files, run commands, and build things for you.</span>
     <span class="lang-fr">OMP est l'harnais d'agent : le programme qui tourne dans votre terminal, dialogue avec OpenRouter, et peut lire des fichiers, exécuter des commandes et construire des choses pour vous.</span>
   </p>
+  <div class="os-pick">
+    <span class="lang-en">Show steps for:</span><span class="lang-fr">Afficher les étapes pour :</span>
+    <div class="os-toggle" role="group" aria-label="Operating system / Système d'exploitation">
+      <button type="button" data-os="win" aria-pressed="true">Windows</button>
+      <button type="button" data-os="mac" aria-pressed="false">macOS</button>
+    </div>
+  </div>
 
   <div class="progress-label" data-progress-label="install">0 / 5 — 0%</div>
   <div class="progress-track"><div class="progress-fill" data-progress-fill="install"></div></div>
 
   <ul class="checklist" data-checklist="install">
     <li><input type="checkbox" id="in1"><label class="step-text" for="in1">
-      <strong><span class="lang-en">Open PowerShell</span><span class="lang-fr">Ouvrez PowerShell</span></strong>
-      <span class="note"><span class="lang-en">Press <kbd>Win</kbd>, type <em>PowerShell</em>, press <kbd>Enter</kbd>. (Windows Terminal works great too.)</span>
-      <span class="lang-fr">Appuyez sur <kbd>Win</kbd>, tapez <em>PowerShell</em>, appuyez sur <kbd>Entrée</kbd>. (Windows Terminal fonctionne très bien aussi.)</span></span></label></li>
+      <span class="os-win">
+        <strong><span class="lang-en">Open PowerShell</span><span class="lang-fr">Ouvrez PowerShell</span></strong>
+        <span class="note"><span class="lang-en">Press <kbd>Win</kbd>, type <em>PowerShell</em>, press <kbd>Enter</kbd>. (Windows Terminal works great too.)</span>
+        <span class="lang-fr">Appuyez sur <kbd>Win</kbd>, tapez <em>PowerShell</em>, appuyez sur <kbd>Entrée</kbd>. (Windows Terminal fonctionne très bien aussi.)</span></span>
+      </span>
+      <span class="os-mac">
+        <strong><span class="lang-en">Open Terminal</span><span class="lang-fr">Ouvrez Terminal</span></strong>
+        <span class="note"><span class="lang-en">Press <kbd>⌘ Cmd</kbd>+<kbd>Space</kbd> to open Spotlight, type <em>Terminal</em>, press <kbd>Return</kbd>. (It also lives in <em>Applications → Utilities</em>.) Works on both Apple Silicon (M1–M4) and Intel Macs.</span>
+        <span class="lang-fr">Appuyez sur <kbd>⌘ Cmd</kbd>+<kbd>Espace</kbd> pour ouvrir Spotlight, tapez <em>Terminal</em>, appuyez sur <kbd>Retour</kbd>. (Il se trouve aussi dans <em>Applications → Utilitaires</em>.) Fonctionne sur les Mac Apple Silicon (M1–M4) comme Intel.</span></span>
+      </span></label></li>
     <li><input type="checkbox" id="in2"><label class="step-text" for="in2">
       <strong><span class="lang-en">Run the installer command</span><span class="lang-fr">Exécutez la commande d'installation</span></strong>
-      <span class="note"><span class="lang-en">Copy the block below into PowerShell and press <kbd>Enter</kbd>.</span>
-      <span class="lang-fr">Copiez le bloc ci-dessous dans PowerShell et appuyez sur <kbd>Entrée</kbd>.</span></span>
-      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> irm https://omp.sh/install.ps1 | iex</code></pre></div>
+      <span class="note"><span class="lang-en">Copy the block below into <span class="os-win">PowerShell</span><span class="os-mac">Terminal</span> and press <span class="os-win"><kbd>Enter</kbd></span><span class="os-mac"><kbd>Return</kbd></span>.</span>
+      <span class="lang-fr">Copiez le bloc ci-dessous dans <span class="os-win">PowerShell</span><span class="os-mac">Terminal</span> et appuyez sur <span class="os-win"><kbd>Entrée</kbd></span><span class="os-mac"><kbd>Retour</kbd></span>.</span></span>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> irm https://omp.sh/install.ps1 | iex</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> curl -fsSL https://omp.sh/install | sh</code></pre></div>
       </label></li>
     <li><input type="checkbox" id="in3"><label class="step-text" for="in3">
-      <strong><span class="lang-en">Note the PATH hint</span><span class="lang-fr">Notez l'indication de PATH</span></strong>
-      <span class="note"><span class="lang-en">If the installer prints a PATH instruction, follow it, then <strong>close PowerShell and open a new one</strong> so the change takes effect.</span>
-      <span class="lang-fr">Si l'installateur affiche une instruction concernant le PATH, suivez-la, puis <strong>fermez PowerShell et rouvrez-le</strong> pour que le changement prenne effet.</span></span></label></li>
+      <span class="os-win">
+        <strong><span class="lang-en">Note the PATH hint</span><span class="lang-fr">Notez l'indication de PATH</span></strong>
+        <span class="note"><span class="lang-en">If the installer prints a PATH instruction, follow it, then <strong>close PowerShell and open a new one</strong> so the change takes effect.</span>
+        <span class="lang-fr">Si l'installateur affiche une instruction concernant le PATH, suivez-la, puis <strong>fermez PowerShell et rouvrez-le</strong> pour que le changement prenne effet.</span></span>
+      </span>
+      <span class="os-mac">
+        <strong><span class="lang-en">Add OMP to your PATH (one-time)</span><span class="lang-fr">Ajoutez OMP à votre PATH (une seule fois)</span></strong>
+        <span class="note"><span class="lang-en">The installer puts <code class="inline">omp</code> in <code class="inline">~/.local/bin</code>, which macOS doesn't search by default. If it ends with <em>&quot;Add …/.local/bin to your PATH&quot;</em>, run the block below. If it says <em>&quot;Run 'omp' to get started!&quot;</em>, skip this — you're already set.</span>
+        <span class="lang-fr">L'installateur place <code class="inline">omp</code> dans <code class="inline">~/.local/bin</code>, dossier que macOS ne consulte pas par défaut. S'il se termine par <em>« Add …/.local/bin to your PATH »</em>, exécutez le bloc ci-dessous. S'il affiche <em>« Run 'omp' to get started! »</em>, passez cette étape — tout est prêt.</span></span>
+        <div class="term"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.zshrc
+<span class="ps">$</span> source ~/.zshrc</code></pre></div>
+      </span></label></li>
     <li><input type="checkbox" id="in4"><label class="step-text" for="in4">
       <strong><span class="lang-en">Verify the install</span><span class="lang-fr">Vérifiez l'installation</span></strong>
       <span class="note"><span class="lang-en">A version number printed (e.g. <code class="inline">omp/18.x.x</code>) means success.</span>
       <span class="lang-fr">Un numéro de version affiché (ex. <code class="inline">omp/18.x.x</code>) signifie que c'est bon.</span></span>
-      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp --version</code></pre></div>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp --version</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> omp --version</code></pre></div>
       </label></li>
     <li><input type="checkbox" id="in5"><label class="step-text" for="in5">
       <strong><span class="lang-en">Keep this terminal open</span><span class="lang-fr">Gardez ce terminal ouvert</span></strong>
-      <span class="note"><span class="lang-en">Everything from here happens in this same PowerShell window.</span>
-      <span class="lang-fr">Tout le reste se passe dans cette même fenêtre PowerShell.</span></span></label></li>
+      <span class="note"><span class="lang-en">Everything from here happens in this same <span class="os-win">PowerShell</span><span class="os-mac">Terminal</span> window.</span>
+      <span class="lang-fr">Tout le reste se passe dans cette même fenêtre <span class="os-win">PowerShell</span><span class="os-mac">Terminal</span>.</span></span></label></li>
   </ul>
 
-  <details class="acc">
+  <details class="acc os-win">
     <summary><span class="lang-en">Troubleshooting: <code class="inline">omp</code> is not recognized</span><span class="lang-fr">Dépannage : <code class="inline">omp</code> n'est pas reconnu</span></summary>
     <div class="acc-body">
-      <span class="lang-en">Almost always a PATH refresh issue: close <em>all</em> PowerShell/Terminal windows and open a brand-new one, then run <code class="inline">omp --version</code> again. If it still fails, re-run the installer and read the PATH note it prints. macOS/Linux users instead run <code class="inline">curl -fsSL https://omp.sh/install | sh</code>.</span>
-      <span class="lang-fr">Presque toujours un problème de rafraîchissement du PATH : fermez <em>toutes</em> les fenêtres PowerShell/Terminal et rouvrez-en une nouvelle, puis relancez <code class="inline">omp --version</code>. Si cela échoue encore, réexécutez l'installateur et lisez la note PATH qu'il affiche. Sous macOS/Linux : <code class="inline">curl -fsSL https://omp.sh/install | sh</code>.</span>
+      <span class="lang-en">Almost always a PATH refresh issue: close <em>all</em> PowerShell/Terminal windows and open a brand-new one, then run <code class="inline">omp --version</code> again. If it still fails, re-run the installer and read the PATH note it prints.</span>
+      <span class="lang-fr">Presque toujours un problème de rafraîchissement du PATH : fermez <em>toutes</em> les fenêtres PowerShell/Terminal et rouvrez-en une nouvelle, puis relancez <code class="inline">omp --version</code>. Si cela échoue encore, réexécutez l'installateur et lisez la note PATH qu'il affiche.</span>
+    </div>
+  </details>
+  <details class="acc os-mac">
+    <summary><span class="lang-en">Troubleshooting: <code class="inline">zsh: command not found: omp</code></span><span class="lang-fr">Dépannage : <code class="inline">zsh: command not found: omp</code></span></summary>
+    <div class="acc-body">
+      <span class="lang-en">
+        Your PATH doesn't include <code class="inline">~/.local/bin</code> yet. Run the two PATH lines from step 3, or quit Terminal completely (<kbd>⌘ Cmd</kbd>+<kbd>Q</kbd>) and reopen it. To confirm the file is there, run <code class="inline">ls ~/.local/bin/omp</code>; you can always start it directly with <code class="inline">~/.local/bin/omp</code>.
+        If your Terminal uses <strong>bash</strong> instead of zsh (older Macs — the prompt ends in <code class="inline">$</code> and <code class="inline">echo $SHELL</code> shows <code class="inline">/bin/bash</code>), write the PATH line to <code class="inline">~/.bash_profile</code> instead of <code class="inline">~/.zshrc</code>.
+        If <code class="inline">curl</code> reports a network or certificate error, check you're not behind a proxy/VPN that blocks downloads and try again.
+        Later, if macOS pops up <em>&quot;The python3 / git command requires the command line developer tools&quot;</em> (usually the first time the agent runs Python or starts a local server), click <strong>Install</strong> — it's a free Apple download, takes a few minutes, and only happens once. Then ask OMP to retry.
+      </span>
+      <span class="lang-fr">
+        Votre PATH n'inclut pas encore <code class="inline">~/.local/bin</code>. Exécutez les deux lignes PATH de l'étape 3, ou quittez complètement Terminal (<kbd>⌘ Cmd</kbd>+<kbd>Q</kbd>) et rouvrez-le. Pour vérifier que le fichier est bien là : <code class="inline">ls ~/.local/bin/omp</code> ; vous pouvez toujours le lancer directement avec <code class="inline">~/.local/bin/omp</code>.
+        Si votre Terminal utilise <strong>bash</strong> au lieu de zsh (Mac plus anciens — <code class="inline">echo $SHELL</code> affiche <code class="inline">/bin/bash</code>), écrivez la ligne PATH dans <code class="inline">~/.bash_profile</code> au lieu de <code class="inline">~/.zshrc</code>.
+        Si <code class="inline">curl</code> signale une erreur réseau ou de certificat, vérifiez qu'aucun proxy/VPN ne bloque les téléchargements, puis réessayez.
+        Plus tard, si macOS affiche <em>« La commande python3 / git nécessite les outils de développement en ligne de commande »</em> (souvent la première fois que l'agent lance Python ou un serveur local), cliquez sur <strong>Installer</strong> — c'est un téléchargement Apple gratuit, de quelques minutes, une seule fois. Demandez ensuite à OMP de réessayer.
+      </span>
     </div>
   </details>
 
@@ -143,15 +192,18 @@
   <ul class="checklist" data-checklist="connect">
     <li><input type="checkbox" id="co1"><label class="step-text" for="co1">
       <strong><span class="lang-en">Create the <code class="inline">amplify</code> folder and enter it</span><span class="lang-fr">Créez le dossier <code class="inline">amplify</code> et entrez-y</span></strong>
-      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> mkdir amplify
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> mkdir amplify
 <span class="ps">PS&gt;</span> cd amplify</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> mkdir ~/amplify
+<span class="ps">$</span> cd ~/amplify</code></pre></div>
       <span class="note"><span class="lang-en">The folder you launch OMP from becomes the "project" the agent works in.</span>
       <span class="lang-fr">Le dossier depuis lequel vous lancez OMP devient le « projet » dans lequel l'agent travaille.</span></span></label></li>
     <li><input type="checkbox" id="co2"><label class="step-text" for="co2">
       <strong><span class="lang-en">Launch OMP</span><span class="lang-fr">Lancez OMP</span></strong>
-      <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp</code></pre></div>
-      <span class="note"><span class="lang-en">The first launch opens a short setup wizard.</span>
-      <span class="lang-fr">Le premier lancement ouvre un petit assistant de configuration.</span></span></label></li>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> omp</code></pre></div>
+      <span class="note"><span class="lang-en">The first launch opens a short setup wizard.<span class="os-mac"> On a Mac, wherever these steps say <kbd>Enter</kbd> press <kbd>Return</kbd>, and OMP shortcuts like <kbd>Ctrl</kbd>+<kbd>O</kbd> really are <kbd>Ctrl</kbd> (not <kbd>⌘ Cmd</kbd>).</span></span>
+      <span class="lang-fr">Le premier lancement ouvre un petit assistant de configuration.<span class="os-mac"> Sur Mac, lorsque ces étapes disent <kbd>Entrée</kbd>, appuyez sur <kbd>Retour</kbd> ; et les raccourcis OMP comme <kbd>Ctrl</kbd>+<kbd>O</kbd> utilisent bien <kbd>Ctrl</kbd> (pas <kbd>⌘ Cmd</kbd>).</span></span></span></label></li>
     <li><input type="checkbox" id="co3"><label class="step-text" for="co3">
       <strong><span class="lang-en">Choose OpenRouter → Sign in</span><span class="lang-fr">Choisissez OpenRouter → Sign in</span></strong>
       <span class="note"><span class="lang-en">On <em>Set up your providers</em>, select <strong>OpenRouter</strong> and press <kbd>Enter</kbd>. Your browser opens an OpenRouter approval page.</span>
@@ -261,7 +313,7 @@
     <tbody>
       <tr><td><code class="inline">/model</code></td><td><span class="lang-en">Search &amp; switch the model mid-session.</span><span class="lang-fr">Chercher et changer de modèle en cours de session.</span></td></tr>
       <tr><td><kbd>Esc</kbd></td><td><span class="lang-en">Interrupt the agent when it goes the wrong way, then clarify.</span><span class="lang-fr">Interrompre l'agent s'il part dans la mauvaise direction, puis préciser.</span></td></tr>
-      <tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td><span class="lang-en">Expand/collapse full tool output (see what it ran and read).</span><span class="lang-fr">Déplier/replier la sortie complète des outils (voir ce qu'il a exécuté et lu).</span></td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td><span class="lang-en">Expand/collapse full tool output (see what it ran and read).</span><span class="lang-fr">Déplier/replier la sortie complète des outils (voir ce qu'il a exécuté et lu).</span><span class="os-mac"> <span class="lang-en">On a Mac this is still <kbd>Ctrl</kbd>, not <kbd>⌘ Cmd</kbd>.</span><span class="lang-fr">Sur Mac, c'est bien <kbd>Ctrl</kbd>, pas <kbd>⌘ Cmd</kbd>.</span></span></td></tr>
       <tr><td><code class="inline">@file</code></td><td><span class="lang-en">Attach a file (e.g. the CSV) to your message.</span><span class="lang-fr">Joindre un fichier (ex. le CSV) à votre message.</span></td></tr>
       <tr><td><code class="inline">omp --continue</code></td><td><span class="lang-en">Reopen your last session in the same folder tomorrow.</span><span class="lang-fr">Rouvrir votre dernière session dans le même dossier demain.</span></td></tr>
       <tr><td><code class="inline">omp -p "…"</code></td><td><span class="lang-en">Script mode: answer and exit — automation without chat.</span><span class="lang-fr">Mode script : répondre et quitter — de l'automatisation sans conversation.</span></td></tr>
@@ -277,6 +329,10 @@
   <p>
     <span class="lang-en">Copy the class dataset <code class="inline">data-NG-lf-iu-2014-2025-20261028_150104.csv</code> into your <code class="inline">amplify</code> folder, then paste this prompt into OMP (adjust model/paths as needed):</span>
     <span class="lang-fr">Copiez le jeu de données du cours <code class="inline">data-NG-lf-iu-2014-2025-20261028_150104.csv</code> dans votre dossier <code class="inline">amplify</code>, puis collez cette consigne dans OMP :</span>
+  </p>
+  <p class="hint">
+    <span class="lang-en">Can't find the folder? Open it from the terminal (in a second window, or before launching <code class="inline">omp</code>): <span class="os-win"><code class="inline">explorer .</code> opens it in File Explorer.</span><span class="os-mac"><code class="inline">open ~/amplify</code> opens it in Finder — your download is usually in <em>Downloads</em>; drag it across.</span></span>
+    <span class="lang-fr">Vous ne trouvez pas le dossier ? Ouvrez-le depuis le terminal (dans une seconde fenêtre, ou avant de lancer <code class="inline">omp</code>) : <span class="os-win"><code class="inline">explorer .</code> l'ouvre dans l'Explorateur de fichiers.</span><span class="os-mac"><code class="inline">open ~/amplify</code> l'ouvre dans le Finder — votre téléchargement est en général dans <em>Téléchargements</em> ; faites-le glisser.</span></span>
   </p>
   <div class="term"><div class="term-head"><span class="lang-en">prompt to paste into OMP</span><span class="lang-fr">consigne à coller dans OMP</span></div><pre><code>You are a data analyst for a neglected tropical disease program.
 The file data-NG-lf-iu-2014-2025-20261028_150104.csv in this folder is

@@ -25,6 +25,29 @@
     LF.setLang(LF.getLang());
   }
 
+  // ---- Operating system (Windows / macOS) ----------------------------
+  LF.getOS = function () {
+    var saved = null;
+    try { saved = localStorage.getItem("omp-class-os"); } catch (e) {}
+    if (saved === "win" || saved === "mac") return saved;
+    var p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+    return /mac/i.test(p) ? "mac" : "win";
+  };
+  LF.setOS = function (os) {
+    try { localStorage.setItem("omp-class-os", os); } catch (e) {}
+    document.body.classList.toggle("mac", os === "mac");
+    document.querySelectorAll(".os-toggle button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.os === os));
+    });
+  };
+
+  function initOS() {
+    document.querySelectorAll(".os-toggle button").forEach(function (b) {
+      b.addEventListener("click", function () { LF.setOS(b.dataset.os); });
+    });
+    LF.setOS(LF.getOS());
+  }
+
   // ---- Checklists ------------------------------------------------------
   function initChecklists() {
     document.querySelectorAll("[data-checklist]").forEach(function (list) {
@@ -71,7 +94,7 @@
       btn.dataset.fr = "Copier";
       btn.textContent = btn.dataset[LF.getLang()] || "Copy";
       btn.addEventListener("click", function () {
-        var text = pre.innerText.replace(/^\s*PS> ?|^\s*> ?/gm, "");
+        var text = pre.innerText.replace(/^\s*PS> ?|^\s*\$ ?|^\s*> ?/gm, "");
         navigator.clipboard.writeText(text).then(function () {
           btn.textContent = btn.dataset[LF.getLang()] === "Copier" ? "Copié ✓" : "Copied ✓";
           btn.classList.add("copied");
@@ -92,6 +115,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initLang();
+    initOS();
     initChecklists();
     initCopyButtons();
   });

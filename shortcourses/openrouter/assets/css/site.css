@@ -35,6 +35,11 @@ body:not(.fr) .lang-fr.block { display: none; }
 body.fr .lang-fr.block { display: block; }
 body.fr .lang-en.block { display: none; }
 
+/* OS layering: default Windows; body.mac shows macOS */
+.os-mac { display: none; }
+body.mac .os-mac { display: revert; }
+body.mac .os-win { display: none; }
+
 /* ---------- Sponsor bar ---------- */
 .sponsor-bar {
   display: flex; align-items: center; justify-content: center; gap: .7rem;
@@ -104,6 +109,10 @@ body.fr .lang-en.block { display: none; }
   cursor: pointer; font: inherit;
 }
 .lang-toggle button[aria-pressed="true"] { background: var(--accent); color: #ffffff; font-weight: 600; }
+.os-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; font-size: .9rem; background: var(--surface); }
+.os-toggle button { border: 0; background: transparent; color: var(--muted); padding: .4rem 1rem; cursor: pointer; font: inherit; }
+.os-toggle button[aria-pressed="true"] { background: var(--accent-2); color: #ffffff; font-weight: 600; }
+.os-pick { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 1rem 0; color: var(--muted); font-size: .95rem; }
 
 /* ---------- Layout ---------- */
 .wrap { max-width: 1080px; margin: 0 auto; padding: 2.5rem 1.4rem 5rem; }
@@ -147,7 +156,10 @@ a.card:hover { transform: translateY(-3px); border-color: var(--accent); }
 .checklist li.done .step-text { opacity: .55; }
 .checklist input[type="checkbox"] { margin-top: .35em; transform: scale(1.4); accent-color: var(--ok); cursor: pointer; }
 .checklist .step-text { flex: 1; }
-.checklist .step-text > strong { display: block; margin-bottom: .15rem; }
+.checklist .step-text > strong,
+.checklist .step-text > .os-win > strong,
+.checklist .step-text > .os-mac > strong { display: block; margin-bottom: .15rem; }
+p.hint { color: var(--muted); font-size: .95rem; }
 .checklist .step-text small, .checklist .step-text .note { color: var(--muted); font-size: .9rem; }
 
 .progress-track { height: 8px; background: var(--surface-2); border-radius: 99px; overflow: hidden; margin: .4rem 0 1.2rem; }
