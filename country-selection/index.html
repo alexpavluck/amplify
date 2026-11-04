@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amplify — Africa Country Selection Tool</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{--bg:#f7f8fb;--card:#fff;--border:#e3e6ee;--fg:#111827;--muted:#6b7280;--accent:#2563eb;--accent2:#7c3aed;--success:#059669;--warn:#d97706;--error:#dc2626;--r:12px}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:var(--fg);background:var(--bg);line-height:1.45}
+header{padding:18px 20px 10px;max-width:1280px;margin:0 auto}
+header h1{margin:0;font-size:22px;letter-spacing:-.02em}
+header p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.layout{max-width:1280px;margin:0 auto;padding:10px 16px 40px;display:grid;grid-template-columns:340px 1fr;gap:16px}
+@media(max-width:980px){.layout{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px}
+.card h2{margin:0 0 10px;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+label{font-size:12px;color:var(--muted);display:block;margin:8px 0 4px}
+input[type=number],select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:14px;background:#fff}
+input[type=number]:focus,select:focus{outline:2px solid #bfdbfe;border-color:var(--accent)}
+.row{display:flex;gap:8px;align-items:center}
+.row input{flex:1}
+.btn{appearance:none;border:1px solid var(--border);background:#fff;padding:9px 14px;border-radius:10px;font-weight:600;font-size:13px;cursor:pointer}
+.btn:hover{background:#f3f4f6}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:#1d4ed8}
+.btn.ghost{background:transparent}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:#fff}
+.pill button{border:none;background:transparent;cursor:pointer;font-weight:700}
+.badge{font-size:11px;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+.badge.s2{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:8px 0 0}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:4px;border:1px solid #0001}
+#map{height:520px;border-radius:12px;border:1px solid var(--border)}
+@media(max-width:700px){#map{height:420px}}
+.kpis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px}
+.kpi b{font-size:20px}
+.kpi span{font-size:11px;color:var(--muted);display:block}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#f9fafb;position:sticky;top:0}
+.wrap{overflow:auto;max-height:520px;border:1px solid var(--border);border-radius:10px}
+.tag{font-size:11px;padding:2px 6px;border-radius:999px;background:#f3f4f6;border:1px solid var(--border);white-space:nowrap}
+.lang{font-size:11px;padding:2px 6px;border-radius:999px;background:#fef3c7;border:1px solid #fde68a}
+.hint{font-size:12px;color:var(--muted)}
+.exclude-grid{max-height:220px;overflow:auto;border:1px solid var(--border);border-radius:10px;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.exclude-grid label{margin:0;font-size:12px;color:var(--fg);display:flex;gap:6px;align-items:center}
+.seed{width:90px}
+hr{border:none;border-top:1px solid var(--border);margin:12px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>Amplify — Africa Country Selection Tool</h1>
+  <p>Randomly select countries for two Amplify sessions. Set languages, targets, exclusions, then draw. Map highlights Session 1 (blue) and Session 2 (purple).</p>
+</header>
+
+<div class="layout">
+  <!-- Controls -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="card">
+      <h2>Selection criteria</h2>
+
+      <label>Languages allowed (session grouping)</label>
+      <div class="row" style="flex-wrap:wrap;gap:6px" id="langToggles"></div>
+      <div class="hint">A country qualifies if it speaks <em>any</em> selected language. Select multiple to allow mixed-language sessions; or pick e.g. English only for an English cohort.</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+        <div>
+          <label>Session 1 — invited</label>
+          <input type="number" id="n1" min="0" max="30" value="10">
+        </div>
+        <div>
+          <label>Session 2 — invited</label>
+          <input type="number" id="n2" min="0" max="30" value="10">
+        </div>
+      </div>
+      <div class="hint" style="margin-top:6px">Cap is 10 per session (you can invite up to 30 but UI will warn). Acceptance estimator below helps size the invite.</div>
+
+      <label style="margin-top:10px">NTD filter (optional)</label>
+      <select id="ntdFilter">
+        <option value="">Any NTD burden</option>
+        <option value="1+">≥1 NTD requiring PC</option>
+        <option value="3+">≥3 NTDs</option>
+        <option value="5">5 NTDs (highest burden)</option>
+      </select>
+
+      <label>Random seed (reproducible draw)</label>
+      <div class="row">
+        <input type="number" id="seed" class="seed" value="42" placeholder="e.g. 42">
+        <button class="btn" id="randSeed" type="button">↻ randomize</button>
+      </div>
+
+      <label>Acceptance rate assumption</label>
+      <div class="row">
+        <input type="number" id="accRate" min="0" max="100" step="5" value="40"> <span class="hint">% &nbsp; (last cycle: 40%)</span>
+      </div>
+      <div class="hint" id="accHint" style="margin-top:4px"></div>
+
+      <hr>
+      <div class="row">
+        <button class="btn primary" id="draw" style="flex:1">🎲 Random draw</button>
+        <button class="btn" id="clear">Clear</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button class="btn" id="copyLink" style="flex:1">Copy share link</button>
+        <button class="btn" id="csv" style="flex:1">Download CSV</button>
+      </div>
+      <div id="status" class="hint" style="margin-top:8px"></div>
+    </div>
+
+    <div class="card">
+      <h2>Exclusions</h2>
+      <div class="hint" style="margin-bottom:8px">Uncheck/tick to remove from pool. 2026 Amplify class pre-ticked as excluded (editable).</div>
+      <div class="row" style="margin-bottom:8px">
+        <button class="btn" id="exAll">Select all</button>
+        <button class="btn" id="exNone">Select none</button>
+        <button class="btn" id="exAmplify">Reset to 2026 class</button>
+      </div>
+      <label>Quick search</label>
+      <input type="text" id="exSearch" placeholder="Filter e.g. Rwanda" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px">
+      <div style="margin-top:8px" id="excludeCount" class="hint"></div>
+      <div class="exclude-grid" id="excludeGrid"></div>
+    </div>
+
+    <div class="card">
+      <h2>How it works</h2>
+      <div class="hint">
+        <ol style="margin:6px 0 0 16px;padding:0">
+          <li>Pool = Africa (54) minus exclusions, filtered by language & NTD rule.</li>
+          <li>Seeded Fisher–Yates shuffle → first N1 → Session 1, next N2 → Session 2.</li>
+          <li>Map + table update; share link encodes criteria for reproducibility.</li>
+        </ol>
+        <p style="margin:8px 0 0">NTD data: ESPEN endemicity (PC-required: LF, Oncho, STH, SCH, Trachoma). Languages: official/working language relevant to session delivery.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map + results -->
+  <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+    <div class="card" style="padding:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <h2 style="margin:0">Map</h2>
+        <div class="legend">
+          <span><i style="background:#2563eb"></i> Session 1</span>
+          <span><i style="background:#7c3aed"></i> Session 2</span>
+          <span><i style="background:#e5e7eb"></i> Not selected</span>
+          <span><i style="background:#f3f4f6;border-style:dashed"></i> Excluded</span>
+        </div>
+      </div>
+      <div id="map"></div>
+      <div class="kpis" id="kpis"></div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <h2 style="margin:0">Selection — table</h2>
+        <span class="hint" id="tableMeta"></span>
+      </div>
+      <div class="wrap" style="margin-top:10px">
+        <table>
+          <thead><tr>
+            <th>Session</th><th>Country</th><th>ISO</th><th>Language(s)</th><th>Endemic NTDs</th><th>#</th>
+          </tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="hint" id="poolHint" style="margin-top:8px"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- Data ----
+const AFRICA = [
+ {"iso2":"DZ","name":"Algeria","languages":["Arabic","French"],"ntds":["Trachoma"]},
+ {"iso2":"AO","name":"Angola","languages":["Portuguese"],"ntds":["LF","Oncho","STH","SCH"]},
+ {"iso2":"BJ","name":"Benin","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"BW","name":"Botswana","languages":["English"],"ntds":["STH","SCH"]},
+ {"iso2":"BF","name":"Burkina Faso","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"BI","name":"Burundi","languages":["French","English"],"ntds":["Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"CM","name":"Cameroon","languages":["French","English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"CV","name":"Cabo Verde","languages":["Portuguese"],"ntds":["STH","SCH"]},
+ {"iso2":"CF","name":"Central African Republic","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"TD","name":"Chad","languages":["French","Arabic"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"KM","name":"Comoros","languages":["French","Arabic"],"ntds":["LF","STH","SCH"]},
+ {"iso2":"CG","name":"Congo","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"CD","name":"Democratic Rep. of the Congo","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"CI","name":"Côte d'Ivoire","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"DJ","name":"Djibouti","languages":["French","Arabic"],"ntds":["Trachoma"]},
+ {"iso2":"EG","name":"Egypt","languages":["Arabic"],"ntds":["LF","Trachoma"]},
+ {"iso2":"GQ","name":"Equatorial Guinea","languages":["Spanish","French","Portuguese"],"ntds":["LF","Oncho","STH","SCH"]},
+ {"iso2":"ER","name":"Eritrea","languages":["Arabic","English"],"ntds":["LF","STH","SCH","Trachoma"]},
+ {"iso2":"SZ","name":"Eswatini","languages":["English"],"ntds":["STH","SCH"]},
+ {"iso2":"ET","name":"Ethiopia","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"GA","name":"Gabon","languages":["French"],"ntds":["LF","Oncho","STH","SCH"]},
+ {"iso2":"GM","name":"Gambia","languages":["English"],"ntds":["LF","STH","SCH","Trachoma"]},
+ {"iso2":"GH","name":"Ghana","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"GN","name":"Guinea","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"GW","name":"Guinea-Bissau","languages":["Portuguese"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"KE","name":"Kenya","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"LS","name":"Lesotho","languages":["English"],"ntds":["STH","SCH"]},
+ {"iso2":"LR","name":"Liberia","languages":["English"],"ntds":["LF","Oncho","STH","SCH"]},
+ {"iso2":"LY","name":"Libya","languages":["Arabic"],"ntds":["Trachoma"]},
+ {"iso2":"MG","name":"Madagascar","languages":["French"],"ntds":["LF","STH","SCH"]},
+ {"iso2":"MW","name":"Malawi","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"ML","name":"Mali","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"MR","name":"Mauritania","languages":["Arabic","French"],"ntds":["LF","STH","SCH","Trachoma"]},
+ {"iso2":"MU","name":"Mauritius","languages":["English","French"],"ntds":[]},
+ {"iso2":"MA","name":"Morocco","languages":["Arabic","French"],"ntds":["Trachoma"]},
+ {"iso2":"MZ","name":"Mozambique","languages":["Portuguese"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"NA","name":"Namibia","languages":["English"],"ntds":["STH","SCH","Trachoma"]},
+ {"iso2":"NE","name":"Niger","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"NG","name":"Nigeria","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"RW","name":"Rwanda","languages":["English","French"],"ntds":["STH","SCH"]},
+ {"iso2":"ST","name":"São Tomé and Príncipe","languages":["Portuguese"],"ntds":["LF","STH","SCH"]},
+ {"iso2":"SN","name":"Senegal","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"SC","name":"Seychelles","languages":["English","French"],"ntds":[]},
+ {"iso2":"SL","name":"Sierra Leone","languages":["English"],"ntds":["LF","Oncho","STH","SCH"]},
+ {"iso2":"SO","name":"Somalia","languages":["Arabic","English"],"ntds":["STH","SCH","Trachoma"]},
+ {"iso2":"ZA","name":"South Africa","languages":["English"],"ntds":["STH","SCH"]},
+ {"iso2":"SS","name":"South Sudan","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"SD","name":"Sudan","languages":["Arabic","English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"TZ","name":"Tanzania","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"TG","name":"Togo","languages":["French"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"TN","name":"Tunisia","languages":["Arabic","French"],"ntds":["Trachoma"]},
+ {"iso2":"UG","name":"Uganda","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"ZM","name":"Zambia","languages":["English"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+ {"iso2":"ZW","name":"Zimbabwe","languages":["English"],"ntds":["LF","STH","SCH","Trachoma"]},
+ {"iso2":"YE","name":"Yemen","languages":["Arabic"],"ntds":["LF","Oncho","STH","SCH","Trachoma"]},
+];
+const ALL_LANGS = ["English","French","Portuguese","Arabic","Spanish"];
+const DEFAULT_EXCLUDED = new Set(["RW","KE","GH","SN","ET","BJ","UG","ZM","MW","CM","CI","ML","BF","NE","NG"]);
+
+// State
+let excluded = new Set(DEFAULT_EXCLUDED);
+let session1 = [], session2 = [];
+let geoLayer = null;
+
+// Utils
+function mulberry32(a){return function(){let t=a+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296}}
+function shuffleSeeded(arr, seed){const r=[...arr], rnd=mulberry32(seed>>>0); for(let i=r.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1)); [r[i],r[j]]=[r[j],r[i]]} return r;}
+function getLangs(){return [...document.querySelectorAll('.langChk:checked')].map(c=>c.value)}
+function pool(){
+  const langs=getLangs();
+  const ntd=document.getElementById('ntdFilter').value;
+  return AFRICA.filter(c=>{
+    if(excluded.has(c.iso2)) return false;
+    if(langs.length && !c.languages.some(l=>langs.includes(l))) return false;
+    if(ntd==="1+" && c.ntds.length<1) return false;
+    if(ntd==="3+" && c.ntds.length<3) return false;
+    if(ntd==="5" && c.ntds.length<5) return false;
+    return true;
+  });
+}
+function updateAcceptanceHint(){
+  const rate=parseFloat(document.getElementById('accRate').value)||0;
+  const n1=parseInt(document.getElementById('n1').value)||0;
+  const n2=parseInt(document.getElementById('n2').value)||0;
+  const total=n1+n2;
+  if(!rate){document.getElementById('accHint').textContent='';return}
+  const needPerSession = r=> r? Math.ceil(10/(r/100)) : 0;
+  const need=needPerSession(rate);
+  const expected=Math.round(total*rate/100);
+  document.getElementById('accHint').textContent =
+    `At ${rate}% acceptance: invite ~${need} to fill 10 seats per session · your invite of ${total} → ~${expected} expected to accept. ${need>total?'⚠ Invite more to reliably fill both sessions.':''}`;
+}
+
+function renderLangs(){
+  const el=document.getElementById('langToggles');
+  el.innerHTML=ALL_LANGS.map(l=>`<label class="pill" style="cursor:pointer"><input type="checkbox" class="langChk" value="${l}" checked> ${l}</label>`).join('');
+  el.querySelectorAll('input').forEach(c=>c.addEventListener('change', ()=>{syncURL(); updateAcceptanceHint(); refreshPoolHint(); renderMap()}));
+}
+function renderExclusions(){
+  const q=(document.getElementById('exSearch').value||'').toLowerCase();
+  const grid=document.getElementById('excludeGrid');
+  grid.innerHTML=AFRICA.filter(c=>!q||c.name.toLowerCase().includes(q)||c.iso2.toLowerCase().includes(q))
+    .map(c=>`<label><input type="checkbox" data-iso="${c.iso2}" ${excluded.has(c.iso2)?'checked':''}> ${c.name} <span class="hint">(${c.iso2})</span></label>`).join('');
+  grid.querySelectorAll('input').forEach(cb=>cb.addEventListener('change', e=>{
+    const iso=e.target.dataset.iso;
+    if(e.target.checked) excluded.add(iso); else excluded.delete(iso);
+    syncURL(); refreshPoolHint(); renderMap(); document.getElementById('excludeCount').textContent=`Excluded: ${excluded.size} · Pool: ${pool().length}`;
+  }));
+  document.getElementById('excludeCount').textContent=`Excluded: ${excluded.size} · Pool: ${pool().length}`;
+}
+function refreshPoolHint(){
+  const p=pool();
+  const n1=parseInt(document.getElementById('n1').value)||0;
+  const n2=parseInt(document.getElementById('n2').value)||0;
+  document.getElementById('poolHint').textContent=`Eligible pool: ${p.length} countries · will draw ${Math.min(n1,p.length)} + ${Math.min(n2, Math.max(0,p.length-n1))} of them. ${p.length < n1+n2 ? '⚠ Pool smaller than invite — reduce invite or relax filters.' : ''}`;
+  updateAcceptanceHint();
+}
+function renderTable(){
+  const tb=document.getElementById('tbody');
+  const rows=[];
+  session1.forEach(c=>rows.push({session:'Session 1',...c}));
+  session2.forEach(c=>rows.push({session:'Session 2',...c}));
+  tb.innerHTML=rows.map(r=>`
+    <tr>
+      <td><span class="badge ${r.session==='Session 2'?'s2':''}">${r.session}</span></td>
+      <td><b>${r.name}</b></td>
+      <td>${r.iso2}</td>
+      <td>${r.languages.map(l=>`<span class="lang">${l}</span>`).join(' ')}</td>
+      <td>${r.ntds.length? r.ntds.map(n=>`<span class="tag">${n}</span>`).join(' ') : '<span class="hint">None requiring PC</span>'}</td>
+      <td>${r.ntds.length}</td>
+    </tr>`).join('') || `<tr><td colspan="6" class="hint" style="text-align:center;padding:18px">No selection yet — set criteria and hit Random draw.</td></tr>`;
+  document.getElementById('tableMeta').textContent = rows.length ? `${rows.length} invited (${session1.length} S1 + ${session2.length} S2)` : '';
+  const p=pool();
+  document.getElementById('kpis').innerHTML = `
+    <div class="kpi"><b>${p.length}</b><span>Eligible pool</span></div>
+    <div class="kpi"><b style="color:var(--accent)">${session1.length}</b><span>Session 1 invited</span></div>
+    <div class="kpi"><b style="color:var(--accent2)">${session2.length}</b><span>Session 2 invited</span></div>
+  `;
+}
+function doDraw(){
+  const p=pool();
+  const n1=Math.min(parseInt(document.getElementById('n1').value)||0, 30);
+  const n2=Math.min(parseInt(document.getElementById('n2').value)||0, 30);
+  const seed=parseInt(document.getElementById('seed').value)||0;
+  if(n1>10||n2>10) alert('Cap is 10 per session — invite above 10 will be highlighted. Consider using acceptance-rate to size the invite.');
+  if(p.length===0){document.getElementById('status').textContent='No countries match current filters.'; return}
+  const shuf=shuffleSeeded(p, seed);
+  session1=shuf.slice(0, Math.min(n1, p.length));
+  session2=shuf.slice(session1.length, Math.min(session1.length+n2, p.length));
+  if(n1+n2>p.length) document.getElementById('status').textContent=`⚠ Pool has ${p.length} but invite is ${n1+n2}; drew all available.`;
+  else document.getElementById('status').textContent=`Drew ${session1.length}+${session2.length} from ${p.length} eligible (seed ${seed}). Share link copied to URL bar.`;
+  syncURL(true); renderTable(); renderMap(); updateAcceptanceHint();
+}
+function toCSV(){
+  const rows=[['session','country','iso2','languages','ntds','ntd_count']];
+  session1.forEach(c=>rows.push(['Session 1',c.name,c.iso2,c.languages.join(';'),c.ntds.join(';'),c.ntds.length]));
+  session2.forEach(c=>rows.push(['Session 2',c.name,c.iso2,c.languages.join(';'),c.ntds.join(';'),c.ntds.length]));
+  if(rows.length===1){alert('Nothing to export — run a draw first.');return}
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'}), a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='amplify-selection.csv'; a.click();
+}
+
+// Map
+let map, africaGeo;
+async function initMap(){
+  map=L.map('map',{zoomControl:true}).setView([2,20],3);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OSM © CARTO · country shapes Natural Earth via geojson-maps',maxZoom:6,minZoom:2}).addTo(map);
+  try{
+    const res=await fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json');
+    const gj=await res.json();
+    africaGeo={type:'FeatureCollection',features:gj.features.filter(f=>AFRICA.some(a=>a.iso2===f.id || a.name===f.properties.name || f.properties.name.includes(a.name)))};
+    // fallback: if filter too strict, use ISO match via AFRICA set
+    if(africaGeo.features.length<40){
+      const names=new Set(AFRICA.map(a=>a.name.toLowerCase()));
+      const isoSet=new Set(AFRICA.map(a=>a.iso2));
+      africaGeo={type:'FeatureCollection',features:gj.features.filter(f=>{
+        const id=(f.id||'').toUpperCase();
+        const nm=(f.properties.name||'').toLowerCase();
+        return isoSet.has(id) || names.has(nm) || [...names].some(n=>nm.includes(n.toLowerCase())||n.includes(nm));
+      })};
+    }
+  }catch(e){
+    document.getElementById('status').textContent='Map shapes failed to load; table still works.';
+    return;
+  }
+  renderMap();
+}
+function styleFor(iso){
+  if(excluded.has(iso)) return {fillColor:'#f3f4f6',color:'#9ca3af',weight:1,dashArray:'4 4',fillOpacity:.35};
+  if(session1.some(c=>c.iso2===iso)) return {fillColor:'#2563eb',color:'#1e40af',weight:1.2,fillOpacity:.75};
+  if(session2.some(c=>c.iso2===iso)) return {fillColor:'#7c3aed',color:'#5b21b6',weight:1.2,fillOpacity:.75};
+  return {fillColor:'#e5e7eb',color:'#9ca3af',weight:1,fillOpacity:.55};
+}
+function renderMap(){
+  if(!map||!africaGeo) return;
+  if(geoLayer) geoLayer.remove();
+  const s1=new Set(session1.map(c=>c.iso2)), s2=new Set(session2.map(c=>c.iso2));
+  geoLayer=L.geoJSON(africaGeo,{
+    style: f=>{
+      const iso=(f.id||'').toUpperCase();
+      const match=AFRICA.find(a=>a.iso2===iso);
+      const key=match? match.iso2 : (AFRICA.find(a=>f.properties.name.toLowerCase().includes(a.name.toLowerCase()))||{}).iso2 || iso;
+      return styleFor(key);
+    },
+    onEachFeature:(f,layer)=>{
+      const iso=(f.id||'').toUpperCase();
+      let c=AFRICA.find(a=>a.iso2===iso);
+      if(!c) c=AFRICA.find(a=>f.properties.name.toLowerCase().includes(a.name.toLowerCase()));
+      if(!c) return;
+      const inS1=s1.has(c.iso2), inS2=s2.has(c.iso2), ex=excluded.has(c.iso2);
+      const state=ex?'Excluded':inS1?'Session 1':inS2?'Session 2':'Eligible';
+      layer.bindTooltip(`<b>${c.name} (${c.iso2})</b><br>${c.languages.join(', ')} · ${c.ntds.join(', ')||'No PC NTDs'}<br><i>${state}</i>`,{sticky:true});
+      layer.on('click',()=>{
+        if(excluded.has(c.iso2)){excluded.delete(c.iso2)} else {excluded.add(c.iso2)}
+        renderExclusions(); syncURL(); refreshPoolHint(); renderMap();
+      });
+    }
+  }).addTo(map);
+}
+
+// URL sync
+function syncURL(withSessions){
+  const params=new URLSearchParams();
+  params.set('langs', getLangs().join(','));
+  params.set('n1', document.getElementById('n1').value);
+  params.set('n2', document.getElementById('n2').value);
+  params.set('ntd', document.getElementById('ntdFilter').value);
+  params.set('seed', document.getElementById('seed').value);
+  params.set('acc', document.getElementById('accRate').value);
+  params.set('ex', [...excluded].join(','));
+  if(withSessions){ params.set('s1', session1.map(c=>c.iso2).join(',')); params.set('s2', session2.map(c=>c.iso2).join(',')); }
+  history.replaceState(null,'','?'+params.toString());
+}
+function loadURL(){
+  const p=new URLSearchParams(location.search);
+  if(p.has('langs')){ const v=p.get('langs').split(',').filter(Boolean); document.querySelectorAll('.langChk').forEach(c=>c.checked=v.includes(c.value)); }
+  if(p.has('n1')) document.getElementById('n1').value=p.get('n1');
+  if(p.has('n2')) document.getElementById('n2').value=p.get('n2');
+  if(p.has('ntd')) document.getElementById('ntdFilter').value=p.get('ntd');
+  if(p.has('seed')) document.getElementById('seed').value=p.get('seed');
+  if(p.has('acc')) document.getElementById('accRate').value=p.get('acc');
+  if(p.has('ex')) excluded=new Set(p.get('ex').split(',').filter(Boolean));
+  if(p.has('s1')||p.has('s2')){
+    const byIso=new Map(AFRICA.map(c=>[c.iso2,c]));
+    session1=(p.get('s1')||'').split(',').filter(Boolean).map(id=>byIso.get(id)).filter(Boolean);
+    session2=(p.get('s2')||'').split(',').filter(Boolean).map(id=>byIso.get(id)).filter(Boolean);
+  }
+}
+
+// Events
+document.getElementById('draw').addEventListener('click', doDraw);
+document.getElementById('clear').addEventListener('click', ()=>{session1=[];session2=[];document.getElementById('status').textContent='Cleared.';syncURL(true);renderTable();renderMap()});
+document.getElementById('randSeed').addEventListener('click', ()=>{document.getElementById('seed').value=Math.floor(Math.random()*100000);syncURL();});
+document.getElementById('csv').addEventListener('click', toCSV);
+document.getElementById('copyLink').addEventListener('click', async ()=>{syncURL(true); await navigator.clipboard.writeText(location.href); document.getElementById('status').textContent='Link copied!';});
+document.getElementById('exSearch').addEventListener('input', renderExclusions);
+document.getElementById('exAll').addEventListener('click', ()=>{excluded=new Set(AFRICA.map(c=>c.iso2)); renderExclusions(); syncURL(); refreshPoolHint(); renderMap()});
+document.getElementById('exNone').addEventListener('click', ()=>{excluded.clear(); renderExclusions(); syncURL(); refreshPoolHint(); renderMap()});
+document.getElementById('exAmplify').addEventListener('click', ()=>{excluded=new Set(DEFAULT_EXCLUDED); renderExclusions(); syncURL(); refreshPoolHint(); renderMap()});
+document.getElementById('ntdFilter').addEventListener('change', ()=>{syncURL(); refreshPoolHint(); renderMap()});
+['n1','n2','accRate','seed'].forEach(id=>document.getElementById(id).addEventListener('input', ()=>{syncURL(); refreshPoolHint()}));
+document.getElementById('accRate').addEventListener('input', updateAcceptanceHint);
+
+// Boot
+renderLangs();
+renderExclusions();
+loadURL();
+refreshPoolHint();
+renderTable();
+updateAcceptanceHint();
+initMap();
+if(session1.length||session2.length) renderTable();
+</script>
+</body>
+</html>
