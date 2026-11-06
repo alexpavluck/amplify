@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup &amp; Publish — GitHub + Vercel | Installation &amp; publication</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
+    <div><div class="eyebrow">GitHub × Vercel</div><a class="brand" href="index.html"><span class="dot"></span>GitHub × Vercel</a></div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <ol>
+    <li><a href="index.html"><span class="n">01</span><span><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></span></a></li>
+    <li><a href="setup.html" class="active"><span class="n">02</span><span><span class="lang-en">Setup &amp; Publish</span><span class="lang-fr">Installation &amp; publication</span></span></a></li>
+  </ol>
+  <ol>
+    <li><a href="#part-github"><span class="n">1</span><span><span class="lang-en">GitHub account</span><span class="lang-fr">Compte GitHub</span></span></a></li>
+    <li><a href="#part-install"><span class="n">2</span><span><span class="lang-en">Install git + GitHub CLI</span><span class="lang-fr">Installer git + GitHub CLI</span></span></a></li>
+    <li><a href="#part-push"><span class="n">3</span><span><span class="lang-en">The agent's first push</span><span class="lang-fr">Première poussée de l'agent</span></span></a></li>
+    <li><a href="#part-vercel"><span class="n">4</span><span><span class="lang-en">Go live with Vercel</span><span class="lang-fr">Mise en ligne avec Vercel</span></span></a></li>
+    <li><a href="#part-loop"><span class="n">5</span><span><span class="lang-en">The everyday loop</span><span class="lang-fr">La boucle du quotidien</span></span></a></li>
+    <li><a href="#troubleshooting"><span class="n">?</span><span><span class="lang-en">Troubleshooting &amp; FAQ</span><span class="lang-fr">Dépannage &amp; FAQ</span></span></a></li>
+  </ol>
+  <div class="map-foot"><a href="https://amplify-course.com" target="_blank" rel="noopener">amplify-course.com</a></div>
+</nav>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span class="lang-en">Parts 1–5 · checklist-driven</span><span class="lang-fr">Parties 1–5 · guidé par des check-lists</span></p>
+    <h1>
+      <span class="lang-en">Setup &amp; Publish</span>
+      <span class="lang-fr">Installation &amp; publication</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">Work top to bottom. Tick every box — your progress is saved in this browser, so you can pause and come back. All terminal blocks have a <strong>Copy</strong> button. One-time setup: about 30 minutes. After that, your agent does the typing.</span>
+      <span class="lang-fr">Avancez de haut en bas. Cochez chaque case — votre progression est enregistrée dans ce navigateur, vous pouvez faire une pause et revenir. Tous les blocs de terminal ont un bouton <strong>Copier</strong>. Installation unique : environ 30 minutes. Ensuite, votre agent tape pour vous.</span>
+    </p>
+    <div class="os-pick">
+      <span class="lang-en">My computer runs:</span><span class="lang-fr">Mon ordinateur est sous :</span>
+      <div class="os-toggle" role="group" aria-label="Operating system / Système d'exploitation">
+        <button type="button" data-os="win" aria-pressed="true">Windows</button>
+        <button type="button" data-os="mac" aria-pressed="false">macOS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PART 1 ================= -->
+  <h2 id="part-github">1 · <span class="lang-en">Create your free GitHub account</span><span class="lang-fr">Créez votre compte GitHub gratuit</span></h2>
+  <p>
+    <span class="lang-en">GitHub is where the master copy of your project will live in the cloud — with every version remembered. The free plan gives you <strong>unlimited public and private repositories</strong>. No credit card, no trial period.</span>
+    <span class="lang-fr">GitHub est l'endroit où la copie maîtresse de votre projet vivra dans le cloud — avec chaque version mémorisée. Le plan gratuit offre des <strong>dépôts publics et privés illimités</strong>. Sans carte bancaire, sans période d'essai.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="github">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="github"></div></div>
+
+  <ul class="checklist" data-checklist="github">
+    <li><input type="checkbox" id="gh1"><label class="step-text" for="gh1">
+      <strong><span class="lang-en">Open the sign-up page</span><span class="lang-fr">Ouvrez la page d'inscription</span></strong>
+      <span class="note"><span class="lang-en">Go to <a href="https://github.com/signup" target="_blank" rel="noopener">https://github.com/signup</a>.</span>
+      <span class="lang-fr">Rendez-vous sur <a href="https://github.com/signup" target="_blank" rel="noopener">https://github.com/signup</a>.</span></span></label></li>
+    <li><input type="checkbox" id="gh2"><label class="step-text" for="gh2">
+      <strong><span class="lang-en">Sign up with your email</span><span class="lang-fr">Inscrivez-vous avec votre e-mail</span></strong>
+      <span class="note"><span class="lang-en">Enter your email, create a password, and pick a username. <strong>Choose the username with care</strong> — it appears in every URL you share: <code class="inline">github.com/&lt;username&gt;</code>.</span>
+      <span class="lang-fr">Saisissez votre e-mail, créez un mot de passe et choisissez un nom d'utilisateur. <strong>Choisissez-le avec soin</strong> — il apparaît dans chaque adresse que vous partagerez : <code class="inline">github.com/&lt;nom-utilisateur&gt;</code>.</span></span></label></li>
+    <li><input type="checkbox" id="gh3"><label class="step-text" for="gh3">
+      <strong><span class="lang-en">Verify your email</span><span class="lang-fr">Vérifiez votre e-mail</span></strong>
+      <span class="note"><span class="lang-en">GitHub emails you a code — enter it. You cannot push code until the address is verified.</span>
+      <span class="lang-fr">GitHub vous envoie un code par e-mail — saisissez-le. Impossible de pousser du code tant que l'adresse n'est pas vérifiée.</span></span></label></li>
+    <li><input type="checkbox" id="gh4"><label class="step-text" for="gh4">
+      <strong><span class="lang-en">Skip the personalization questions</span><span class="lang-fr">Sautez les questions de personnalisation</span></strong>
+      <span class="note"><span class="lang-en">GitHub asks about your team size and interests — answer or skip; nothing here changes your account.</span>
+      <span class="lang-fr">GitHub pose des questions sur votre équipe et vos centres d'intérêt — répondez ou sautez ; rien de cela ne change votre compte.</span></span></label></li>
+    <li><input type="checkbox" id="gh5"><label class="step-text" for="gh5">
+      <strong><span class="lang-en">Confirm you're on the Free plan</span><span class="lang-fr">Confirmez que vous êtes sur le plan gratuit</span></strong>
+      <span class="note"><span class="lang-en">If asked to choose a plan, pick <strong>Free</strong>. Your dashboard at <a href="https://github.com" target="_blank" rel="noopener">github.com</a> is now your home base.</span>
+      <span class="lang-fr">Si l'on vous demande de choisir un plan, prenez <strong>Free</strong>. Votre tableau de bord sur <a href="https://github.com" target="_blank" rel="noopener">github.com</a> est maintenant votre port d'attache.</span></span></label></li>
+  </ul>
+
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">Public or private?</span><span class="lang-fr">Public ou privé ?</span></div>
+    <span class="lang-en">Every repository you create can be <strong>private</strong> (only you — and people you invite — can see it) or <strong>public</strong> (anyone can read the code). In this class we create a <strong>private</strong> repository: your Vercel website stays publicly visible either way, but your code history stays yours. You can flip the switch later in the repository's <em>Settings</em>.</span>
+    <span class="lang-fr">Chaque dépôt que vous créez peut être <strong>privé</strong> (visible uniquement par vous — et les personnes invitées) ou <strong>public</strong> (lisible par tout le monde). Dans ce cours, nous créons un dépôt <strong>privé</strong> : votre site Vercel reste publiquement visible dans les deux cas, mais votre historique de code reste à vous. Vous pourrez changer cela plus tard dans les <em>Settings</em> du dépôt.</span>
+  </div>
+
+  <!-- ================= PART 2 ================= -->
+  <h2 id="part-install">2 · <span class="lang-en">Install git + the GitHub CLI, then sign in</span><span class="lang-fr">Installer git + le GitHub CLI, puis se connecter</span> <span class="os-win">(Windows)</span><span class="os-mac">(macOS)</span></h2>
+  <p>
+    <span class="lang-en">Two small tools: <code class="inline">git</code> tracks versions of your folder, and <code class="inline">gh</code> (the GitHub CLI) lets you — and your agent — talk to GitHub from the terminal. You sign in <strong>once</strong>; after that, <code class="inline">omp</code> can push for you.</span>
+    <span class="lang-fr">Deux petits outils : <code class="inline">git</code> suit les versions de votre dossier, et <code class="inline">gh</code> (le GitHub CLI) permet à vous — et à votre agent — de parler à GitHub depuis le terminal. Vous vous connectez <strong>une seule fois</strong> ; ensuite, <code class="inline">omp</code> peut pousser pour vous.</span>
+  </p>
+  <div class="os-pick">
+    <span class="lang-en">Show steps for:</span><span class="lang-fr">Afficher les étapes pour :</span>
+    <div class="os-toggle" role="group" aria-label="Operating system / Système d'exploitation">
+      <button type="button" data-os="win" aria-pressed="true">Windows</button>
+      <button type="button" data-os="mac" aria-pressed="false">macOS</button>
+    </div>
+  </div>
+
+  <div class="progress-label" data-progress-label="install">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="install"></div></div>
+
+  <ul class="checklist" data-checklist="install">
+    <li><input type="checkbox" id="in1"><label class="step-text" for="in1">
+      <span class="os-win">
+        <strong><span class="lang-en">Open PowerShell</span><span class="lang-fr">Ouvrez PowerShell</span></strong>
+        <span class="note"><span class="lang-en">Press <kbd>Win</kbd>, type <em>PowerShell</em>, press <kbd>Enter</kbd>.</span>
+        <span class="lang-fr">Appuyez sur <kbd>Win</kbd>, tapez <em>PowerShell</em>, appuyez sur <kbd>Entrée</kbd>.</span></span>
+      </span>
+      <span class="os-mac">
+        <strong><span class="lang-en">Open Terminal</span><span class="lang-fr">Ouvrez Terminal</span></strong>
+        <span class="note"><span class="lang-en">Press <kbd>⌘ Cmd</kbd>+<kbd>Space</kbd>, type <em>Terminal</em>, press <kbd>Return</kbd>.</span>
+        <span class="lang-fr">Appuyez sur <kbd>⌘ Cmd</kbd>+<kbd>Espace</kbd>, tapez <em>Terminal</em>, appuyez sur <kbd>Retour</kbd>.</span></span>
+      </span></label></li>
+    <li><input type="checkbox" id="in2"><label class="step-text" for="in2">
+      <span class="os-win">
+        <strong><span class="lang-en">Install git</span><span class="lang-fr">Installez git</span></strong>
+        <span class="note"><span class="lang-en">Run this in PowerShell. If Windows asks for permission, say yes.</span>
+        <span class="lang-fr">Exécutez ceci dans PowerShell. Si Windows demande une autorisation, acceptez.</span></span>
+        <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> winget install --id Git.Git -e --source winget</code></pre></div>
+      </span>
+      <span class="os-mac">
+        <strong><span class="lang-en">Check git — macOS offers to install it</span><span class="lang-fr">Vérifiez git — macOS propose de l'installer</span></strong>
+        <span class="note"><span class="lang-en">Run the command below. If git is missing, a dialog pops up: click <em>Install</em> and wait for the Command Line Tools to finish (a few minutes).</span>
+        <span class="lang-fr">Exécutez la commande ci-dessous. Si git est absent, une boîte de dialogue apparaît : cliquez sur <em>Install</em> et attendez la fin des Command Line Tools (quelques minutes).</span></span>
+        <div class="term"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> git --version</code></pre></div>
+      </span></label></li>
+    <li><input type="checkbox" id="in3"><label class="step-text" for="in3">
+      <span class="os-win">
+        <strong><span class="lang-en">Install the GitHub CLI</span><span class="lang-fr">Installez le GitHub CLI</span></strong>
+        <div class="term"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> winget install --id GitHub.cli -e --source winget</code></pre></div>
+      </span>
+      <span class="os-mac">
+        <strong><span class="lang-en">Install the GitHub CLI</span><span class="lang-fr">Installez le GitHub CLI</span></strong>
+        <span class="note"><span class="lang-en">This uses Homebrew, the standard Mac package installer. If the command says <em>brew: command not found</em>, install Homebrew first — see the accordion just below the checklist.</span>
+        <span class="lang-fr">Ceci utilise Homebrew, l'installateur de paquets standard sur Mac. Si la commande répond <em>brew: command not found</em>, installez d'abord Homebrew — voyez l'accordéon juste sous la check-list.</span></span>
+        <div class="term"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> brew install gh</code></pre></div>
+      </span></label></li>
+    <li><input type="checkbox" id="in4"><label class="step-text" for="in4">
+      <strong><span class="lang-en">Close and reopen the terminal, then verify</span><span class="lang-fr">Fermez et rouvrez le terminal, puis vérifiez</span></strong>
+      <span class="note"><span class="lang-en">New tools only appear in <strong>new</strong> terminal windows. Open a fresh one and run both checks — each should print a version number.</span>
+      <span class="lang-fr">Les nouveaux outils n'apparaissent que dans les <strong>nouvelles</strong> fenêtres de terminal. Ouvrez-en une nouvelle et lancez les deux vérifications — chacune doit afficher un numéro de version.</span></span>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> git --version
+<span class="ps">PS&gt;</span> gh --version</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> git --version
+<span class="ps">$</span> gh --version</code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="in5"><label class="step-text" for="in5">
+      <strong><span class="lang-en">Sign in to GitHub — once, via the browser</span><span class="lang-fr">Connectez-vous à GitHub — une fois, via le navigateur</span></strong>
+      <span class="note"><span class="lang-en">Run <code class="inline">gh auth login</code> and answer: <em>GitHub.com</em> → <em>HTTPS</em> → <em>Yes</em> (authenticate git) → <em>Login with a web browser</em>. Copy the one-time code shown, press <span class="os-win"><kbd>Enter</kbd></span><span class="os-mac"><kbd>Return</kbd></span>, paste the code in the browser tab that opens, and authorize.</span>
+      <span class="lang-fr">Exécutez <code class="inline">gh auth login</code> et répondez : <em>GitHub.com</em> → <em>HTTPS</em> → <em>Yes</em> (authentifier git) → <em>Login with a web browser</em>. Copiez le code à usage unique affiché, appuyez sur <span class="os-win"><kbd>Entrée</kbd></span><span class="os-mac"><kbd>Retour</kbd></span>, collez le code dans l'onglet navigateur qui s'ouvre, et autorisez.</span></span>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> gh auth login
+<span class="cm"># GitHub.com → HTTPS → Yes → Login with a web browser</span>
+<span class="ps">PS&gt;</span> gh auth status
+<span class="cm"># ✓ Logged in to github.com account &lt;you&gt;</span></code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> gh auth login
+<span class="cm"># GitHub.com → HTTPS → Yes → Login with a web browser</span>
+<span class="ps">$</span> gh auth status
+<span class="cm"># ✓ Logged in to github.com account &lt;you&gt;</span></code></pre></div>
+      <span class="note"><span class="lang-en"><code class="inline">gh auth status</code> should greet you with a ✓ and your username. That green tick is what lets your agent push later.</span>
+      <span class="lang-fr"><code class="inline">gh auth status</code> doit vous saluer d'un ✓ et de votre nom d'utilisateur. Cette coche verte est ce qui permettra à votre agent de pousser ensuite.</span></span></label></li>
+  </ul>
+
+  <details class="acc os-mac">
+    <summary><span class="lang-en">macOS: <code class="inline">brew: command not found</code> — install Homebrew first</span><span class="lang-fr">macOS : <code class="inline">brew: command not found</code> — installez d'abord Homebrew</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Run the official installer, then follow the two “Next steps” lines it prints at the end to add brew to your PATH:</span>
+      <span class="lang-fr">Exécutez l'installateur officiel, puis suivez les deux lignes « Next steps » affichées à la fin pour ajouter brew à votre PATH :</span>
+      <div class="term"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre></div>
+      <span class="lang-en">Then retry <code class="inline">brew install gh</code>.</span>
+      <span class="lang-fr">Puis réessayez <code class="inline">brew install gh</code>.</span>
+    </div>
+  </details>
+  <details class="acc os-win">
+    <summary><span class="lang-en">Windows: <code class="inline">winget</code> is not recognized</span><span class="lang-fr">Windows : <code class="inline">winget</code> n'est pas reconnu</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">winget ships with “App Installer” from the Microsoft Store — install or update that, then reopen PowerShell. On older Windows builds without winget, download the installers directly: <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com/download/win</a> and <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a> — double-click each and take all defaults.</span>
+      <span class="lang-fr">winget est fourni avec « App Installer » du Microsoft Store — installez-le ou mettez-le à jour, puis rouvrez PowerShell. Sur les anciennes versions de Windows sans winget, téléchargez les installateurs directement : <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com/download/win</a> et <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a> — double-cliquez sur chacun et gardez tous les choix par défaut.</span>
+    </div>
+  </details>
+
+  <!-- ================= PART 3 ================= -->
+  <h2 id="part-push">3 · <span class="lang-en">Hands-on: your agent's first push</span><span class="lang-fr">Pratique : la première poussée de votre agent</span></h2>
+  <p>
+    <span class="lang-en">This is the moment the harness takes over the typing. You will ask <code class="inline">omp</code> — in plain language — to turn your website folder into a git repository, create the matching private repo on GitHub, and push. <strong>You approve every command before it runs.</strong></span>
+    <span class="lang-fr">C'est le moment où le harnais prend le relais pour taper. Vous allez demander à <code class="inline">omp</code> — en langage naturel — de transformer votre dossier de site en dépôt git, de créer le dépôt privé correspondant sur GitHub, et de pousser. <strong>Vous approuvez chaque commande avant son exécution.</strong></span>
+  </p>
+
+  <div class="progress-label" data-progress-label="push">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="push"></div></div>
+
+  <ul class="checklist" data-checklist="push">
+    <li><input type="checkbox" id="ps1"><label class="step-text" for="ps1">
+      <strong><span class="lang-en">Point the terminal at your website folder</span><span class="lang-fr">Placez le terminal dans le dossier de votre site</span></strong>
+      <span class="note"><span class="lang-en">Use the folder that holds your <code class="inline">index.html</code>. Adjust the path to yours.</span>
+      <span class="lang-fr">Utilisez le dossier qui contient votre <code class="inline">index.html</code>. Adaptez le chemin au vôtre.</span></span>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> cd ~\Documents\my-first-site</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> cd ~/Documents/my-first-site</code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="ps2"><label class="step-text" for="ps2">
+      <strong><span class="lang-en">Launch omp</span><span class="lang-fr">Lancez omp</span></strong>
+      <div class="term os-win"><div class="term-head">PowerShell</div><pre><code><span class="ps">PS&gt;</span> omp</code></pre></div>
+      <div class="term os-mac"><div class="term-head">Terminal (macOS)</div><pre><code><span class="ps">$</span> omp</code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="ps3"><label class="step-text" for="ps3">
+      <strong><span class="lang-en">Ask, in plain language</span><span class="lang-fr">Demandez, en langage naturel</span></strong>
+      <span class="note"><span class="lang-en">Paste this request (or write your own version of it):</span>
+      <span class="lang-fr">Collez cette demande (ou rédigez votre propre version) :</span></span>
+      <div class="term"><div class="term-head"><span class="lang-en">your prompt to omp</span><span class="lang-fr">votre prompt à omp</span></div><pre><code>Initialize this folder as a git repository, create a PRIVATE
+GitHub repo called my-first-site using the gh CLI, commit all
+the files with the message "First version of my site", and push.</code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="ps4"><label class="step-text" for="ps4">
+      <strong><span class="lang-en">Read and approve each command it proposes</span><span class="lang-fr">Lisez et approuvez chaque commande proposée</span></strong>
+      <span class="note"><span class="lang-en">The agent will propose, roughly: <code class="inline">git init</code> → <code class="inline">git add</code> + <code class="inline">git commit</code> → <code class="inline">gh repo create my-first-site --private --source=. --push</code>. Each time it asks, say yes. If a command surprises you, ask <em>“what does this command do?”</em> before approving.</span>
+      <span class="lang-fr">L'agent proposera, grosso modo : <code class="inline">git init</code> → <code class="inline">git add</code> + <code class="inline">git commit</code> → <code class="inline">gh repo create my-first-site --private --source=. --push</code>. À chaque demande, dites oui. Si une commande vous surprend, demandez <em>« que fait cette commande ? »</em> avant d'approuver.</span></span></label></li>
+    <li><input type="checkbox" id="ps5"><label class="step-text" for="ps5">
+      <strong><span class="lang-en">See it on GitHub</span><span class="lang-fr">Voyez le résultat sur GitHub</span></strong>
+      <span class="note"><span class="lang-en">Open <code class="inline">https://github.com/&lt;your-username&gt;/my-first-site</code> in the browser. Your files are there, with the commit message “First version of my site”. Your work now survives anything that happens to this laptop.</span>
+      <span class="lang-fr">Ouvrez <code class="inline">https://github.com/&lt;votre-nom&gt;/my-first-site</code> dans le navigateur. Vos fichiers y sont, avec le message de commit « First version of my site ». Votre travail survit désormais à tout ce qui pourrait arriver à cet ordinateur.</span></span></label></li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title"><span class="lang-en">What just happened — in three words</span><span class="lang-fr">Ce qui vient de se passer — en trois mots</span></div>
+    <span class="lang-en"><strong>commit</strong> = a labelled snapshot of the folder. <strong>repository</strong> = the folder plus its whole snapshot history. <strong>push</strong> = copy the snapshots up to GitHub. The agent runs these; you only need the words.</span>
+    <span class="lang-fr"><strong>commit</strong> = un instantané étiqueté du dossier. <strong>dépôt</strong> (repository) = le dossier plus tout son historique d'instantanés. <strong>push</strong> (poussée) = copier les instantanés vers GitHub. L'agent les exécute ; vous n'avez besoin que des mots.</span>
+  </div>
+
+  <!-- ================= PART 4 ================= -->
+  <h2 id="part-vercel">4 · <span class="lang-en">Go live with Vercel</span><span class="lang-fr">Mise en ligne avec Vercel</span></h2>
+  <p>
+    <span class="lang-en">Vercel watches your GitHub repository and publishes it to a real URL. You connect it <strong>once</strong> — every future push then updates the live site automatically, about a minute later.</span>
+    <span class="lang-fr">Vercel surveille votre dépôt GitHub et le publie sur une véritable adresse. Vous le connectez <strong>une seule fois</strong> — chaque poussée future met alors le site à jour automatiquement, environ une minute plus tard.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="vercel">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="vercel"></div></div>
+
+  <ul class="checklist" data-checklist="vercel">
+    <li><input type="checkbox" id="vc1"><label class="step-text" for="vc1">
+      <strong><span class="lang-en">Sign up with GitHub</span><span class="lang-fr">Inscrivez-vous avec GitHub</span></strong>
+      <span class="note"><span class="lang-en">Go to <a href="https://vercel.com/signup" target="_blank" rel="noopener">https://vercel.com/signup</a> and choose <strong>Continue with GitHub</strong>. Choose the <strong>Hobby</strong> plan — free for personal, non-commercial sites, no card.</span>
+      <span class="lang-fr">Rendez-vous sur <a href="https://vercel.com/signup" target="_blank" rel="noopener">https://vercel.com/signup</a> et choisissez <strong>Continue with GitHub</strong>. Prenez le plan <strong>Hobby</strong> — gratuit pour les sites personnels non commerciaux, sans carte.</span></span></label></li>
+    <li><input type="checkbox" id="vc2"><label class="step-text" for="vc2">
+      <strong><span class="lang-en">Authorize Vercel to see your repositories</span><span class="lang-fr">Autorisez Vercel à voir vos dépôts</span></strong>
+      <span class="note"><span class="lang-en">GitHub asks whether Vercel may access your repositories. Allow it — you can limit it to just <code class="inline">my-first-site</code> if you prefer.</span>
+      <span class="lang-fr">GitHub demande si Vercel peut accéder à vos dépôts. Autorisez — vous pouvez limiter l'accès au seul dépôt <code class="inline">my-first-site</code> si vous préférez.</span></span></label></li>
+    <li><input type="checkbox" id="vc3"><label class="step-text" for="vc3">
+      <strong><span class="lang-en">Import the repository</span><span class="lang-fr">Importez le dépôt</span></strong>
+      <span class="note"><span class="lang-en">On the Vercel dashboard click <em>Add New… → Project</em>, find <code class="inline">my-first-site</code>, click <em>Import</em>.</span>
+      <span class="lang-fr">Sur le tableau de bord Vercel, cliquez sur <em>Add New… → Project</em>, repérez <code class="inline">my-first-site</code>, cliquez sur <em>Import</em>.</span></span></label></li>
+    <li><input type="checkbox" id="vc4"><label class="step-text" for="vc4">
+      <strong><span class="lang-en">Deploy — change nothing</span><span class="lang-fr">Déployez — ne changez rien</span></strong>
+      <span class="note"><span class="lang-en">Vercel detects a plain static site; no build settings are needed. Click <em>Deploy</em> and wait ~30 seconds for the 🎉 screen.</span>
+      <span class="lang-fr">Vercel détecte un site statique simple ; aucun réglage de build n'est nécessaire. Cliquez sur <em>Deploy</em> et attendez ~30 secondes l'écran 🎉.</span></span></label></li>
+    <li><input type="checkbox" id="vc5"><label class="step-text" for="vc5">
+      <strong><span class="lang-en">Visit your live URL — and share it</span><span class="lang-fr">Visitez votre adresse en ligne — et partagez-la</span></strong>
+      <span class="note"><span class="lang-en">Your site is live at <code class="inline">my-first-site.vercel.app</code> (or a similar name Vercel assigns). Send it to the person next to you — it works on their phone too.</span>
+      <span class="lang-fr">Votre site est en ligne sur <code class="inline">my-first-site.vercel.app</code> (ou un nom proche attribué par Vercel). Envoyez-le à votre voisin·e — il marche aussi sur son téléphone.</span></span></label></li>
+  </ul>
+
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">The wire you just connected</span><span class="lang-fr">Le câble que vous venez de brancher</span></div>
+    <span class="lang-en">From now on: <strong>push to GitHub → Vercel rebuilds → the URL updates</strong>. You never touch Vercel again unless you want a custom domain. The <em>Deployments</em> tab in Vercel shows every publish, with a preview of each one.</span>
+    <span class="lang-fr">Désormais : <strong>poussée vers GitHub → Vercel reconstruit → l'adresse se met à jour</strong>. Vous ne retoucherez à Vercel que si vous voulez un nom de domaine personnalisé. L'onglet <em>Deployments</em> de Vercel montre chaque publication, avec un aperçu de chacune.</span>
+  </div>
+
+  <!-- ================= PART 5 ================= -->
+  <h2 id="part-loop">5 · <span class="lang-en">The everyday loop</span><span class="lang-fr">La boucle du quotidien</span></h2>
+  <p>
+    <span class="lang-en">Setup is done — forever. From here the whole workflow is one sentence to your agent, and one refresh of the live site.</span>
+    <span class="lang-fr">L'installation est terminée — pour toujours. Désormais, tout le flux de travail tient en une phrase à votre agent, et un rafraîchissement du site en ligne.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="loop">0 / 4 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="loop"></div></div>
+
+  <ul class="checklist" data-checklist="loop">
+    <li><input type="checkbox" id="lp1"><label class="step-text" for="lp1">
+      <strong><span class="lang-en">Make one small change</span><span class="lang-fr">Faites une petite modification</span></strong>
+      <span class="note"><span class="lang-en">Ask the agent for something visible, e.g. <em>“change the main heading of index.html to include my name.”</em></span>
+      <span class="lang-fr">Demandez à l'agent quelque chose de visible, par ex. <em>« change le titre principal d'index.html pour y inclure mon nom. »</em></span></span></label></li>
+    <li><input type="checkbox" id="lp2"><label class="step-text" for="lp2">
+      <strong><span class="lang-en">Say the magic sentence</span><span class="lang-fr">Prononcez la phrase magique</span></strong>
+      <div class="term"><div class="term-head"><span class="lang-en">your prompt to omp</span><span class="lang-fr">votre prompt à omp</span></div><pre><code>Commit and push these changes.</code></pre></div>
+      <span class="note"><span class="lang-en">The agent snapshots, labels, and pushes. Approve its commands as before.</span>
+      <span class="lang-fr">L'agent fait l'instantané, l'étiquette et pousse. Approuvez ses commandes comme avant.</span></span></label></li>
+    <li><input type="checkbox" id="lp3"><label class="step-text" for="lp3">
+      <strong><span class="lang-en">Watch the live site update</span><span class="lang-fr">Regardez le site en ligne se mettre à jour</span></strong>
+      <span class="note"><span class="lang-en">Wait about a minute, refresh your <code class="inline">.vercel.app</code> URL — your change is live. (No update? See the FAQ at the bottom.)</span>
+      <span class="lang-fr">Attendez environ une minute, rafraîchissez votre adresse <code class="inline">.vercel.app</code> — votre modification est en ligne. (Pas de mise à jour ? Voyez la FAQ en bas.)</span></span></label></li>
+    <li><input type="checkbox" id="lp4"><label class="step-text" for="lp4">
+      <strong><span class="lang-en">Try the undo superpower</span><span class="lang-fr">Essayez le superpouvoir de l'annulation</span></strong>
+      <span class="note"><span class="lang-en">Ask: <em>“revert the last change and push.”</em> The agent restores the previous version and publishes it. Every snapshot you ever pushed is restorable — this is why history matters more than any single file.</span>
+      <span class="lang-fr">Demandez : <em>« annule la dernière modification et pousse. »</em> L'agent restaure la version précédente et la publie. Chaque instantané poussé est restaurable — c'est pourquoi l'historique compte plus que n'importe quel fichier isolé.</span></span></label></li>
+  </ul>
+
+  <h3><span class="lang-en">The three sentences you will actually use</span><span class="lang-fr">Les trois phrases que vous utiliserez vraiment</span></h3>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">You say to the agent</span><span class="lang-fr">Vous dites à l'agent</span></th>
+      <th><span class="lang-en">The agent runs</span><span class="lang-fr">L'agent exécute</span></th>
+      <th><span class="lang-en">Result</span><span class="lang-fr">Résultat</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td>“<span class="lang-en">Commit and push these changes</span><span class="lang-fr">Commit and push ces changements</span>”</td>
+        <td><code class="inline">git add · commit · push</code></td>
+        <td><span class="lang-en">Live site updates in ~1 min</span><span class="lang-fr">Site en ligne mis à jour en ~1 min</span></td>
+      </tr>
+      <tr>
+        <td>“<span class="lang-en">What did I change since the last push?</span><span class="lang-fr">Qu'ai-je changé depuis la dernière poussée ?</span>”</td>
+        <td><code class="inline">git status · git diff</code></td>
+        <td><span class="lang-en">A plain-language summary of edits</span><span class="lang-fr">Un résumé en langage clair des modifications</span></td>
+      </tr>
+      <tr>
+        <td>“<span class="lang-en">Revert the last change and push</span><span class="lang-fr">Annule la dernière modification et pousse</span>”</td>
+        <td><code class="inline">git revert · push</code></td>
+        <td><span class="lang-en">Previous version back, live</span><span class="lang-fr">Version précédente restaurée, en ligne</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-title"><span class="lang-en">Habits worth keeping for real work</span><span class="lang-fr">Des habitudes à garder pour le vrai travail</span></div>
+    <span class="lang-en">Push at the end of every working session — a push is a free backup. Write commit messages your future self will understand (“add 2024 MDA coverage chart”, not “updates”). And keep anything you wouldn't publish — passwords, personal data, unpublished data — out of the folder entirely; history remembers everything, even deleted files.</span>
+    <span class="lang-fr">Poussez à la fin de chaque session de travail — une poussée est une sauvegarde gratuite. Écrivez des messages de commit que votre futur vous comprendra (« add 2024 MDA coverage chart », pas « updates »). Et gardez hors du dossier tout ce que vous ne publieriez pas — mots de passe, données personnelles, données non publiées ; l'historique se souvient de tout, même des fichiers supprimés.</span>
+  </div>
+
+  <!-- ================= TROUBLESHOOTING ================= -->
+  <h2 id="troubleshooting"><span class="lang-en">Troubleshooting &amp; FAQ</span><span class="lang-fr">Dépannage &amp; FAQ</span></h2>
+
+  <details class="acc">
+    <summary><span class="lang-en">“command not found” / “is not recognized” right after installing</span><span class="lang-fr">« command not found » / « n'est pas reconnu » juste après l'installation</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Always a PATH refresh: close <em>every</em> terminal window and open a brand-new one, then retry. Installed tools are only visible to windows opened after the install.</span>
+      <span class="lang-fr">Toujours un problème de rafraîchissement du PATH : fermez <em>toutes</em> les fenêtres de terminal et rouvrez-en une nouvelle, puis réessayez. Les outils installés ne sont visibles que pour les fenêtres ouvertes après l'installation.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en"><code class="inline">gh auth login</code>: the browser didn't open, or the code failed</span><span class="lang-fr"><code class="inline">gh auth login</code> : le navigateur ne s'est pas ouvert, ou le code a échoué</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Copy the URL the terminal prints and open it by hand — the one-time code still works. If the code expired, just run <code class="inline">gh auth login</code> again. Check the result any time with <code class="inline">gh auth status</code>.</span>
+      <span class="lang-fr">Copiez l'adresse affichée dans le terminal et ouvrez-la à la main — le code à usage unique fonctionne toujours. Si le code a expiré, relancez simplement <code class="inline">gh auth login</code>. Vérifiez le résultat à tout moment avec <code class="inline">gh auth status</code>.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">Push fails with “Permission denied” or “Authentication failed”</span><span class="lang-fr">La poussée échoue avec « Permission denied » ou « Authentication failed »</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Nine times out of ten the sign-in from Part 2 was skipped or expired. Run <code class="inline">gh auth status</code>; if you're not logged in, run <code class="inline">gh auth login</code> again and answer <em>Yes</em> to “Authenticate Git with your GitHub credentials?”. Or tell the agent: <em>“my push failed with an auth error — fix my GitHub login.”</em></span>
+      <span class="lang-fr">Neuf fois sur dix, la connexion de la partie 2 a été sautée ou a expiré. Exécutez <code class="inline">gh auth status</code> ; si vous n'êtes pas connecté, relancez <code class="inline">gh auth login</code> et répondez <em>Yes</em> à « Authenticate Git with your GitHub credentials? ». Ou dites à l'agent : <em>« ma poussée a échoué avec une erreur d'authentification — répare ma connexion GitHub. »</em></span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">The Vercel deploy failed</span><span class="lang-fr">Le déploiement Vercel a échoué</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Open the project in Vercel → <em>Deployments</em> → click the failed one to read the log. For a plain static site the common cause is pushing a folder with no <code class="inline">index.html</code> at its root. If the log is cryptic, paste it to the agent: <em>“here's my Vercel deploy log — what's wrong?”</em></span>
+      <span class="lang-fr">Ouvrez le projet dans Vercel → <em>Deployments</em> → cliquez sur celui qui a échoué pour lire le journal. Pour un site statique simple, la cause fréquente est un dossier sans <code class="inline">index.html</code> à sa racine. Si le journal est obscur, collez-le à l'agent : <em>« voici mon journal de déploiement Vercel — quel est le problème ? »</em></span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">I pushed, but the live site didn't change</span><span class="lang-fr">J'ai poussé, mais le site en ligne n'a pas changé</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Three checks, in order: (1) confirm the push actually happened — <code class="inline">git log</code> shows your commit and GitHub.com shows it too; (2) look at Vercel <em>Deployments</em> — a new one should appear within seconds of the push; (3) hard-refresh the browser (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> / <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) to skip the cache.</span>
+      <span class="lang-fr">Trois vérifications, dans l'ordre : (1) confirmez que la poussée a vraiment eu lieu — <code class="inline">git log</code> montre votre commit et GitHub.com aussi ; (2) regardez <em>Deployments</em> dans Vercel — un nouveau doit apparaître quelques secondes après la poussée ; (3) forcez le rafraîchissement du navigateur (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>R</kbd> / <kbd>⌘</kbd>+<kbd>Maj</kbd>+<kbd>R</kbd>) pour sauter le cache.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">Is my code really private? Can I work on sensitive data?</span><span class="lang-fr">Mon code est-il vraiment privé ? Puis-je travailler sur des données sensibles ?</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">A <strong>private</strong> repository is readable only by you and people you invite — but your <em>Vercel website</em> is public by design, so anything the site displays is visible to the world. Rule of thumb: code and structure can live in the private repo; put sensitive data behind access controls or keep it out of the deployed folder entirely.</span>
+      <span class="lang-fr">Un dépôt <strong>privé</strong> n'est lisible que par vous et les personnes invitées — mais votre <em>site Vercel</em> est public par nature, donc tout ce que le site affiche est visible par tous. Règle pratique : le code et la structure peuvent vivre dans le dépôt privé ; les données sensibles passent derrière des contrôles d'accès ou restent hors du dossier déployé.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">What does this cost if I keep using it?</span><span class="lang-fr">Combien cela coûte-t-il si je continue à l'utiliser ?</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">GitHub Free: unlimited public + private repos, <span class="pill free">$0</span>. Vercel Hobby: personal, non-commercial sites, <span class="pill free">$0</span>. Costs appear only if you exceed Hobby's generous bandwidth or use it commercially — at which point Pro is $20/month. Course projects sit comfortably at $0.</span>
+      <span class="lang-fr">GitHub Free : dépôts publics + privés illimités, <span class="pill free">0 $</span>. Vercel Hobby : sites personnels non commerciaux, <span class="pill free">0 $</span>. Des coûts n'apparaissent que si vous dépassez la bande passante généreuse du plan Hobby ou en cas d'usage commercial — auquel cas Pro coûte 20 $/mois. Les projets du cours restent tranquillement à 0 $.</span>
+    </div>
+  </details>
+
+  <p style="margin-top:2.5rem">
+    <a class="btn primary" href="index.html"><span class="lang-en">← Back to Class Home</span><span class="lang-fr">← Retour à l'accueil du cours</span></a>
+    <a class="btn" href="../openrouter/"><span class="lang-en">Next course: OpenRouter + OMP →</span><span class="lang-fr">Cours suivant : OpenRouter + OMP →</span></a>
+  </p>
+</main>
+</div>
+<footer class="site">
+  <span class="lang-en">Built for the class with OMP · GitHub + Vercel free tiers</span>
+  <span class="lang-fr">Conçu pour le cours avec OMP · offres gratuites GitHub + Vercel</span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

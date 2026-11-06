@@ -101,6 +101,7 @@ button{font:inherit;color:inherit}
 .hero{padding-top:clamp(3rem,1.5rem + 5vw,6.5rem);text-align:center}
 .hero .display{max-width:15em;margin:0 auto}
 .hero-sub{margin:1.5rem auto 0;color:var(--ink-2)}
+.hero-why{max-width:46em;margin:clamp(2.5rem,1.5rem + 3vw,4.5rem) auto 0;color:var(--ink-2)}
 .hero-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:2.25rem}
 @media (max-width:480px){.hero .display{font-size:2.1rem}}
 
@@ -225,6 +226,9 @@ button{font:inherit;color:inherit}
 .needs li{background:var(--muted);border-radius:16px;padding:1.5rem 1.6rem;transition:transform .25s var(--ease)}
 .needs li:hover{transform:translateX(4px)}
 .needs b{display:block;font-size:var(--fs-lead);font-weight:600;letter-spacing:-.015em;line-height:1.3;margin-bottom:.3rem}
+.lvl{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:99px;padding:.22em .9em;margin-left:.7rem;vertical-align:.18em}
+.lvl-beginner{background:#E3F0FA;color:#2568A0}
+.lvl-intermediate{background:#FBF0C8;color:#8A6400}
 .apply .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.25rem}
 @media (max-width:900px){.apply{grid-template-columns:1fr}}
 
@@ -317,6 +321,7 @@ button{font:inherit;color:inherit}
   <div class="wrap">
     <h1 class="display" data-rise>AMPLIFY · Making AI work for NTD programme leaders</h1>
     <p class="lead hero-sub" data-rise style="--rd:.08s">Four months · two 90-minute sessions a month · NTD domain specific training</p>
+    <p class="lead hero-why" data-rise style="--rd:.16s">AI training is widely available online, though most courses are general-purpose and use examples far removed from programme realities. Vendor-built tools have also helped many national programmes adopt AI, but tools delivered through short-term projects can be difficult to maintain once that support ends. AMPLIFY is designed to complement both: training that is specific to NTD programmes, taught on participants' own work, and focused on the in-house skills needed to build and maintain solutions long after the course ends.</p>
   </div>
 
   <div class="wrap hub-wrap" id="sessions">
@@ -484,12 +489,16 @@ button{font:inherit;color:inherit}
     </div>
     <ol class="needs" aria-label="Available short courses">
       <li data-rise>
-        <div><b>OpenRouter + OMP — From chat windows to terminal agents (60&nbsp;min)</b>How to access a wide range of AI models using <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> and the AI harness <a href="https://omp.sh" target="_blank" rel="noopener">Oh My Pi (OMP)</a> — one account for Claude, GPT, Gemini, Llama and more, with free-tier models at $0 and transparent per-session pricing when you scale.</div>
-        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/openrouter/">Open short course <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-soft" href="shortcourses/openrouter/setup.html">Setup guide</a></div>
+        <div><b>Choose the right visual — for programme data (20&nbsp;min)<span class="lvl lvl-beginner">Beginner</span></b>Learn how to match your question and data to the right chart. The short course walks you through what each visualization is best for, with an interactive chooser that recommends a chart, shows an example, and writes a ready-to-paste prompt for your data file, plus a quick-reference table and chart rules to use in your next briefing.</div>
+        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/choose-visual/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
       </li>
       <li data-rise style="--rd:.07s">
-        <div><b>Choose the right visual — for programme data (20&nbsp;min)</b>Learn how to match your question and data to the right chart. The short course walks you through what each visualization is best for, with an interactive chooser that recommends a chart, shows an example, and writes a ready-to-paste prompt for your data file, plus a quick-reference table and chart rules to use in your next briefing.</div>
-        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/choose-visual/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
+        <div><b>GitHub + Vercel — put your work online (45&nbsp;min)<span class="lvl lvl-intermediate">Intermediate</span></b>Create free GitHub and Vercel accounts, install the <code>git</code> and GitHub command-line tools, and finish with a live website at a real <code>.vercel.app</code> URL. Then let your AI agent do the pushing: you ask in plain language, it commits and publishes. Includes copy-paste setup for Windows and macOS, an everyday change→push→live loop, and a troubleshooting FAQ.</div>
+        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/github-vercel/">Open short course <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-soft" href="shortcourses/github-vercel/setup.html">Setup guide</a></div>
+      </li>
+      <li data-rise style="--rd:.14s">
+        <div><b>OpenRouter + OMP — From chat windows to terminal agents (60&nbsp;min)<span class="lvl lvl-intermediate">Intermediate</span></b>How to access a wide range of AI models using <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> and the AI harness <a href="https://omp.sh" target="_blank" rel="noopener">Oh My Pi (OMP)</a> — one account for Claude, GPT, Gemini, Llama and more, with free-tier models at $0 and transparent per-session pricing when you scale.</div>
+        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/openrouter/">Open short course <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-soft" href="shortcourses/openrouter/setup.html">Setup guide</a></div>
       </li>
     </ol>
   </div>

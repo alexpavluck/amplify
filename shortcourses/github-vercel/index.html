@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub + Vercel — Put Your Work Online | Mettez votre travail en ligne</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
+    <div><div class="eyebrow">GitHub × Vercel</div><a class="brand" href="index.html"><span class="dot"></span>GitHub × Vercel</a></div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <ol>
+    <li><a href="index.html" class="active"><span class="n">01</span><span><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></span></a></li>
+    <li><a href="setup.html"><span class="n">02</span><span><span class="lang-en">Setup &amp; Publish</span><span class="lang-fr">Installation &amp; publication</span></span></a></li>
+  </ol>
+  <div class="map-foot"><a href="https://amplify-course.com" target="_blank" rel="noopener">amplify-course.com</a></div>
+</nav>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span class="lang-en">45-minute hands-on class</span><span class="lang-fr">Cours pratique de 45 minutes</span></p>
+    <h1>
+      <span class="lang-en">Put Your Work Online:<br>GitHub + Vercel</span>
+      <span class="lang-fr">Mettez votre travail en ligne&nbsp;:<br>GitHub + Vercel</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">
+        Create free GitHub and Vercel accounts, install two small command-line tools, and finish with a
+        live website at a real <code class="inline">.vercel.app</code> URL you can share with anyone.
+        Then — the best part — let your <code class="inline">omp</code> agent do the pushing from then on:
+        you ask in plain language, it commits and publishes. All commands are copy-paste ready.
+      </span>
+      <span class="lang-fr">
+        Créez des comptes GitHub et Vercel gratuits, installez deux petits outils en ligne de commande, et terminez avec un
+        site en ligne sur une véritable adresse <code class="inline">.vercel.app</code> à partager avec qui vous voulez.
+        Ensuite — le meilleur — laissez votre agent <code class="inline">omp</code> pousser les changements à votre place&nbsp;:
+        vous demandez en langage naturel, il publie. Toutes les commandes sont prêtes à copier-coller.
+      </span>
+    </p>
+    <div class="steps-strip" role="list">
+      <div class="step-chip" role="listitem"><span class="step-n">1</span><div>
+        <strong><span class="lang-en">Create two free accounts</span><span class="lang-fr">Créez deux comptes gratuits</span></strong>
+        <small><span class="lang-en">GitHub (your code's cloud home) and Vercel (your publisher) — both free, no card.</span><span class="lang-fr">GitHub (le foyer cloud de votre code) et Vercel (votre éditeur) — gratuits, sans carte.</span></small></div>
+      </div>
+      <div class="step-chip" role="listitem"><span class="step-n">2</span><div>
+        <strong><span class="lang-en">Install two small tools</span><span class="lang-fr">Installez deux petits outils</span></strong>
+        <small><span class="lang-en"><code class="inline">git</code> and the GitHub CLI — one command each, we copy it for you.</span><span class="lang-fr"><code class="inline">git</code> et le GitHub CLI — une commande chacun, nous la copions pour vous.</span></small></div>
+      </div>
+      <div class="step-chip" role="listitem"><span class="step-n">3</span><div>
+        <strong><span class="lang-en">Your agent publishes for you</span><span class="lang-fr">Votre agent publie pour vous</span></strong>
+        <small><span class="lang-en">From then on: “push my changes” — the agent commits, pushes, and your site updates.</span><span class="lang-fr">Ensuite&nbsp;: « pousse mes changements » — l'agent publie et votre site se met à jour.</span></small></div>
+      </div>
+    </div>
+    <p style="margin-top:1.6rem">
+      <a class="btn primary" href="setup.html"><span class="lang-en">Start the class →</span><span class="lang-fr">Commencer le cours →</span></a>
+    </p>
+  </section>
+
+  <h2><span class="lang-en">The mental model in one picture</span><span class="lang-fr">Le modèle mental en une image</span></h2>
+  <p>
+    <span class="lang-en">Two free services and one rule: the folder on your laptop is the master copy; everything else follows from it.</span>
+    <span class="lang-fr">Deux services gratuits et une règle&nbsp;: le dossier sur votre ordinateur est la copie maîtresse&nbsp;; tout le reste en découle.</span>
+  </p>
+
+  <div class="compare-grid">
+    <div class="mock">
+      <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">Your laptop — the master copy</span><span class="lang-fr">Votre ordinateur — la copie maîtresse</span></div>
+      <div class="mock-body">
+        <div><span class="ps">~/amplify&gt;</span> index.html&nbsp;&nbsp;style.css&nbsp;&nbsp;data.csv</div>
+        <div class="tool-line">💾 <span class="lang-en">the files you actually edit</span><span class="lang-fr">les fichiers que vous modifiez vraiment</span></div>
+        <div class="tool-line"><span class="lang-en">🔒 if your laptop dies today, the work dies with it</span><span class="lang-fr">🔒 si votre ordinateur meurt aujourd'hui, le travail meurt avec lui</span></div>
+        <div class="tool-line"><span class="lang-en">🙅 nobody else can see or use it</span><span class="lang-fr">🙅 personne d'autre ne peut le voir ni l'utiliser</span></div>
+      </div>
+    </div>
+
+    <div class="compare-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      <span class="lang-en">push</span><span class="lang-fr">pousser</span>
+    </div>
+
+    <div class="mock terminal-mock">
+      <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">The cloud — GitHub then Vercel</span><span class="lang-fr">Le cloud — GitHub puis Vercel</span></div>
+      <div class="mock-body">
+        <div>📦 <strong>GitHub</strong> — <span class="lang-en">a safe, versioned copy of your folder. Every save is remembered; nothing is ever lost.</span><span class="lang-fr">une copie sécurisée et versionnée de votre dossier. Chaque enregistrement est mémorisé&nbsp;; rien ne se perd jamais.</span></div>
+        <div style="margin-top:.5rem">🌐 <strong>Vercel</strong> — <span class="lang-en">watches that copy and publishes it to a live URL. Every push = your site quietly updates, about a minute later.</span><span class="lang-fr">surveille cette copie et la publie sur une adresse en ligne. Chaque poussée = votre site se met à jour, environ une minute plus tard.</span></div>
+        <div style="margin-top:.5rem"><span class="ok-tick">✓</span> <span class="lang-en">result: <strong>my-first-site.vercel.app</strong> — a link, not a file to email.</span><span class="lang-fr">résultat&nbsp;: <strong>my-first-site.vercel.app</strong> — un lien, pas un fichier à envoyer.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    <span class="lang-en">You do the setup <strong>once</strong> in this class. After that, the conversation with your agent is all you need — that's why the harness asks you to install these tools today.</span>
+    <span class="lang-fr">Vous faites l'installation <strong>une seule fois</strong> dans ce cours. Ensuite, la conversation avec votre agent suffit — c'est pourquoi le harnais vous demande d'installer ces outils aujourd'hui.</span>
+  </p>
+
+  <h2><span class="lang-en">What you will do</span><span class="lang-fr">Ce que vous ferez</span></h2>
+  <div class="grid cols-3">
+    <a class="card" href="setup.html#part-github">
+      <span class="kicker"><span class="lang-en">Part 1</span><span class="lang-fr">Partie 1</span></span>
+      <h3><span class="lang-en">Free GitHub account</span><span class="lang-fr">Compte GitHub gratuit</span></h3>
+      <p><span class="lang-en">Two minutes of sign-up. This is where your code will live, with full history.</span><span class="lang-fr">Deux minutes d'inscription. C'est là que votre code vivra, avec tout l'historique.</span></p>
+    </a>
+    <a class="card" href="setup.html#part-install">
+      <span class="kicker"><span class="lang-en">Part 2</span><span class="lang-fr">Partie 2</span></span>
+      <h3><span class="lang-en">Install git + GitHub CLI</span><span class="lang-fr">Installer git + GitHub CLI</span></h3>
+      <p><span class="lang-en">Two one-line installs, then sign in once from the browser. Windows or Mac.</span><span class="lang-fr">Deux installations en une ligne, puis une connexion via le navigateur. Windows ou Mac.</span></p>
+    </a>
+    <a class="card" href="setup.html#part-push">
+      <span class="kicker"><span class="lang-en">Part 3</span><span class="lang-fr">Partie 3</span></span>
+      <h3><span class="lang-en">Your agent's first push</span><span class="lang-fr">Première poussée de votre agent</span></h3>
+      <p><span class="lang-en">Ask <code class="inline">omp</code> to create the repository and publish your folder. You approve; it types.</span><span class="lang-fr">Demandez à <code class="inline">omp</code> de créer le dépôt et de publier votre dossier. Vous approuvez&nbsp;; il tape.</span></p>
+    </a>
+    <a class="card" href="setup.html#part-vercel">
+      <span class="kicker"><span class="lang-en">Part 4</span><span class="lang-fr">Partie 4</span></span>
+      <h3><span class="lang-en">Go live with Vercel</span><span class="lang-fr">Mise en ligne avec Vercel</span></h3>
+      <p><span class="lang-en">Connect the repository once — from then on, every push publishes automatically.</span><span class="lang-fr">Connectez le dépôt une fois — ensuite, chaque poussée publie automatiquement.</span></p>
+    </a>
+    <a class="card" href="setup.html#part-loop">
+      <span class="kicker"><span class="lang-en">Part 5</span><span class="lang-fr">Partie 5</span></span>
+      <h3><span class="lang-en">The everyday loop</span><span class="lang-fr">La boucle du quotidien</span></h3>
+      <p><span class="lang-en">Change → “commit and push” → live in about a minute. Then save these habits for real work.</span><span class="lang-fr">Modifier → « commit and push » → en ligne en environ une minute. Puis gardez ces habitudes pour le vrai travail.</span></p>
+    </a>
+    <a class="card" href="setup.html#troubleshooting">
+      <span class="kicker"><span class="lang-en">Reference</span><span class="lang-fr">Référence</span></span>
+      <h3><span class="lang-en">Troubleshooting &amp; FAQ</span><span class="lang-fr">Dépannage &amp; FAQ</span></h3>
+      <p><span class="lang-en">“Command not found”, sign-in hiccups, and what to do when a deploy looks broken.</span><span class="lang-fr">« Commande introuvable », soucis de connexion, et quoi faire quand un déploiement semble cassé.</span></p>
+    </a>
+  </div>
+
+  <h2><span class="lang-en">45-minute agenda</span><span class="lang-fr">Programme des 45 minutes</span></h2>
+  <ul class="agenda">
+    <li><span class="time">00:00</span><span class="pin"></span><div><strong><span class="lang-en">Why put your work online?</span><span class="lang-fr">Pourquoi mettre votre travail en ligne ?</span></strong>
+      <span class="desc"><span class="lang-en">The mental model: laptop → GitHub → Vercel. Backup, history, and a shareable URL.</span><span class="lang-fr">Le modèle mental&nbsp;: ordinateur → GitHub → Vercel. Sauvegarde, historique et adresse partageable.</span></span></div></li>
+    <li><span class="time">00:05</span><span class="pin"></span><div><strong><span class="lang-en">Create your free GitHub account</span><span class="lang-fr">Créer votre compte GitHub gratuit</span></strong>
+      <span class="desc"><span class="lang-en">Sign-up checklist and a first look at a repository page.</span><span class="lang-fr">Check-list d'inscription et premier aperçu d'une page de dépôt.</span></span></div></li>
+    <li><span class="time">00:10</span><span class="pin"></span><div><strong><span class="lang-en">Install git + the GitHub CLI, sign in</span><span class="lang-fr">Installer git + le GitHub CLI, se connecter</span></strong>
+      <span class="desc"><span class="lang-en">One command each, <code class="inline">gh auth login</code> in the browser, verify with <code class="inline">gh auth status</code>.</span><span class="lang-fr">Une commande chacun, <code class="inline">gh auth login</code> dans le navigateur, vérification avec <code class="inline">gh auth status</code>.</span></span></div></li>
+    <li><span class="time">00:20</span><span class="pin"></span><div><strong><span class="lang-en">Hands-on: your agent's first push</span><span class="lang-fr">Pratique&nbsp;: première poussée de votre agent</span></strong>
+      <span class="desc"><span class="lang-en">Launch <code class="inline">omp</code>, ask it to create the repository and push your website. You approve each step.</span><span class="lang-fr">Lancez <code class="inline">omp</code>, demandez-lui de créer le dépôt et de pousser votre site. Vous approuvez chaque étape.</span></span></div></li>
+    <li><span class="time">00:30</span><span class="pin"></span><div><strong><span class="lang-en">Go live: connect Vercel</span><span class="lang-fr">Mise en ligne&nbsp;: connecter Vercel</span></strong>
+      <span class="desc"><span class="lang-en">Sign up with GitHub, import the repository, get your live <code class="inline">.vercel.app</code> URL.</span><span class="lang-fr">Inscrivez-vous avec GitHub, importez le dépôt, obtenez votre adresse <code class="inline">.vercel.app</code> en ligne.</span></span></div></li>
+    <li><span class="time">00:40</span><span class="pin later"></span><div><strong><span class="lang-en">The everyday loop + Q&amp;A</span><span class="lang-fr">La boucle du quotidien + questions</span></strong>
+      <span class="desc"><span class="lang-en">One more edit, one more push, watch the live site update. Reverting a bad change. Public vs private.</span><span class="lang-fr">Une modification, une poussée, le site en ligne se met à jour. Revenir en arrière. Public ou privé.</span></span></div></li>
+  </ul>
+
+  <h2><span class="lang-en">Why bother, when the files already run on my laptop?</span><span class="lang-fr">Pourquoi s'encombrer, alors que les fichiers fonctionnent déjà sur mon ordinateur ?</span></h2>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>🛟 <span class="lang-en">Nothing can be lost</span><span class="lang-fr">Rien ne peut se perdre</span></h3>
+      <p><span class="lang-en">Your work lives in two places. Laptop stolen, tea spilled, file deleted by accident — the GitHub copy has every version, and one command brings it back.</span>
+      <span class="lang-fr">Votre travail existe en deux endroits. Ordinateur volé, thé renversé, fichier supprimé par erreur — la copie GitHub garde chaque version, et une commande la ramène.</span></p>
+    </div>
+    <div class="card">
+      <h3>🔗 <span class="lang-en">A link, not an attachment</span><span class="lang-fr">Un lien, pas une pièce jointe</span></h3>
+      <p><span class="lang-en">Share <code class="inline">my-first-site.vercel.app</code> with a colleague, a donor, a ministry. It always shows the latest version — no “final_v2_REAL.zip”.</span>
+      <span class="lang-fr">Partagez <code class="inline">my-first-site.vercel.app</code> avec un collègue, un bailleur, un ministère. Il montre toujours la dernière version — fini les « final_v2_VRAI.zip ».</span></p>
+    </div>
+    <div class="card">
+      <h3>🤖 <span class="lang-en">Your agent gains a superpower</span><span class="lang-fr">Votre agent gagne un superpouvoir</span></h3>
+      <p><span class="lang-en">With the CLIs installed, publishing becomes a sentence: <em>“commit and push these changes.”</em> The agent runs git, you stay in plain language — and you approve every action.</span>
+      <span class="lang-fr">Avec les CLIs installées, publier devient une phrase&nbsp;: <em>« commit and push ces changements »</em>. L'agent exécute git, vous restez en langage naturel — et vous approuvez chaque action.</span></p>
+    </div>
+    <div class="card">
+      <h3>⏪ <span class="lang-en">Every change is remembered</span><span class="lang-fr">Chaque modification est mémorisée</span></h3>
+      <p><span class="lang-en">Every push is a snapshot with a message. Broke something this morning? Look at the history, restore yesterday's version in one click.</span>
+      <span class="lang-fr">Chaque poussée est un instantané avec un message. Quelque chose a cassé ce matin&nbsp;? Regardez l'historique, restaurez la version d'hier en un clic.</span></p>
+    </div>
+    <div class="card">
+      <h3>💸 <span class="lang-en">Free for exactly this</span><span class="lang-fr">Gratuit, précisément pour cela</span></h3>
+      <p><span class="lang-en">Unlimited public and private repositories on GitHub's free plan; Vercel's Hobby plan hosts personal, non-commercial sites at $0. No card required for either.</span>
+      <span class="lang-fr">Dépôts publics et privés illimités avec le plan gratuit de GitHub&nbsp;; le plan Hobby de Vercel héberge les sites personnels non commerciaux à 0 $. Carte bancaire inutile pour les deux.</span></p>
+    </div>
+    <div class="card">
+      <h3>🤝 <span class="lang-en">Ready for teamwork later</span><span class="lang-fr">Prêt pour le travail en équipe plus tard</span></h3>
+      <p><span class="lang-en">GitHub is the standard place teams share code. Once your project lives there, a colleague can contribute — and the agent can help you review what changed.</span>
+      <span class="lang-fr">GitHub est l'endroit standard où les équipes partagent le code. Une fois votre projet hébergé, un collègue peut contribuer — et l'agent peut vous aider à relire les changements.</span></p>
+    </div>
+  </div>
+
+  <p style="margin-top:2.5rem">
+    <a class="btn primary" href="setup.html"><span class="lang-en">Begin: Part 1 — GitHub account →</span><span class="lang-fr">Commencer&nbsp;: partie 1 — compte GitHub →</span></a>
+  </p>
+</main>
+</div>
+<footer class="site">
+  <span class="lang-en">Built for the class with OMP · GitHub + Vercel free tiers</span>
+  <span class="lang-fr">Conçu pour le cours avec OMP · offres gratuites GitHub + Vercel</span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
