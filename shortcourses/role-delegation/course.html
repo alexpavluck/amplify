@@ -47,8 +47,8 @@
     <span class="lang-fr">Pensez à votre dernière campagne de TDM. Vous n'aviez pas une seule personne (très chère, très fatiguée) qui planifiait la stratégie, comptait chaque comprimé, vérifiait chaque fiche de décompte et rédigeait le rapport au bailleur. Vous aviez un <strong>responsable de programme</strong> qui planifiait, des <strong>équipes de terrain</strong> pour le gros du travail, des <strong>superviseurs</strong> pour les contrôles — et tout le monde rendait compte au responsable.</span>
   </p>
   <p>
-    <span class="lang-en"><strong>Multi-model role delegation is exactly that, inside one OMP setup.</strong> OMP keeps a small <em>staffing chart</em> of named seats — one model drives your conversation, another writes commit messages, another answers web searches, another powers the worker helpers it sends off in parallel. You assign each seat a model once; afterwards, work flows to the right brain automatically. <strong>Each seat can run a different model at a different thinking depth.</strong> The strategist can be a frontier model earning its premium; the form-counters can be small, fast, near-free models.</span>
-    <span class="lang-fr"><strong>La délégation multi-modèles, c'est exactement cela, dans une seule configuration OMP.</strong> OMP entretient un petit <em>organigramme</em> de postes nommés — un modèle pilote votre conversation, un autre rédige les messages de commit, un autre répond aux recherches web, un autre propulse les assistants qu'il envoie travailler en parallèle. Vous attribuez un modèle à chaque poste une fois ; ensuite, le travail rejoint automatiquement le bon cerveau. <strong>Chaque poste peut fonctionner avec un modèle différent, à une profondeur de réflexion différente.</strong> Le stratège peut être un modèle de pointe qui mérite son prix ; les compteurs de formulaires peuvent être des modèles petits, rapides et quasi gratuits.</span>
+    <span class="lang-en"><strong>Multi-model role delegation is exactly that, inside one OMP setup.</strong> OMP keeps a small <em>staffing chart</em> of named seats — one model drives your conversation, another writes commit messages, another answers web searches, another powers the worker helpers it sends off in parallel. You assign each seat a model once; afterwards, <strong>recurring jobs flow to their assigned model by job type</strong> — not because OMP guessed how hard your prompt was. Each seat can run a different model at a different thinking depth. The strategist can be a frontier model earning its premium; the form-counters can be small, fast, near-free models.</span>
+    <span class="lang-fr"><strong>La délégation multi-modèles, c'est exactement cela, dans une seule configuration OMP.</strong> OMP entretient un petit <em>organigramme</em> de postes nommés — un modèle pilote votre conversation, un autre rédige les messages de commit, un autre répond aux recherches web, un autre propulse les assistants qu'il envoie travailler en parallèle. Vous attribuez un modèle à chaque poste une fois ; ensuite, <strong>les tâches récurrentes rejoignent leur modèle assigné par type de travail</strong> — pas parce qu'OMP a deviné la difficulté de votre question. Chaque poste peut fonctionner avec un modèle différent, à une profondeur de réflexion différente. Le stratège peut être un modèle de pointe qui mérite son prix ; les compteurs de formulaires peuvent être des modèles petits, rapides et quasi gratuits.</span>
   </p>
 
   <div class="compare-grid">
@@ -403,11 +403,30 @@
     <span class="lang-fr">Bonus pour les prudents : chaque poste peut avoir une <strong>chaîne de repli</strong> (<code class="inline">retry.fallbackChains</code>) — un banc de remplaçants pour que le travail continue quand le modèle de premier choix est saturé ou en panne. La même idée que votre plan de dotation d'urgence en cas de grève.</span>
   </p>
 
-  <!-- ================= PART 5 ================= -->
-  <h2 id="part-try">5 · <span class="lang-en">Try it: inspect, staff, escalate, delegate</span><span class="lang-fr">À vous de jouer : inspecter, pourvoir, escalader, déléguer</span></h2>
+  <h3 id="part-prewalk"><span class="lang-en">Making the handoff automatic: prewalk</span><span class="lang-fr">Automatiser le relais : prewalk</span></h3>
   <p>
-    <span class="lang-en">Four short exercises inside a real OMP session. Exercise 2 assumes you completed the <a href="../openrouter/">OpenRouter class</a> (free models available); the rest work with whatever models you have.</span>
-    <span class="lang-fr">Quatre exercices courts dans une vraie session OMP. L'exercice 2 suppose que vous avez suivi le <a href="../openrouter/">cours OpenRouter</a> (modèles gratuits disponibles) ; les autres fonctionnent avec les modèles dont vous disposez.</span>
+    <span class="lang-en">Staffing the seats already routes recurring work by job type. The gap left is the conversation itself: as long as the driver seat answers and edits, everything runs at driver prices. <code class="inline">prewalk</code> automates a strong-plan → cheap-implement handoff: the driver plans, opens a todo list, and at the first real edit OMP switches the active model to a cheaper seat for the rest of the implementation.</span>
+    <span class="lang-fr">Pourvoir les postes route déjà le travail récurrent par type. Ce qui reste, c'est la conversation elle-même : tant que le poste pilote répond et édite, tout tourne au tarif du pilote. <code class="inline">prewalk</code> automatise un relais planification forte → exécution bon marché : le pilote planifie, ouvre une liste de tâches, et au premier vrai edit, OMP bascule le modèle actif vers un poste moins cher pour le reste de l'implémentation.</span>
+  </p>
+  <div class="term"><div class="term-head"><span class="lang-en">~/.omp/agent/config.yml — enable prewalk</span><span class="lang-fr">~/.omp/agent/config.yml — activer prewalk</span></div><pre><code>prewalk:
+  enabled: true
+  into: "@smol"     # default: where implementation happens
+  from: "@default"  # default: the model that plans</code></pre></div>
+  <p class="hint">
+    <span class="lang-en">Use <code class="inline">into: "@task"</code> if your workload is mostly code edits; use <code class="inline">from: "@plan"</code> if you want your strongest planning model to do the thinking. It arms only <strong>new</strong> sessions — resumed sessions stay where they are. Opt out per run with <code class="inline">omp --no-prewalk</code> or mid-session with <code class="inline">/prewalk off</code>.</span>
+    <span class="lang-fr">Utilisez <code class="inline">into: "@task"</code> si votre travail consiste surtout en éditions de code ; utilisez <code class="inline">from: "@plan"</code> si vous voulez que votre modèle de planification le plus fort fasse la réflexion. Cela ne s'arme que sur les sessions <strong>nouvelles</strong> — les sessions reprises restent où elles sont. Désactivez une exécution avec <code class="inline">omp --no-prewalk</code> ou en cours de session avec <code class="inline">/prewalk off</code>.</span>
+  </p>
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">Not a per-prompt router</span><span class="lang-fr">Pas un routeur par question</span></div>
+    <span class="lang-en">There is also <code class="inline">prewalk.auto</code>, which asks a native judge backend whether each new task should hand off. It only works when the <code class="inline">judge</code> role resolves to a native judgment provider such as TypeSafe Jev, OpenRouter Decisions, or OpenAI Decisions. Without one it silently stays off and the session behaves as if prewalk were not configured.</span>
+    <span class="lang-fr">Il existe aussi <code class="inline">prewalk.auto</code>, qui interroge un backend de jugement natif pour décider si chaque nouvelle tâche doit être relayée. Cela ne fonctionne que si le rôle <code class="inline">judge</code> résout vers un fournisseur de jugement natif comme TypeSafe Jev, OpenRouter Decisions ou OpenAI Decisions. Sans cela, il reste silencieusement désactivé et la session se comporte comme si prewalk n'était pas configuré.</span>
+  </div>
+
+  <!-- ================= PART 5 ================= -->
+  <h2 id="part-try">5 · <span class="lang-en">Try it: inspect, staff, escalate, delegate, prewalk</span><span class="lang-fr">À vous de jouer : inspecter, pourvoir, escalader, déléguer, prewalk</span></h2>
+  <p>
+    <span class="lang-en">Five short exercises inside a real OMP session. Exercise 2 assumes you completed the <a href="../openrouter/">OpenRouter class</a> (free models available); the rest work with whatever models you have.</span>
+    <span class="lang-fr">Cinq exercices courts dans une vraie session OMP. L'exercice 2 suppose que vous avez suivi le <a href="../openrouter/">cours OpenRouter</a> (modèles gratuits disponibles) ; les autres fonctionnent avec les modèles dont vous disposez.</span>
   </p>
 
   <ul class="checklist" data-checklist="delegation-1">
@@ -451,6 +470,13 @@ and what are the three most promising starting points for someone
 who wants to understand this project? Don't read every file
 yourself — delegate the exploring. Then summarize their findings.</code></pre></div>
 
+  <ul class="checklist" data-checklist="delegation-5">
+    <li><input type="checkbox" id="dl5"><label class="step-text" for="dl5">
+      <strong><span class="lang-en">Exercise 5 — arm prewalk for one session</span><span class="lang-fr">Exercice 5 — armer prewalk pour une session</span></strong>
+      <span class="note"><span class="lang-en">Start a brand-new OMP session in a scratch folder with <code class="inline">omp --prewalk</code> (or after setting <code class="inline">prewalk.enabled: true</code>). Ask for a small multi-file task that requires a todo list. Watch for a model switch after the first edit. If the session never uses a todo list, the handoff gate stays closed.</span>
+      <span class="lang-fr">Lancez une toute nouvelle session OMP dans un dossier temporaire avec <code class="inline">omp --prewalk</code> (ou après avoir activé <code class="inline">prewalk.enabled: true</code>). Demandez une petite tâche multi-fichiers qui nécessite une liste de tâches. Observez un changement de modèle après le premier edit. Si la session n'utilise jamais de liste de tâches, la porte de repli reste fermée.</span></span></label></li>
+  </ul>
+
   <div class="callout warn">
     <div class="callout-title"><span class="lang-en">Free-tier reality check</span><span class="lang-fr">Réalité du niveau gratuit</span></div>
     <span class="lang-en">Delegated work multiplies requests: one question can fire several model calls — the driver, plus each helper, plus housekeeping. On a 50-requests/day free account, that's how you meet HTTP 429 before lunch. Small paid models cost pennies per session and make delegation smooth; a local model (Ollama) in the cheap seats does the same for $0, offline.</span>
@@ -464,6 +490,7 @@ yourself — delegate the exploring. Then summarize their findings.</code></pre>
       <tr><td><code class="inline">/model</code> → <span class="lang-en">Roles view</span><span class="lang-fr">vue Roles</span></td><td><span class="lang-en">See and staff every seat — no file editing, changes apply live.</span><span class="lang-fr">Voir et pourvoir chaque poste — sans éditer de fichier, changements appliqués à chaud.</span></td></tr>
       <tr><td><code class="inline">omp config get modelRoles</code></td><td><span class="lang-en">Audit your current roster from any terminal.</span><span class="lang-fr">Auditer votre organigramme actuel depuis n'importe quel terminal.</span></td></tr>
       <tr><td><code class="inline">omp --slow "&lt;model:high&gt;"</code></td><td><span class="lang-en">One run on your deepest model — the on-demand specialist consult.</span><span class="lang-fr">Une exécution sur votre modèle le plus profond — la consultation du spécialiste à la demande.</span></td></tr>
+      <tr><td><code class="inline">prewalk.enabled: true</code></td><td><span class="lang-en">Plan on the strong model, then let OMP switch to the cheap seat at the first edit.</span><span class="lang-fr">Planifiez sur le modèle fort, puis laissez OMP basculer vers le poste bon marché au premier edit.</span></td></tr>
       <tr><td><code class="inline">modelRoles:</code> <span class="lang-en">in <code class="inline">config.yml</code></span><span class="lang-fr">dans <code class="inline">config.yml</code></span></td><td><span class="lang-en">Permanent staffing: driver strong, workers mid, housekeeping free.</span><span class="lang-fr">Dotation permanente : pilote fort, ouvriers intermédiaires, ménage gratuit.</span></td></tr>
       <tr><td><code class="inline">advisor.enabled: true</code></td><td><span class="lang-en">A reviewer riding along on every turn — supervision built in.</span><span class="lang-fr">Un relecteur qui accompagne chaque étape — la supervision intégrée.</span></td></tr>
       <tr><td><span class="lang-en">Plain language: &quot;send scouts first, don't read everything yourself&quot;</span><span class="lang-fr">En langage naturel : « envoie des éclaireurs d'abord, ne lis pas tout toi-même »</span></td><td><span class="lang-en">The driver hires subagents mid-task — they run on the seats you staffed.</span><span class="lang-fr">Le pilote embauche des sous-agents en cours de tâche — ils tournent sur les postes que vous avez pourvus.</span></td></tr>
