@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Course — Multi-Model Role Delegation in OMP | Le cours</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row"><div><div class="eyebrow">OMP × Roles</div><a class="brand" href="index.html"><span class="dot"></span>OMP × Roles</a></div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <ol>
+    <li><a href="index.html"><span class="n">01</span><span><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></span></a></li>
+    <li><a href="course.html" class="active"><span class="n">02</span><span><span class="lang-en">The Course</span><span class="lang-fr">Le cours</span></span></a></li>
+  </ol>
+  <div class="map-foot"><a href="https://amplify-course.com" target="_blank" rel="noopener">amplify-course.com</a></div>
+</nav>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span class="lang-en">Parts 1–5 · read top to bottom</span><span class="lang-fr">Parties 1–5 · à lire de haut en bas</span></p>
+    <h1>
+      <span class="lang-en">Multi-Model Role Delegation</span>
+      <span class="lang-fr">La délégation multi-modèles</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">Parts 1–2 are concepts you can read with a coffee. Part 3 opens the real staffing chart inside OMP, Part 4 matches models to seats, and Part 5 has hands-on steps to see delegation live. Tick the boxes as you go — your progress is saved in this browser.</span>
+      <span class="lang-fr">Les parties 1 et 2 sont des concepts à lire avec un café. La partie 3 dévoile le vrai organigramme à l'intérieur d'OMP, la partie 4 associe les modèles aux postes, et la partie 5 propose des exercices pratiques pour voir la délégation en direct. Cochez les cases au fur et à mesure — votre progression est enregistrée dans ce navigateur.</span>
+    </p>
+  </section>
+
+  <!-- ================= PART 1 ================= -->
+  <h2 id="part-what">1 · <span class="lang-en">What is multi-model role delegation?</span><span class="lang-fr">Qu'est-ce que la délégation multi-modèles ?</span></h2>
+  <p>
+    <span class="lang-en">Think of your last MDA campaign. You did not have one (very expensive, very tired) person plan the strategy, count every tablet, verify every tally sheet, and write the donor report. You had a <strong>programme manager</strong> who planned, <strong>field teams</strong> who did the volume work, <strong>supervisors</strong> who spot-checked — and everyone reported back up.</span>
+    <span class="lang-fr">Pensez à votre dernière campagne de TDM. Vous n'aviez pas une seule personne (très chère, très fatiguée) qui planifiait la stratégie, comptait chaque comprimé, vérifiait chaque fiche de décompte et rédigeait le rapport au bailleur. Vous aviez un <strong>responsable de programme</strong> qui planifiait, des <strong>équipes de terrain</strong> pour le gros du travail, des <strong>superviseurs</strong> pour les contrôles — et tout le monde rendait compte au responsable.</span>
+  </p>
+  <p>
+    <span class="lang-en"><strong>Multi-model role delegation is exactly that, inside one OMP setup.</strong> OMP keeps a small <em>staffing chart</em> of named seats — one model drives your conversation, another writes commit messages, another answers web searches, another powers the worker helpers it sends off in parallel. You assign each seat a model once; afterwards, work flows to the right brain automatically. <strong>Each seat can run a different model at a different thinking depth.</strong> The strategist can be a frontier model earning its premium; the form-counters can be small, fast, near-free models.</span>
+    <span class="lang-fr"><strong>La délégation multi-modèles, c'est exactement cela, dans une seule configuration OMP.</strong> OMP entretient un petit <em>organigramme</em> de postes nommés — un modèle pilote votre conversation, un autre rédige les messages de commit, un autre répond aux recherches web, un autre propulse les assistants qu'il envoie travailler en parallèle. Vous attribuez un modèle à chaque poste une fois ; ensuite, le travail rejoint automatiquement le bon cerveau. <strong>Chaque poste peut fonctionner avec un modèle différent, à une profondeur de réflexion différente.</strong> Le stratège peut être un modèle de pointe qui mérite son prix ; les compteurs de formulaires peuvent être des modèles petits, rapides et quasi gratuits.</span>
+  </p>
+
+  <div class="compare-grid">
+    <div class="mock">
+      <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">The referral pathway you already know</span><span class="lang-fr">Le parcours de référence que vous connaissez</span></div>
+      <div class="mock-body">
+        <div class="bubble ai"><span class="tag"><span class="lang-en">Community health worker</span><span class="lang-fr">Agent de santé communautaire</span></span>
+          <span class="lang-en">Sees every patient first. Cheap to train, fast, everywhere. Handles the routine 90%.</span>
+          <span class="lang-fr">Voit chaque patient en premier. Peu coûteux à former, rapide, partout. Traite 90 % des cas de routine.</span></div>
+        <div class="bubble ai"><span class="tag"><span class="lang-en">Nurse at the health centre</span><span class="lang-fr">Infirmier au centre de santé</span></span>
+          <span class="lang-en">Handles the cases the CHW refers up — solid skills, mid-level cost.</span>
+          <span class="lang-fr">Traite les cas référés par l'ASC — compétences solides, coût intermédiaire.</span></div>
+        <div class="bubble ai"><span class="tag"><span class="lang-en">District medical officer</span><span class="lang-fr">Médecin de district</span></span>
+          <span class="lang-en">Sees only the hardest cases. Scarce, expensive — so you protect their time fiercely.</span>
+          <span class="lang-fr">Ne voit que les cas les plus difficiles. Rares, coûteux — vous protégez donc leur temps farouchement.</span></div>
+      </div>
+    </div>
+
+    <div class="compare-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      <span class="lang-en">same logic, new staff</span><span class="lang-fr">même logique, nouvelle équipe</span>
+    </div>
+
+    <div class="mock">
+      <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">OMP's version of the same pathway</span><span class="lang-fr">La version OMP du même parcours</span></div>
+      <div class="mock-body">
+        <div class="bubble ai"><span class="tag"><span class="lang-en">Small / cheap seats (smol, tiny, commit)</span><span class="lang-fr">Postes petits / bon marché (smol, tiny, commit)</span></span>
+          <span class="lang-en">First contact with bulk work: housekeeping, commit messages, tiny jobs. Fast, nearly free.</span>
+          <span class="lang-fr">Premier contact avec le gros du travail : ménage interne, messages de commit, micro-tâches. Rapides, quasi gratuits.</span></div>
+        <div class="bubble ai"><span class="tag"><span class="lang-en">Mid-tier seats (task, advisor)</span><span class="lang-fr">Postes intermédiaires (task, advisor)</span></span>
+          <span class="lang-en">Well-specified work: the delegated worker agents and the background reviewer.</span>
+          <span class="lang-fr">Travail bien spécifié : les agents délégués et le relecteur en arrière-plan.</span></div>
+        <div class="bubble ai"><span class="tag"><span class="lang-en">Frontier seats (default, plan, slow)</span><span class="lang-fr">Postes de pointe (default, plan, slow)</span></span>
+          <span class="lang-en">Judgment calls: driving your session, planning the architecture, deep-diving when you escalate. You only pay its rate for this.</span>
+          <span class="lang-fr">Les appels au jugement : piloter votre session, planifier l'architecture, plonger en profondeur quand vous escaladez. Vous ne payez ce tarif que pour cela.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">The one-sentence definition</span><span class="lang-fr">La définition en une phrase</span></div>
+    <span class="lang-en">Multi-model role delegation = <strong>each recurring job in OMP is a named seat, and you staff every seat with the cheapest model that can do that job well.</strong></span>
+    <span class="lang-fr">Délégation multi-modèles = <strong>chaque tâche récurrente dans OMP est un poste nommé, et vous pourvoyez chaque poste avec le modèle le moins cher capable de bien faire ce travail.</strong></span>
+  </div>
+
+  <!-- ================= PART 2 ================= -->
+  <h2 id="part-why">2 · <span class="lang-en">Why it matters</span><span class="lang-fr">Pourquoi c'est important</span></h2>
+  <p>
+    <span class="lang-en">Four reasons — and each one has a twin you already know from programme life.</span>
+    <span class="lang-fr">Quatre raisons — et chacune a une jumelle que vous connaissez déjà de la vie des programmes.</span>
+  </p>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>💰 <span class="lang-en">Cost: stop paying surgeon rates for pill counting</span><span class="lang-fr">Coût : fini le tarif chirurgien pour compter des comprimés</span></h3>
+      <p><span class="lang-en">Model prices differ by 100× or more per million words processed. Without delegation, every commit message and every background check is billed at your best model's rate. Staff the cheap seats with cheap models and the frontier price only buys frontier work — the same way you would never pay your epidemiologist's daily rate to count tablets in the warehouse.</span>
+      <span class="lang-fr">Les prix des modèles varient d'un facteur 100 ou plus par million de mots traités. Sans délégation, chaque message de commit et chaque vérification en arrière-plan est facturée au tarif de votre meilleur modèle. Pourvoyez les postes modestes avec des modèles modestes, et le tarif de pointe n'achètera que du travail de pointe — de la même façon que vous ne paieriez jamais le taux journalier de votre épidémiologiste pour compter des comprimés à l'entrepôt.</span></p>
+    </div>
+    <div class="card">
+      <h3>⚡ <span class="lang-en">Speed: four clerks beat one genius</span><span class="lang-fr">Rapidité : quatre commis battent un génie</span></h3>
+      <p><span class="lang-en">Delegated worker agents can run <strong>in parallel</strong> on the cheap <code class="inline">task</code> seat: four assistants reading ten reports each finish long before one model reading forty in a row. It's the difference between one team visiting 200 households and twenty teams visiting ten each.</span>
+      <span class="lang-fr">Les agents délégués peuvent travailler <strong>en parallèle</strong> sur le poste <code class="inline">task</code> bon marché : quatre assistants lisant dix rapports chacun finissent bien avant un modèle qui en lit quarante à la file. C'est la différence entre une équipe qui visite 200 ménages et vingt équipes qui en visitent dix chacune.</span></p>
+    </div>
+    <div class="card">
+      <h3>🎯 <span class="lang-en">Quality: attention where the stakes are</span><span class="lang-fr">Qualité : l'attention là où sont les enjeux</span></h3>
+      <p><span class="lang-en">A model buried in 40 raw reports summarizes worse than one that receives 4 clean digests. Delegation keeps the strong model's attention on judgment — exactly why your best analyst writes the donor report instead of washing the tally sheets.</span>
+      <span class="lang-fr">Un modèle noyé dans 40 rapports bruts résume moins bien qu'un modèle qui reçoit 4 synthèses propres. La délégation préserve l'attention du modèle fort pour le jugement — exactement comme votre meilleur analyste rédige le rapport au bailleur au lieu de laver les fiches de décompte.</span></p>
+    </div>
+    <div class="card">
+      <h3>🛡️ <span class="lang-en">Safety: a colleague who always double-checks</span><span class="lang-fr">Sécurité : un collègue qui vérifie toujours</span></h3>
+      <p><span class="lang-en">With the <code class="inline">advisor</code> seat staffed, a second model quietly reviews every turn in the background and slips notes to the driver — supervision built into the workflow, the way a supervisor's checklist rides along on every supervisory visit.</span>
+      <span class="lang-fr">Avec le poste <code class="inline">advisor</code> pourvu, un second modèle passe discrètement en revue chaque étape en arrière-plan et glisse des notes au pilote — la supervision intégrée au flux de travail, comme la check-list du superviseur qui accompagne chaque visite de supervision.</span></p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title"><span class="lang-en">A number to keep</span><span class="lang-fr">Un chiffre à retenir</span></div>
+    <span class="lang-en">In a typical working session, most requests OMP fires are <em>not</em> your conversation: they are housekeeping, commits, searches, worker agents. Delegation sends all of that to cheap models — like a campaign where most of the work is walking household to household, not planning.</span>
+    <span class="lang-fr">Dans une session de travail typique, la plupart des requêtes lancées par OMP ne sont <em>pas</em> votre conversation : ce sont du ménage interne, des commits, des recherches, des agents ouvriers. La délégation envoie tout cela vers des modèles bon marché — comme dans une campagne où l'essentiel du travail consiste à marcher de ménage en ménage, pas à planifier.</span>
+  </div>
+
+  <!-- ================= PART 3 ================= -->
+  <h2 id="part-roles">3 · <span class="lang-en">The roles: OMP's real staffing chart</span><span class="lang-fr">Les rôles : le vrai organigramme d'OMP</span></h2>
+  <p>
+    <span class="lang-en">OMP's delegation is not metaphorical — it lives in one setting called <code class="inline">modelRoles</code>, a roster of <strong>named seats</strong>. Each seat is a recurring job; each seat gets its own model, optionally with a <strong>thinking-depth suffix</strong> like <code class="inline">:high</code> or <code class="inline">:low</code>. Meet the seats:</span>
+    <span class="lang-fr">La délégation dans OMP n'est pas métaphorique — elle vit dans un réglage nommé <code class="inline">modelRoles</code>, un organigramme de <strong>postes nommés</strong>. Chaque poste est une tâche récurrente ; chaque poste reçoit son propre modèle, avec au choix un <strong>suffixe de profondeur de réflexion</strong> comme <code class="inline">:high</code> ou <code class="inline">:low</code>. Voici les postes :</span>
+  </p>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">Seat</span><span class="lang-fr">Poste</span></th>
+      <th><span class="lang-en">Nickname on your team</span><span class="lang-fr">Surnom dans votre équipe</span></th>
+      <th><span class="lang-en">When OMP uses it</span><span class="lang-fr">Quand OMP l'utilise</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><code class="inline">default</code></td>
+        <td><span class="lang-en">Programme manager</span><span class="lang-fr">Responsable de programme</span></td>
+        <td><span class="lang-en">The model you actually chat with. Drives the session, plans, delegates, answers you. This is the seat <code class="inline">/model</code> changes.</span><span class="lang-fr">Le modèle avec qui vous parlez vraiment. Pilote la session, planifie, délègue, vous répond. C'est le poste que <code class="inline">/model</code> modifie.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">plan</code></td>
+        <td><span class="lang-en">The architect</span><span class="lang-fr">L'architecte</span></td>
+        <td><span class="lang-en">Architectural planning and breaking big work into pieces before anyone builds. Also settable per-run with <code class="inline">--plan</code>.</span><span class="lang-fr">Planification d'architecture et découpage du gros travail en morceaux avant que quiconque construise. Réglable aussi ponctuellement avec <code class="inline">--plan</code>.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">slow</code></td>
+        <td><span class="lang-en">The consultant specialist</span><span class="lang-fr">Le spécialiste consultant</span></td>
+        <td><span class="lang-en">Manual deep-reasoning escalation: the model you switch to (<code class="inline">--slow</code>, or from the <code class="inline">/model</code> view) when the question deserves a long, hard think.</span><span class="lang-fr">Escalade manuelle vers un raisonnement profond : le modèle vers lequel vous basculez (<code class="inline">--slow</code>, ou depuis la vue <code class="inline">/model</code>) quand la question mérite une longue et sérieuse réflexion.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">advisor</code></td>
+        <td><span class="lang-en">The shadow M&amp;E officer</span><span class="lang-fr">Le chargé de S&amp;E fantôme</span></td>
+        <td><span class="lang-en">A background reviewer (enable with <code class="inline">advisor.enabled: true</code>) that reads every turn and slips advice to the driver. It never acts — it only observes and comments.</span><span class="lang-fr">Un relecteur en arrière-plan (à activer avec <code class="inline">advisor.enabled: true</code>) qui lit chaque étape et glisse des conseils au pilote. Il n'agit jamais — il observe et commente, c'est tout.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">task</code></td>
+        <td><span class="lang-en">The field officers</span><span class="lang-fr">Les agents de terrain</span></td>
+        <td><span class="lang-en">The delegated worker subagents: when the manager says &quot;go handle this piece,&quot; this is the model those workers run on. Most of the bulk building happens here.</span><span class="lang-fr">Les sous-agents ouvriers délégués : quand le responsable dit « va gérer cette partie », c'est le modèle sur lequel tournent ces ouvriers. L'essentiel du gros œuvre se fait ici.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">smol</code></td>
+        <td><span class="lang-en">The office clerk</span><span class="lang-fr">Le commis de bureau</span></td>
+        <td><span class="lang-en">Lightweight housekeeping: quick summaries, small utility jobs. Also settable per-run with <code class="inline">--smol</code>.</span><span class="lang-fr">Le ménage léger : résumés rapides, petites tâches utilitaires. Réglable aussi ponctuellement avec <code class="inline">--smol</code>.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">commit</code></td>
+        <td><span class="lang-en">The minute-taker</span><span class="lang-fr">Le secrétaire de séance</span></td>
+        <td><span class="lang-en">Writes your git commit messages. Short, formulaic, frequent — a classic cheap seat.</span><span class="lang-fr">Rédige vos messages de commit git. Court, stéréotypé, fréquent — un poste bon marché classique.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">tiny</code></td>
+        <td><span class="lang-en">The runner</span><span class="lang-fr">Le coursier</span></td>
+        <td><span class="lang-en">The very smallest jobs; can even be a small local model that never leaves your laptop.</span><span class="lang-fr">Les toutes petites tâches ; peut même être un petit modèle local qui ne quitte jamais votre ordinateur.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">memory</code></td>
+        <td><span class="lang-en">The archivist</span><span class="lang-fr">L'archiviste</span></td>
+        <td><span class="lang-en">Keeps OMP's long-term memory tidy between sessions.</span><span class="lang-fr">Maintient en ordre la mémoire à long terme d'OMP entre les sessions.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">vision</code></td>
+        <td><span class="lang-en">The photo interpreter</span><span class="lang-fr">L'interprète photo</span></td>
+        <td><span class="lang-en">Called when you attach images to the conversation.</span><span class="lang-fr">Appelé quand vous joignez des images à la conversation.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">web</code></td>
+        <td><span class="lang-en">The librarian</span><span class="lang-fr">Le bibliothécaire</span></td>
+        <td><span class="lang-en">Runs web searches for the agent.</span><span class="lang-fr">Exécute les recherches web pour l'agent.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="hint">
+    <span class="lang-en">There are a few more specialist seats (<code class="inline">image</code>, <code class="inline">speech</code>, <code class="inline">dictation</code>, <code class="inline">judge</code>) for generating pictures, speech, and automated judgments — same principle, different uniforms. Run <code class="inline">omp config get modelRoles</code> to see your own roster.</span>
+    <span class="lang-fr">Il existe quelques autres postes spécialisés (<code class="inline">image</code>, <code class="inline">speech</code>, <code class="inline">dictation</code>, <code class="inline">judge</code>) pour générer des images, de la voix et des jugements automatisés — même principe, autres uniformes. Lancez <code class="inline">omp config get modelRoles</code> pour voir votre propre organigramme.</span>
+  </p>
+
+  <h3><span class="lang-en">And the on-demand helpers</span><span class="lang-fr">Et les assistants à la demande</span></h3>
+  <p>
+    <span class="lang-en">On top of the permanent seats, the manager can hire temporary specialists mid-task — subagents that appear as labeled helpers in the transcript. You will meet four of them often:</span>
+    <span class="lang-fr">En plus des postes permanents, le responsable peut embaucher des spécialistes temporaires en cours de tâche — des sous-agents qui apparaissent comme des assistants étiquetés dans la transcription. Vous en croiserez quatre souvent :</span>
+  </p>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">Helper</span><span class="lang-fr">Assistant</span></th>
+      <th><span class="lang-en">Its job</span><span class="lang-fr">Son travail</span></th>
+      <th><span class="lang-en">Hands</span><span class="lang-fr">Mains</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><code class="inline">scout</code></td>
+        <td><span class="lang-en">Fast reconnaissance: &quot;what's in this folder, where does X live?&quot; Reports back a compressed map. Can fan out several at once.</span><span class="lang-fr">Reconnaissance rapide : « qu'y a-t-il dans ce dossier, où habite X ? » Renvoie une carte condensée. Peut se déployer à plusieurs à la fois.</span></td>
+        <td><span class="lang-en">Read-only</span><span class="lang-fr">Lecture seule</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">task</code></td>
+        <td><span class="lang-en">The generalist worker for multi-step jobs with a clear brief — these run on the <code class="inline">task</code> seat you staffed above.</span><span class="lang-fr">L'ouvrier généraliste pour les tâches multi-étapes au cahier des charges clair — ils tournent sur le poste <code class="inline">task</code> que vous avez pourvu ci-dessus.</span></td>
+        <td><span class="lang-en">Read + write</span><span class="lang-fr">Lecture + écriture</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">sonic</code></td>
+        <td><span class="lang-en">Strictly mechanical work, low-reasoning by design: rename 40 files to the same pattern, apply one fix in 12 places. Give it checklists, not questions.</span><span class="lang-fr">Travail strictement mécanique, raisonnement limité par conception : renommer 40 fichiers selon le même gabarit, appliquer une correction en 12 endroits. Donnez-lui des check-lists, pas des questions.</span></td>
+        <td><span class="lang-en">Read + write</span><span class="lang-fr">Lecture + écriture</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">reviewer</code></td>
+        <td><span class="lang-en">Independent quality check of work just done — a fresh pair of eyes that didn't write what it's checking. (There's also a security-focused sibling.)</span><span class="lang-fr">Contrôle qualité indépendant du travail qui vient d'être fait — un regard neuf qui n'a pas écrit ce qu'il vérifie. (Il existe aussi un cousin spécialisé en sécurité.)</span></td>
+        <td><span class="lang-en">Read + write</span><span class="lang-fr">Lecture + écriture</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">You never lose the steering wheel</span><span class="lang-fr">Vous ne lâchez jamais le volant</span></div>
+    <span class="lang-en">Delegation changes who does the work, not who directs it. You still talk to the <code class="inline">default</code> seat, interrupt with <kbd>Esc</kbd> when it drifts, and every helper's actions show up in the transcript for you to inspect (<kbd>Ctrl</kbd>+<kbd>O</kbd> expands the details).</span>
+    <span class="lang-fr">La délégation change qui fait le travail, pas qui le dirige. Vous parlez toujours au poste <code class="inline">default</code>, vous l'interrompez avec <kbd>Esc</kbd> quand il dérive, et chaque action des assistants apparaît dans la transcription pour que vous l'inspectiez (<kbd>Ctrl</kbd>+<kbd>O</kbd> déplie les détails).</span>
+  </div>
+
+  <!-- ================= PART 4 ================= -->
+  <h2 id="part-match">4 · <span class="lang-en">Which models fit which seats — and why</span><span class="lang-fr">Quels modèles pour quels postes — et pourquoi</span></h2>
+  <p>
+    <span class="lang-en">Think of models in three tiers, the same way you think of staff:</span>
+    <span class="lang-fr">Pensez aux modèles en trois niveaux, comme vous pensez à votre personnel :</span>
+  </p>
+  <div class="grid cols-3">
+    <div class="card">
+      <span class="kicker"><span class="lang-en">Tier 1 · Frontier</span><span class="lang-fr">Niveau 1 · Pointe</span></span>
+      <h3><span class="lang-en">The district medical officer</span><span class="lang-fr">Le médecin de district</span></h3>
+      <p><span class="lang-en">Claude Opus-class, GPT Pro-class, Gemini Pro-class. Deepest reasoning, best under ambiguity — and priced like it.</span>
+      <span class="lang-fr">Classe Claude Opus, GPT Pro, Gemini Pro. Raisonnement le plus profond, le meilleur dans l'ambiguïté — et au prix correspondant.</span></p>
+    </div>
+    <div class="card">
+      <span class="kicker"><span class="lang-en">Tier 2 · Mid</span><span class="lang-fr">Niveau 2 · Intermédiaire</span></span>
+      <h3><span class="lang-en">The health-centre nurse</span><span class="lang-fr">L'infirmier du centre de santé</span></h3>
+      <p><span class="lang-en">Claude Sonnet-class, GPT-mini-class, Gemini Flash-class. Follows a clear brief reliably at a fraction of frontier cost.</span>
+      <span class="lang-fr">Classe Claude Sonnet, GPT-mini, Gemini Flash. Suit un cahier des charges clair de façon fiable, pour une fraction du coût de la pointe.</span></p>
+    </div>
+    <div class="card">
+      <span class="kicker"><span class="lang-en">Tier 3 · Small / free</span><span class="lang-fr">Niveau 3 · Petit / gratuit</span></span>
+      <h3><span class="lang-en">The community health worker</span><span class="lang-fr">L'agent de santé communautaire</span></h3>
+      <p><span class="lang-en">Haiku-class, local models (Ollama), OpenRouter <code class="inline">:free</code> models. Fast, near-free — perfect for volume with verifiable output.</span>
+      <span class="lang-fr">Classe Haiku, modèles locaux (Ollama), modèles <code class="inline">:free</code> d'OpenRouter. Rapides, quasi gratuits — parfaits pour le volume à résultat vérifiable.</span></p>
+    </div>
+  </div>
+
+  <h3><span class="lang-en">The matching table</span><span class="lang-fr">Le tableau des correspondances</span></h3>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">Seat</span><span class="lang-fr">Poste</span></th>
+      <th><span class="lang-en">Best tier (+ thinking)</span><span class="lang-fr">Niveau idéal (+ réflexion)</span></th>
+      <th><span class="lang-en">Why</span><span class="lang-fr">Pourquoi</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><code class="inline">default</code></td>
+        <td><span class="pill paid"><span class="lang-en">Frontier or strong mid</span><span class="lang-fr">Pointe ou solide intermédiaire</span></span></td>
+        <td><span class="lang-en">Every message flows through here: judgment, delegation decisions, your final answers. A weak driver mismanages a strong team — a campaign led from an empty chair.</span><span class="lang-fr">Chaque message passe par ici : jugement, décisions de délégation, vos réponses finales. Un pilote faible gère mal une équipe forte — une campagne dirigée depuis une chaise vide.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">plan</code></td>
+        <td><span class="pill paid"><span class="lang-en">Frontier, <code class="inline">:high</code></span><span class="lang-fr">Pointe, <code class="inline">:high</code></span></span></td>
+        <td><span class="lang-en">Planning decisions ripple through everything that follows — a bad plan wastes the whole team's afternoon. Staff it strong but quota-conscious; it only fires at planning time.</span><span class="lang-fr">Les décisions de planification se répercutent sur tout ce qui suit — un mauvais plan gaspille l'après-midi de toute l'équipe. Pourvoyez-le fort mais soucieux du quota ; il ne se déclenche qu'à la planification.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">slow</code></td>
+        <td><span class="pill paid"><span class="lang-en">Deepest you have, <code class="inline">:high</code></span><span class="lang-fr">Le plus profond, <code class="inline">:high</code></span></span></td>
+        <td><span class="lang-en">Your manual escape hatch for rare, genuinely hard problems. It fires only when you call it — so cost is irrelevant; depth is everything.</span><span class="lang-fr">Votre issue de secours manuelle pour les problèmes rares et vraiment difficiles. Il ne se déclenche que lorsque vous l'appelez — le coût importe donc peu ; seule compte la profondeur.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">task</code></td>
+        <td><span class="pill paid"><span class="lang-en">Mid-tier, big context</span><span class="lang-fr">Intermédiaire, grand contexte</span></span></td>
+        <td><span class="lang-en">Workers receive a written brief and execute it for hours — they need reliability and room to read, not philosophy. Nurse-level work.</span><span class="lang-fr">Les ouvriers reçoivent un cahier des charges écrit et l'exécutent pendant des heures — il leur faut de la fiabilité et de la place pour lire, pas de la philosophie. Travail de niveau infirmier.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">advisor</code></td>
+        <td><span class="pill paid"><span class="lang-en">Mid-tier, <code class="inline">:medium</code>/<code class="inline">:auto</code></span><span class="lang-fr">Intermédiaire, <code class="inline">:medium</code>/<code class="inline">:auto</code></span></span></td>
+        <td><span class="lang-en">It reviews <em>every single turn</em> — the standing cost seat. Strong enough to catch real problems, cheap enough to leave on forever. Use a <em>different</em> model than the driver: a fresh pair of eyes, literally.</span><span class="lang-fr">Il passe en revue <em>chaque étape</em> — c'est le poste au coût permanent. Assez fort pour repérer les vrais problèmes, assez bon marché pour rester activé en permanence. Utilisez un modèle <em>différent</em> du pilote : un regard neuf, littéralement.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">smol</code> · <code class="inline">commit</code> · <code class="inline">tiny</code> · <code class="inline">memory</code></td>
+        <td><span class="pill free"><span class="lang-en">Smallest reliable, <code class="inline">:low</code></span><span class="lang-fr">Le plus petit fiable, <code class="inline">:low</code></span></span></td>
+        <td><span class="lang-en">High volume, verifiable output, near-zero stakes per call. A flash-tier, <code class="inline">:free</code>, or local model is ideal — wrong answers here cost seconds to spot, and the volume is where a big model would drain the budget.</span><span class="lang-fr">Gros volume, résultat vérifiable, enjeux quasi nuls par appel. Un modèle flash, <code class="inline">:free</code> ou local est idéal — les erreurs coûtent ici quelques secondes à repérer, et c'est le volume qui viderait le budget avec un gros modèle.</span></td>
+      </tr>
+      <tr>
+        <td><code class="inline">vision</code> · <code class="inline">web</code></td>
+        <td><span class="pill free"><span class="lang-en">What you have</span><span class="lang-fr">Ce que vous avez</span></span></td>
+        <td><span class="lang-en">Constraint-driven, not preference-driven: vision needs a model that actually sees images; web needs a search runner you have access to.</span><span class="lang-fr">Piloté par les contraintes, pas les préférences : vision exige un modèle qui voit vraiment les images ; web exige un moteur de recherche auquel vous avez accès.</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">The second dial: thinking depth</span><span class="lang-fr">Le second cadran : la profondeur de réflexion</span></div>
+    <span class="lang-en">Notice the <code class="inline">:high</code> and <code class="inline">:low</code> suffixes. The roster is <strong>two-dimensional</strong>: which brain <em>×</em> how hard it thinks. The same mid-tier model at <code class="inline">:low</code> writes your commit messages and at <code class="inline">:high</code> reviews your strategy. Suffixes run from <code class="inline">:off</code> to <code class="inline">:max</code>, with <code class="inline">:auto</code> letting OMP pick per request.</span>
+    <span class="lang-fr">Remarquez les suffixes <code class="inline">:high</code> et <code class="inline">:low</code>. L'organigramme est <strong>à deux dimensions</strong> : quel cerveau <em>×</em> avec quelle intensité de réflexion. Le même modèle intermédiaire en <code class="inline">:low</code> rédige vos messages de commit et en <code class="inline">:high</code> examine votre stratégie. Les suffixes vont de <code class="inline">:off</code> à <code class="inline">:max</code>, <code class="inline">:auto</code> laissant OMP choisir à chaque requête.</span>
+  </div>
+
+  <h3><span class="lang-en">Rules of thumb</span><span class="lang-fr">Règles empiriques</span></h3>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">If the seat's work is…</span><span class="lang-fr">Si le travail du poste est…</span></th>
+      <th><span class="lang-en">Staff it with…</span><span class="lang-fr">Pourvoyez-le avec…</span></th>
+      <th><span class="lang-en">Programme twin</span><span class="lang-fr">Équivalent programme</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="lang-en">Repetitive, verifiable, high volume</span><span class="lang-fr">Répétitif, vérifiable, gros volume</span></td>
+        <td><span class="lang-en">Smallest model that can do it, <code class="inline">:low</code></span><span class="lang-fr">Le plus petit modèle capable, <code class="inline">:low</code></span></td>
+        <td><span class="lang-en">Counting tablets, tallying forms</span><span class="lang-fr">Compter les comprimés, dépouiller les formulaires</span></td>
+      </tr>
+      <tr>
+        <td><span class="lang-en">Well-specified, multi-step</span><span class="lang-fr">Bien spécifié, multi-étapes</span></td>
+        <td><span class="lang-en">Mid-tier</span><span class="lang-fr">Intermédiaire</span></td>
+        <td><span class="lang-en">Following an approved protocol</span><span class="lang-fr">Suivre un protocole approuvé</span></td>
+      </tr>
+      <tr>
+        <td><span class="lang-en">Ambiguous, high-stakes, or strategic</span><span class="lang-fr">Ambigu, à fort enjeu ou stratégique</span></td>
+        <td><span class="lang-en">Frontier</span><span class="lang-fr">Pointe</span></td>
+        <td><span class="lang-en">Writing the donor report, setting strategy</span><span class="lang-fr">Rédiger le rapport au bailleur, définir la stratégie</span></td>
+      </tr>
+      <tr>
+        <td><span class="lang-en">Running on <em>every</em> turn in the background</span><span class="lang-fr">Lancé à <em>chaque</em> étape en arrière-plan</span></td>
+        <td><span class="lang-en">Cheap enough to leave on forever</span><span class="lang-fr">Assez bon marché pour rester activé toujours</span></td>
+        <td><span class="lang-en">A supervisor who joins every visit, not a one-off review mission</span><span class="lang-fr">Un superviseur qui accompagne chaque visite, pas une mission de revue ponctuelle</span></td>
+      </tr>
+      <tr>
+        <td><span class="lang-en">Checking someone else's work</span><span class="lang-fr">Vérifier le travail d'un autre</span></td>
+        <td><span class="lang-en">A <em>different</em> model than the author's</span><span class="lang-fr">Un modèle <em>différent</em> de celui de l'auteur</span></td>
+        <td><span class="lang-en">Independent supervisory visit</span><span class="lang-fr">Visite de supervision indépendante</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3><span class="lang-en">How you actually staff the seats</span><span class="lang-fr">Comment pourvoir concrètement les postes</span></h3>
+  <p>
+    <span class="lang-en">Three ways, from quickest to most permanent:</span>
+    <span class="lang-fr">Trois façons, de la plus rapide à la plus durable :</span>
+  </p>
+  <div class="grid cols-3">
+    <div class="card">
+      <span class="kicker"><span class="lang-en">Inside a session</span><span class="lang-fr">Dans une session</span></span>
+      <h3><code class="inline">/model</code> → Roles</h3>
+      <p><span class="lang-en">Type <code class="inline">/model</code> and open the <strong>Roles</strong> view: every seat listed, pick a model for each, edit fallback rows — no file editing needed.</span>
+      <span class="lang-fr">Tapez <code class="inline">/model</code> et ouvrez la vue <strong>Roles</strong> : tous les postes listés, choisissez un modèle pour chacun, modifiez les lignes de repli — sans toucher aucun fichier.</span></p>
+    </div>
+    <div class="card">
+      <span class="kicker"><span class="lang-en">Permanent</span><span class="lang-fr">Permanent</span></span>
+      <h3><code class="inline">config.yml</code></h3>
+      <p><span class="lang-en">Edit <code class="inline">modelRoles</code> in your OMP config (<code class="inline">~/.omp/agent/config.yml</code>) and it's staffed forever, for every session — OMP reloads it live.</span>
+      <span class="lang-fr">Modifiez <code class="inline">modelRoles</code> dans votre config OMP (<code class="inline">~/.omp/agent/config.yml</code>) et les postes sont pourvus pour toujours, pour toutes les sessions — OMP la recharge à chaud.</span></p>
+    </div>
+    <div class="card">
+      <span class="kicker"><span class="lang-en">One run only</span><span class="lang-fr">Une seule exécution</span></span>
+      <h3><code class="inline">--smol</code> / <code class="inline">--slow</code> / <code class="inline">--plan</code></h3>
+      <p><span class="lang-en">Launch flags override three seats for a single run: <code class="inline">omp --slow "&lt;model&gt;"</code> — perfect for trying a seat change before committing to it.</span>
+      <span class="lang-fr">Les options de lancement remplacent trois postes pour une seule exécution : <code class="inline">omp --slow "&lt;model&gt;"</code> — parfait pour essayer un changement de poste avant de l'adopter.</span></p>
+    </div>
+  </div>
+  <p><span class="lang-en">A permanent staffing chart in <code class="inline">config.yml</code> looks like this (model IDs are examples — use what you have access to):</span>
+     <span class="lang-fr">Un organigramme permanent dans <code class="inline">config.yml</code> ressemble à ceci (les identifiants de modèles sont des exemples — utilisez ceux auxquels vous avez accès) :</span></p>
+  <div class="term"><div class="term-head"><span class="lang-en">~/.omp/agent/config.yml — example modelRoles block</span><span class="lang-fr">~/.omp/agent/config.yml — exemple de bloc modelRoles</span></div><pre><code>modelRoles:
+  default: anthropic/claude-sonnet-4-5        # the driver you chat with
+  plan:    anthropic/claude-opus-4-5:high     # architect before big builds
+  slow:    anthropic/claude-opus-4-5:high     # manual deep-dive escape hatch
+  advisor: anthropic/claude-sonnet-4-5:medium # background second opinion
+  task:    openai/gpt-4.1-mini                # delegated worker agents
+  smol:    google/gemma-4-31b-it:free         # quick housekeeping
+  commit:  google/gemma-4-31b-it:free         # commit messages
+  tiny:    google/gemma-4-31b-it:free         # tiniest jobs
+  memory:  google/gemma-4-31b-it:free         # memory upkeep
+  web:     web/duckduckgo                     # web search runner</code></pre></div>
+  <p class="hint">
+    <span class="lang-en">Bonus for the cautious: each seat can have a <strong>fallback chain</strong> (<code class="inline">retry.fallbackChains</code>) — a bench of substitutes so work continues when the first-choice model is rate-limited or down. Same idea as your contingency staffing plan for a strike.</span>
+    <span class="lang-fr">Bonus pour les prudents : chaque poste peut avoir une <strong>chaîne de repli</strong> (<code class="inline">retry.fallbackChains</code>) — un banc de remplaçants pour que le travail continue quand le modèle de premier choix est saturé ou en panne. La même idée que votre plan de dotation d'urgence en cas de grève.</span>
+  </p>
+
+  <!-- ================= PART 5 ================= -->
+  <h2 id="part-try">5 · <span class="lang-en">Try it: inspect, staff, escalate, delegate</span><span class="lang-fr">À vous de jouer : inspecter, pourvoir, escalader, déléguer</span></h2>
+  <p>
+    <span class="lang-en">Four short exercises inside a real OMP session. Exercise 2 assumes you completed the <a href="../openrouter/">OpenRouter class</a> (free models available); the rest work with whatever models you have.</span>
+    <span class="lang-fr">Quatre exercices courts dans une vraie session OMP. L'exercice 2 suppose que vous avez suivi le <a href="../openrouter/">cours OpenRouter</a> (modèles gratuits disponibles) ; les autres fonctionnent avec les modèles dont vous disposez.</span>
+  </p>
+
+  <ul class="checklist" data-checklist="delegation-1">
+    <li><input type="checkbox" id="dl1"><label class="step-text" for="dl1">
+      <strong><span class="lang-en">Exercise 1 — read your staffing chart</span><span class="lang-fr">Exercice 1 — lire votre organigramme</span></strong>
+      <span class="note"><span class="lang-en">Before changing anything, look at who currently holds each seat. In a terminal (not inside OMP), run:</span>
+      <span class="lang-fr">Avant de rien changer, regardez qui occupe actuellement chaque poste. Dans un terminal (pas dans OMP), lancez :</span></span></label></li>
+  </ul>
+  <div class="term"><div class="term-head"><span class="lang-en">terminal — show your current roster</span><span class="lang-fr">terminal — afficher votre organigramme actuel</span></div><pre><code>omp config get modelRoles</code></pre></div>
+  <p class="hint">
+    <span class="lang-en">Empty result? Then every seat falls back to built-in defaults — which is exactly the &quot;one brain does everything&quot; pattern this course exists to fix. Also try <code class="inline">/model</code> inside a session and look for the <strong>Roles</strong> view.</span>
+    <span class="lang-fr">Résultat vide ? Alors chaque poste retombe sur les valeurs par défaut intégrées — c'est exactement le schéma « un cerveau fait tout » que ce cours vise à corriger. Essayez aussi <code class="inline">/model</code> dans une session et cherchez la vue <strong>Roles</strong>.</span>
+  </p>
+
+  <ul class="checklist" data-checklist="delegation-2">
+    <li><input type="checkbox" id="dl2"><label class="step-text" for="dl2">
+      <strong><span class="lang-en">Exercise 2 — staff a cheap seat with a free model</span><span class="lang-fr">Exercice 2 — pourvoir un poste modeste avec un modèle gratuit</span></strong>
+      <span class="note"><span class="lang-en">Give the <code class="inline">smol</code> seat a $0 model so housekeeping stops billing your best brain. Two options: (a) inside OMP, type <code class="inline">/model</code>, open the Roles view, and assign the <code class="inline">smol</code> seat any model ending in <code class="inline">:free</code> (e.g. <code class="inline">google/gemma-4-31b-it:free</code>); or (b) add one line to your config:</span>
+      <span class="lang-fr">Donnez au poste <code class="inline">smol</code> un modèle à 0 $ pour que le ménage interne cesse de facturer votre meilleur cerveau. Deux options : (a) dans OMP, tapez <code class="inline">/model</code>, ouvrez la vue Roles, et attribuez au poste <code class="inline">smol</code> n'importe quel modèle finissant par <code class="inline">:free</code> (ex. <code class="inline">google/gemma-4-31b-it:free</code>) ; ou (b) ajoutez une ligne à votre config :</span></span></label></li>
+  </ul>
+  <div class="term"><div class="term-head"><span class="lang-en">~/.omp/agent/config.yml</span><span class="lang-fr">~/.omp/agent/config.yml</span></div><pre><code>modelRoles:
+  smol: google/gemma-4-31b-it:free</code></pre></div>
+
+  <ul class="checklist" data-checklist="delegation-3">
+    <li><input type="checkbox" id="dl3"><label class="step-text" for="dl3">
+      <strong><span class="lang-en">Exercise 3 — the specialist consultation</span><span class="lang-fr">Exercice 3 — la consultation du spécialiste</span></strong>
+      <span class="note"><span class="lang-en">Ask your driver a genuinely hard question (a knotty budget scenario, a tricky survey design). Then quit and re-ask it with the <code class="inline">slow</code> seat in charge for one run — the deep-reasoning escalation. Compare the two answers: more structure? longer reasoning? This is the &quot;refer to the district medical officer&quot; move, on demand:</span>
+      <span class="lang-fr">Posez à votre pilote une question vraiment difficile (un scénario budgétaire épineux, un plan d'enquête délicat). Puis quittez et reposez-la avec le poste <code class="inline">slow</code> aux commandes pour une exécution — l'escalade en raisonnement profond. Comparez les deux réponses : plus de structure ? un raisonnement plus long ? C'est le geste « référer au médecin de district », à la demande :</span></span></label></li>
+  </ul>
+  <div class="term"><div class="term-head"><span class="lang-en">terminal — one run on the slow seat</span><span class="lang-fr">terminal — une exécution sur le poste slow</span></div><pre><code>omp --slow "anthropic/claude-opus-4-5:high"</code></pre></div>
+
+  <ul class="checklist" data-checklist="delegation-4">
+    <li><input type="checkbox" id="dl4"><label class="step-text" for="dl4">
+      <strong><span class="lang-en">Exercise 4 — send out the survey team</span><span class="lang-fr">Exercice 4 — envoyer l'équipe d'enquête</span></strong>
+      <span class="note"><span class="lang-en">Sit in a folder with several files (e.g. the <code class="inline">amplify</code> folder from the OpenRouter class) and paste the prompt below. Watch read-only <strong>scout</strong> helpers fan out in parallel — each labeled in the transcript — while your driver stays free to synthesize. This is the <code class="inline">task</code> seat earning its keep.</span>
+      <span class="lang-fr">Placez-vous dans un dossier contenant plusieurs fichiers (ex. le dossier <code class="inline">amplify</code> du cours OpenRouter) et collez la consigne ci-dessous. Observez les assistants <strong>scout</strong> en lecture seule se déployer en parallèle — chacun étiqueté dans la transcription — pendant que votre pilote reste libre de synthétiser. C'est le poste <code class="inline">task</code> qui justifie son salaire.</span></span></label></li>
+  </ul>
+  <div class="term"><div class="term-head"><span class="lang-en">prompt · paste into OMP</span><span class="lang-fr">consigne · à coller dans OMP</span></div><pre><code>Before doing anything else, send out read-only scouts in parallel
+to map this folder: what files are here, what does each one do,
+and what are the three most promising starting points for someone
+who wants to understand this project? Don't read every file
+yourself — delegate the exploring. Then summarize their findings.</code></pre></div>
+
+  <div class="callout warn">
+    <div class="callout-title"><span class="lang-en">Free-tier reality check</span><span class="lang-fr">Réalité du niveau gratuit</span></div>
+    <span class="lang-en">Delegated work multiplies requests: one question can fire several model calls — the driver, plus each helper, plus housekeeping. On a 50-requests/day free account, that's how you meet HTTP 429 before lunch. Small paid models cost pennies per session and make delegation smooth; a local model (Ollama) in the cheap seats does the same for $0, offline.</span>
+    <span class="lang-fr">Le travail délégué multiplie les requêtes : une seule question peut déclencher plusieurs appels de modèles — le pilote, plus chaque assistant, plus le ménage interne. Sur un compte gratuit à 50 requêtes/jour, c'est ainsi qu'on rencontre l'erreur HTTP 429 avant midi. Les petits modèles payants coûtent quelques centimes par session et rendent la délégation fluide ; un modèle local (Ollama) sur les postes modestes fait la même chose pour 0 $, hors ligne.</span>
+  </div>
+
+  <h3><span class="lang-en">What to steal for your next session</span><span class="lang-fr">À réutiliser dans votre prochaine session</span></h3>
+  <table class="ref">
+    <thead><tr><th><span class="lang-en">Do this</span><span class="lang-fr">Faites ceci</span></th><th><span class="lang-en">And this happens</span><span class="lang-fr">Et voilà ce qui se passe</span></th></tr></thead>
+    <tbody>
+      <tr><td><code class="inline">/model</code> → <span class="lang-en">Roles view</span><span class="lang-fr">vue Roles</span></td><td><span class="lang-en">See and staff every seat — no file editing, changes apply live.</span><span class="lang-fr">Voir et pourvoir chaque poste — sans éditer de fichier, changements appliqués à chaud.</span></td></tr>
+      <tr><td><code class="inline">omp config get modelRoles</code></td><td><span class="lang-en">Audit your current roster from any terminal.</span><span class="lang-fr">Auditer votre organigramme actuel depuis n'importe quel terminal.</span></td></tr>
+      <tr><td><code class="inline">omp --slow "&lt;model:high&gt;"</code></td><td><span class="lang-en">One run on your deepest model — the on-demand specialist consult.</span><span class="lang-fr">Une exécution sur votre modèle le plus profond — la consultation du spécialiste à la demande.</span></td></tr>
+      <tr><td><code class="inline">modelRoles:</code> <span class="lang-en">in <code class="inline">config.yml</code></span><span class="lang-fr">dans <code class="inline">config.yml</code></span></td><td><span class="lang-en">Permanent staffing: driver strong, workers mid, housekeeping free.</span><span class="lang-fr">Dotation permanente : pilote fort, ouvriers intermédiaires, ménage gratuit.</span></td></tr>
+      <tr><td><code class="inline">advisor.enabled: true</code></td><td><span class="lang-en">A reviewer riding along on every turn — supervision built in.</span><span class="lang-fr">Un relecteur qui accompagne chaque étape — la supervision intégrée.</span></td></tr>
+      <tr><td><span class="lang-en">Plain language: &quot;send scouts first, don't read everything yourself&quot;</span><span class="lang-fr">En langage naturel : « envoie des éclaireurs d'abord, ne lis pas tout toi-même »</span></td><td><span class="lang-en">The driver hires subagents mid-task — they run on the seats you staffed.</span><span class="lang-fr">Le pilote embauche des sous-agents en cours de tâche — ils tournent sur les postes que vous avez pourvus.</span></td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <a class="btn primary" href="index.html"><span class="lang-en">← Back to class home</span><span class="lang-fr">← Retour à l'accueil du cours</span></a>
+    <a class="btn" href="../openrouter/setup.html"><span class="lang-en">Revisit the OpenRouter + OMP setup →</span><span class="lang-fr">Revoir l'installation OpenRouter + OMP →</span></a>
+  </p>
+</main>
+</div>
+<footer class="site">
+  <span class="lang-en">Built for the class with OMP + OpenRouter · Best taken after the <a href="../openrouter/">OpenRouter + OMP</a> class</span>
+  <span class="lang-fr">Conçu pour le cours avec OMP + OpenRouter · Idéal après le cours <a href="../openrouter/">OpenRouter + OMP</a></span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
