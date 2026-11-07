@@ -76,8 +76,8 @@
       <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">OMP's version of the same pathway</span><span class="lang-fr">La version OMP du même parcours</span></div>
       <div class="mock-body">
         <div class="bubble ai"><span class="tag"><span class="lang-en">Small / cheap seats (smol, tiny, commit)</span><span class="lang-fr">Postes petits / bon marché (smol, tiny, commit)</span></span>
-          <span class="lang-en">First contact with bulk work: housekeeping, commit messages, tiny jobs. Fast, nearly free.</span>
-          <span class="lang-fr">Premier contact avec le gros du travail : ménage interne, messages de commit, micro-tâches. Rapides, quasi gratuits.</span></div>
+          <span class="lang-en">First contact with volume work: fast lightweight tasks, commit messages, background jobs like session titles. Fast, nearly free.</span>
+          <span class="lang-fr">Premier contact avec le gros du travail : tâches légères rapides, messages de commit, tâches de fond comme les titres de session. Rapides, quasi gratuits.</span></div>
         <div class="bubble ai"><span class="tag"><span class="lang-en">Mid-tier seats (task, advisor)</span><span class="lang-fr">Postes intermédiaires (task, advisor)</span></span>
           <span class="lang-en">Well-specified work: the delegated worker agents and the background reviewer.</span>
           <span class="lang-fr">Travail bien spécifié : les agents délégués et le relecteur en arrière-plan.</span></div>
@@ -124,9 +124,9 @@
   </div>
 
   <div class="callout">
-    <div class="callout-title"><span class="lang-en">A number to keep</span><span class="lang-fr">Un chiffre à retenir</span></div>
-    <span class="lang-en">In a typical working session, most requests OMP fires are <em>not</em> your conversation: they are housekeeping, commits, searches, worker agents. Delegation sends all of that to cheap models — like a campaign where most of the work is walking household to household, not planning.</span>
-    <span class="lang-fr">Dans une session de travail typique, la plupart des requêtes lancées par OMP ne sont <em>pas</em> votre conversation : ce sont du ménage interne, des commits, des recherches, des agents ouvriers. La délégation envoie tout cela vers des modèles bon marché — comme dans une campagne où l'essentiel du travail consiste à marcher de ménage en ménage, pas à planifier.</span>
+    <div class="callout-title"><span class="lang-en">The fallback ladder</span><span class="lang-fr">L'échelle de repli</span></div>
+    <span class="lang-en">An unstaffed seat never silently mirrors your chat model — it resolves down a ladder: <code class="inline">memory</code> falls back to <code class="inline">tiny</code>, <code class="inline">tiny</code> to <code class="inline">smol</code>, and an unset <code class="inline">smol</code> or <code class="inline">slow</code> inherits an explicitly configured <code class="inline">default</code> before OMP's built-in priority lists. The advisor uses your <code class="inline">slow</code> seat or its own strong-model chain — never the conversation model. Staff the cheap seats and you cut the ladder off early, before it climbs to your expensive driver.</span>
+    <span class="lang-fr">Un poste non pourvu ne reflète jamais en silence votre modèle de conversation — il descend une échelle de repli : <code class="inline">memory</code> retombe sur <code class="inline">tiny</code>, <code class="inline">tiny</code> sur <code class="inline">smol</code>, et un <code class="inline">smol</code> ou <code class="inline">slow</code> non défini hérite d'un <code class="inline">default</code> explicitement configuré avant de recourir aux listes de priorité intégrées d'OMP. L'advisor utilise votre poste <code class="inline">slow</code> ou sa propre chaîne de modèles forts — jamais le modèle de conversation. Pourvoyez les postes modestes et vous coupez l'échelle tôt, avant qu'elle n'atteigne votre pilote coûteux.</span>
   </div>
 
   <!-- ================= PART 3 ================= -->
@@ -150,7 +150,7 @@
       <tr>
         <td><code class="inline">plan</code></td>
         <td><span class="lang-en">The architect</span><span class="lang-fr">L'architecte</span></td>
-        <td><span class="lang-en">Architectural planning and breaking big work into pieces before anyone builds. Also settable per-run with <code class="inline">--plan</code>.</span><span class="lang-fr">Planification d'architecture et découpage du gros travail en morceaux avant que quiconque construise. Réglable aussi ponctuellement avec <code class="inline">--plan</code>.</span></td>
+        <td><span class="lang-en">Architectural planning and breaking big work into pieces before anyone builds. While plan mode is active, this seat's model drives the turn. Also settable per-run with <code class="inline">--plan</code>.</span><span class="lang-fr">Planification d'architecture et découpage du gros travail en morceaux avant que quiconque construise. Tant que le mode plan est actif, c'est le modèle de ce poste qui pilote l'étape. Réglable aussi ponctuellement avec <code class="inline">--plan</code>.</span></td>
       </tr>
       <tr>
         <td><code class="inline">slow</code></td>
@@ -170,7 +170,7 @@
       <tr>
         <td><code class="inline">smol</code></td>
         <td><span class="lang-en">The office clerk</span><span class="lang-fr">Le commis de bureau</span></td>
-        <td><span class="lang-en">Lightweight housekeeping: quick summaries, small utility jobs. Also settable per-run with <code class="inline">--smol</code>.</span><span class="lang-fr">Le ménage léger : résumés rapides, petites tâches utilitaires. Réglable aussi ponctuellement avec <code class="inline">--smol</code>.</span></td>
+        <td><span class="lang-en">Fast model for lightweight tasks — and the fallback anchor for <code class="inline">tiny</code>. Also settable per-run with <code class="inline">--smol</code>.</span><span class="lang-fr">Modèle rapide pour les tâches légères — et le recours du poste <code class="inline">tiny</code>. Réglable aussi ponctuellement avec <code class="inline">--smol</code>.</span></td>
       </tr>
       <tr>
         <td><code class="inline">commit</code></td>
@@ -180,12 +180,12 @@
       <tr>
         <td><code class="inline">tiny</code></td>
         <td><span class="lang-en">The runner</span><span class="lang-fr">Le coursier</span></td>
-        <td><span class="lang-en">The very smallest jobs; can even be a small local model that never leaves your laptop.</span><span class="lang-fr">Les toutes petites tâches ; peut même être un petit modèle local qui ne quitte jamais votre ordinateur.</span></td>
+        <td><span class="lang-en">Background jobs such as session titles; when unset it resolves through <code class="inline">smol</code>. Can even be a small local model that never leaves your laptop.</span><span class="lang-fr">Des tâches de fond comme les titres de session ; non pourvu, il retombe sur <code class="inline">smol</code>. Peut même être un petit modèle local qui ne quitte jamais votre ordinateur.</span></td>
       </tr>
       <tr>
         <td><code class="inline">memory</code></td>
         <td><span class="lang-en">The archivist</span><span class="lang-fr">L'archiviste</span></td>
-        <td><span class="lang-en">Keeps OMP's long-term memory tidy between sessions.</span><span class="lang-fr">Maintient en ordre la mémoire à long terme d'OMP entre les sessions.</span></td>
+        <td><span class="lang-en">Keeps OMP's long-term memory tidy between sessions; when unset it resolves through <code class="inline">tiny</code>.</span><span class="lang-fr">Maintient en ordre la mémoire à long terme d'OMP entre les sessions ; non pourvu, il retombe sur <code class="inline">tiny</code>.</span></td>
       </tr>
       <tr>
         <td><code class="inline">vision</code></td>
@@ -393,9 +393,9 @@
   slow:    anthropic/claude-opus-4-5:high     # manual deep-dive escape hatch
   advisor: anthropic/claude-sonnet-4-5:medium # background second opinion
   task:    openai/gpt-4.1-mini                # delegated worker agents
-  smol:    google/gemma-4-31b-it:free         # quick housekeeping
+  smol:    google/gemma-4-31b-it:free         # fast, lightweight tasks
   commit:  google/gemma-4-31b-it:free         # commit messages
-  tiny:    google/gemma-4-31b-it:free         # tiniest jobs
+  tiny:    google/gemma-4-31b-it:free         # background jobs (session titles)
   memory:  google/gemma-4-31b-it:free         # memory upkeep
   web:     web/duckduckgo                     # web search runner</code></pre></div>
   <p class="hint">
