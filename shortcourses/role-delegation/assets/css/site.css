@@ -353,6 +353,12 @@ footer.site a { color: var(--accent); }
 .deck-count { font-family: var(--mono); color: var(--muted); font-size: .85rem; min-width: 3.5rem; text-align: center; }
 .src-note { font-size: .75rem; color: var(--muted); margin-top: .8rem; }
 
+/* level pills */
+.lvl { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; border-radius: 99px; padding: .22em .9em; margin-left: .7rem; vertical-align: .18em; }
+.lvl-beginner { background: #E3F0FA; color: #2568A0; }
+.lvl-intermediate { background: #FBF0C8; color: #8A6400; }
+.lvl-advanced { background: #F8E3E3; color: #8B0000; }
+
 @media (max-width: 760px) {
   .slide { padding: 1.2rem 1.2rem 4.5rem; }
   .slide-canvas { flex-direction: column; }
