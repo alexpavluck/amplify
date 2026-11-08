@@ -99,6 +99,9 @@ button{font:inherit;color:inherit}
 
 /* ── hero ───────────────────────────────────────────── */
 .hero{padding-top:clamp(3rem,1.5rem + 5vw,6.5rem);text-align:center}
+/* AMPLIFY in logo colours: A + I navy, MPL + FY sky-blue */
+.amp i{font-style:normal}
+.amp b{font-weight:inherit;color:var(--sky)}
 .hero .display{max-width:15em;margin:0 auto}
 .hero-sub{margin:1.5rem auto 0;color:var(--ink-2)}
 .hero-why{max-width:46em;margin:clamp(2.5rem,1.5rem + 3vw,4.5rem) auto 0;color:var(--ink-2)}
@@ -282,9 +285,9 @@ button{font:inherit;color:inherit}
 }
 .mentor-banner{
   display:flex;align-items:center;gap:1rem;
-  background:var(--gold);
+  background:color-mix(in srgb, var(--sky) 14%, white);
   color:var(--ink);
-  border:1px solid #D9AD1F;
+  border:1px solid color-mix(in srgb, var(--sky) 40%, white);
   border-radius:12px;
   padding:1rem 1.2rem;
   margin:1.5rem 0 1.9rem;
@@ -292,7 +295,7 @@ button{font:inherit;color:inherit}
 .mentor-banner .mb-icon{
   flex:0 0 38px;width:38px;height:38px;
   display:grid;place-items:center;
-  background:var(--ink);color:var(--gold);
+  background:var(--ink);color:var(--sky);
   border-radius:50%;font-size:1rem;line-height:1;
 }
 .mentor-banner .mb-body{line-height:1.35}
@@ -337,7 +340,7 @@ button{font:inherit;color:inherit}
 <section class="hero">
 
   <div class="wrap">
-    <h1 class="display" data-rise>AMPLIFY · Making AI work for NTD programme leaders</h1>
+    <h1 class="display" data-rise><span class="amp"><i>A</i><b>MPL</b><i>I</i><b>FY</b></span> · Making AI work for NTD programme leaders</h1>
     <p class="lead hero-sub" data-rise style="--rd:.08s">Four months · two 90-minute sessions a month · NTD domain specific training</p>
     <p class="lead hero-why" data-rise style="--rd:.16s">AI training is widely available online, but most courses are general-purpose and use examples that have little to do with NTD programme work. Vendor-built tools have helped national programmes tackle specific challenges with AI, though these are not always the national priority, and tools delivered through short-term projects have often been difficult to maintain once that support ends. AMPLIFY offers training and mentoring that is specific to NTD programmes and their data. Courses are taught with nationally reported data available from WHO, and focus on the skills NTD leaders need at country level to build and maintain solutions long after the course ends.</p>
   </div>
