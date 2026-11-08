@@ -220,22 +220,31 @@ button{font:inherit;color:inherit}
 .slides figure{display:flex;flex-direction:column}
 @media (max-width:900px){.pilot-top{grid-template-columns:1fr}.slides{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-/* apply */
-.apply{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2.5rem,2rem + 4vw,6rem);align-items:start}
-.needs{list-style:none;display:flex;flex-direction:column;gap:.75rem}
-.needs li{background:var(--muted);border-radius:16px;padding:1.5rem 1.6rem;transition:transform .25s var(--ease)}
-.needs li:hover{transform:translateX(4px)}
-.needs b{display:block;font-size:var(--fs-lead);font-weight:600;letter-spacing:-.015em;line-height:1.3;margin-bottom:.3rem}
+/* short courses */
+.sc-grid{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:clamp(2.5rem,2rem + 2vw,4rem)}
+.scard{background:var(--ground);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.scard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,26,38,.09)}
+/* [data-rise].in pins transform:none with a higher specificity than .scard:hover — re-assert after reveal */
+.js .scard[data-rise].in{transition:opacity .7s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);transition-delay:var(--rd,0s),0s,0s}
+.js .scard[data-rise].in:hover{transform:translateY(-4px)}
+.scard-media{background:var(--tile);aspect-ratio:16/10;padding:1.5rem 1.5rem 0}
+.scard-media img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px 10px 0 0;transition:transform .4s var(--ease)}
+.scard:hover .scard-media img{transform:scale(1.02)}
+.scard-body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.scard-meta{font-size:var(--fs-small);color:var(--ink-2);display:flex;align-items:center;gap:.7rem}
+.scard-meta .lvl{margin-left:0;vertical-align:0}
+.scard-t{font-size:1.45rem;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.scard-sum{color:var(--ink-2);line-height:1.55}
+.scard-actions{margin-top:auto;padding-top:1rem;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
 .lvl{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:99px;padding:.22em .9em;margin-left:.7rem;vertical-align:.18em}
 .lvl-beginner{background:#E3F0FA;color:#2568A0}
 .lvl-intermediate{background:#FBF0C8;color:#8A6400}
 .lvl-advanced{background:#F8E3E3;color:#8B0000}
-.apply .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.25rem}
-@media (max-width:900px){.apply{grid-template-columns:1fr}}
+@media (max-width:1000px){.sc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sc-grid{grid-template-columns:1fr}}
 
 /* footer */
 .foot-apply{padding-bottom:2rem}
-.foot-apply .needs li{background:var(--ground)}
 .foot-base{display:flex;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;margin-top:clamp(3rem,2rem + 3vw,5rem);color:var(--ink-2);font-size:var(--fs-small)}
 .foot-base nav{display:flex;gap:1.5rem;flex-wrap:wrap}
 .foot-base a{color:var(--ink);text-decoration:none}
@@ -483,23 +492,38 @@ button{font:inherit;color:inherit}
 
 <!-- ══ SHORT COURSES ══ -->
 <section class="section section-muted foot-apply" id="short-courses">
-  <div class="wrap apply">
+  <div class="wrap">
     <div class="head">
       <h2 class="h2" data-rise>AMPLIFY: Short courses.</h2>
       <p class="lead" data-rise style="--rd:.08s">This section provides access to a growing list of short courses that are intended to cover advanced topics or highlight partner tools. If you have a short course or a tool you want highlighted, please reach out to <a href="mailto:apavluck@sightsavers.org">apavluck@sightsavers.org</a> and we will cover it here.</p>
     </div>
-    <ol class="needs" aria-label="Available short courses">
-      <li data-rise>
-        <div><b>Choose the right visual — for programme data (20&nbsp;min)<span class="lvl lvl-beginner">Beginner</span></b>Learn how to match your question and data to the right chart. The short course walks you through what each visualization is best for, with an interactive chooser that recommends a chart, shows an example, and writes a ready-to-paste prompt for your data file, plus a quick-reference table and chart rules to use in your next briefing.</div>
-        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/choose-visual/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
+    <ol class="sc-grid" aria-label="Available short courses">
+      <li class="scard" data-rise>
+        <div class="scard-media"><img src="shortcourses/choose-visual/card.jpg" alt="Preview of the chart-chooser short course" loading="lazy"></div>
+        <div class="scard-body">
+          <p class="scard-meta">20 min <span class="lvl lvl-beginner">Beginner</span></p>
+          <h3 class="scard-t">Choose the right visual</h3>
+          <p class="scard-sum">Not sure which chart to use? Answer two or three quick questions about your data and the interactive chooser recommends the right one, shows a real example, and even writes the prompt to build it — plus a cheat sheet you can reuse every time you brief your programme.</p>
+          <div class="scard-actions"><a class="btn btn-ink" href="shortcourses/choose-visual/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
+        </div>
       </li>
-      <li data-rise style="--rd:.07s">
-        <div><b>GitHub + Vercel — put your work online (45&nbsp;min)<span class="lvl lvl-intermediate">Intermediate</span></b>Create free GitHub and Vercel accounts, install the <code>git</code> and GitHub command-line tools, and finish with a live website at a real <code>.vercel.app</code> URL. Then let your AI agent do the pushing: you ask in plain language, it commits and publishes. Includes copy-paste setup for Windows and macOS, an everyday change→push→live loop, and a troubleshooting FAQ.</div>
-        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/github-vercel/">Open short course <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-soft" href="shortcourses/github-vercel/setup.html">Setup guide</a></div>
+      <li class="scard" data-rise style="--rd:.07s">
+        <div class="scard-media"><img src="shortcourses/github-vercel/card.jpg" alt="Preview of the GitHub + Vercel short course" loading="lazy"></div>
+        <div class="scard-body">
+          <p class="scard-meta">45 min <span class="lvl lvl-intermediate">Intermediate</span></p>
+          <h3 class="scard-t">GitHub + Vercel: put your work online</h3>
+          <p class="scard-sum">Get your work on the internet, free. Set up GitHub and Vercel, publish a live site at your own <code>.vercel.app</code> address, then hand the pushing to your AI agent — you ask in plain language and it commits and publishes. Windows and Mac covered, with a troubleshooting FAQ when things go sideways.</p>
+          <div class="scard-actions"><a class="btn btn-soft" href="shortcourses/github-vercel/setup.html">Setup guide</a> <a class="btn btn-ink" href="shortcourses/github-vercel/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
+        </div>
       </li>
-      <li data-rise style="--rd:.14s">
-        <div><b>OpenRouter + OMP — From chat windows to terminal agents (60&nbsp;min)<span class="lvl lvl-intermediate">Intermediate</span></b>How to access a wide range of AI models using <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> and the AI harness <a href="https://omp.sh" target="_blank" rel="noopener">Oh My Pi (OMP)</a> — one account for Claude, GPT, Gemini, Llama and more, with free-tier models at $0 and transparent per-session pricing when you scale.</div>
-        <div class="actions" style="margin-top:1rem"><a class="btn btn-ink" href="shortcourses/openrouter/">Open short course <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-soft" href="shortcourses/openrouter/setup.html">Setup guide</a></div>
+      <li class="scard" data-rise style="--rd:.14s">
+        <div class="scard-media"><img src="shortcourses/openrouter/card.jpg" alt="Preview of the OpenRouter + OMP short course" loading="lazy"></div>
+        <div class="scard-body">
+          <p class="scard-meta">60 min <span class="lvl lvl-intermediate">Intermediate</span></p>
+          <h3 class="scard-t">OpenRouter + OMP: from chat windows to terminal agents</h3>
+          <p class="scard-sum">One free account, every major AI model. Try Claude, GPT, Gemini, Llama and more from a single place — free-tier models cost $0, and when you're ready to scale you can see exactly what each session costs. You'll finish by turning real programme data into polished slides, straight from your terminal.</p>
+          <div class="scard-actions"><a class="btn btn-soft" href="shortcourses/openrouter/setup.html">Setup guide</a> <a class="btn btn-ink" href="shortcourses/openrouter/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
+        </div>
       </li>
     </ol>
   </div>
