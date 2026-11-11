@@ -548,7 +548,7 @@ details.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
   .topbar, #progress-bar, .quiz, .spot, #toast { display: none !important; }
   body { background: #fff; }
 }
-/* Section 5 · Find your problem in three prompts */
+/* Section 5 · Find your problem in two prompts */
 .seed { margin: 22px 0 6px; }
 .seed > h3 { margin: 0 0 4px; font-size: 1.05rem; }
 .seed .card-step, .seed .seed-export { margin: 12px 0; }
@@ -563,10 +563,6 @@ details.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
 .seed-field textarea { resize: vertical; }
 .seed-field input:focus, .seed-field textarea:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
 .seed-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 12px; margin-bottom: 12px; }
-.seed-parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
-.seed-parts .seed-field:last-child { grid-column: 1 / -1; }
-.seed-sentence-box { margin: 14px 0 10px; }
-.seed-k { font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); }
 .seed-pick { border: 0; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .seed-pick legend { font-size: .84rem; font-weight: 600; margin-bottom: 6px; padding: 0; }
 .seed-radio { font-size: .9rem; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }

@@ -511,8 +511,8 @@
   </div>
 
   <div class="seed">
-    <h3 data-i18n="seed.t">Find your problem in three prompts</h3>
-    <p class="hint" data-i18n="seed.hint">About 30 minutes. Run the three prompts in order, in the same Claude chat, and record what you find in the boxes here. Your answers save in this browser as you type. At the end, download your problem file.</p>
+    <h3 data-i18n="seed.t">Find your problem in two prompts</h3>
+    <p class="hint" data-i18n="seed.hint">About 20 minutes. Run the two prompts in order, in the same Claude chat, and record what you find in the boxes here. Your answers save in this browser as you type. At the end, download your problem file.</p>
 
     <div class="card card-step"><span class="step-n">1</span>
       <h3><span data-i18n="seed.s1.t">Let the AI interview you</span> <span class="seed-time" data-i18n="seed.s1.time">about 15 min</span></h3>
@@ -522,9 +522,9 @@
         <label class="seed-field"><span data-i18n="seed.f.prog">Programme / disease</span><input type="text" data-seed="prog" data-i18n-ph="seed.f.prog.ph" placeholder="e.g. trachoma elimination"></label>
         <label class="seed-field"><span data-i18n="seed.f.place">Country / district</span><input type="text" data-seed="place" data-i18n-ph="seed.f.place.ph" placeholder="e.g. Kenya, Turkana"></label>
       </div>
-      <p class="seed-prompt" id="seed-p1">I work as a [role] on [programme/disease] in [country/district]. I’m starting a course where I’ll use AI to work on a real problem from my job, but I don’t know what that problem is yet. Interview me to help me find it. Ask me one question at a time about my normal working week: tasks that are repetitive, slow, frustrating, or that I keep putting off. Don’t suggest solutions or AI tools. After about 6 questions, stop and tell me you’re done.</p>
+      <p class="seed-prompt" id="seed-p1">I work as a [role] on [programme/disease] in [country/district]. I’m starting a course where I’ll use AI to work on a real problem from my job, but I don’t know what that problem is yet. Interview me to help me find it. Ask me one question at a time about my normal working week: tasks that are repetitive, slow, frustrating, or that I keep putting off. Don’t suggest solutions or AI tools. After about 6 questions, stop. Then write a short summary I can copy of what the interview brought up, and name the 2–3 tasks that came up most.</p>
       <button class="btn small" type="button" data-seed-copy="1" data-i18n="seed.copy">Copy prompt</button>
-      <label class="seed-field"><span data-i18n="seed.s1.notes">What did the interview bring up? Note the 2–3 tasks that came up most.</span><textarea rows="3" data-seed="notes"></textarea></label>
+      <label class="seed-field"><span data-i18n="seed.s1.notes">Paste Claude&#x27;s summary here — what the interview brought up and the 2–3 tasks that came up most.</span><textarea rows="3" data-seed="notes"></textarea></label>
     </div>
 
     <div class="card card-step"><span class="step-n">2</span>
@@ -536,30 +536,20 @@
     </div>
 
     <div class="card card-step"><span class="step-n">3</span>
-      <h3><span data-i18n="seed.s3.t">Write it yourself, then check it</span> <span class="seed-time" data-i18n="seed.s3.time">about 10 min</span></h3>
-      <p data-i18n="seed.s3.d">Fill in the blanks in your own words — your sentence builds itself below.</p>
-      <div class="seed-parts">
-        <label class="seed-field"><span data-i18n="seed.f.task">When I… (task)</span><input type="text" data-seed="task" data-i18n-ph="seed.f.task.ph" placeholder="compile the district MDA reports"></label>
-        <label class="seed-field"><span data-i18n="seed.f.struggle">I struggle with…</span><input type="text" data-seed="struggle" data-i18n-ph="seed.f.struggle.ph" placeholder="files arriving in different formats"></label>
-        <label class="seed-field"><span data-i18n="seed.f.because">because…</span><input type="text" data-seed="because" data-i18n-ph="seed.f.because.ph" placeholder="each district uses its own template"></label>
-        <label class="seed-field"><span data-i18n="seed.f.often">It happens… (how often)</span><input type="text" data-seed="often" data-i18n-ph="seed.f.often.ph" placeholder="every quarter"></label>
-        <label class="seed-field"><span data-i18n="seed.f.benefit">If it went better, … would benefit</span><input type="text" data-seed="benefit" data-i18n-ph="seed.f.benefit.ph" placeholder="the national programme team"></label>
-      </div>
-      <div class="seed-sentence-box"><span class="seed-k" data-i18n="seed.s3.yours">Your sentence</span><blockquote id="seed-sentence"></blockquote></div>
-      <p data-i18n="seed.s3.then">Now copy the check prompt — your sentence is already in it — and send it in the same chat:</p>
-      <p class="seed-prompt" id="seed-p3">Here is my problem in my own words: [paste]. Don’t rewrite it. Check it against three questions: (1) Does this happen regularly, not just once? (2) Do I already have information or materials that go into it? (3) Can I roughly picture what a better result would look like? If any of these is unclear, ask me one question about it.</p>
+      <h3><span data-i18n="seed.s3.t">Write your problem statement</span> <span class="seed-time" data-i18n="seed.s3.time">about 5 min</span></h3>
+      <p class="seed-prompt" id="seed-p3">Using the option I chose, write my problem statement in two sentences: who struggles, with which task, and why it matters. Write it plainly, in first person, without mentioning AI or technology. Then ask me if it sounds like my work.</p>
       <button class="btn small" type="button" data-seed-copy="3" data-i18n="seed.copy">Copy prompt</button>
-      <label class="seed-field"><span data-i18n="seed.s3.reply">What did Claude say? Paste its reply.</span><textarea rows="4" data-seed="reply"></textarea></label>
-      <label class="seed-field"><span data-i18n="seed.s3.final">Your problem statement — leave it as is, or edit it if Claude&#x27;s question changed your thinking</span><textarea rows="3" data-seed="final" id="seed-final"></textarea></label>
+      <label class="seed-field"><span data-i18n="seed.s3.paste">What did Claude say? Paste its reply — this becomes your problem statement.</span><textarea rows="3" data-seed="statement"></textarea></label>
     </div>
 
     <div class="card seed-export">
       <h3 data-i18n="seed.ex.t">Download your problem file</h3>
-      <p data-i18n="seed.ex.d">Your instructors review this file and give you feedback. Keep it safe: in session 2 you upload it, and the next section builds on your problem statement.</p>
+      <p data-i18n="seed.ex.d">Your instructors review this file and give you feedback. Keep it safe: in session 2 you upload it, and the next section builds on the option you chose.</p>
       <ul class="seed-status">
         <li data-seed-status="1"><span data-i18n="seed.ex.s1">Step 1 · Interview</span> <span class="st">not finished</span></li>
         <li data-seed-status="2"><span data-i18n="seed.ex.s2">Step 2 · Options</span> <span class="st">not finished</span></li>
-        <li data-seed-status="3"><span data-i18n="seed.ex.s3">Step 3 · Your problem</span> <span class="st">not finished</span></li>
+        <li data-seed-status="3"><span data-i18n="seed.ex.s3">Step 3 · Statement</span> <span class="st">not finished</span></li>
+        <li data-seen-page><span data-i18n="seen.label">Full page · all sections read</span> <span class="st" data-i18n="seed.ex.todo">not finished</span></li>
       </ul>
       <label class="seed-field seed-name"><span data-i18n="seed.ex.name">Your name</span><input type="text" data-seed="name" autocomplete="name" data-i18n-ph="seed.ex.name.ph" placeholder="First and last name"></label>
       <p class="hint seed-missing" id="seed-missing" data-i18n="seed.ex.missing">Some steps aren&#x27;t finished yet — the file will show them as incomplete.</p>
@@ -581,7 +571,7 @@
     </div>
     <div class="card card-hw"><span class="step-n">2</span>
       <h3 data-i18n="hw.2.t">Post your problem</h3>
-      <p data-i18n="hw.2.d">Paste your problem statement.</p>
+      <p data-i18n="hw.2.d">Paste the option you chose.</p>
     </div>
     <div class="card card-hw"><span class="step-n">3</span>
       <h3 data-i18n="hw.3.t">Reply to two classmates</h3>
