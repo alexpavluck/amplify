@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMPLIFY 2027 · Interactive learning session 2 — Chat, Cowork or Code?</title>
+<meta name="description" content="AMPLIFY 2027 Interactive learning session 2: Chat vs Claude Cowork vs Claude Code, and turning your best prompts into reusable skills.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="progress-bar" aria-hidden="true"></div>
+
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
+    <div>
+      <div class="brand" style="gap:8px">
+        <div class="brand-mark" aria-hidden="true">▲</div>
+        <div>
+          <div class="eyebrow">AMPLIFY 2027</div>
+          <b data-i18n="brand.title">AMPLIFY 2027</b>
+        </div>
+      </div>
+      <p class="tagline" data-i18n="brand.tagline">Interactive learning session 2 · Chat vs agents — Sightsavers</p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button id="lang-en" class="lang-btn active" type="button" aria-pressed="true">EN</button>
+      <button id="lang-fr" class="lang-btn" type="button" aria-pressed="false">FR</button>
+    </div>
+  </div>
+
+  <div class="progress" aria-hidden="true">
+    <div class="row"><span id="ring-label">0/2</span><span data-i18n="nav.ring">skill checks</span></div>
+    <div class="bar"><i id="map-bar" style="width:0"></i></div>
+  </div>
+  <a class="ring-wrap" href="#which" id="ring-link" aria-label="Skill-check progress">
+    <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+      <circle class="ring-bg" cx="22" cy="22" r="17"></circle>
+      <circle class="ring-fg" id="ring-fg" cx="22" cy="22" r="17"></circle>
+    </svg>
+  </a>
+
+  <ol>
+    <li><a href="#idea"><span class="n">01</span> <span data-i18n="nav.idea">The big idea</span></a></li>
+    <li><a href="#which"><span class="n">02</span> <span data-i18n="nav.which">Which Claude?</span></a></li>
+    <li><a href="#skills"><span class="n">03</span> <span data-i18n="nav.skills">Prompts to skills</span></a></li>
+    <li><a href="#problem"><span class="n">04</span> <span data-i18n="nav.problem">Your problem</span></a></li>
+    <li><a href="#homework"><span class="n">05</span> <span data-i18n="nav.homework">Homework</span></a></li>
+  </ol>
+
+  <div class="map-foot">
+    <span class="nav-checks" id="nav-checks">Skill checks 0/2</span>
+    <span><a href="../">← amplify-course.com</a></span>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <p class="kicker" data-i18n="hero.kicker">Sightsavers · Cohort 2 · 2027</p>
+  <h2 data-i18n="hero.title">Interactive learning session 2 — Chat, Cowork or Code?</h2>
+  <p class="lead" data-i18n="hero.lead">All three run the same Claude models — none is "smarter". What changes is where Claude can act, and how long it keeps going without you. This class you learn to pick the right hands for the job, and to stop retyping your best prompts by turning them into skills.</p>
+  <div class="chips">
+    <span class="chip" data-i18n="hero.chip.freq">Every 2 weeks</span>
+    <span class="chip" data-i18n="hero.chip.dur">90 minutes</span>
+    <span class="chip" data-i18n="hero.chip.meet">Google Meet</span>
+    <span class="chip chip-accent" data-i18n="hero.chip.count">Class 2 of 8</span>
+  </div>
+  <p class="hero-note" data-i18n="hero.note">This page is part of the course. Everything here is interactive — switch languages at the top, pass the two skill checks, build a skill, and answer the questions about your own problem. Your progress is saved in your browser only.</p>
+</section>
+
+<!-- ============================ 1 · THE BIG IDEA ============================ -->
+<section id="idea" class="section">
+  <h2 data-i18n="idea.h2">1 · Same brain, different hands</h2>
+  <p class="section-lead" data-i18n="idea.lead">The question is never "which one is best" — it is who does the follow-through work: you, or Claude.</p>
+
+  <div class="grid3 idea-grid">
+    <div class="card">
+      <h3><span class="tool-dot td-chat" aria-hidden="true"></span><span data-i18n="idea.chat.t">Chat — talks it through with you</span></h3>
+      <p data-i18n="idea.chat.d">Think, draft, explain, analyse uploaded files, make quick artifacts. Can use connectors (MCP). You carry the results back to where the work lives.</p>
+      <p class="hint" data-i18n="idea.chat.a">Like a consultant on the phone.</p>
+    </div>
+    <div class="card">
+      <h3><span class="tool-dot td-cowork" aria-hidden="true"></span><span data-i18n="idea.cowork.t">Cowork — works in your files</span></h3>
+      <p data-i18n="idea.cowork.d">Runs in the Claude desktop app. Reads, creates and reorganises files in a folder you choose, across documents, spreadsheets and slides. Plans, acts and checks while you do something else.</p>
+      <p class="hint" data-i18n="idea.cowork.a">Like an assistant at your desk.</p>
+    </div>
+    <div class="card">
+      <h3><span class="tool-dot td-code" aria-hidden="true"></span><span data-i18n="idea.code.t">Code — builds and runs things</span></h3>
+      <p data-i18n="idea.code.d">A tab in the desktop app, or the command line. Writes and runs scripts, builds web pages and automations that rerun next month without starting over. Awareness level for this course — no coding needed.</p>
+      <p class="hint" data-i18n="idea.code.a">Like an engineer with keys to the workshop.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-accent">
+    <h3 data-i18n="idea.pole.t">Read it like an ivermectin dose pole</h3>
+    <p data-i18n="idea.pole.d">The medicine is the same, and the dose goes up with the size of the job. Chat makes you the courier. Cowork does the errand. Code builds a machine that runs the errand again.</p>
+  </div>
+
+  <div class="callout">
+    <h3 data-i18n="idea.mcp.t">One plug, three sockets</h3>
+    <p data-i18n="idea.mcp.d">Connectors (MCP) are shared plumbing: the same connector works in Chat, Cowork and Code. What differs is what the tool does with the data — an answer, a document on disk, or a pipeline that reruns. You will connect them yourself in session 4.</p>
+  </div>
+
+  <div class="callout callout-red">
+    <h3 data-i18n="idea.safe.t">A word of safety</h3>
+    <p data-i18n="idea.safe.d">Cowork and Code change files. Practise on copies, never on real programme data — and when either tool asks permission before acting, read the whole message before you allow it.</p>
+  </div>
+</section>
+
+<!-- ============================ 2 · WHICH CLAUDE ============================ -->
+<section id="which" class="section">
+  <h2 data-i18n="which.h2">2 · Which Claude for the job?</h2>
+  <p class="section-lead" data-i18n="which.lead">Two skill checks, straight from the live class. First: guess which tool produced each real output. Then: pick a tool for twelve programme scenarios — some have more than one defensible answer.</p>
+
+  <div class="quiz" id="quiz-guess" data-quiz="guess"></div>
+  <div class="quiz" id="quiz-pick" data-quiz="pick"></div>
+</section>
+
+<!-- ============================ 3 · PROMPTS TO SKILLS ============================ -->
+<section id="skills" class="section">
+  <h2 data-i18n="skills.h2">3 · Turn a prompt into a skill</h2>
+  <p class="section-lead" data-i18n="skills.lead">You already know the pattern from session 1: refine a prompt until it reliably gives you what you want. A skill is that refined prompt, saved with a name and a trigger so Claude can use it again — and again — without being re-taught.</p>
+
+  <div class="card card-strong">
+    <h3 data-i18n="skills.what.t">What a skill is</h3>
+    <p data-i18n="skills.what.d">A skill is a small folder with a SKILL.md file inside: a name, a one-line description of when to use it, and the instructions that follow. Claude loads it when <em>its</em> job matches the description, so good descriptions matter more than clever instructions.</p>
+  </div>
+
+  <div class="card builder-card">
+    <h3 data-i18n="sb.t">Skill builder — draft your first skill</h3>
+    <p class="hint" data-i18n="sb.hint">Fill the three parts and watch the SKILL.md file assemble. Three sentences of instructions beat three paragraphs.</p>
+    <div class="builder">
+      <div class="builder-form">
+        <label><span class="b-letter bl-P" data-i18n="sb.l1">N</span><span class="b-label" data-i18n="sb.name">Name</span>
+          <input type="text" id="sb-name" data-i18n-ph="sb.name.ph" placeholder="monthly-district-report"></label>
+        <label><span class="b-letter bl-T" data-i18n="sb.l2">W</span><span class="b-label" data-i18n="sb.when">When to use it</span>
+          <input type="text" id="sb-when" data-i18n-ph="sb.when.ph" placeholder="When I need to merge district reports into the national template…"></label>
+        <label class="sb-body-row"><span class="b-letter bl-I" data-i18n="sb.l3">I</span><span class="b-label" data-i18n="sb.body">Instructions</span>
+          <textarea id="sb-body" rows="4" data-i18n-ph="sb.body.ph" placeholder="1. Check every district is present and spelled as in the master list…"></textarea></label>
+      </div>
+      <div class="builder-out">
+        <pre id="builder-out"></pre>
+        <div class="builder-actions">
+          <button class="btn primary" id="builder-copy" type="button" data-i18n="sb.copy">Copy SKILL.md</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-step"><span class="step-n">1</span>
+    <h3 data-i18n="skills.make.t">Make one from a prompt you already have</h3>
+    <ol class="flow-list">
+      <li data-i18n="skills.make.s1">Open your Claude project and reread your session 1 problem statement.</li>
+      <li data-i18n="skills.make.s2">Find one step in that problem you repeat every week or month — that repetition is your skill candidate.</li>
+      <li data-i18n="skills.make.s3">Take the prompt you use for it, fill the builder above, and copy the result.</li>
+      <li data-i18n="skills.make.s4">In Claude, ask: "Save this as a skill called [name]" and paste your SKILL.md. Then run the task once using the skill.</li>
+    </ol>
+  </div>
+
+  <div class="card card-step"><span class="step-n">2</span>
+    <h3 data-i18n="skills.borrow.t">Borrow before you build</h3>
+    <p data-i18n="skills.borrow.d">Skills are shared — search GitHub and the Claude skills directories for someone else's before writing your own. Read the SKILL.md first: a skill is instructions to an AI, so only use one whose instructions you could defend if asked. The red lines from session 1 still apply: never put restricted data into an untrusted skill.</p>
+  </div>
+</section>
+
+<!-- ============================ 4 · YOUR PROBLEM ============================ -->
+<section id="problem" class="section">
+  <h2 data-i18n="problem.h2">4 · Your problem — which Claude, which skill?</h2>
+  <p class="section-lead" data-i18n="problem.lead">Take the problem statement you drafted in session 1 and look at it with this session's eyes. Open answers — your instructors read them, so write for them.</p>
+
+  <div class="card">
+    <h3 data-i18n="app.stmt.t">Your problem statement from session 1</h3>
+    <p class="hint" data-i18n="app.stmt.hint">Pulls in automatically if you did session 1 in this browser — otherwise paste it in.</p>
+    <label class="seed-field"><span class="sr" data-i18n="app.stmt.l">Problem statement</span><textarea rows="3" data-app="statement"></textarea></label>
+  </div>
+
+  <div class="card">
+    <h3><span data-i18n="app.q1.t">Question 1</span> · <span data-i18n="app.q1.q">Which Claude would you use for this problem — and why?</span></h3>
+    <fieldset class="seed-pick">
+      <legend class="sr" data-i18n="app.q1.legend">Pick a tool</legend>
+      <label class="seed-radio"><input type="radio" name="app-tool" value="chat" data-app="tool"> <span data-i18n="app.tool.chat">Chat</span></label>
+      <label class="seed-radio"><input type="radio" name="app-tool" value="cowork" data-app="tool"> <span data-i18n="app.tool.cowork">Cowork</span></label>
+      <label class="seed-radio"><input type="radio" name="app-tool" value="code" data-app="tool"> <span data-i18n="app.tool.code">Code</span></label>
+    </fieldset>
+    <label class="seed-field"><span data-i18n="app.q1.why">Why — what about the problem (files? repetition? one-off thinking?) points at that tool?</span><textarea rows="3" data-app="why"></textarea></label>
+  </div>
+
+  <div class="card">
+    <h3><span data-i18n="app.q2.t">Question 2</span> · <span data-i18n="app.q2.q">Would a skill help? If so, for what?</span></h3>
+    <label class="seed-field"><span data-i18n="app.q2.l">Is there a repeating step in your problem a skill could take on? Name the step, or say honestly if nothing repeats yet.</span><textarea rows="3" data-app="skills"></textarea></label>
+  </div>
+
+  <div class="card seed-export">
+    <h3 data-i18n="ex.t">Download your session 2 file</h3>
+    <p data-i18n="ex.d">Your instructors review this file and give you feedback on Slack. It shows that you read the page, passed the skill checks, and what you answered above.</p>
+    <ul class="seed-status">
+      <li data-app-status="1"><span data-i18n="ex.s1">Question 1 · Which Claude</span> <span class="st">not finished</span></li>
+      <li data-app-status="2"><span data-i18n="ex.s2">Question 2 · Skills</span> <span class="st">not finished</span></li>
+      <li data-seen-page><span data-i18n="seen.label">Full page · all sections read</span> <span class="st">not finished</span></li>
+    </ul>
+    <label class="seed-field seed-name"><span data-i18n="ex.name">Your name</span><input type="text" data-app="name" autocomplete="name" data-i18n-ph="ex.name.ph" placeholder="First and last name"></label>
+    <p class="hint seed-missing" id="app-missing" data-i18n="ex.missing">Some questions aren't finished yet — the file will show them as incomplete.</p>
+    <button class="btn primary" type="button" id="app-export" data-i18n="ex.btn">Download my session 2 file</button>
+    <p class="hint" data-i18n="ex.note">Saves a web page (.html). Open it in any browser to check it, then post it on Slack as your homework.</p>
+  </div>
+</section>
+
+<!-- ============================ 5 · HOMEWORK ============================ -->
+<section id="homework" class="section">
+  <h2 data-i18n="homework.h2">5 · Homework — due before Class 3</h2>
+  <p class="section-lead" data-i18n="homework.sub">Three steps, all on Slack or in your Claude project.</p>
+  <div class="hw-grid">
+    <div class="card card-hw"><span class="step-n">1</span>
+      <h3 data-i18n="hw.1.t">Post your session 2 file</h3>
+      <p data-i18n="hw.1.d">Upload it to your private channel, titled FirstNameLastName_Assignment2.</p>
+    </div>
+    <div class="card card-hw"><span class="step-n">2</span>
+      <h3 data-i18n="hw.2.t">Run your skill once</h3>
+      <p data-i18n="hw.2.d">Use the skill you drafted on your real problem, in your project, and post one line in the module channel about what worked or didn't.</p>
+    </div>
+    <div class="card card-hw"><span class="step-n">3</span>
+      <h3 data-i18n="hw.3.t">Reply to one classmate</h3>
+      <p data-i18n="hw.3.d">If their tool choice surprises you, say why — the debate is the exercise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section">
+  <h2 data-i18n="faq.h">Quick answers</h2>
+  <details class="faq"><summary data-i18n="faq.q1">Do I need a paid plan or special access?</summary><p data-i18n="faq.a1">Chat works on what you already have. Cowork and Code need a Pro, Max, Team or Enterprise plan — check yours before class and flag it in your Slack channel if it is missing.</p></details>
+  <details class="faq"><summary data-i18n="faq.q2">Do I need to know how to code?</summary><p data-i18n="faq.a2">No. Claude Code is awareness-level on this course: you should know what it is for and what it can build, but you will never be asked to write code yourself.</p></details>
+  <details class="faq"><summary data-i18n="faq.q3">Can I work in French?</summary><p data-i18n="faq.a3">Yes. Write your answers in whichever language you think in; instructors read both. (This page toggles with EN/FR at the top.)</p></details>
+</section>
+
+<footer class="footnote">
+  <p data-i18n="ft.credit">AMPLIFY 2027 · Sightsavers · Cohort 2</p>
+  <p data-i18n="ft.note">This page is a plain HTML file with no backend — your answers stay in your browser until you download them.</p>
+  <p class="ft-links">
+    <a href="../" data-i18n="ft.link0">← Back to AMPLIFY</a> ·
+    <a href="../course-1/" data-i18n="ft.link1">Session 1 page</a> ·
+    <a href="https://claude.ai/download" target="_blank" rel="noopener" data-i18n="ft.link2">Download Claude</a> ·
+    <a href="https://slack.com/help" target="_blank" rel="noopener" data-i18n="ft.link3">Slack Help Center</a>
+  </p>
+</footer>
+
+</main>
+</div><!-- /.shell -->
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
