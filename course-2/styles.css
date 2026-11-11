@@ -452,3 +452,8 @@ details.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
   .builder-form label .b-label { white-space: normal; grid-column: 2; }
   .builder-form label input, .builder-form label textarea { grid-column: 1 / -1; }
 }
+
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; gap: 24px; }
+  .map { position: static; }
+}

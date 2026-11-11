@@ -579,3 +579,8 @@ details.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
 @media (max-width: 720px) {
   .seed-grid3, .seed-parts { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; gap: 24px; }
+  .map { position: static; }
+}
