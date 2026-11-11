@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .navy{stroke:#22325F}
+    @media (prefers-color-scheme:dark){.navy{stroke:#FFFFFF}}
+  </style>
+  <g fill="none" stroke-linecap="round">
+    <path class="navy" stroke-width="6" d="M49.4 11.3A27 27 0 0 1 49.4 52.7M14.6 11.3A27 27 0 0 0 14.6 52.7"/>
+    <path stroke="#5EA4DA" stroke-width="5" d="M42.9 19A17 17 0 0 1 42.9 45M21.1 19A17 17 0 0 0 21.1 45"/>
+  </g>
+  <path fill="#EFBF29" d="M32 22.5Q33.3 30.7 41.5 32Q33.3 33.3 32 41.5Q30.7 33.3 22.5 32Q30.7 30.7 32 22.5Z"/>
+</svg>
