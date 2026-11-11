@@ -437,3 +437,18 @@ details.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
 #sb-body { width: 100%; }
 
 .chip-accent { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* builder labels are multi-word here (vs one-word in course-1) — don't letter-wrap them */
+.builder-form label { grid-template-columns: 26px max-content 1fr; }
+.builder-form label .b-label { white-space: nowrap; }
+.sb-body-row { align-items: start; }
+.sb-body-row textarea {
+  font: inherit; font-size: .88rem; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); width: 100%; box-sizing: border-box; resize: vertical;
+}
+.sb-body-row textarea:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+@media (max-width: 480px) {
+  .builder-form label { grid-template-columns: 26px 1fr; }
+  .builder-form label .b-label { white-space: normal; grid-column: 2; }
+  .builder-form label input, .builder-form label textarea { grid-column: 1 / -1; }
+}
