@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Tour — Claude Teams | Visite de l'application</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/teams.css">
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
+    <div><div class="eyebrow">Claude Teams</div><a class="brand" href="index.html"><span class="dot"></span>Claude Teams</a></div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <ol>
+    <li><a href="index.html"><span class="n">01</span><span><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></span></a></li>
+    <li><a href="tour.html" class="active"><span class="n">02</span><span><span class="lang-en">App Tour</span><span class="lang-fr">Visite de l'appli</span></span></a></li>
+    <li><a href="setup.html"><span class="n">03</span><span><span class="lang-en">Hands-on Missions</span><span class="lang-fr">Missions pratiques</span></span></a></li>
+  </ol>
+  <ol>
+    <li><a href="#t-window"><span class="n">A</span><span><span class="lang-en">The main window</span><span class="lang-fr">La fenêtre principale</span></span></a></li>
+    <li><a href="#t-projects"><span class="n">B</span><span><span class="lang-en">Where projects live</span><span class="lang-fr">Où sont les projets</span></span></a></li>
+    <li><a href="#t-create"><span class="n">C</span><span><span class="lang-en">Just for me, or for the team?</span><span class="lang-fr">Pour moi, ou pour l'équipe ?</span></span></a></li>
+    <li><a href="#t-share"><span class="n">D</span><span><span class="lang-en">Sharing a project</span><span class="lang-fr">Partager un projet</span></span></a></li>
+    <li><a href="#t-context"><span class="n">E</span><span><span class="lang-en">Adding context (files)</span><span class="lang-fr">Ajouter du contexte</span></span></a></li>
+    <li><a href="#t-instructions"><span class="n">F</span><span><span class="lang-en">Writing instructions</span><span class="lang-fr">Rédiger les instructions</span></span></a></li>
+  </ol>
+  <div class="map-foot"><a href="https://amplify-course.com" target="_blank" rel="noopener">amplify-course.com</a></div>
+</nav>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span class="lang-en">10-minute guided tour · read before the missions</span><span class="lang-fr">Visite guidée de 10 minutes · à lire avant les missions</span></p>
+    <h1>
+      <span class="lang-en">App Tour: find your way around Claude</span>
+      <span class="lang-fr">Visite de l'appli : s'orienter dans Claude</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">Each picture below is a simplified drawing of the Claude app. The desktop app and <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> in a browser look the same. Red numbers match the list under each picture. The exact wording and position of buttons can change when Claude updates, but the layout stays recognisable.</span>
+      <span class="lang-fr">Chaque image ci-dessous est un dessin simplifié de l'application Claude. L'application de bureau et <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> dans un navigateur se ressemblent. Les numéros rouges renvoient à la liste sous chaque image. Le libellé et la position exacts des boutons peuvent changer avec les mises à jour, mais l'organisation reste reconnaissable.</span>
+    </p>
+  </section>
+
+  <!-- ================= A · MAIN WINDOW ================= -->
+  <h2 id="t-window">A · <span class="lang-en">The main window</span><span class="lang-fr">La fenêtre principale</span></h2>
+  <p>
+    <span class="lang-en">Everything starts from the sidebar on the left. Learn these five spots and you'll never be lost.</span>
+    <span class="lang-fr">Tout part de la barre latérale à gauche. Retenez ces cinq endroits et vous ne serez jamais perdu·e.</span>
+  </p>
+  <figure class="shot">
+    <div class="shot-scroll">
+      <div class="app" role="img" aria-label="Drawing of the Claude main window with sidebar and chat box">
+        <div class="app-bar"><i></i><i></i><i></i><span>Claude</span></div>
+        <div class="app-body">
+          <div class="app-side">
+            <div class="logo">Claude</div>
+            <div class="nav cta">＋ <span class="lang-en">New chat</span><span class="lang-fr">Nouvelle conversation</span><span class="callout-n">1</span></div>
+            <div class="nav">💬 <span class="lang-en">Chats</span><span class="lang-fr">Conversations</span></div>
+            <div class="nav">🗂️ <span class="lang-en">Projects</span><span class="lang-fr">Projets</span><span class="callout-n">2</span></div>
+            <div class="nav">🎨 <span class="lang-en">Artifacts</span><span class="lang-fr">Artefacts</span><span class="callout-n">3</span></div>
+            <div class="sec"><span class="lang-en">Recents</span><span class="lang-fr">Récents</span></div>
+            <div class="rec blur">MDA coverage summary Ghana</div>
+            <div class="rec blur">Draft email to district team</div>
+            <div class="rec blur">TT backlog questions</div>
+            <div class="me"><span class="avatar">AK</span><div><b>Ama K.</b><small>AMPLIFY · Team</small></div><span class="callout-n">4</span></div>
+          </div>
+          <div class="app-main" style="justify-content:center">
+            <h4 style="text-align:center"><span class="lang-en">Good afternoon, Ama</span><span class="lang-fr">Bon après-midi, Ama</span></h4>
+            <div class="a-input big">
+              <span><span class="lang-en">How can I help you today?</span><span class="lang-fr">Comment puis-je vous aider ?</span></span>
+              <div class="tools"><b>＋</b><span>Claude Sonnet ▾ &nbsp; <b style="font-size:14px">↑</b></span></div>
+              <span class="callout-n">5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="legend">
+      <li><span class="lang-en"><strong>New chat</strong>: a fresh, private conversation outside any project.</span><span class="lang-fr"><strong>Nouvelle conversation</strong> : une conversation privée, hors de tout projet.</span></li>
+      <li><span class="lang-en"><strong>Projects</strong>: your projects and the ones shared with you live here. You'll use this most in the team workspace.</span><span class="lang-fr"><strong>Projets</strong> : vos projets et ceux partagés avec vous sont ici. C'est ce que vous utiliserez le plus dans l'espace d'équipe.</span></li>
+      <li><span class="lang-en"><strong>Artifacts</strong>: the pages, dashboards and apps Claude has built for you, plus ones teammates shared.</span><span class="lang-fr"><strong>Artefacts</strong> : les pages, tableaux de bord et applis que Claude a créés pour vous, et ceux partagés par vos collègues.</span></li>
+      <li><span class="lang-en"><strong>Your name + workspace</strong>: click it to check you're in <em>AMPLIFY</em> (not your personal account), and to open <em>Settings</em>.</span><span class="lang-fr"><strong>Votre nom + espace</strong> : cliquez pour vérifier que vous êtes dans <em>AMPLIFY</em> (et non votre compte personnel), et pour ouvrir les <em>Paramètres</em>.</span></li>
+      <li><span class="lang-en"><strong>Chat box</strong>: the <strong>＋</strong> attaches files or turns on connected apps for this one chat. Files attached here are <em>not</em> shared with anyone.</span><span class="lang-fr"><strong>Zone de saisie</strong> : le <strong>＋</strong> joint des fichiers ou active des applications connectées pour cette conversation. Les fichiers joints ici ne sont <em>pas</em> partagés.</span></li>
+    </ol>
+    <figcaption class="cap-note"><span class="lang-en">Illustration. Chat titles are blurred, just like your own recents are hidden from teammates.</span><span class="lang-fr">Illustration. Les titres sont floutés, comme vos conversations récentes le sont pour vos collègues.</span></figcaption>
+  </figure>
+
+  <!-- ================= B · PROJECTS PAGE ================= -->
+  <h2 id="t-projects">B · <span class="lang-en">Where projects live</span><span class="lang-fr">Où vivent les projets</span></h2>
+  <p>
+    <span class="lang-en">Click <strong>Projects</strong> in the sidebar. You'll see every project you can open: your private ones, ones teammates invited you to, and ones shared with the whole organization.</span>
+    <span class="lang-fr">Cliquez sur <strong>Projets</strong> dans la barre latérale. Vous verrez tous les projets que vous pouvez ouvrir : vos projets privés, ceux où l'on vous a invité·e, et ceux partagés avec toute l'organisation.</span>
+  </p>
+  <figure class="shot">
+    <div class="shot-scroll">
+      <div class="app" role="img" aria-label="Drawing of the Projects page with project cards">
+        <div class="app-bar"><i></i><i></i><i></i><span>Claude · <span class="lang-en">Projects</span><span class="lang-fr">Projets</span></span></div>
+        <div class="app-body">
+          <div class="app-side">
+            <div class="logo">Claude</div>
+            <div class="nav cta">＋ <span class="lang-en">New chat</span><span class="lang-fr">Nouvelle conversation</span></div>
+            <div class="nav">💬 <span class="lang-en">Chats</span><span class="lang-fr">Conversations</span></div>
+            <div class="nav on">🗂️ <span class="lang-en">Projects</span><span class="lang-fr">Projets</span><span class="callout-n">1</span></div>
+            <div class="nav">🎨 <span class="lang-en">Artifacts</span><span class="lang-fr">Artefacts</span></div>
+            <div class="me"><span class="avatar">AK</span><div><b>Ama K.</b><small>AMPLIFY · Team</small></div></div>
+          </div>
+          <div class="app-main">
+            <div class="app-row">
+              <h4><span class="lang-en">Projects</span><span class="lang-fr">Projets</span></h4>
+              <span class="a-btn">＋ <span class="lang-en">New project</span><span class="lang-fr">Nouveau projet</span><span class="callout-n">2</span></span>
+            </div>
+            <div class="a-input" style="position:relative">🔍 <span class="lang-en">Search projects…</span><span class="lang-fr">Rechercher des projets…</span><span class="callout-n">3</span></div>
+            <div class="pgrid">
+              <div class="pcard"><b>AMPLIFY Cohort 2 · <span class="lang-en">Class project</span><span class="lang-fr">Projet du cours</span></b><small><span class="lang-en">Shared by your instructor</span><span class="lang-fr">Partagé par votre formateur</span></small><br><span class="tag shared">👥 <span class="lang-en">Everyone at AMPLIFY</span><span class="lang-fr">Tout AMPLIFY</span></span><span class="callout-n">4</span></div>
+              <div class="pcard"><b><span class="lang-en">Team Baobab: Trachoma TT</span><span class="lang-fr">Équipe Baobab : TT trachome</span></b><small><span class="lang-en">You + 3 teammates</span><span class="lang-fr">Vous + 3 collègues</span></small><br><span class="tag shared">👥 <span class="lang-en">Shared</span><span class="lang-fr">Partagé</span></span></div>
+              <div class="pcard"><b><span class="lang-en">My learning notes</span><span class="lang-fr">Mes notes d'apprentissage</span></b><small><span class="lang-en">Only you</span><span class="lang-fr">Vous seul·e</span></small><br><span class="tag">🔒 <span class="lang-en">Private</span><span class="lang-fr">Privé</span></span><span class="callout-n">5</span></div>
+              <div class="pcard"><b><span class="lang-en">District report drafts</span><span class="lang-fr">Brouillons de rapports</span></b><small><span class="lang-en">Only you</span><span class="lang-fr">Vous seul·e</span></small><br><span class="tag">🔒 <span class="lang-en">Private</span><span class="lang-fr">Privé</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="legend">
+      <li><span class="lang-en"><strong>Projects</strong> in the sidebar opens this page.</span><span class="lang-fr"><strong>Projets</strong> dans la barre latérale ouvre cette page.</span></li>
+      <li><span class="lang-en"><strong>New project</strong> starts a new one (see section C).</span><span class="lang-fr"><strong>Nouveau projet</strong> en crée un (voir section C).</span></li>
+      <li><span class="lang-en"><strong>Search</strong>: helpful once the workspace fills up with everyone's shared projects.</span><span class="lang-fr"><strong>Recherche</strong> : utile quand l'espace se remplit des projets partagés de chacun.</span></li>
+      <li><span class="lang-en">A <strong>shared</strong> project, like the class project. You see it because it was shared with you or with everyone.</span><span class="lang-fr">Un projet <strong>partagé</strong>, comme celui du cours. Vous le voyez parce qu'il a été partagé avec vous ou avec tous.</span></li>
+      <li><span class="lang-en">A <strong>private</strong> project. Nobody else sees it in their list.</span><span class="lang-fr">Un projet <strong>privé</strong>. Personne d'autre ne le voit dans sa liste.</span></li>
+    </ol>
+    <figcaption class="cap-note"><span class="lang-en">Illustration. Project names are examples.</span><span class="lang-fr">Illustration. Les noms de projets sont des exemples.</span></figcaption>
+  </figure>
+
+  <!-- ================= C · CREATE ================= -->
+  <h2 id="t-create">C · <span class="lang-en">Create a project: just for you, or for the team?</span><span class="lang-fr">Créer un projet : pour vous, ou pour l'équipe ?</span></h2>
+  <p>
+    <span class="lang-en">Click <strong>New project</strong>. You give it a name, a short description, and choose who can see it. On a Team plan you'll be offered two options.</span>
+    <span class="lang-fr">Cliquez sur <strong>Nouveau projet</strong>. Donnez-lui un nom, une courte description, et choisissez qui peut le voir. Avec un plan Team, deux options vous sont proposées.</span>
+  </p>
+  <figure class="shot">
+    <div class="shot-scroll">
+      <div class="app" role="img" aria-label="Drawing of the New project dialog with a visibility choice">
+        <div class="app-bar"><i></i><i></i><i></i><span>Claude · <span class="lang-en">New project</span><span class="lang-fr">Nouveau projet</span></span></div>
+        <div class="app-body solo">
+          <div class="app-dim">
+            <div class="modal">
+              <h5><span class="lang-en">Create a project</span><span class="lang-fr">Créer un projet</span></h5>
+              <div style="position:relative"><div class="a-label"><span class="lang-en">What are you working on?</span><span class="lang-fr">Sur quoi travaillez-vous ?</span></div><div class="a-input" style="color:var(--a-ink)"><span class="lang-en">Team Baobab: Trachoma TT backlog</span><span class="lang-fr">Équipe Baobab : arriéré TT trachome</span></div><span class="callout-n">1</span></div>
+              <div style="position:relative"><div class="a-label"><span class="lang-en">What are you trying to achieve?</span><span class="lang-fr">Quel est votre objectif ?</span></div><div class="a-input"><span class="lang-en">Plan surgical camps to clear the TT backlog in 3 districts</span><span class="lang-fr">Planifier des campagnes chirurgicales pour résorber l'arriéré TT dans 3 districts</span></div><span class="callout-n">2</span></div>
+              <div class="vis">
+                <div class="on">🔒 <b><span class="lang-en">Private</span><span class="lang-fr">Privé</span></b><span class="lang-en">Only you, and people you invite</span><span class="lang-fr">Vous seul·e, et les personnes invitées</span><span class="callout-n l">3</span></div>
+                <div>👥 <b><span class="lang-en">Public</span><span class="lang-fr">Public</span></b><span class="lang-en">Everyone at AMPLIFY can view and use it</span><span class="lang-fr">Tout AMPLIFY peut le voir et l'utiliser</span><span class="callout-n">4</span></div>
+              </div>
+              <div class="foot"><span class="a-btn ghost"><span class="lang-en">Cancel</span><span class="lang-fr">Annuler</span></span><span class="a-btn"><span class="lang-en">Create project</span><span class="lang-fr">Créer le projet</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="legend">
+      <li><span class="lang-en"><strong>Name</strong>: make it findable. Group + topic works well, e.g. “Team Baobab: Trachoma TT backlog”.</span><span class="lang-fr"><strong>Nom</strong> : facile à retrouver. Groupe + sujet fonctionne bien, p. ex. « Équipe Baobab : arriéré TT trachome ».</span></li>
+      <li><span class="lang-en"><strong>Description</strong>: one line on the goal. It helps teammates know what the project is for.</span><span class="lang-fr"><strong>Description</strong> : une ligne sur l'objectif. Elle aide les collègues à savoir à quoi sert le projet.</span></li>
+      <li><span class="lang-en"><strong>Private</strong>: starts just for you. You can still invite specific teammates later. Best default.</span><span class="lang-fr"><strong>Privé</strong> : commence pour vous seul·e. Vous pouvez inviter des collègues précis ensuite. Le meilleur choix par défaut.</span></li>
+      <li><span class="lang-en"><strong>Public</strong>: the whole organization can find it and chat in it. Use it for shared reference material.</span><span class="lang-fr"><strong>Public</strong> : toute l'organisation peut le trouver et y discuter. À utiliser pour les ressources de référence communes.</span></li>
+    </ol>
+    <figcaption class="cap-note"><span class="lang-en">Illustration. Wording may differ slightly in your app; if you don't see a visibility choice, the project starts private and you share it afterwards (section D).</span><span class="lang-fr">Illustration. Le libellé peut légèrement différer ; si vous ne voyez pas de choix de visibilité, le projet démarre privé et vous le partagez ensuite (section D).</span></figcaption>
+  </figure>
+
+  <div class="choose">
+    <div class="card me">
+      <h3>🔒 <span class="lang-en">Choose “just for me” when…</span><span class="lang-fr">Choisissez « pour moi » quand…</span></h3>
+      <ul>
+        <li><span class="lang-en">You're learning, experimenting or drafting</span><span class="lang-fr">Vous apprenez, testez ou rédigez un brouillon</span></li>
+        <li><span class="lang-en">The files are for your eyes only (your own notes, a draft not ready for review)</span><span class="lang-fr">Les fichiers ne concernent que vous (vos notes, un brouillon pas encore prêt)</span></li>
+        <li><span class="lang-en">You want your own standing instructions, e.g. “always answer in French”</span><span class="lang-fr">Vous voulez vos propres consignes, p. ex. « réponds toujours en français »</span></li>
+      </ul>
+    </div>
+    <div class="card team">
+      <h3>👥 <span class="lang-en">Choose “for the team” when…</span><span class="lang-fr">Choisissez « pour l'équipe » quand…</span></h3>
+      <ul>
+        <li><span class="lang-en">Several people work from the same documents and data</span><span class="lang-fr">Plusieurs personnes travaillent sur les mêmes documents et données</span></li>
+        <li><span class="lang-en">You want everyone's Claude to use the same country, terms and format</span><span class="lang-fr">Vous voulez que le Claude de chacun utilise le même pays, les mêmes termes et le même format</span></li>
+        <li><span class="lang-en">It's a group assignment, or reference material the whole cohort needs</span><span class="lang-fr">C'est un travail de groupe, ou une ressource dont toute la cohorte a besoin</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout info">
+    <div class="callout-title"><span class="lang-en">You can change your mind</span><span class="lang-fr">Vous pouvez changer d'avis</span></div>
+    <span class="lang-en">A private project can be shared later, and a shared one can be narrowed back down. Either way, <strong>your chats inside it stay private</strong>. Only the files and instructions are shared.</span>
+    <span class="lang-fr">Un projet privé peut être partagé plus tard, et un projet partagé peut être restreint. Dans tous les cas, <strong>vos conversations à l'intérieur restent privées</strong>. Seuls les fichiers et les instructions sont partagés.</span>
+  </div>
+
+  <!-- ================= D · SHARE ================= -->
+  <h2 id="t-share">D · <span class="lang-en">Sharing a project with your team</span><span class="lang-fr">Partager un projet avec l'équipe</span></h2>
+  <p>
+    <span class="lang-en">Open the project and click <strong>Share</strong> (top right of the project page). Add people one by one, or give access to the whole organization.</span>
+    <span class="lang-fr">Ouvrez le projet et cliquez sur <strong>Partager</strong> (en haut à droite de la page du projet). Ajoutez des personnes une à une, ou donnez accès à toute l'organisation.</span>
+  </p>
+  <figure class="shot">
+    <div class="shot-scroll">
+      <div class="app" role="img" aria-label="Drawing of the project Share dialog with people and permissions">
+        <div class="app-bar"><i></i><i></i><i></i><span>Claude · <span class="lang-en">Share project</span><span class="lang-fr">Partager le projet</span></span></div>
+        <div class="app-body solo">
+          <div class="app-dim">
+            <div class="modal">
+              <h5><span class="lang-en">Share “Team Baobab: Trachoma TT”</span><span class="lang-fr">Partager « Équipe Baobab : TT trachome »</span></h5>
+              <div class="a-input" style="position:relative"><span class="lang-en">Add people by name or email…</span><span class="lang-fr">Ajouter des personnes par nom ou e-mail…</span><span class="callout-n">1</span></div>
+              <div class="people">
+                <div class="person"><span class="avatar">AK</span>Ama K. <small style="color:var(--a-mute)">(<span class="lang-en">you</span><span class="lang-fr">vous</span>)</small><span class="role"><span class="lang-en">Owner</span><span class="lang-fr">Propriétaire</span></span></div>
+                <div class="person"><span class="avatar b">JM</span>Jean M.<span class="role">Can edit ▾<span class="callout-n">2</span></span></div>
+                <div class="person"><span class="avatar c">FD</span>Fatou D.<span class="role">Can edit ▾</span></div>
+                <div class="person"><span class="avatar">PO</span>Prof. O. <span class="role">Can view ▾<span class="callout-n">3</span></span></div>
+              </div>
+              <div class="org-row">🏢 <span class="lang-en">Everyone at AMPLIFY</span><span class="lang-fr">Tout AMPLIFY</span><span class="role"><span class="lang-en">No access ▾</span><span class="lang-fr">Pas d'accès ▾</span></span><span class="callout-n">4</span></div>
+              <div class="foot"><span class="a-btn"><span class="lang-en">Done</span><span class="lang-fr">Terminé</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="legend">
+      <li><span class="lang-en"><strong>Add people</strong>: type a teammate's name or email. Only members of the AMPLIFY workspace can be added.</span><span class="lang-fr"><strong>Ajouter des personnes</strong> : tapez le nom ou l'e-mail d'un collègue. Seuls les membres de l'espace AMPLIFY peuvent être ajoutés.</span></li>
+      <li><span class="lang-en"><strong>Can edit</strong>: can change instructions, add or remove files, and manage members. Give this to your working group.</span><span class="lang-fr"><strong>Can edit</strong> : peut modifier les instructions, ajouter ou retirer des fichiers et gérer les membres. À donner à votre groupe de travail.</span></li>
+      <li><span class="lang-en"><strong>Can view</strong>: can read the files and instructions and chat in the project, but can't change it. Good for reviewers and supervisors.</span><span class="lang-fr"><strong>Can view</strong> : peut lire les fichiers et instructions et discuter dans le projet, sans le modifier. Idéal pour relecteurs et superviseurs.</span></li>
+      <li><span class="lang-en"><strong>Everyone at AMPLIFY</strong>: opens the project to the whole organization, which makes it public.</span><span class="lang-fr"><strong>Tout AMPLIFY</strong> : ouvre le projet à toute l'organisation (projet public).</span></li>
+    </ol>
+    <figcaption class="cap-note"><span class="lang-en">Illustration. People and names are examples.</span><span class="lang-fr">Illustration. Les personnes et noms sont des exemples.</span></figcaption>
+  </figure>
+
+  <!-- ================= E · CONTEXT ================= -->
+  <h2 id="t-context">E · <span class="lang-en">Adding context: the project's files</span><span class="lang-fr">Ajouter du contexte : les fichiers du projet</span></h2>
+  <p>
+    <span class="lang-en">Inside a project, the panel on the right holds two things: <strong>instructions</strong> and <strong>files</strong> (also called project knowledge). Anything you add here, Claude can read in <em>every</em> chat in the project, for every member.</span>
+    <span class="lang-fr">Dans un projet, le panneau de droite contient deux choses : les <strong>instructions</strong> et les <strong>fichiers</strong> (les connaissances du projet). Tout ce que vous y ajoutez, Claude peut le lire dans <em>chaque</em> conversation du projet, pour chaque membre.</span>
+  </p>
+  <figure class="shot">
+    <div class="shot-scroll">
+      <div class="app" role="img" aria-label="Drawing of a project page with chats on the left and instructions and files panel on the right">
+        <div class="app-bar"><i></i><i></i><i></i><span>Claude · <span class="lang-en">Team Baobab: Trachoma TT</span><span class="lang-fr">Équipe Baobab : TT trachome</span></span></div>
+        <div class="app-body solo">
+          <div class="app-main">
+            <div class="app-row">
+              <h4><span class="lang-en">Team Baobab: Trachoma TT</span><span class="lang-fr">Équipe Baobab : TT trachome</span></h4>
+              <span class="a-btn ghost">👥 <span class="lang-en">Share</span><span class="lang-fr">Partager</span><span class="callout-n">1</span></span>
+            </div>
+            <div class="proj">
+              <div style="display:grid;gap:10px;align-content:start">
+                <div class="a-input big"><span><span class="lang-en">Start a chat in this project…</span><span class="lang-fr">Lancer une conversation dans ce projet…</span></span><div class="tools"><b>＋</b><b style="font-size:14px">↑</b></div><span class="callout-n">2</span></div>
+                <div class="a-label"><span class="lang-en">Your chats in this project</span><span class="lang-fr">Vos conversations dans ce projet</span></div>
+                <div class="chatlist" style="position:relative">
+                  <div><span class="lang-en">Which district has the biggest backlog?</span><span class="lang-fr">Quel district a le plus gros arriéré ?</span><br><small>🔒 <span class="lang-en">only you · 2 min ago</span><span class="lang-fr">vous seul·e · il y a 2 min</span></small></div>
+                  <div><span class="lang-en">Draft camp schedule for Q1</span><span class="lang-fr">Calendrier des campagnes T1</span><br><small>🔒 <span class="lang-en">only you · yesterday</span><span class="lang-fr">vous seul·e · hier</span></small></div>
+                  <span class="callout-n">3</span>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="ph"><span class="lang-en">Instructions</span><span class="lang-fr">Instructions</span> <em>✎</em><span class="callout-n">4</span></div>
+                <div class="instr"><span class="lang-en">We are an NTD programme team working on trachoma in…</span><span class="lang-fr">Nous sommes une équipe de programme MTN travaillant sur le trachome au…</span></div>
+                <div class="ph"><span class="lang-en">Files</span><span class="lang-fr">Fichiers</span> <em>＋</em><span class="callout-n">5</span></div>
+                <div class="menu">
+                  <div>⬆︎ <span class="lang-en">Upload from device</span><span class="lang-fr">Importer depuis l'appareil</span></div>
+                  <div>📝 <span class="lang-en">Add text content</span><span class="lang-fr">Ajouter du texte</span></div>
+                  <div>🔌 <span class="lang-en">From a connected app (e.g. Drive)</span><span class="lang-fr">Depuis une appli connectée (p. ex. Drive)</span></div>
+                </div>
+                <div class="file"><i>PDF</i> TT_survey_report_2025.pdf</div>
+                <div class="file"><i class="csv">CSV</i> tt_backlog_by_district.csv</div>
+                <div class="file"><i class="txt">TXT</i> <span class="lang-en">programme_glossary.txt</span><span class="lang-fr">glossaire_programme.txt</span></div>
+                <div class="cap" style="position:relative"><span></span></div>
+                <small style="color:var(--a-mute);font-size:11px;position:relative"><span class="lang-en">18% of project capacity used</span><span class="lang-fr">18 % de la capacité du projet utilisée</span><span class="callout-n">6</span></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="legend">
+      <li><span class="lang-en"><strong>Share</strong>: who's in the project (section D).</span><span class="lang-fr"><strong>Partager</strong> : qui est dans le projet (section D).</span></li>
+      <li><span class="lang-en"><strong>Project chat box</strong>: chats started here automatically get the instructions and files.</span><span class="lang-fr"><strong>Saisie du projet</strong> : les conversations lancées ici reçoivent automatiquement les instructions et fichiers.</span></li>
+      <li><span class="lang-en"><strong>Your chats</strong>: only yours are listed. Teammates see their own list, not yours.</span><span class="lang-fr"><strong>Vos conversations</strong> : seules les vôtres sont listées. Vos collègues voient leur propre liste, pas la vôtre.</span></li>
+      <li><span class="lang-en"><strong>Instructions</strong>: click the pencil to write or edit them (section F).</span><span class="lang-fr"><strong>Instructions</strong> : cliquez sur le crayon pour les rédiger ou les modifier (section F).</span></li>
+      <li><span class="lang-en"><strong>Files ＋</strong>: upload a document, paste text, or add from a connected app. Every member sees what's here.</span><span class="lang-fr"><strong>Fichiers ＋</strong> : importez un document, collez du texte, ou ajoutez depuis une appli connectée. Chaque membre voit ce qui est ici.</span></li>
+      <li><span class="lang-en"><strong>Capacity</strong>: projects have a size limit. Add the files that matter, not everything you have.</span><span class="lang-fr"><strong>Capacité</strong> : les projets ont une taille limite. Ajoutez les fichiers utiles, pas tout ce que vous avez.</span></li>
+    </ol>
+    <figcaption class="cap-note"><span class="lang-en">Illustration. On narrow screens the panel may sit below the chats instead of beside them.</span><span class="lang-fr">Illustration. Sur petit écran, le panneau peut se trouver sous les conversations plutôt qu'à côté.</span></figcaption>
+  </figure>
+
+  <h3><span class="lang-en">Why add context to a project?</span><span class="lang-fr">Pourquoi ajouter du contexte à un projet ?</span></h3>
+  <div class="grid cols-2">
+    <div class="card"><h3>⏱️ <span class="lang-en">Stop re-uploading</span><span class="lang-fr">Fini les envois répétés</span></h3><p><span class="lang-en">Add the 80-page survey report once. Every chat, yours and your teammates', already has it.</span><span class="lang-fr">Ajoutez le rapport d'enquête de 80 pages une fois. Chaque conversation, la vôtre et celles de vos collègues, l'a déjà.</span></p></div>
+    <div class="card"><h3>🎯 <span class="lang-en">Answers grounded in <em>your</em> data</span><span class="lang-fr">Des réponses fondées sur <em>vos</em> données</span></h3><p><span class="lang-en">Claude answers from your programme's numbers and can point to the file, instead of guessing from general knowledge.</span><span class="lang-fr">Claude répond à partir des chiffres de votre programme et peut citer le fichier, au lieu de deviner à partir de connaissances générales.</span></p></div>
+    <div class="card"><h3>🤝 <span class="lang-en">Everyone starts from the same page</span><span class="lang-fr">Tout le monde part de la même base</span></h3><p><span class="lang-en">No more “which version of the data did you use?” The project holds the agreed version.</span><span class="lang-fr">Plus de « quelle version des données as-tu utilisée ? » Le projet contient la version convenue.</span></p></div>
+    <div class="card"><h3>🧭 <span class="lang-en">New teammates catch up fast</span><span class="lang-fr">Les nouveaux rattrapent vite</span></h3><p><span class="lang-en">Someone joins the group late? Add them to the project and they can ask Claude “summarise what this project is about”.</span><span class="lang-fr">Quelqu'un rejoint le groupe en retard ? Ajoutez-le au projet et il peut demander à Claude « résume de quoi parle ce projet ».</span></p></div>
+  </div>
+
+  <table class="ref">
+    <thead><tr><th><span class="lang-en">✅ Good things to add</span><span class="lang-fr">✅ Bons éléments à ajouter</span></th><th><span class="lang-en">🚫 Keep out of shared projects</span><span class="lang-fr">🚫 À garder hors des projets partagés</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="lang-en">Programme reports and survey summaries</span><span class="lang-fr">Rapports de programme et résumés d'enquêtes</span></td><td><span class="lang-en">Patient-level or personally identifiable data</span><span class="lang-fr">Données individuelles ou identifiantes de patients</span></td></tr>
+      <tr><td><span class="lang-en">Aggregated data tables (CSV) with a short data dictionary</span><span class="lang-fr">Tableaux de données agrégées (CSV) avec un court dictionnaire de données</span></td><td><span class="lang-en">Passwords, API keys, bank details</span><span class="lang-fr">Mots de passe, clés API, coordonnées bancaires</span></td></tr>
+      <tr><td><span class="lang-en">WHO guidelines and your national protocols</span><span class="lang-fr">Lignes directrices OMS et protocoles nationaux</span></td><td><span class="lang-en">Drafts or opinions not meant for the whole group</span><span class="lang-fr">Brouillons ou avis non destinés à tout le groupe</span></td></tr>
+      <tr><td><span class="lang-en">A glossary of your terms and abbreviations</span><span class="lang-fr">Un glossaire de vos termes et abréviations</span></td><td><span class="lang-en">Huge files that aren't relevant: they dilute the useful context</span><span class="lang-fr">De gros fichiers sans rapport : ils diluent le contexte utile</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ================= F · INSTRUCTIONS ================= -->
+  <h2 id="t-instructions">F · <span class="lang-en">Writing project instructions</span><span class="lang-fr">Rédiger les instructions du projet</span></h2>
+  <p>
+    <span class="lang-en">Instructions are standing orders that Claude follows in every chat in the project. Click the ✎ next to <em>Instructions</em> and write them like a briefing for a new colleague: who you are, who it's for, and how you want answers.</span>
+    <span class="lang-fr">Les instructions sont des consignes permanentes que Claude suit dans chaque conversation du projet. Cliquez sur ✎ à côté d'<em>Instructions</em> et rédigez-les comme un briefing pour un nouveau collègue : qui vous êtes, pour qui, et comment vous voulez les réponses.</span>
+  </p>
+  <figure class="shot">
+    <div class="shot-scroll">
+      <div class="app" role="img" aria-label="Drawing of the project instructions editor">
+        <div class="app-bar"><i></i><i></i><i></i><span>Claude · <span class="lang-en">Set project instructions</span><span class="lang-fr">Instructions du projet</span></span></div>
+        <div class="app-body solo">
+          <div class="app-dim">
+            <div class="modal" style="width:min(560px,100%)">
+              <h5><span class="lang-en">Set project instructions</span><span class="lang-fr">Définir les instructions du projet</span></h5>
+              <small style="color:var(--a-mute)"><span class="lang-en">Provide Claude with relevant instructions and information for chats within this project.</span><span class="lang-fr">Donnez à Claude les instructions et informations utiles pour les conversations de ce projet.</span></small>
+              <div class="a-textarea" style="position:relative"><span class="lang-en">We are an NTD programme team working on trachoma in
+three districts of northern Ghana.                      ← who
+Our audience is the national programme manager.          ← for whom
+- Answer in English, plain language, no jargon.         ← how
+- Always say which project file a number comes from.
+- If the files don't contain the answer, say so.        ← rules</span><span class="lang-fr">Nous sommes une équipe de programme MTN travaillant sur le
+trachome dans trois districts du nord du Ghana.         ← qui
+Notre public est le responsable national du programme.  ← pour qui
+- Réponds en français, langage simple, sans jargon.     ← comment
+- Indique toujours de quel fichier vient un chiffre.
+- Si les fichiers ne contiennent pas la réponse, dis-le. ← règles</span><span class="callout-n">1</span></div>
+              <div class="foot"><span class="a-btn ghost"><span class="lang-en">Cancel</span><span class="lang-fr">Annuler</span></span><span class="a-btn">  <span class="lang-en">Save instructions</span><span class="lang-fr">Enregistrer</span><span class="callout-n">2</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="legend">
+      <li><span class="lang-en"><strong>Four ingredients</strong>: who you are, who the output is for, how to answer (language, length, format), and any rules (cite sources, don't guess).</span><span class="lang-fr"><strong>Quatre ingrédients</strong> : qui vous êtes, à qui s'adresse le résultat, comment répondre (langue, longueur, format), et les règles (citer les sources, ne pas deviner).</span></li>
+      <li><span class="lang-en"><strong>Save</strong>: applies to every <em>new</em> chat in the project, for every member. In a shared project, only people with <em>Can edit</em> can change it.</span><span class="lang-fr"><strong>Enregistrer</strong> : s'applique à chaque <em>nouvelle</em> conversation du projet, pour chaque membre. Dans un projet partagé, seules les personnes en <em>Can edit</em> peuvent la modifier.</span></li>
+    </ol>
+  </figure>
+
+  <h3><span class="lang-en">Why bother? Same question, with and without instructions</span><span class="lang-fr">Pourquoi ? Même question, avec et sans instructions</span></h3>
+  <div class="ba">
+    <div class="mock bad">
+      <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">No instructions</span><span class="lang-fr">Sans instructions</span></div>
+      <div class="mock-body">
+        <div class="bubble user"><span class="tag"><span class="lang-en">You</span><span class="lang-fr">Vous</span></span><span class="lang-en">How are we doing on TT?</span><span class="lang-fr">Où en sommes-nous sur le TT ?</span></div>
+        <div class="bubble ai"><span class="tag">Claude</span><span class="lang-en">Trachomatous trichiasis (TT) is a late stage of trachoma… Globally, WHO estimates… Could you tell me which country or programme you mean?</span><span class="lang-fr">Le trichiasis trachomateux (TT) est un stade tardif du trachome… Au niveau mondial, l'OMS estime… Pouvez-vous préciser de quel pays ou programme il s'agit ?</span></div>
+        <span class="verdict-tag"><span class="lang-en">Generic, long, and it has to ask you</span><span class="lang-fr">Générique, long, et il doit vous demander</span></span>
+      </div>
+    </div>
+    <div class="mock good">
+      <div class="mock-head"><span class="dots">● ● ●</span><span class="lang-en">With project instructions + files</span><span class="lang-fr">Avec instructions + fichiers</span></div>
+      <div class="mock-body">
+        <div class="bubble user"><span class="tag"><span class="lang-en">You</span><span class="lang-fr">Vous</span></span><span class="lang-en">How are we doing on TT?</span><span class="lang-fr">Où en sommes-nous sur le TT ?</span></div>
+        <div class="bubble ai"><span class="tag">Claude</span><span class="lang-en">• Backlog: 1,240 people across the 3 districts<br>• Biggest gap: District B (610)<br>• Source: tt_backlog_by_district.csv</span><span class="lang-fr">• Arriéré : 1 240 personnes dans les 3 districts<br>• Plus gros écart : district B (610)<br>• Source : tt_backlog_by_district.csv</span></div>
+        <span class="verdict-tag"><span class="lang-en">Specific, sourced, in your format</span><span class="lang-fr">Précis, sourcé, dans votre format</span></span>
+      </div>
+    </div>
+  </div>
+  <p class="hint"><span class="lang-en">Numbers above are illustrative.</span><span class="lang-fr">Les chiffres ci-dessus sont illustratifs.</span></p>
+
+  <div class="callout warn">
+    <div class="callout-title"><span class="lang-en">Instructions vs. your profile preferences</span><span class="lang-fr">Instructions vs. vos préférences de profil</span></div>
+    <span class="lang-en"><strong>Project instructions</strong> are shared: they shape Claude for everyone in the project. <strong>Profile preferences</strong> (Settings → Profile) are private: they shape only your Claude, everywhere. Put team rules in the project and personal taste in your profile.</span>
+    <span class="lang-fr">Les <strong>instructions de projet</strong> sont partagées : elles règlent Claude pour tous les membres du projet. Les <strong>préférences de profil</strong> (Paramètres → Profil) sont privées : elles ne règlent que votre Claude, partout. Mettez les règles d'équipe dans le projet et vos goûts personnels dans votre profil.</span>
+  </div>
+
+  <p style="margin-top:2.5rem">
+    <a class="btn primary" href="setup.html"><span class="lang-en">Now try it: Hands-on Missions →</span><span class="lang-fr">À vous : missions pratiques →</span></a>
+    <a class="btn" href="index.html"><span class="lang-en">← Class Home</span><span class="lang-fr">← Accueil</span></a>
+  </p>
+</main>
+</div>
+<footer class="site">
+  <span class="lang-en">Built for AMPLIFY students · Claude Team plan · drawings are simplified illustrations; menus may move as Claude updates</span>
+  <span class="lang-fr">Conçu pour les participants AMPLIFY · plan Claude Team · les dessins sont des illustrations simplifiées ; les menus peuvent bouger avec les mises à jour</span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/teams.js"></script>
+</body>
+</html>

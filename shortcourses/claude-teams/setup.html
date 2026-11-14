@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hands-on Missions — Claude Teams | Missions pratiques</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/teams.css">
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
+    <div><div class="eyebrow">Claude Teams</div><a class="brand" href="index.html"><span class="dot"></span>Claude Teams</a></div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <ol>
+    <li><a href="index.html"><span class="n">01</span><span><span class="lang-en">Class Home</span><span class="lang-fr">Accueil</span></span></a></li>
+    <li><a href="tour.html"><span class="n">02</span><span><span class="lang-en">App Tour</span><span class="lang-fr">Visite de l'appli</span></span></a></li>
+    <li><a href="setup.html" class="active"><span class="n">03</span><span><span class="lang-en">Hands-on Missions</span><span class="lang-fr">Missions pratiques</span></span></a></li>
+  </ol>
+  <ol>
+    <li><a href="#m-join"><span class="n">1</span><span><span class="lang-en">Join the workspace</span><span class="lang-fr">Rejoindre l'espace</span></span></a></li>
+    <li><a href="#m-explore"><span class="n">2</span><span><span class="lang-en">Explore the class project</span><span class="lang-fr">Explorer le projet du cours</span></span></a></li>
+    <li><a href="#m-build"><span class="n">3</span><span><span class="lang-en">Build your team's project</span><span class="lang-fr">Créer le projet d'équipe</span></span></a></li>
+    <li><a href="#m-artifact"><span class="n">4</span><span><span class="lang-en">Publish an artifact</span><span class="lang-fr">Publier un artefact</span></span></a></li>
+    <li><a href="#m-privacy"><span class="n">5</span><span><span class="lang-en">Privacy check</span><span class="lang-fr">Vérification confidentialité</span></span></a></li>
+    <li><a href="#cheatsheet"><span class="n">★</span><span><span class="lang-en">Who-sees-what cheat sheet</span><span class="lang-fr">Aide-mémoire qui voit quoi</span></span></a></li>
+    <li><a href="#faq"><span class="n">?</span><span><span class="lang-en">FAQ</span><span class="lang-fr">FAQ</span></span></a></li>
+  </ol>
+  <div class="map-foot"><a href="https://amplify-course.com" target="_blank" rel="noopener">amplify-course.com</a></div>
+</nav>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span class="lang-en">Missions 1–5 · checklist-driven</span><span class="lang-fr">Missions 1–5 · guidé par des check-lists</span></p>
+    <h1>
+      <span class="lang-en">Hands-on Missions</span>
+      <span class="lang-fr">Missions pratiques</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">Work top to bottom with your group. Tick every box — progress is saved in this browser — and unlock the badge at the bottom. Every prompt block has a <strong>Copy</strong> button: paste it into Claude at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> or the Claude desktop app.</span>
+      <span class="lang-fr">Avancez de haut en bas avec votre groupe. Cochez chaque case — la progression est enregistrée dans ce navigateur — et débloquez le badge en bas. Chaque bloc de prompt a un bouton <strong>Copier</strong> : collez-le dans Claude sur <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> ou dans l'application Claude.</span>
+    </p>
+    <div class="callout info">
+      <div class="callout-title"><span class="lang-en">Before class (instructor)</span><span class="lang-fr">Avant le cours (formateur)</span></div>
+      <span class="lang-en">Invite every student to the AMPLIFY team workspace by email, and create one <strong>class project</strong> shared with everyone as <em>Can view</em>, with a short instruction and two or three real programme files in its knowledge (e.g. a country's MDA coverage CSV and a one-page programme summary). Split the class into groups of 3–4.</span>
+      <span class="lang-fr">Invitez chaque participant à l'espace d'équipe AMPLIFY par e-mail, et créez un <strong>projet du cours</strong> partagé avec tous en <em>Can view</em>, avec une courte instruction et deux ou trois vrais fichiers de programme dans ses connaissances (p. ex. un CSV de couverture des TDM d'un pays et un résumé de programme d'une page). Formez des groupes de 3–4.</span>
+    </div>
+  </section>
+
+  <!-- ================= MISSION 1 ================= -->
+  <h2 id="m-join">1 · <span class="lang-en">Join the team workspace</span><span class="lang-fr">Rejoindre l'espace d'équipe</span></h2>
+  <p>
+    <span class="lang-en">You'll get an email invitation to the AMPLIFY organization in Claude. It's a separate space from any personal Claude account you already have — nothing moves between them.</span>
+    <span class="lang-fr">Vous recevrez une invitation par e-mail à l'organisation AMPLIFY dans Claude. C'est un espace distinct de tout compte Claude personnel que vous auriez déjà — rien ne passe de l'un à l'autre.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="join">0 / 4 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="join"></div></div>
+
+  <ul class="checklist" data-checklist="join">
+    <li><input type="checkbox" id="j1"><label class="step-text" for="j1">
+      <strong><span class="lang-en">Accept the invitation</span><span class="lang-fr">Acceptez l'invitation</span></strong>
+      <span class="note"><span class="lang-en">Open the email from Claude/Anthropic and click the join link. Sign in with <strong>the same email address the invite was sent to</strong> — that's the most common hiccup.</span>
+      <span class="lang-fr">Ouvrez l'e-mail de Claude/Anthropic et cliquez sur le lien. Connectez-vous avec <strong>la même adresse e-mail que celle de l'invitation</strong> — c'est le blocage le plus fréquent.</span></span></label></li>
+    <li><input type="checkbox" id="j2"><label class="step-text" for="j2">
+      <strong><span class="lang-en">Check you're in the right place</span><span class="lang-fr">Vérifiez que vous êtes au bon endroit</span></strong>
+      <span class="note"><span class="lang-en">Click your name in the bottom-left corner. You should see the AMPLIFY organization ticked. Already had a personal account? It's listed there too — switch back any time.</span>
+      <span class="lang-fr">Cliquez sur votre nom en bas à gauche. L'organisation AMPLIFY doit être cochée. Vous aviez déjà un compte personnel ? Il apparaît aussi — vous pouvez y revenir à tout moment.</span></span></label></li>
+    <li><input type="checkbox" id="j3"><label class="step-text" for="j3">
+      <strong><span class="lang-en">Tell Claude who you are</span><span class="lang-fr">Dites à Claude qui vous êtes</span></strong>
+      <span class="note"><span class="lang-en">Go to <em>Settings → Profile</em> and fill in your role and preferences (e.g. “I'm an NTD programme officer in Côte d'Ivoire; I prefer answers in French with short bullet points”). <strong>This is private</strong> — it shapes only your Claude.</span>
+      <span class="lang-fr">Allez dans <em>Paramètres → Profil</em> et indiquez votre rôle et vos préférences (p. ex. « Je suis chargé·e de programme MTN en Côte d'Ivoire ; je préfère des réponses en français, en puces courtes »). <strong>C'est privé</strong> — cela ne règle que votre Claude.</span></span></label></li>
+    <li><input type="checkbox" id="j4"><label class="step-text" for="j4">
+      <strong><span class="lang-en">Say hello in a private chat</span><span class="lang-fr">Dites bonjour dans une conversation privée</span></strong>
+      <span class="note"><span class="lang-en">Start a new chat from the home screen and paste this. Nobody else will ever see it.</span>
+      <span class="lang-fr">Lancez une conversation depuis l'accueil et collez ceci. Personne d'autre ne la verra jamais.</span></span>
+      <div class="term"><div class="term-head"><span class="lang-en">your prompt to Claude</span><span class="lang-fr">votre prompt à Claude</span></div><pre><code><span class="lang-en">I just joined my team's Claude workspace. In 3 bullet points,
+what do you know about me from my profile, and what can't you
+see about my teammates?</span><span class="lang-fr">Je viens de rejoindre l'espace Claude de mon équipe. En 3 puces,
+que sais-tu de moi grâce à mon profil, et que ne peux-tu pas
+voir de mes collègues ?</span></code></pre></div>
+      </label></li>
+  </ul>
+
+  <!-- ================= MISSION 2 ================= -->
+  <h2 id="m-explore">2 · <span class="lang-en">Explore the class project</span><span class="lang-fr">Explorer le projet du cours</span></h2>
+  <p>
+    <span class="lang-en">Your instructor has shared a project with the whole class as <strong>Can view</strong>. You'll see how a project gives Claude shared context — and prove to yourself that your chats in it stay private.</span>
+    <span class="lang-fr">Votre formateur a partagé un projet avec toute la classe en <strong>Can view</strong>. Vous allez voir comment un projet donne un contexte commun à Claude — et vérifier que vos conversations y restent privées.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="explore">0 / 4 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="explore"></div></div>
+
+  <ul class="checklist" data-checklist="explore">
+    <li><input type="checkbox" id="p1"><label class="step-text" for="p1">
+      <strong><span class="lang-en">Open Projects and find the class project</span><span class="lang-fr">Ouvrez Projets et trouvez le projet du cours</span></strong>
+      <span class="note"><span class="lang-en">Click <em>Projects</em> in the left sidebar. Shared projects appear alongside your own; the class project is the one your instructor named. Not sure where? See <a href="tour.html#t-projects">App Tour B</a>.</span>
+      <span class="lang-fr">Cliquez sur <em>Projets</em> dans la barre latérale. Les projets partagés apparaissent à côté des vôtres ; celui du cours porte le nom donné par votre formateur. Vous hésitez ? Voir <a href="tour.html#t-projects">Visite B</a>.</span></span></label></li>
+    <li><input type="checkbox" id="p2"><label class="step-text" for="p2">
+      <strong><span class="lang-en">Read its instructions and knowledge</span><span class="lang-fr">Lisez ses instructions et connaissances</span></strong>
+      <span class="note"><span class="lang-en">On the right side of the project page: the <em>instructions</em> (how Claude should behave here) and the <em>files</em>. As a viewer you can read them but not change them.</span>
+      <span class="lang-fr">À droite de la page du projet : les <em>instructions</em> (comment Claude doit se comporter ici) et les <em>fichiers</em>. En tant que lecteur, vous pouvez les lire mais pas les modifier.</span></span></label></li>
+    <li><input type="checkbox" id="p3"><label class="step-text" for="p3">
+      <strong><span class="lang-en">Chat inside the project</span><span class="lang-fr">Discutez dans le projet</span></strong>
+      <span class="note"><span class="lang-en">Start a chat from the project page. Notice you never upload anything — Claude already has the files.</span>
+      <span class="lang-fr">Lancez une conversation depuis la page du projet. Remarquez que vous n'envoyez rien — Claude a déjà les fichiers.</span></span>
+      <div class="term"><div class="term-head"><span class="lang-en">your prompt to Claude</span><span class="lang-fr">votre prompt à Claude</span></div><pre><code><span class="lang-en">Using only the files in this project, give me the three most
+important numbers a programme manager should know, and say
+which file each one comes from.</span><span class="lang-fr">En utilisant uniquement les fichiers de ce projet, donne-moi les
+trois chiffres les plus importants pour un responsable de
+programme, et indique de quel fichier vient chacun.</span></code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="p4"><label class="step-text" for="p4">
+      <strong><span class="lang-en">The privacy test: compare with your neighbour</span><span class="lang-fr">Le test : comparez avec votre voisin·e</span></strong>
+      <span class="note"><span class="lang-en">Open the project's chat list on your screen and on your neighbour's. You each see <strong>only your own chats</strong> — same project, same files, separate notebooks.</span>
+      <span class="lang-fr">Ouvrez la liste des conversations du projet sur votre écran et sur celui de votre voisin·e. Chacun ne voit <strong>que ses propres conversations</strong> — même projet, mêmes fichiers, carnets séparés.</span></span></label></li>
+  </ul>
+
+  <!-- ================= MISSION 3 ================= -->
+  <h2 id="m-build">3 · <span class="lang-en">Build your team's project — the project relay</span><span class="lang-fr">Créer le projet d'équipe — le relais de projet</span></h2>
+  <p>
+    <span class="lang-en">Now your group makes its own shared project. One person is the <strong>captain</strong> who creates it; everyone else gets <em>Can edit</em> and adds one piece. By the end, Claude knows your group's whole context.</span>
+    <span class="lang-fr">Votre groupe crée maintenant son propre projet partagé. Une personne est le <strong>capitaine</strong> qui le crée ; les autres reçoivent <em>Can edit</em> et ajoutent chacun un élément. À la fin, Claude connaît tout le contexte de votre groupe.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="build">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="build"></div></div>
+
+  <ul class="checklist" data-checklist="build">
+    <li><input type="checkbox" id="t1"><label class="step-text" for="t1">
+      <strong><span class="lang-en">Captain: create the project</span><span class="lang-fr">Capitaine : créez le projet</span></strong>
+      <span class="note"><span class="lang-en"><em>Projects → New project</em>. Name it after your group and topic, e.g. <code class="inline">Team Baobab — Trachoma TT backlog</code>. Choose to keep it <strong>private</strong> (invite-only) — you'll invite your group next. (Picture: <a href="tour.html#t-create">App Tour C</a>.)</span>
+      <span class="lang-fr"><em>Projets → Nouveau projet</em>. Nommez-le d'après votre groupe et votre sujet, p. ex. <code class="inline">Équipe Baobab — arriéré TT trachome</code>. Gardez-le <strong>privé</strong> (sur invitation) — vous inviterez votre groupe ensuite. (Image : <a href="tour.html#t-create">Visite C</a>.)</span></span></label></li>
+    <li><input type="checkbox" id="t2"><label class="step-text" for="t2">
+      <strong><span class="lang-en">Captain: share it with your group as “Can edit”</span><span class="lang-fr">Capitaine : partagez avec le groupe en « Can edit »</span></strong>
+      <span class="note"><span class="lang-en">Click <em>Share</em> on the project page, add each teammate by name or email, set them to <strong>Can edit</strong>. (Use <em>Can view</em> when you want people to use a project without changing it — like the class project. Picture: <a href="tour.html#t-share">App Tour D</a>.)</span>
+      <span class="lang-fr">Cliquez sur <em>Partager</em> sur la page du projet, ajoutez chaque collègue par nom ou e-mail, en <strong>Can edit</strong>. (Utilisez <em>Can view</em> quand vous voulez qu'on utilise un projet sans le modifier — comme celui du cours. Image : <a href="tour.html#t-share">Visite D</a>.)</span></span></label></li>
+    <li><input type="checkbox" id="t3"><label class="step-text" for="t3">
+      <strong><span class="lang-en">Teammate A: write the instructions</span><span class="lang-fr">Coéquipier A : rédigez les instructions</span></strong>
+      <span class="note"><span class="lang-en">Open the project's instructions (<a href="tour.html#t-instructions">App Tour F</a>) and paste a starter, then make it yours:</span>
+      <span class="lang-fr">Ouvrez les instructions du projet (<a href="tour.html#t-instructions">Visite F</a>), collez cette base, puis adaptez-la :</span></span>
+      <div class="term"><div class="term-head"><span class="lang-en">project instructions</span><span class="lang-fr">instructions du projet</span></div><pre><code><span class="lang-en">We are an NTD programme team working on [disease] in [country].
+Our audience is the national programme manager.
+- Answer in [English/French], plain language, no jargon.
+- Always say which project file a number comes from.
+- If the files don't contain the answer, say so — don't guess.</span><span class="lang-fr">Nous sommes une équipe de programme MTN travaillant sur [maladie] au [pays].
+Notre public est le responsable national du programme.
+- Réponds en [français/anglais], langage simple, sans jargon.
+- Indique toujours de quel fichier du projet vient un chiffre.
+- Si les fichiers ne contiennent pas la réponse, dis-le — n'invente pas.</span></code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="t4"><label class="step-text" for="t4">
+      <strong><span class="lang-en">Teammates B, C…: each add one file to knowledge</span><span class="lang-fr">Coéquipiers B, C… : ajoutez chacun un fichier</span></strong>
+      <span class="note"><span class="lang-en">Add a document to the project's files — a report, a data table, a guideline. Only add what your <strong>whole group may see</strong>: knowledge is shared with every member. What to add: <a href="tour.html#t-context">App Tour E</a>.</span>
+      <span class="lang-fr">Ajoutez un document aux fichiers du projet — rapport, tableau de données, ligne directrice. N'ajoutez que ce que <strong>tout le groupe peut voir</strong> : les connaissances sont partagées avec chaque membre. Quoi ajouter : <a href="tour.html#t-context">Visite E</a>.</span></span></label></li>
+    <li><input type="checkbox" id="t5"><label class="step-text" for="t5">
+      <strong><span class="lang-en">Everyone: ask the same question, compare answers</span><span class="lang-fr">Tous : posez la même question, comparez</span></strong>
+      <span class="note"><span class="lang-en">Each person starts their own chat in the project and asks: <em>“What do we know, and what's missing?”</em> Answers will be close — same instructions, same files — but you'll each only see your own chat.</span>
+      <span class="lang-fr">Chacun lance sa propre conversation dans le projet et demande : <em>« Que savons-nous, et que manque-t-il ? »</em> Les réponses seront proches — mêmes instructions, mêmes fichiers — mais chacun ne voit que sa conversation.</span></span></label></li>
+  </ul>
+
+  <div class="mission">
+    <span class="mission-tag"><span class="lang-en">Bonus round · 2 min</span><span class="lang-fr">Manche bonus · 2 min</span></span>
+    <h3><span class="lang-en">Break it on purpose</span><span class="lang-fr">Cassez-le exprès</span></h3>
+    <span class="lang-en">One teammate edits the instructions to add a silly rule — <em>“end every answer with a proverb.”</em> Everyone else starts a new chat. Did it reach you? That's the power (and responsibility) of <em>Can edit</em>: one change, whole team. Now remove the rule.</span>
+    <span class="lang-fr">Un coéquipier ajoute une règle farfelue aux instructions — <em>« termine chaque réponse par un proverbe »</em>. Les autres lancent une nouvelle conversation. Ça vous est parvenu&nbsp;? C'est le pouvoir (et la responsabilité) de <em>Can edit</em> : un changement, toute l'équipe. Maintenant, retirez la règle.</span>
+  </div>
+
+  <!-- ================= MISSION 4 ================= -->
+  <h2 id="m-artifact">4 · <span class="lang-en">Publish an artifact to your team</span><span class="lang-fr">Publier un artefact pour votre équipe</span></h2>
+  <p>
+    <span class="lang-en">An artifact is a finished thing Claude builds — a page, a dashboard, a small tool — that opens on its own with a link. It starts on your desk; you decide when it goes on the noticeboard.</span>
+    <span class="lang-fr">Un artefact est un objet fini que Claude construit — page, tableau de bord, petit outil — qui s'ouvre seul via un lien. Il naît sur votre bureau ; vous décidez quand il passe au tableau d'affichage.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="artifact">0 / 5 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="artifact"></div></div>
+
+  <ul class="checklist" data-checklist="artifact">
+    <li><input type="checkbox" id="a1"><label class="step-text" for="a1">
+      <strong><span class="lang-en">Ask for a one-page brief, inside your team project</span><span class="lang-fr">Demandez une note d'une page, dans le projet d'équipe</span></strong>
+      <div class="term"><div class="term-head"><span class="lang-en">your prompt to Claude</span><span class="lang-fr">votre prompt à Claude</span></div><pre><code><span class="lang-en">Build a one-page web artifact our programme manager can open
+on a phone: a headline finding, three key numbers as big tiles,
+one simple chart, and "what we recommend" in three bullets.
+Use only the project files and cite them at the bottom.</span><span class="lang-fr">Crée un artefact web d'une page que notre responsable de
+programme peut ouvrir sur téléphone : un constat principal, trois
+chiffres clés en grandes tuiles, un graphique simple, et « ce que
+nous recommandons » en trois puces. Utilise uniquement les
+fichiers du projet et cite-les en bas.</span></code></pre></div>
+      </label></li>
+    <li><input type="checkbox" id="a2"><label class="step-text" for="a2">
+      <strong><span class="lang-en">Polish it in two follow-ups</span><span class="lang-fr">Peaufinez en deux relances</span></strong>
+      <span class="note"><span class="lang-en">Keep chatting: <em>“make the colours calmer”</em>, <em>“add a French version toggle”</em>. Each request updates the same artifact. It's still private — only you can see it.</span>
+      <span class="lang-fr">Continuez : <em>« des couleurs plus sobres »</em>, <em>« ajoute un bouton pour la version anglaise »</em>. Chaque demande met à jour le même artefact. Il est toujours privé — vous seul·e le voyez.</span></span></label></li>
+    <li><input type="checkbox" id="a3"><label class="step-text" for="a3">
+      <strong><span class="lang-en">Share it with your organization</span><span class="lang-fr">Partagez-le avec votre organisation</span></strong>
+      <span class="note"><span class="lang-en">Open the artifact, click <em>Share</em> (or <em>Publish</em>), and choose your team / everyone at the organization. Copy the link. Only signed-in members of the AMPLIFY workspace can open it.</span>
+      <span class="lang-fr">Ouvrez l'artefact, cliquez sur <em>Partager</em> (ou <em>Publier</em>) et choisissez votre équipe / toute l'organisation. Copiez le lien. Seuls les membres connectés de l'espace AMPLIFY peuvent l'ouvrir.</span></span></label></li>
+    <li><input type="checkbox" id="a4"><label class="step-text" for="a4">
+      <strong><span class="lang-en">Gallery walk: open two teammates' artifacts</span><span class="lang-fr">Galerie : ouvrez deux artefacts de collègues</span></strong>
+      <span class="note"><span class="lang-en">Drop your links in the class chat (WhatsApp, Teams, email…). Open two from another group. Vote with emoji for the clearest one 🏅.</span>
+      <span class="lang-fr">Postez vos liens dans le groupe de discussion du cours (WhatsApp, Teams, e-mail…). Ouvrez-en deux d'un autre groupe. Votez par emoji pour le plus clair 🏅.</span></span></label></li>
+    <li><input type="checkbox" id="a5"><label class="step-text" for="a5">
+      <strong><span class="lang-en">Build on a teammate's work — without breaking theirs</span><span class="lang-fr">Repartez du travail d'un collègue — sans casser le sien</span></strong>
+      <span class="note"><span class="lang-en">Like one? Copy its code (or describe it) into a <strong>new chat of your own</strong> and ask Claude to adapt it for your country. Your copy is separate — the original stays exactly as its owner made it.</span>
+      <span class="lang-fr">Vous en aimez un&nbsp;? Copiez son code (ou décrivez-le) dans une <strong>nouvelle conversation à vous</strong> et demandez à Claude de l'adapter à votre pays. Votre copie est séparée — l'original reste tel que son auteur l'a fait.</span></span></label></li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title"><span class="lang-en">Why the link doesn't work for your cousin</span><span class="lang-fr">Pourquoi le lien ne marche pas pour votre cousin</span></div>
+    <span class="lang-en">On a Team plan, shared artifacts stay <strong>inside the organization</strong>. Anyone outside — a ministry partner without an AMPLIFY seat, your family — will hit a sign-in wall. Public links exist only if a workspace Owner turns on external sharing. Need something truly public? That's what the <a href="../github-vercel/">GitHub + Vercel</a> course is for.</span>
+    <span class="lang-fr">Avec un plan Team, les artefacts partagés restent <strong>dans l'organisation</strong>. Toute personne extérieure — un partenaire du ministère sans siège AMPLIFY, votre famille — tombera sur une page de connexion. Les liens publics n'existent que si un Owner active le partage externe. Besoin de quelque chose de vraiment public&nbsp;? C'est le rôle du cours <a href="../github-vercel/">GitHub + Vercel</a>.</span>
+  </div>
+
+  <!-- ================= MISSION 5 ================= -->
+  <h2 id="m-privacy">5 · <span class="lang-en">Privacy check: share a chat on purpose</span><span class="lang-fr">Vérification : partagez une conversation exprès</span></h2>
+  <p>
+    <span class="lang-en">Sometimes a conversation is worth showing — a great answer, a useful prompt. Here's how you open the door from your desk, deliberately.</span>
+    <span class="lang-fr">Parfois une conversation mérite d'être montrée — une excellente réponse, un prompt utile. Voici comment ouvrir la porte de votre bureau, volontairement.</span>
+  </p>
+
+  <div class="progress-label" data-progress-label="privacy">0 / 3 — 0%</div>
+  <div class="progress-track"><div class="progress-fill" data-progress-fill="privacy"></div></div>
+
+  <ul class="checklist" data-checklist="privacy">
+    <li><input type="checkbox" id="s1"><label class="step-text" for="s1">
+      <strong><span class="lang-en">Share your best chat with one teammate</span><span class="lang-fr">Partagez votre meilleure conversation avec un collègue</span></strong>
+      <span class="note"><span class="lang-en">In the chat, click <em>Share</em> and add one person (or “anyone at the organization”). They get a <strong>read-only snapshot</strong> — they can't type into your chat.</span>
+      <span class="lang-fr">Dans la conversation, cliquez sur <em>Partager</em> et ajoutez une personne (ou « tout le monde dans l'organisation »). Elle reçoit une <strong>copie en lecture seule</strong> — elle ne peut pas écrire dans votre conversation.</span></span></label></li>
+    <li><input type="checkbox" id="s2"><label class="step-text" for="s2">
+      <strong><span class="lang-en">Undo it</span><span class="lang-fr">Annulez-le</span></strong>
+      <span class="note"><span class="lang-en">Open the same <em>Share</em> menu and remove the person or stop sharing. Practising the undo now means you won't panic later.</span>
+      <span class="lang-fr">Rouvrez le même menu <em>Partager</em> et retirez la personne ou arrêtez le partage. S'entraîner à annuler maintenant évite la panique plus tard.</span></span></label></li>
+    <li><input type="checkbox" id="s3"><label class="step-text" for="s3">
+      <strong><span class="lang-en">Ask Claude to check you</span><span class="lang-fr">Demandez à Claude de vous vérifier</span></strong>
+      <div class="term"><div class="term-head"><span class="lang-en">your prompt to Claude</span><span class="lang-fr">votre prompt à Claude</span></div><pre><code><span class="lang-en">Quiz me with 5 quick questions about what my teammates can
+and can't see in our Claude Team workspace (projects, chats,
+artifacts, memory). One at a time, tell me if I'm right.</span><span class="lang-fr">Pose-moi 5 questions rapides sur ce que mes collègues peuvent
+et ne peuvent pas voir dans notre espace Claude Team (projets,
+conversations, artefacts, mémoire). Une à la fois, dis-moi si
+j'ai raison.</span></code></pre></div>
+      </label></li>
+  </ul>
+
+  <!-- ================= CHEAT SHEET ================= -->
+  <h2 id="cheatsheet"><span class="lang-en">Cheat sheet: who sees what?</span><span class="lang-fr">Aide-mémoire : qui voit quoi ?</span></h2>
+  <table class="ref">
+    <thead><tr>
+      <th><span class="lang-en">Thing</span><span class="lang-fr">Élément</span></th>
+      <th><span class="lang-en">Who sees it by default</span><span class="lang-fr">Qui le voit par défaut</span></th>
+      <th><span class="lang-en">How to share it</span><span class="lang-fr">Comment le partager</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="lang-en">Chats (anywhere, even in shared projects)</span><span class="lang-fr">Conversations (partout, même dans un projet partagé)</span></td>
+        <td><span class="who-pill me"><span class="lang-en">Only me</span><span class="lang-fr">Moi seul·e</span></span></td>
+        <td><span class="lang-en"><em>Share</em> → people or whole org · read-only</span><span class="lang-fr"><em>Partager</em> → personnes ou toute l'org · lecture seule</span></td></tr>
+      <tr><td><span class="lang-en">A new project</span><span class="lang-fr">Un nouveau projet</span></td>
+        <td><span class="who-pill me"><span class="lang-en">Me + invited</span><span class="lang-fr">Moi + invités</span></span></td>
+        <td><span class="lang-en"><em>Share</em> → add people as Can view / Can edit, or make it public to the org</span><span class="lang-fr"><em>Partager</em> → ajouter en Can view / Can edit, ou le rendre public dans l'org</span></td></tr>
+      <tr><td><span class="lang-en">Project knowledge &amp; instructions</span><span class="lang-fr">Connaissances &amp; instructions du projet</span></td>
+        <td><span class="who-pill team"><span class="lang-en">Project members</span><span class="lang-fr">Membres du projet</span></span></td>
+        <td><span class="lang-en">Automatic for members · only Can edit changes them</span><span class="lang-fr">Automatique pour les membres · seul Can edit les modifie</span></td></tr>
+      <tr><td><span class="lang-en">Artifacts</span><span class="lang-fr">Artefacts</span></td>
+        <td><span class="who-pill me"><span class="lang-en">Only me</span><span class="lang-fr">Moi seul·e</span></span></td>
+        <td><span class="lang-en"><em>Share</em> → people or whole org · public only if an Owner allows</span><span class="lang-fr"><em>Partager</em> → personnes ou toute l'org · public seulement si un Owner l'autorise</span></td></tr>
+      <tr><td><span class="lang-en">Memory, profile, styles</span><span class="lang-fr">Mémoire, profil, styles</span></td>
+        <td><span class="who-pill me"><span class="lang-en">Only me</span><span class="lang-fr">Moi seul·e</span></span></td>
+        <td><span class="lang-en">Not shareable — each person has their own</span><span class="lang-fr">Non partageable — chacun a les siens</span></td></tr>
+      <tr><td><span class="lang-en">Connected apps (Drive, Gmail…)</span><span class="lang-fr">Applications connectées (Drive, Gmail…)</span></td>
+        <td><span class="who-pill me"><span class="lang-en">Only me</span><span class="lang-fr">Moi seul·e</span></span></td>
+        <td><span class="lang-en">Each person connects with their own login</span><span class="lang-fr">Chacun se connecte avec son propre identifiant</span></td></tr>
+      <tr><td><span class="lang-en">Anything on a .vercel.app site</span><span class="lang-fr">Tout ce qui est sur un site .vercel.app</span></td>
+        <td><span class="who-pill world"><span class="lang-en">The internet</span><span class="lang-fr">Tout internet</span></span></td>
+        <td><span class="lang-en">Already public — see GitHub + Vercel</span><span class="lang-fr">Déjà public — voir GitHub + Vercel</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ================= FAQ ================= -->
+  <h2 id="faq"><span class="lang-en">FAQ</span><span class="lang-fr">FAQ</span></h2>
+  <details class="acc">
+    <summary><span class="lang-en">Can my instructor read my chats?</span><span class="lang-fr">Mon formateur peut-il lire mes conversations ?</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Not through sharing: your chats don't appear in projects, artifacts or anyone else's sidebar unless you share them. But remember this is an organization account — Owners administer the workspace and its data. Use it like your work email and keep personal matters out.</span>
+      <span class="lang-fr">Pas via le partage : vos conversations n'apparaissent ni dans les projets, ni dans les artefacts, ni chez quiconque, sauf si vous les partagez. Mais c'est un compte d'organisation — les Owners administrent l'espace et ses données. Utilisez-le comme votre e-mail professionnel et gardez-y vos affaires personnelles à l'écart.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">I can't find the class project</span><span class="lang-fr">Je ne trouve pas le projet du cours</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Nine times out of ten you're in your personal account. Click your name bottom-left and switch to AMPLIFY. Still missing? Ask your instructor to check you were added to the project (or that it's public to the organization).</span>
+      <span class="lang-fr">Neuf fois sur dix, vous êtes dans votre compte personnel. Cliquez sur votre nom en bas à gauche et passez à AMPLIFY. Toujours rien&nbsp;? Demandez au formateur de vérifier que vous êtes bien ajouté·e au projet (ou qu'il est public dans l'organisation).</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">I can't edit the project instructions or add files</span><span class="lang-fr">Je ne peux pas modifier les instructions ni ajouter de fichiers</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">You have <em>Can view</em>. Ask the project owner (or anyone with Can edit) to switch you to <em>Can edit</em> from the project's Share menu. If sharing options are missing entirely, an Owner may have turned project sharing off for the workspace.</span>
+      <span class="lang-fr">Vous avez <em>Can view</em>. Demandez au propriétaire du projet (ou à quelqu'un en Can edit) de vous passer en <em>Can edit</em> via le menu Partager. Si les options de partage ont disparu, un Owner a peut-être désactivé le partage de projets dans l'espace.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">Will my old personal chats show up here?</span><span class="lang-fr">Mes anciennes conversations personnelles vont-elles apparaître ici ?</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">No. Personal and team accounts are separate spaces — chats, projects and artifacts don't move between them. If you need something from your personal account, copy the useful text into a new chat or project file in the team workspace.</span>
+      <span class="lang-fr">Non. Les comptes personnel et d'équipe sont des espaces séparés — conversations, projets et artefacts ne passent pas de l'un à l'autre. Si vous avez besoin de quelque chose, copiez le texte utile dans une nouvelle conversation ou un fichier de projet de l'espace d'équipe.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">I shared something by mistake!</span><span class="lang-fr">J'ai partagé quelque chose par erreur !</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">Don't panic — it stayed inside the organization. Open the same Share menu and remove access (Mission 5). If it was a file in project knowledge, delete it from the project. If it contained sensitive data, tell your instructor so they can follow your programme's data rules.</span>
+      <span class="lang-fr">Pas de panique — c'est resté dans l'organisation. Rouvrez le menu Partager et retirez l'accès (mission 5). Si c'était un fichier des connaissances du projet, supprimez-le. S'il contenait des données sensibles, prévenez votre formateur pour appliquer les règles de données du programme.</span>
+    </div>
+  </details>
+  <details class="acc">
+    <summary><span class="lang-en">Does Claude in our project remember things between chats?</span><span class="lang-fr">Claude se souvient-il des choses d'une conversation à l'autre dans le projet ?</span></summary>
+    <div class="acc-body">
+      <span class="lang-en">What's shared reliably is the project's <strong>knowledge and instructions</strong> — so put anything the whole team needs Claude to know there. Memory (if enabled) is kept per project and is personal to you, so it won't carry your teammates' conversations into yours.</span>
+      <span class="lang-fr">Ce qui est partagé de façon fiable, ce sont les <strong>connaissances et instructions</strong> du projet — mettez-y tout ce que l'équipe doit faire savoir à Claude. La mémoire (si activée) est tenue par projet et vous est personnelle : elle n'apporte pas les conversations de vos collègues dans les vôtres.</span>
+    </div>
+  </details>
+
+  <div class="finish locked" data-finish>
+    <div class="badge" aria-hidden="true">🏅</div>
+    <h3><span class="lang-en">Team Workspace Graduate</span><span class="lang-fr">Diplômé·e de l'espace d'équipe</span></h3>
+    <p><span class="lang-en">Missions complete: </span><span class="lang-fr">Missions terminées : </span><strong data-finish-count>0 / 21</strong> — <span class="lang-en">tick every box to light up your badge.</span><span class="lang-fr">cochez toutes les cases pour allumer votre badge.</span></p>
+  </div>
+
+  <p style="margin-top:2.5rem">
+    <a class="btn primary" href="index.html"><span class="lang-en">← Back to Class Home</span><span class="lang-fr">← Retour à l'accueil du cours</span></a>
+    <a class="btn" href="../github-vercel/"><span class="lang-en">Next: go public with GitHub + Vercel →</span><span class="lang-fr">Ensuite : publier avec GitHub + Vercel →</span></a>
+  </p>
+</main>
+</div>
+<footer class="site">
+  <span class="lang-en">Built for AMPLIFY students · Claude Team plan · menus may move as Claude updates — look for the <em>Share</em> button</span>
+  <span class="lang-fr">Conçu pour les participants AMPLIFY · plan Claude Team · les menus peuvent bouger avec les mises à jour — cherchez le bouton <em>Partager</em></span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/teams.js"></script>
+</body>
+</html>

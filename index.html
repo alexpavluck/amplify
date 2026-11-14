@@ -144,15 +144,27 @@ button{font:inherit;color:inherit}
   width:100%;text-align:left;cursor:pointer;border:0;
   background:var(--muted);border-radius:12px;padding:1rem 1.1rem 1.05rem;
   display:block;
-  transition:background-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease);
+  transition:background-color .15s,color .15s,box-shadow .15s;
 }
-.hub-card button:hover{background:var(--tile);transform:translateY(-2px)}
+.hub-card button:hover{background:var(--tile);box-shadow:0 0 0 2px var(--ink) inset}
+.hub-card button:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 .hub-card button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .hub-card .m{display:block;font-size:var(--fs-small);color:var(--ink-2);transition:color .2s}
 .hub-card button[aria-pressed="true"] .m{color:var(--gold)}
 .hub-card .t{display:block;font-weight:600;line-height:1.25;margin-top:.2rem}
-.float{animation:float 7s ease-in-out infinite;animation-delay:var(--d,0s)}
-@keyframes float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+/* cues: every card opens details; some also have an interactive module */
+.hub-card .cue{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.7rem;font-size:.78rem;font-weight:600;color:var(--ink-2)}
+.hub-card .cue .go{text-decoration:underline;text-underline-offset:3px}
+.hub-card button[aria-pressed="true"] .cue{color:#fff}
+.hub-card .badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--gold);color:var(--ink);border-radius:999px;padding:.15rem .55rem;font-size:.72rem;font-weight:700;white-space:nowrap}
+.hub-hint{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem 1.25rem;margin:0 auto clamp(1.5rem,1rem + 1.5vw,2.5rem);font-size:var(--fs-small);color:var(--ink-2);text-align:center}
+.hub-hint b{color:var(--ink)}
+.hub-hint .badge{display:inline-flex;background:var(--gold);color:var(--ink);border-radius:999px;padding:.15rem .55rem;font-size:.72rem;font-weight:700}
+.panel-module{margin-top:1.5rem;padding:1.1rem 1.25rem;border-radius:12px;background:var(--ground);border:2px solid var(--gold);display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem}
+.panel-module p{margin:0!important;flex:1 1 16rem}
+.panel-module b{display:block;color:var(--ink)}
+.panel-module.teams{border-color:var(--sky)}
+.panel-module.teams+.panel-module{margin-top:1rem}
 
 .hub-panel{
   max-width:1160px;margin:1.5rem auto 0;background:var(--muted);border-radius:16px;
@@ -168,8 +180,6 @@ button{font:inherit;color:inherit}
 .hub-panel dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem 2rem}
 .hub-panel dt{font-weight:600;margin-bottom:.35rem}
 .hub-panel dd{color:var(--ink)}
-.panel-enter{animation:panelIn .35s var(--ease)}
-@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 @media (max-width:980px){
   .hub{height:auto;display:flex;flex-direction:column;align-items:center;gap:2rem}
@@ -178,7 +188,6 @@ button{font:inherit;color:inherit}
   .hub-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;width:100%}
   .hub-card{position:static;transform:none;width:auto}
   .hub-card button{height:100%}
-  .float{animation:none}
   .hub-panel{grid-template-columns:1fr}
   .hub-panel dl{grid-template-columns:1fr}
 }
@@ -263,34 +272,16 @@ button{font:inherit;color:inherit}
 .foot-base a:hover{text-decoration:underline}
 
 /* ── motion ─────────────────────────────────────────── */
-/* hub: fan out from the centre, then follow the pointer */
-.core-tile{transition:transform .1s linear;will-change:transform}
-.float{will-change:transform}
-.js .hub .hub-card{opacity:0;translate:var(--fx,0) var(--fy,0);scale:.4}
-.js .hub.in .hub-card{opacity:1;translate:0 0;scale:1;
-  transition:opacity .5s var(--ease),translate 1s cubic-bezier(.16,.9,.24,1.08),scale 1s cubic-bezier(.16,.9,.24,1.08);
-  transition-delay:calc(var(--i,0) * 70ms + .1s)}
-.js .hub .hub-lines{opacity:0}
-.js .hub.in .hub-lines{opacity:1;transition:opacity .8s var(--ease) .55s}
-.hub-lines line.near{stroke:var(--ink-2)}
-.hub-lines line.on{stroke:var(--ink)}
+/* the session hub is static: no entrance, float or pointer motion */
+.hub-lines line.on{stroke:var(--ink);stroke-dasharray:none;stroke-width:2}
 
 .js [data-rise]{opacity:0;transform:translateY(24px)}
 .js [data-rise].in{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--rd,0s)}
-.hub-lines line{stroke-dashoffset:0;animation:flow 2.4s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-20}}
-.spark{transform-origin:50px 50px;animation:twinkle 4s ease-in-out infinite}
-@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.18) rotate(45deg)}}
-.ring{transform-origin:50px 50px;animation:spin 18s linear infinite}
-.ring.r2{animation-duration:26s;animation-direction:reverse}
-@keyframes spin{to{transform:rotate(360deg)}}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
   .js [data-rise]{opacity:1;transform:none}
-  .js .hub .hub-card{opacity:1;translate:0 0;scale:1}
-  .js .hub .hub-lines{opacity:1}
 }
 .mentor-banner{
   display:flex;align-items:center;gap:1rem;
@@ -400,6 +391,7 @@ button{font:inherit;color:inherit}
       <h2 class="h2" data-rise data-i18n="hub.h2">Learn AI on a problem you own.</h2>
       <p class="lead" data-rise style="--rd:.08s" data-i18n="hub.lead">AMPLIFY 2027 is an eight-session course for staff of national NTD programmes. You bring one real task from your own work. Every session sharpens it or builds the AI skill to solve it, and you finish by presenting the solution.</p>
     </div>
+    <p class="hub-hint" data-i18n="hub.hint"><span><b>Click any session</b> to see what it covers and what you do before the next one.</span><span><span class="badge">▶ Interactive</span> sessions also open a hands-on learning module.</span></p>
     <div class="hub" id="hub">
       <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <line x1="50" y1="50" x2="33.2" y2="13"/>
@@ -426,25 +418,25 @@ button{font:inherit;color:inherit}
       </div>
 
       <ol class="hub-list" aria-label="The eight sessions" data-i18n-aria-label="a.sessions">
-        <li class="hub-card" style="--x:33.2%;--y:13%"><div class="float" style="--d:0s"><button type="button" data-s="0" aria-pressed="true" aria-controls="panel-0" data-i18n="hub.b0"><span class="m">Session 1</span><span class="t">Setup, AI fundamentals &amp; prompting</span></button></div></li>
-        <li class="hub-card" style="--x:66.8%;--y:13%"><div class="float" style="--d:-1.2s"><button type="button" data-s="1" aria-pressed="false" aria-controls="panel-1" data-i18n="hub.b1"><span class="m">Session 2</span><span class="t">Chat vs agents &amp; prompts to skills</span></button></div></li>
-        <li class="hub-card" style="--x:90.7%;--y:34.7%"><div class="float" style="--d:-2.4s"><button type="button" data-s="2" aria-pressed="false" aria-controls="panel-2" data-i18n="hub.b2"><span class="m">Session 3</span><span class="t">Knowledge management: notebooks &amp; RAG</span></button></div></li>
-        <li class="hub-card" style="--x:90.7%;--y:65.3%"><div class="float" style="--d:-3.6s"><button type="button" data-s="3" aria-pressed="false" aria-controls="panel-3" data-i18n="hub.b3"><span class="m">Session 4</span><span class="t">Connectors: built-in &amp; custom</span></button></div></li>
-        <li class="hub-card" style="--x:66.8%;--y:87%"><div class="float" style="--d:-4.8s"><button type="button" data-s="4" aria-pressed="false" aria-controls="panel-4" data-i18n="hub.b4"><span class="m">Session 5</span><span class="t">AI for decision-making: data-to-action</span></button></div></li>
-        <li class="hub-card" style="--x:33.2%;--y:87%"><div class="float" style="--d:-6s"><button type="button" data-s="5" aria-pressed="false" aria-controls="panel-5" data-i18n="hub.b5"><span class="m">Session 6</span><span class="t">AI for office documents &amp; presentations</span></button></div></li>
-        <li class="hub-card" style="--x:9.3%;--y:65.3%"><div class="float" style="--d:-1.8s"><button type="button" data-s="6" aria-pressed="false" aria-controls="panel-6" data-i18n="hub.b6"><span class="m">Session 7</span><span class="t">Group presentations &amp; dashboards</span></button></div></li>
-        <li class="hub-card" style="--x:9.3%;--y:34.7%"><div class="float" style="--d:-4.2s"><button type="button" data-s="7" aria-pressed="false" aria-controls="panel-7" data-i18n="hub.b7"><span class="m">Session 8</span><span class="t">Group presentations, maps &amp; wrap-up</span></button></div></li>
+        <li class="hub-card" style="--x:33.2%;--y:13%"><button type="button" data-s="0" aria-pressed="true" aria-controls="panel-0" data-i18n="hub.b0"><span class="m">Session 1</span><span class="t">Setup, AI fundamentals &amp; prompting</span><span class="cue"><span class="go">See details</span><span class="badge">▶ Interactive</span></span></button></li>
+        <li class="hub-card" style="--x:66.8%;--y:13%"><button type="button" data-s="1" aria-pressed="false" aria-controls="panel-1" data-i18n="hub.b1"><span class="m">Session 2</span><span class="t">Chat vs agents &amp; prompts to skills</span><span class="cue"><span class="go">See details</span><span class="badge">▶ Interactive</span></span></button></li>
+        <li class="hub-card" style="--x:90.7%;--y:34.7%"><button type="button" data-s="2" aria-pressed="false" aria-controls="panel-2" data-i18n="hub.b2"><span class="m">Session 3</span><span class="t">Knowledge management: notebooks &amp; RAG</span><span class="cue"><span class="go">See details</span></span></button></li>
+        <li class="hub-card" style="--x:90.7%;--y:65.3%"><button type="button" data-s="3" aria-pressed="false" aria-controls="panel-3" data-i18n="hub.b3"><span class="m">Session 4</span><span class="t">Connectors: built-in &amp; custom</span><span class="cue"><span class="go">See details</span></span></button></li>
+        <li class="hub-card" style="--x:66.8%;--y:87%"><button type="button" data-s="4" aria-pressed="false" aria-controls="panel-4" data-i18n="hub.b4"><span class="m">Session 5</span><span class="t">AI for decision-making: data-to-action</span><span class="cue"><span class="go">See details</span></span></button></li>
+        <li class="hub-card" style="--x:33.2%;--y:87%"><button type="button" data-s="5" aria-pressed="false" aria-controls="panel-5" data-i18n="hub.b5"><span class="m">Session 6</span><span class="t">AI for office documents &amp; presentations</span><span class="cue"><span class="go">See details</span></span></button></li>
+        <li class="hub-card" style="--x:9.3%;--y:65.3%"><button type="button" data-s="6" aria-pressed="false" aria-controls="panel-6" data-i18n="hub.b6"><span class="m">Session 7</span><span class="t">Group presentations &amp; dashboards</span><span class="cue"><span class="go">See details</span></span></button></li>
+        <li class="hub-card" style="--x:9.3%;--y:34.7%"><button type="button" data-s="7" aria-pressed="false" aria-controls="panel-7" data-i18n="hub.b7"><span class="m">Session 8</span><span class="t">Group presentations, maps &amp; wrap-up</span><span class="cue"><span class="go">See details</span></span></button></li>
       </ol>
     </div>
 
     <div aria-live="polite">
       <div class="hub-panel" id="panel-0">
         <div data-i18n="hub.h0"><h3 class="h3">Setup, AI fundamentals &amp; prompting</h3><p class="m">Session 1 · Foundations</p></div>
-        <div class="story" data-i18n="hub.s0"><p>You meet the cohort and the instructors, and leave with your own Claude project and a place on the course Slack. We introduce the vocabulary you will use for the next four months: what the different models are good at, the red lines on what must never go into an AI tool, and the habit of judging every answer, then keeping it, trying a new idea or discarding it. From there we get straight into prompting: how an effective prompt is put together, and how to get answers that sound like you rather than a chatbot.</p><p>Before the next session, you introduce yourself on Slack, post your problem for the whole cohort to read, and respond to at least two other people’s. By the end of the week your problem has a name, and other people are already thinking about it.</p><p style="margin-top:1.1rem"><a class="btn btn-ink" href="course-1/">Open interactive learning session&nbsp;1 <span class="arr" aria-hidden="true">→</span></a> <span class="small" style="margin-left:.6rem;color:var(--ink-2)">Checklists, prompt builder, EN/FR</span></p></div>
+        <div class="story" data-i18n="hub.s0"><p>You meet the cohort and the instructors, and leave with your own Claude project and a place on the course Slack. We introduce the vocabulary you will use for the next four months: what the different models are good at, the red lines on what must never go into an AI tool, and the habit of judging every answer, then keeping it, trying a new idea or discarding it. From there we get straight into prompting: how an effective prompt is put together, and how to get answers that sound like you rather than a chatbot.</p><p>Before the next session, you introduce yourself on Slack, post your problem for the whole cohort to read, and respond to at least two other people’s. By the end of the week your problem has a name, and other people are already thinking about it.</p><div class="panel-module teams"><p><b>👥 Getting started with Claude Teams</b>Join the AMPLIFY workspace, take a tour of the app, and learn to share projects and artifacts, and what stays private to you.</p><a class="btn btn-ink" href="shortcourses/claude-teams/">Start here <span class="arr" aria-hidden="true">→</span></a></div><div class="panel-module"><p><b>▶ Interactive learning module</b>Checklists, a prompt builder and exercises for this session, in English and French.</p><a class="btn btn-ink" href="course-1/">Open session&nbsp;1 module <span class="arr" aria-hidden="true">→</span></a></div></div>
       </div>
       <div class="hub-panel" id="panel-1" hidden>
         <div data-i18n="hub.h1"><h3 class="h3">Chat vs agents &amp; prompts to skills</h3><p class="m">Session 2 · Foundations</p></div>
-        <div class="story" data-i18n="hub.s1"><p>Most AI use so far has been chat: one question, one answer. An agent works differently — it takes a goal, breaks it into steps and carries them out, checking its own work as it goes. You compare the two on the same task, so you can judge when a chat reply is enough and when a task is worth handing to an agent.</p><p>Then you convert what already works. A prompt you have refined until it reliably gives a good answer can become a skill the AI follows without being re-taught — one you build yourself, or borrow from someone else. You turn those prompts on your own problem, using the AI to question it until it is sharper than the version you posted, and start to separate the parts of your task that repeat, which a skill can take on, from the steps you only do once.</p><p style="margin-top:1.1rem"><a class="btn btn-ink" href="course-2/">Open interactive learning session&nbsp;2 <span class="arr" aria-hidden="true">→</span></a></p></div>
+        <div class="story" data-i18n="hub.s1"><p>Most AI use so far has been chat: one question, one answer. An agent works differently — it takes a goal, breaks it into steps and carries them out, checking its own work as it goes. You compare the two on the same task, so you can judge when a chat reply is enough and when a task is worth handing to an agent.</p><p>Then you convert what already works. A prompt you have refined until it reliably gives a good answer can become a skill the AI follows without being re-taught — one you build yourself, or borrow from someone else. You turn those prompts on your own problem, using the AI to question it until it is sharper than the version you posted, and start to separate the parts of your task that repeat, which a skill can take on, from the steps you only do once.</p><div class="panel-module"><p><b>▶ Interactive learning module</b>Hands-on exercises to work through this session at your own pace.</p><a class="btn btn-ink" href="course-2/">Open session&nbsp;2 module <span class="arr" aria-hidden="true">→</span></a></div></div>
       </div>
       <div class="hub-panel" id="panel-2" hidden>
         <div data-i18n="hub.h2s"><h3 class="h3">Knowledge management: notebooks &amp; RAG</h3><p class="m">Session 3 · Knowledge &amp; connectors</p></div>
@@ -644,6 +636,15 @@ button{font:inherit;color:inherit}
           <div class="scard-actions" data-i18n="sc.a3"><a class="btn btn-soft" href="shortcourses/openrouter/setup.html">Setup guide</a> <a class="btn btn-ink" href="shortcourses/openrouter/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
         </div>
       </li>
+      <li class="scard" data-rise style="--rd:.21s">
+        <div class="scard-media"><img src="shortcourses/claude-teams/card.jpg" alt="Preview of the Claude Teams short course" loading="lazy"></div>
+        <div class="scard-body">
+          <p class="scard-meta" data-i18n="sc.m4">40 min <span class="lvl lvl-beginner">Beginner</span></p>
+          <h3 class="scard-t" data-i18n="sc.t4">Claude Teams: work together, keep what's yours</h3>
+          <p class="scard-sum" data-i18n="sc.s4">Join the AMPLIFY team workspace and learn to work as a group: build a shared project with common files and instructions, publish an artifact your whole team can open with one link, and play a quick game to learn exactly what teammates can see — and what stays private to you.</p>
+          <div class="scard-actions" data-i18n="sc.a4"><a class="btn btn-soft" href="shortcourses/claude-teams/setup.html">Hands-on missions</a> <a class="btn btn-ink" href="shortcourses/claude-teams/">Open short course <span class="arr" aria-hidden="true">→</span></a></div>
+        </div>
+      </li>
     </ol>
   </div>
   <div class="wrap foot-base">
@@ -747,8 +748,7 @@ button{font:inherit;color:inherit}
       var on = j === i;
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
       var p = document.getElementById('panel-' + j);
-      if (on) { p.hidden = false; if (!reduce){ p.classList.remove('panel-enter'); void p.offsetWidth; p.classList.add('panel-enter'); } }
-      else { p.hidden = true; }
+      p.hidden = !on;
       if (lines[j]) lines[j].classList.toggle('on', on);
     });
     if (focus) buttons[i].focus();
@@ -762,86 +762,6 @@ button{font:inherit;color:inherit}
   });
   select(0);
 
-  /* the hub reacts to the pointer: depth parallax, a magnetic pull, a tilting core */
-  var hub = document.getElementById('hub');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.hub-card'));
-  var floats = cards.map(function(c){ return c.querySelector('.float'); });
-  var tile = document.querySelector('.core-tile');
-  var depth = [.9,.6,1,.7,.85,.55,1,.75];
-  var pos = cards.map(function(c){ return [parseFloat(c.style.getPropertyValue('--x')), parseFloat(c.style.getPropertyValue('--y'))]; });
-  var st = cards.map(function(){ return {x:0,y:0,s:1,tx:0,ty:0,ts:1,near:0}; });
-  var tl = {x:0,y:0,tx:0,ty:0};
-  var wide = function(){ return window.innerWidth > 980; };
-
-  /* entrance: each card starts at the core and fans out to its place */
-  function fanOut(){
-    var hr = hub.getBoundingClientRect(), core = tile.getBoundingClientRect();
-    var cx = core.left + core.width/2, cy = core.top + core.height/2;
-    cards.forEach(function(c, i){
-      var r = c.getBoundingClientRect();
-      c.style.setProperty('--fx', (cx - (r.left + r.width/2)) + 'px');
-      c.style.setProperty('--fy', (cy - (r.top + r.height/2)) + 'px');
-      c.style.setProperty('--i', i);
-    });
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){ hub.classList.add('in'); }); });
-  }
-  if (reduce || !('IntersectionObserver' in window)) { hub.classList.add('in'); }
-  else {
-    var hio = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ fanOut(); hio.disconnect(); } }, {threshold:0.2});
-    hio.observe(hub);
-    setTimeout(function(){ hub.classList.add('in'); }, 3000);
-  }
-
-  if (reduce || !window.matchMedia('(pointer:fine)').matches) return;
-
-  var running = false;
-  function aim(mx, my){
-    var hr = hub.getBoundingClientRect();
-    var nx = Math.max(-1, Math.min(1, (mx - hr.left - hr.width/2) / (hr.width/2)));
-    var ny = Math.max(-1, Math.min(1, (my - hr.top - hr.height/2) / (hr.height/2)));
-    cards.forEach(function(c, i){
-      var cx = hr.left + hr.width * pos[i][0] / 100, cy = hr.top + hr.height * pos[i][1] / 100;
-      var dx = mx - cx, dy = my - cy, d = Math.sqrt(dx*dx + dy*dy);
-      var near = Math.max(0, 1 - d / 280);
-      var o = st[i];
-      o.tx = -nx * 40 * depth[i] + dx * near * .32;
-      o.ty = -ny * 30 * depth[i] + dy * near * .32;
-      o.ts = 1 + near * .09;
-      o.near = near;
-    });
-    tl.tx = -ny * 22; tl.ty = nx * 22;
-    if (!running){ running = true; requestAnimationFrame(tick); }
-  }
-  function rest(){
-    st.forEach(function(o){ o.tx = 0; o.ty = 0; o.ts = 1; o.near = 0; });
-    tl.tx = 0; tl.ty = 0;
-    if (!running){ running = true; requestAnimationFrame(tick); }
-  }
-  function tick(){
-    var hr = hub.getBoundingClientRect(), moving = false;
-    st.forEach(function(o, i){
-      o.x += (o.tx - o.x) * .12; o.y += (o.ty - o.y) * .12; o.s += (o.ts - o.s) * .12;
-      if (Math.abs(o.tx - o.x) > .05 || Math.abs(o.ty - o.y) > .05 || Math.abs(o.ts - o.s) > .001) moving = true;
-      floats[i].style.transform = 'translate3d(' + o.x.toFixed(2) + 'px,' + o.y.toFixed(2) + 'px,0) scale(' + o.s.toFixed(4) + ')';
-      if (lines[i]){
-        lines[i].setAttribute('x2', (pos[i][0] + o.x / hr.width * 100).toFixed(3));
-        lines[i].setAttribute('y2', (pos[i][1] + o.y / hr.height * 100).toFixed(3));
-        lines[i].classList.toggle('near', o.near > .35);
-      }
-    });
-    tl.x += (tl.tx - tl.x) * .12; tl.y += (tl.ty - tl.y) * .12;
-    if (Math.abs(tl.tx - tl.x) > .05 || Math.abs(tl.ty - tl.y) > .05) moving = true;
-    tile.style.transform = 'perspective(500px) rotateX(' + tl.x.toFixed(2) + 'deg) rotateY(' + tl.y.toFixed(2) + 'deg)';
-    if (moving) requestAnimationFrame(tick); else running = false;
-  }
-  window.addEventListener('mousemove', function(e){
-    if (!wide()) return;
-    var hr = hub.getBoundingClientRect(), m = 120;
-    if (e.clientX > hr.left - m && e.clientX < hr.right + m && e.clientY > hr.top - m && e.clientY < hr.bottom + m) aim(e.clientX, e.clientY);
-    else rest();
-  }, {passive:true});
-  hub.addEventListener('mouseleave', rest);
-  window.addEventListener('resize', function(){ if (!wide()){ floats.forEach(function(f){ f.style.transform = ''; }); tile.style.transform = ''; } });
 })();
 </script>
 </body>
