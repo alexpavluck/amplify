@@ -298,6 +298,8 @@ button{font:inherit;color:inherit}
 .foot-base nav{display:flex;gap:1.5rem;flex-wrap:wrap}
 .foot-base a{color:var(--night-ink);text-decoration:none}
 .foot-base a:hover{text-decoration:underline}
+.foot-mail{display:inline-flex;align-items:center;gap:.5rem}
+.foot-mail svg{flex:none;color:var(--sky)}
 
 /* ── motion ─────────────────────────────────────────── */
 /* the session hub is static: no entrance, float or pointer motion */
@@ -681,8 +683,7 @@ button{font:inherit;color:inherit}
   <div class="wrap foot-base">
     <span data-i18n="foot.line">AMPLIFY · Making AI work for NTD programme leaders · © 2026 AMPLIFY</span>
     <nav aria-label="Footer" data-i18n-aria-label="a.foot">
-      <a href="https://www.sightsavers.org" target="_blank" rel="noopener noreferrer">Sightsavers</a>
-      <a href="mailto:apavluck@sightsavers.org">apavluck@sightsavers.org</a>
+      <a class="foot-mail" href="mailto:apavluck@sightsavers.org"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>apavluck@sightsavers.org</a>
     </nav>
   </div>
 </footer>
