@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe, rent or run your own AI? — AMPLIFY short course</title>
+<meta name="description" content="A 30-minute AMPLIFY short course: when to pay for a frontier AI subscription, when to pay per token for open-weight models in the cloud, and when to run a free model on your own computer.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* course-specific pieces on top of the shared site.css */
+.opt-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.4rem 0; }
+@media (max-width: 900px) { .opt-grid { grid-template-columns: minmax(0, 1fr); } }
+.opt { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.3rem; display: flex; flex-direction: column; gap: .5rem; }
+.opt h3 { margin: 0; }
+.opt .cost { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--accent); letter-spacing: -.01em; }
+.opt ul { margin: .2rem 0 0; padding-left: 1.1rem; font-size: .95rem; }
+.opt li { margin: .2rem 0; }
+.opt .plus { color: var(--ok); font-weight: 600; }
+.opt .minus { color: var(--error); font-weight: 600; }
+
+.part { margin-top: 3.5rem; }
+.part > h2 { margin-top: 0; }
+.part .lede { margin-bottom: 1rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .75rem; margin: 1.2rem 0; }
+.fact { background: var(--surface-2); border-radius: 12px; padding: .9rem 1rem; }
+.fact b { display: block; font-family: var(--display); font-size: 1.2rem; color: var(--fg); }
+.fact span { color: var(--muted); font-size: .92rem; }
+
+/* chooser */
+.tool { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.4rem; margin: 1.2rem 0; box-shadow: var(--shadow); }
+.q { margin: 0 0 1.1rem; }
+.q > p { font-weight: 600; margin: 0 0 .5rem; }
+.choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.choices button { font: inherit; font-size: .95rem; border: 1px solid var(--border); background: var(--surface); color: var(--fg); border-radius: 10px; padding: .55rem .9rem; cursor: pointer; text-align: left; transition: background .15s, border-color .15s, transform .15s; }
+.choices button:hover { border-color: var(--accent); }
+.choices button:active { transform: scale(.98); }
+.choices button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.verdict { margin-top: .4rem; border-radius: 12px; background: color-mix(in srgb, var(--accent) 8%, var(--surface)); padding: 1rem 1.15rem; }
+.verdict[hidden] { display: none; }
+.verdict .v-title { font-family: var(--display); font-weight: 800; font-size: 1.3rem; color: var(--accent); margin: 0 0 .3rem; }
+.verdict p { margin: .3rem 0 0; }
+
+/* calculator */
+.calc-inputs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr); gap: 1rem; margin: 1rem 0 1.2rem; }
+@media (max-width: 760px) { .calc-inputs { grid-template-columns: minmax(0, 1fr); } }
+.calc-inputs label { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; }
+.calc-inputs input[type="number"], .calc-inputs select { font: inherit; padding: .55rem .7rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); width: 100%; }
+.calc-inputs small { font-weight: 400; color: var(--muted); }
+.presets { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+.presets button { font: inherit; font-size: .9rem; border: 0; background: var(--surface-2); color: var(--fg); border-radius: 999px; padding: .45rem .9rem; cursor: pointer; }
+.presets button:hover { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.cost-rows { display: grid; gap: .45rem; }
+.cost-row { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr) 8.5rem; gap: .8rem; align-items: center; font-size: .95rem; }
+@media (max-width: 760px) { .cost-row { grid-template-columns: minmax(0, 1fr) 8rem; } .cost-row .bar { grid-column: 1 / -1; order: 3; } }
+.cost-row .who small { display: block; color: var(--muted); font-size: .82rem; }
+.cost-row .bar { height: 12px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+.cost-row .bar i { display: block; height: 100%; width: 0; background: var(--accent-2); border-radius: 99px; transition: width .35s; }
+.cost-row.sub .bar i { background: var(--accent); }
+.cost-row.local .bar i { background: var(--ok); }
+.cost-row .amt { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.calc-note { margin-top: 1rem; font-size: .95rem; }
+.calc-meta { color: var(--muted); font-size: .85rem; margin-top: .6rem; }
+
+.mix { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 900px) { .mix { grid-template-columns: minmax(0, 1fr); } }
+.sources { font-size: .9rem; color: var(--muted); }
+.sources li { margin: .25rem 0; }
+</style>
+</head>
+<body>
+<div class="sponsor-bar">
+  <img src="assets/img/amplify-logo.png" alt="AMPLIFY">
+  <span class="sponsor-text lang-en">This short course is brought to you by</span>
+  <span class="sponsor-text lang-fr">Ce cours express vous est offert par</span>
+  <a class="sponsor-text" href="https://amplify-course.com" target="_blank" rel="noopener">AMPLIFY · amplify-course.com</a>
+</div>
+<div class="shell">
+<nav class="map" aria-label="Course sections">
+  <div class="brand-row">
+    <div><div class="eyebrow">Short course</div><a class="brand" href="index.html"><span class="dot"></span><span class="lang-en">Which AI should you pay for?</span><span class="lang-fr">Quelle IA payer ?</span></a></div>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <ol>
+    <li><a href="#start" class="active"><span class="n">01</span><span><span class="lang-en">The three options</span><span class="lang-fr">Les trois options</span></span></a></li>
+    <li><a href="#local"><span class="n">02</span><span><span class="lang-en">Local, on your computer</span><span class="lang-fr">En local, sur votre ordinateur</span></span></a></li>
+    <li><a href="#cloud"><span class="n">03</span><span><span class="lang-en">Open-weight, in the cloud</span><span class="lang-fr">Modèles ouverts, dans le cloud</span></span></a></li>
+    <li><a href="#subscription"><span class="n">04</span><span><span class="lang-en">Frontier subscription</span><span class="lang-fr">Abonnement de pointe</span></span></a></li>
+    <li><a href="#chooser"><span class="n">05</span><span><span class="lang-en">Which one is for you?</span><span class="lang-fr">Laquelle vous convient ?</span></span></a></li>
+    <li><a href="#calculator"><span class="n">06</span><span><span class="lang-en">What would it cost?</span><span class="lang-fr">Combien cela coûterait ?</span></span></a></li>
+    <li><a href="#mix"><span class="n">07</span><span><span class="lang-en">Mixing them</span><span class="lang-fr">Les combiner</span></span></a></li>
+  </ol>
+  <div class="map-foot"><a href="https://amplify-course.com" target="_blank" rel="noopener">amplify-course.com</a></div>
+</nav>
+
+<main class="wrap">
+  <section class="hero" id="start">
+    <p class="eyebrow"><span class="lang-en">30-minute short course · Intermediate</span><span class="lang-fr">Cours express de 30 minutes · Intermédiaire</span></p>
+    <h1>
+      <span class="lang-en">Subscribe, rent, or run your own AI?</span>
+      <span class="lang-fr">S'abonner, louer ou faire tourner sa propre IA&nbsp;?</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">There are three ways to get a capable AI model to work for your programme: pay a monthly subscription to a frontier lab, pay per use for an open-weight model in the cloud, or run a free model on your own computer. Each one trades off cost, quality, privacy and freedom differently. This course walks through all three, then helps you pick, with a quick chooser and a cost calculator.</span>
+      <span class="lang-fr">Il existe trois façons de mettre un modèle d'IA performant au service de votre programme : payer un abonnement mensuel à un laboratoire de pointe, payer à l'usage un modèle ouvert dans le cloud, ou faire tourner gratuitement un modèle sur votre propre ordinateur. Chacune arbitre différemment entre coût, qualité, confidentialité et liberté. Ce cours présente les trois, puis vous aide à choisir grâce à un petit questionnaire et un calculateur de coûts.</span>
+    </p>
+
+    <div class="opt-grid">
+      <div class="opt">
+        <h3><span class="lang-en">1. Local open-weight</span><span class="lang-fr">1. Modèle ouvert en local</span></h3>
+        <div class="cost"><span class="lang-en">$0 a month</span><span class="lang-fr">0 $ par mois</span></div>
+        <ul>
+          <li><span class="plus"><span class="lang-en">Private, offline, yours</span><span class="lang-fr">Privé, hors ligne, à vous</span></span></li>
+          <li><span class="minus"><span class="lang-en">Needs strong hardware to get close to the cloud</span><span class="lang-fr">Exige du matériel puissant pour approcher le cloud</span></span></li>
+        </ul>
+      </div>
+      <div class="opt">
+        <h3><span class="lang-en">2. Open-weight in the cloud</span><span class="lang-fr">2. Modèle ouvert dans le cloud</span></h3>
+        <div class="cost"><span class="lang-en">Pay per million tokens</span><span class="lang-fr">Payé au million de tokens</span></div>
+        <ul>
+          <li><span class="plus"><span class="lang-en">Cheap, try many models from one account</span><span class="lang-fr">Bon marché, de nombreux modèles avec un seul compte</span></span></li>
+          <li><span class="minus"><span class="lang-en">No longer free or fully private</span><span class="lang-fr">Ni gratuit, ni totalement privé</span></span></li>
+        </ul>
+      </div>
+      <div class="opt">
+        <h3><span class="lang-en">3. Frontier subscription</span><span class="lang-fr">3. Abonnement de pointe</span></h3>
+        <div class="cost"><span class="lang-en">About $20 a month</span><span class="lang-fr">Environ 20 $ par mois</span></div>
+        <ul>
+          <li><span class="plus"><span class="lang-en">The best models at a fixed price</span><span class="lang-fr">Les meilleurs modèles à prix fixe</span></span></li>
+          <li><span class="minus"><span class="lang-en">Usage limits, and only that lab's models</span><span class="lang-fr">Limites d'usage, et seulement les modèles de ce laboratoire</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-title"><span class="lang-en">Two words you'll need</span><span class="lang-fr">Deux mots à connaître</span></div>
+      <span class="lang-en"><b>Open-weight</b> means the model's trained file is published, so anyone can download and run it (for example Gemma, gpt-oss, DeepSeek, GLM, Qwen). <b>Tokens</b> are the pieces of text a model reads and writes; a page of English is roughly 650 tokens, and French usually takes a few more. Cloud prices are quoted per million tokens, separately for what you send (input) and what you get back (output).</span>
+      <span class="lang-fr"><b>Modèle ouvert</b> (« open-weight ») : le fichier entraîné du modèle est publié, chacun peut donc le télécharger et l'exécuter (par exemple Gemma, gpt-oss, DeepSeek, GLM, Qwen). Les <b>tokens</b> sont les morceaux de texte qu'un modèle lit et écrit ; une page en anglais représente environ 650 tokens, et le français en demande généralement un peu plus. Les prix du cloud sont donnés par million de tokens, séparément pour ce que vous envoyez (entrée) et ce que vous recevez (sortie).</span>
+    </div>
+  </section>
+
+  <!-- ================= LOCAL ================= -->
+  <section class="part" id="local">
+    <h2><span class="lang-en">Option 1: a free model on your own computer</span><span class="lang-fr">Option 1 : un modèle gratuit sur votre ordinateur</span></h2>
+    <p class="lede">
+      <span class="lang-en">The software and the model are free. Your documents never leave the machine, it works with no internet connection, and nobody can change the price or switch the model off. The catch is hardware: the model has to fit in your computer's memory, and the bigger the model, the closer it gets to cloud quality.</span>
+      <span class="lang-fr">Le logiciel et le modèle sont gratuits. Vos documents ne quittent jamais la machine, tout fonctionne sans connexion internet, et personne ne peut changer le prix ni retirer le modèle. La contrepartie, c'est le matériel : le modèle doit tenir dans la mémoire de l'ordinateur, et plus il est gros, plus il se rapproche de la qualité du cloud.</span>
+    </p>
+
+    <table class="ref">
+      <thead><tr>
+        <th><span class="lang-en">Your machine</span><span class="lang-fr">Votre machine</span></th>
+        <th><span class="lang-en">Rough cost</span><span class="lang-fr">Coût approximatif</span></th>
+        <th><span class="lang-en">Model size that fits</span><span class="lang-fr">Taille de modèle possible</span></th>
+        <th><span class="lang-en">Realistic use</span><span class="lang-fr">Usage réaliste</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="lang-en">Laptop with 16 GB memory</span><span class="lang-fr">Portable avec 16 Go de mémoire</span></td>
+          <td><span class="lang-en">What you have</span><span class="lang-fr">Ce que vous avez</span></td>
+          <td><span class="lang-en">About 12–20 billion parameters (e.g. Gemma 4 12B; gpt-oss-20b is a tight fit)</span><span class="lang-fr">Environ 12 à 20 milliards de paramètres (ex. Gemma 4 12B ; gpt-oss-20b passe tout juste)</span></td>
+          <td><span class="lang-en">Drafting, summarising and translating short documents</span><span class="lang-fr">Rédiger, résumer et traduire des documents courts</span></td>
+        </tr>
+        <tr>
+          <td><span class="lang-en">Desktop with a 24–32 GB graphics card (e.g. RTX 5090)</span><span class="lang-fr">PC de bureau avec carte graphique de 24 à 32 Go (ex. RTX 5090)</span></td>
+          <td><span class="lang-en">Card alone about $2,000 list, often double in shops</span><span class="lang-fr">Carte seule environ 2 000 $ au prix catalogue, souvent le double en magasin</span></td>
+          <td><span class="lang-en">About 30 billion parameters (e.g. Gemma 4 31B)</span><span class="lang-fr">Environ 30 milliards de paramètres (ex. Gemma 4 31B)</span></td>
+          <td><span class="lang-en">Longer reports, structured writing, coding help</span><span class="lang-fr">Rapports plus longs, rédaction structurée, aide au code</span></td>
+        </tr>
+        <tr>
+          <td><span class="lang-en">128 GB "AI box" (AMD Strix Halo, NVIDIA DGX Spark)</span><span class="lang-fr">« Boîtier IA » de 128 Go (AMD Strix Halo, NVIDIA DGX Spark)</span></td>
+          <td><span class="lang-en">About €3,800–5,600</span><span class="lang-fr">Environ 3 800 à 5 600 €</span></td>
+          <td><span class="lang-en">100-billion-class models, slower</span><span class="lang-fr">Modèles de la classe 100 milliards, plus lents</span></td>
+          <td><span class="lang-en">Near-cloud quality for many everyday tasks</span><span class="lang-fr">Qualité proche du cloud pour beaucoup de tâches courantes</span></td>
+        </tr>
+        <tr>
+          <td><span class="lang-en">Mac Studio with 512 GB</span><span class="lang-fr">Mac Studio avec 512 Go</span></td>
+          <td><span class="lang-en">About $22,000</span><span class="lang-fr">Environ 22 000 $</span></td>
+          <td><span class="lang-en">The largest open models (300+ billion)</span><span class="lang-fr">Les plus grands modèles ouverts (plus de 300 milliards)</span></td>
+          <td><span class="lang-en">Closest you can get to frontier quality offline</span><span class="lang-fr">Le plus près possible de la qualité de pointe, hors ligne</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="hint"><span class="lang-en">Rule of thumb: a model compressed to 4-bit needs about 0.6 GB of memory per billion parameters, plus room for the document you're working on.</span><span class="lang-fr">Règle pratique : un modèle compressé en 4 bits demande environ 0,6 Go de mémoire par milliard de paramètres, plus de la place pour le document traité.</span></p>
+
+    <div class="callout">
+      <div class="callout-title"><span class="lang-en">This might be all you need</span><span class="lang-fr">Cela peut suffire</span></div>
+      <span class="lang-en">For report drafting, translation, summarising meeting notes or rewriting text for a different audience, a well-chosen 12–30B model on a laptop or desktop is often good enough, and it is the only option where sensitive data, such as patient lists or unpublished survey results, never leaves your hands. It struggles more with long, multi-step reasoning, large spreadsheets and agent work.</span>
+      <span class="lang-fr">Pour rédiger des rapports, traduire, résumer des notes de réunion ou réécrire un texte pour un autre public, un modèle de 12 à 30 milliards bien choisi, sur un portable ou un PC de bureau, suffit souvent. C'est aussi la seule option où des données sensibles, comme des listes de patients ou des résultats d'enquête non publiés, ne quittent jamais vos mains. Il a plus de mal avec les raisonnements longs en plusieurs étapes, les grands tableurs et le travail d'agent.</span>
+    </div>
+
+    <h3><span class="lang-en">Try it in ten minutes</span><span class="lang-fr">Essayez en dix minutes</span></h3>
+    <ol>
+      <li><span class="lang-en">Install <a href="https://ollama.com/download" target="_blank" rel="noopener">Ollama</a> (Windows, macOS or Linux). It downloads and runs open models for you.</span><span class="lang-fr">Installez <a href="https://ollama.com/download" target="_blank" rel="noopener">Ollama</a> (Windows, macOS ou Linux). Il télécharge et exécute les modèles ouverts pour vous.</span></li>
+      <li><span class="lang-en">In the <a href="https://ollama.com/library" target="_blank" rel="noopener">Ollama library</a>, pick a model whose download size is well under your computer's memory.</span><span class="lang-fr">Dans la <a href="https://ollama.com/library" target="_blank" rel="noopener">bibliothèque Ollama</a>, choisissez un modèle dont la taille de téléchargement est bien inférieure à la mémoire de votre ordinateur.</span></li>
+      <li><span class="lang-en">Give it a real task from your work, for example translating one page of a recent report, and compare the result with what you get from your usual AI tool.</span><span class="lang-fr">Donnez-lui une vraie tâche de votre travail, par exemple traduire une page d'un rapport récent, et comparez avec le résultat de votre outil d'IA habituel.</span></li>
+    </ol>
+  </section>
+
+  <!-- ================= CLOUD ================= -->
+  <section class="part" id="cloud">
+    <h2><span class="lang-en">Option 2: open-weight models in the cloud</span><span class="lang-fr">Option 2 : les modèles ouverts dans le cloud</span></h2>
+    <p class="lede">
+      <span class="lang-en">The same open models, and much bigger ones than your computer can hold, run on someone else's servers. You pay only for what you use, per million tokens in and out. Prices are very low because dozens of providers compete to host each popular model.</span>
+      <span class="lang-fr">Les mêmes modèles ouverts, et d'autres bien plus gros que ce que votre ordinateur peut contenir, tournent sur les serveurs de quelqu'un d'autre. Vous ne payez que ce que vous utilisez, par million de tokens en entrée et en sortie. Les prix sont très bas, car des dizaines de fournisseurs se font concurrence pour héberger chaque modèle populaire.</span>
+    </p>
+
+    <div class="facts">
+      <div class="fact"><b>$0.05 / $0.24</b><span class="lang-en">DeepSeek V4 Flash, per million tokens in / out (OpenRouter average)</span><span class="lang-fr">DeepSeek V4 Flash, par million de tokens en entrée / sortie (moyenne OpenRouter)</span></div>
+      <div class="fact"><b>$0.45 / $3.31</b><span class="lang-en">GLM 5.2, the strongest open model in OpenRouter's mid-2026 review</span><span class="lang-fr">GLM 5.2, le modèle ouvert le plus performant selon le bilan OpenRouter de mi-2026</span></div>
+      <div class="fact"><b>$4 / $20</b><span class="lang-en">For comparison: Claude Opus 5.5 through Anthropic's API</span><span class="lang-fr">Pour comparer : Claude Opus 5.5 via l'API d'Anthropic</span></div>
+      <div class="fact"><b>3–6 <span class="lang-en">months</span><span class="lang-fr">mois</span></b><span class="lang-en">How far the best open models have trailed the closed frontier, according to OpenRouter</span><span class="lang-fr">Le retard des meilleurs modèles ouverts sur les modèles fermés de pointe, selon OpenRouter</span></div>
+    </div>
+
+    <p>
+      <span class="lang-en">Services like <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> and <a href="https://ollama.com/pricing" target="_blank" rel="noopener">Ollama Cloud</a> put hundreds of models behind one account, so you can try a new model on the same task in seconds. On OpenRouter you top up credit and pay per token. Ollama Cloud has pay-as-you-go, or a $20-a-month Pro plan that includes $60 of usage.</span>
+      <span class="lang-fr">Des services comme <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> et <a href="https://ollama.com/pricing" target="_blank" rel="noopener">Ollama Cloud</a> réunissent des centaines de modèles derrière un seul compte : vous pouvez essayer un nouveau modèle sur la même tâche en quelques secondes. Sur OpenRouter, vous rechargez du crédit et payez au token. Ollama Cloud propose le paiement à l'usage, ou un forfait Pro à 20 $ par mois qui inclut 60 $ d'utilisation.</span>
+    </p>
+
+    <div class="callout warn">
+      <div class="callout-title"><span class="lang-en">No longer free, no longer fully private</span><span class="lang-fr">Plus gratuit, plus totalement privé</span></div>
+      <span class="lang-en">Your text now travels to a provider's servers. Policies differ: some keep nothing, some keep data for a period, and some may train on it (DeepSeek's own API, for example, retains data for training). On OpenRouter, turn on zero data retention and opt out of training in your settings so your requests only go to providers that don't keep or train on them. Ollama says it never logs or trains on cloud prompts. Even then, keep identifiable personal data off any cloud service unless your ministry's rules allow it.</span>
+      <span class="lang-fr">Votre texte part désormais sur les serveurs d'un fournisseur. Les politiques varient : certains ne conservent rien, d'autres gardent les données un certain temps, et d'autres peuvent s'en servir pour l'entraînement (l'API de DeepSeek, par exemple, conserve les données à cette fin). Sur OpenRouter, activez la « zero data retention » et refusez l'entraînement dans vos paramètres, pour que vos requêtes n'aillent qu'à des fournisseurs qui ne conservent rien et n'entraînent pas leurs modèles dessus. Ollama affirme ne jamais enregistrer ni utiliser pour l'entraînement les requêtes envoyées à son cloud. Même ainsi, ne confiez aucune donnée personnelle identifiable à un service cloud sauf si les règles de votre ministère l'autorisent.</span>
+    </div>
+    <p class="hint"><span class="lang-en">New to OpenRouter? The <a href="../openrouter/">OpenRouter + OMP short course</a> walks you through the account, credit and your first session.</span><span class="lang-fr">Vous découvrez OpenRouter ? Le <a href="../openrouter/">cours express OpenRouter + OMP</a> vous guide pour le compte, le crédit et votre première session.</span></p>
+  </section>
+
+  <!-- ================= SUBSCRIPTION ================= -->
+  <section class="part" id="subscription">
+    <h2><span class="lang-en">Option 3: a frontier subscription</span><span class="lang-fr">Option 3 : un abonnement de pointe</span></h2>
+    <p class="lede">
+      <span class="lang-en">A monthly plan from OpenAI, Anthropic or Google gives you their best models, in polished apps with file uploads, research, voice and connectors, for a fixed price. For a heavy user the same work at API rates could cost many times more, so these plans are heavily subsidised, at least for now. You can still hit your usage limit, but it is unlikely under normal daily use.</span>
+      <span class="lang-fr">Un forfait mensuel d'OpenAI, d'Anthropic ou de Google vous donne leurs meilleurs modèles, dans des applications soignées avec envoi de fichiers, recherche, voix et connecteurs, pour un prix fixe. Pour un gros utilisateur, le même travail aux tarifs de l'API pourrait coûter bien plus cher : ces forfaits sont donc fortement subventionnés, du moins pour l'instant. Vous pouvez encore atteindre votre limite d'usage, mais c'est peu probable avec un usage quotidien normal.</span>
+    </p>
+
+    <table class="ref">
+      <thead><tr>
+        <th><span class="lang-en">Lab</span><span class="lang-fr">Laboratoire</span></th>
+        <th><span class="lang-en">Entry plan</span><span class="lang-fr">Forfait d'entrée</span></th>
+        <th><span class="lang-en">Standard plan</span><span class="lang-fr">Forfait standard</span></th>
+        <th><span class="lang-en">Heavy-use plans</span><span class="lang-fr">Forfaits gros usage</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Anthropic (Claude)</td><td><span class="lang-en">Free tier</span><span class="lang-fr">Version gratuite</span></td><td>Pro · $20</td><td>Max $100 · Ultra $200</td></tr>
+        <tr><td>OpenAI (ChatGPT)</td><td>Go · $8</td><td>Plus · $20</td><td><span class="lang-en">Pro from $100</span><span class="lang-fr">Pro dès 100 $</span></td></tr>
+        <tr><td>Google (Gemini)</td><td>AI Plus · $4.99</td><td>AI Pro · $19.99</td><td><span class="lang-en">Ultra from $99.99</span><span class="lang-fr">Ultra dès 99,99 $</span></td></tr>
+      </tbody>
+    </table>
+    <p class="hint"><span class="lang-en">US monthly prices; local prices and taxes vary. Usage limits reset on a rolling window (for Claude, every 5 hours and every week).</span><span class="lang-fr">Prix mensuels aux États-Unis ; les prix locaux et les taxes varient. Les limites d'usage se renouvellent par période glissante (pour Claude, toutes les 5 heures et chaque semaine).</span></p>
+
+    <div class="callout warn">
+      <div class="callout-title"><span class="lang-en">The trade-off: one lab's models only</span><span class="lang-fr">La contrepartie : les modèles d'un seul laboratoire</span></div>
+      <span class="lang-en">A ChatGPT plan gives you OpenAI's models, a Claude plan gives you Anthropic's, and so on. If a rival releases a better model next month, you need another subscription to use it. Check the data settings too: consumer plans may use your chats to improve their models unless you switch that off.</span>
+      <span class="lang-fr">Un forfait ChatGPT vous donne les modèles d'OpenAI, un forfait Claude ceux d'Anthropic, et ainsi de suite. Si un concurrent sort un meilleur modèle le mois prochain, il vous faut un autre abonnement pour l'utiliser. Vérifiez aussi les paramètres de données : les forfaits grand public peuvent utiliser vos conversations pour améliorer leurs modèles, sauf si vous le désactivez.</span>
+    </div>
+  </section>
+
+  <!-- ================= CHOOSER ================= -->
+  <section class="part" id="chooser">
+    <h2><span class="lang-en">Which one is for you?</span><span class="lang-fr">Laquelle vous convient ?</span></h2>
+    <p class="lede"><span class="lang-en">Answer three questions about the work you want AI to do.</span><span class="lang-fr">Répondez à trois questions sur le travail que vous voulez confier à l'IA.</span></p>
+
+    <div class="tool" id="chooser-tool">
+      <div class="q" data-q="data">
+        <p><span class="lang-en">How sensitive is the material?</span><span class="lang-fr">Quel est le degré de sensibilité des documents ?</span></p>
+        <div class="choices">
+          <button type="button" data-v="strict" aria-pressed="false"><span class="lang-en">It must not leave my computer</span><span class="lang-fr">Ils ne doivent pas quitter mon ordinateur</span></button>
+          <button type="button" data-v="some" aria-pressed="false"><span class="lang-en">OK in the cloud if nothing is kept or trained on</span><span class="lang-fr">Le cloud convient si rien n'est conservé ni utilisé pour l'entraînement</span></button>
+          <button type="button" data-v="open" aria-pressed="false"><span class="lang-en">Not sensitive</span><span class="lang-fr">Pas sensibles</span></button>
+        </div>
+      </div>
+      <div class="q" data-q="use">
+        <p><span class="lang-en">How will you use it?</span><span class="lang-fr">Comment allez-vous l'utiliser ?</span></p>
+        <div class="choices">
+          <button type="button" data-v="occasional" aria-pressed="false"><span class="lang-en">A few times a week</span><span class="lang-fr">Quelques fois par semaine</span></button>
+          <button type="button" data-v="daily" aria-pressed="false"><span class="lang-en">Every day, in conversation</span><span class="lang-fr">Tous les jours, en conversation</span></button>
+          <button type="button" data-v="auto" aria-pressed="false"><span class="lang-en">Automated or in bulk (scripts, agents, many files)</span><span class="lang-fr">Automatisé ou en masse (scripts, agents, nombreux fichiers)</span></button>
+        </div>
+      </div>
+      <div class="q" data-q="quality">
+        <p><span class="lang-en">How good does it have to be?</span><span class="lang-fr">Quel niveau de qualité faut-il ?</span></p>
+        <div class="choices">
+          <button type="button" data-v="best" aria-pressed="false"><span class="lang-en">The best available: complex analysis, long documents</span><span class="lang-fr">Le meilleur possible : analyses complexes, longs documents</span></button>
+          <button type="button" data-v="good" aria-pressed="false"><span class="lang-en">Good enough: drafting, translation, summaries</span><span class="lang-fr">Suffisant : rédaction, traduction, résumés</span></button>
+        </div>
+      </div>
+      <div class="verdict" id="verdict" aria-live="polite" hidden>
+        <p class="v-title" id="v-title"></p>
+        <p id="v-body"></p>
+      </div>
+      <p class="hint" id="v-hint"><span class="lang-en">Answer all three to see a recommendation.</span><span class="lang-fr">Répondez aux trois questions pour voir une recommandation.</span></p>
+    </div>
+  </section>
+
+  <!-- ================= CALCULATOR ================= -->
+  <section class="part" id="calculator">
+    <h2><span class="lang-en">What would it cost each month?</span><span class="lang-fr">Combien cela coûterait par mois ?</span></h2>
+    <p class="lede"><span class="lang-en">Estimate your monthly volume in pages, then compare paying per token with a $20 subscription. Start from an example if you're not sure.</span><span class="lang-fr">Estimez votre volume mensuel en pages, puis comparez le paiement au token avec un abonnement à 20 $. Partez d'un exemple si vous hésitez.</span></p>
+
+    <div class="tool">
+      <div class="presets" role="group" aria-label="Examples">
+        <button type="button" data-in="40" data-out="40" data-mult="1"><span class="lang-en">Translate a 10-page report every week</span><span class="lang-fr">Traduire un rapport de 10 pages chaque semaine</span></button>
+        <button type="button" data-in="190" data-out="20" data-mult="1"><span class="lang-en">Summarise 38 district reports a month</span><span class="lang-fr">Résumer 38 rapports de district par mois</span></button>
+        <button type="button" data-in="60" data-out="40" data-mult="5"><span class="lang-en">Daily writing help, in long chats</span><span class="lang-fr">Aide quotidienne à la rédaction, longues conversations</span></button>
+        <button type="button" data-in="10000" data-out="300" data-mult="5"><span class="lang-en">An AI agent working on files every day</span><span class="lang-fr">Un agent IA qui travaille sur des fichiers chaque jour</span></button>
+      </div>
+      <div class="calc-inputs">
+        <label><span class="lang-en">Pages you send per month</span><span class="lang-fr">Pages envoyées par mois</span>
+          <input type="number" id="c-in" min="0" step="10" value="40">
+          <small><span class="lang-en">Documents, data, questions</span><span class="lang-fr">Documents, données, questions</span></small></label>
+        <label><span class="lang-en">Pages you get back per month</span><span class="lang-fr">Pages reçues par mois</span>
+          <input type="number" id="c-out" min="0" step="10" value="40">
+          <small><span class="lang-en">Drafts, translations, answers</span><span class="lang-fr">Brouillons, traductions, réponses</span></small></label>
+        <label><span class="lang-en">How you work</span><span class="lang-fr">Votre façon de travailler</span>
+          <select id="c-mult">
+            <option value="1" data-en="One request per document" data-fr="Une requête par document">One request per document</option>
+            <option value="5" data-en="Long chats or agents (history re-sent, about 5×)" data-fr="Longues conversations ou agents (historique renvoyé, environ 5×)">Long chats or agents (history re-sent, about 5×)</option>
+          </select>
+          <small><span class="lang-en">Chats re-send earlier messages each turn</span><span class="lang-fr">Les conversations renvoient les messages précédents à chaque tour</span></small></label>
+      </div>
+      <div class="cost-rows" id="cost-rows"></div>
+      <p class="calc-note" id="calc-note"></p>
+      <p class="calc-meta"><span class="lang-en">Assumes about 650 tokens per page. Open-model prices are OpenRouter averages from mid-2026; Claude prices are Anthropic's list prices. Real costs move with model choice, caching and how much you re-send.</span><span class="lang-fr">Hypothèse : environ 650 tokens par page. Les prix des modèles ouverts sont des moyennes OpenRouter de mi-2026 ; ceux de Claude sont les tarifs publics d'Anthropic. Les coûts réels varient selon le modèle, la mise en cache et la quantité de texte renvoyée.</span></p>
+    </div>
+  </section>
+
+  <!-- ================= MIX ================= -->
+  <section class="part" id="mix">
+    <h2><span class="lang-en">You don't have to pick just one</span><span class="lang-fr">Pas besoin de n'en choisir qu'une</span></h2>
+    <p class="lede"><span class="lang-en">Many programme teams end up using two or three, each for the job it does best.</span><span class="lang-fr">Beaucoup d'équipes de programme finissent par en utiliser deux ou trois, chacune pour ce qu'elle fait le mieux.</span></p>
+    <div class="mix">
+      <div class="opt">
+        <h3><span class="lang-en">Daily thinking work</span><span class="lang-fr">Le travail de réflexion quotidien</span></h3>
+        <p><span class="lang-en">One frontier subscription for analysis, planning and writing that needs the best model.</span><span class="lang-fr">Un abonnement de pointe pour l'analyse, la planification et la rédaction qui demandent le meilleur modèle.</span></p>
+      </div>
+      <div class="opt">
+        <h3><span class="lang-en">Sensitive documents</span><span class="lang-fr">Les documents sensibles</span></h3>
+        <p><span class="lang-en">A local model for anything that must stay on the machine, such as line lists or draft survey results.</span><span class="lang-fr">Un modèle local pour tout ce qui doit rester sur la machine, comme les listes nominatives ou les résultats d'enquête provisoires.</span></p>
+      </div>
+      <div class="opt">
+        <h3><span class="lang-en">Automation and experiments</span><span class="lang-fr">Automatisation et essais</span></h3>
+        <p><span class="lang-en">Pay-per-token open models for scripts, bulk jobs, and trying new models as they appear.</span><span class="lang-fr">Des modèles ouverts payés au token pour les scripts, les traitements en masse, et l'essai des nouveaux modèles dès leur sortie.</span></p>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top:1.5rem">
+      <div class="callout-title"><span class="lang-en">Your homework</span><span class="lang-fr">Votre exercice</span></div>
+      <span class="lang-en">Take one task you do every month. Run it once through your usual subscription, once through an open model in the cloud, and, if your computer can manage it, once locally. Note the quality, the time and the cost of each, and decide which one you'd trust with that task.</span>
+      <span class="lang-fr">Prenez une tâche que vous faites chaque mois. Faites-la une fois avec votre abonnement habituel, une fois avec un modèle ouvert dans le cloud et, si votre ordinateur le permet, une fois en local. Notez la qualité, le temps et le coût de chacune, et décidez à laquelle vous confieriez cette tâche.</span>
+    </div>
+
+    <h3 style="margin-top:2.5rem"><span class="lang-en">Sources (prices checked 15 November 2026)</span><span class="lang-fr">Sources (prix vérifiés le 15 novembre 2026)</span></h3>
+    <ul class="sources">
+      <li><a href="https://claude.com/pricing" target="_blank" rel="noopener">Claude plans</a> · <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Claude API pricing</a></li>
+      <li><a href="https://chatgpt.com/pricing" target="_blank" rel="noopener">ChatGPT plans</a> · <a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener">Google AI plans</a></li>
+      <li><a href="https://ollama.com/pricing" target="_blank" rel="noopener">Ollama Cloud pricing and privacy</a> · <a href="https://openrouter.ai/docs/guides/privacy/zdr" target="_blank" rel="noopener">OpenRouter zero data retention</a></li>
+      <li><a href="https://openrouter.ai/blog/insights/the-open-weight-models-that-matter-june-2026/" target="_blank" rel="noopener">OpenRouter: the open-weight models that matter (June 2026)</a> · <a href="https://openrouter.ai/data/october-2026" target="_blank" rel="noopener">OpenRouter October 2026 data</a></li>
+    </ul>
+  </section>
+</main>
+</div>
+<footer class="site">
+  <span class="lang-en">An AMPLIFY short course · Prices change often; check the sources before you buy.</span>
+  <span class="lang-fr">Un cours express AMPLIFY · Les prix changent souvent ; vérifiez les sources avant d'acheter.</span>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  function lang() { return (window.LF && LF.getLang) ? LF.getLang() : "en"; }
+
+  /* ---- chooser ---- */
+  var answers = {};
+  var V = {
+    local: {
+      en: ["Run a model locally", "Your material can't leave the machine, so a local open-weight model is the only safe fit. Start with a 12–30B model sized to your computer's memory, test it on real tasks, and budget for better hardware if quality falls short."],
+      fr: ["Faites tourner un modèle en local", "Vos documents ne peuvent pas quitter la machine : un modèle ouvert en local est la seule option sûre. Commencez par un modèle de 12 à 30 milliards adapté à la mémoire de votre ordinateur, testez-le sur de vraies tâches, et prévoyez un meilleur matériel si la qualité ne suffit pas."]
+    },
+    localBest: {
+      en: ["Local, with serious hardware", "You need top quality and the data must stay on your machine. Only large open models get close to the frontier offline, which means a 128 GB AI box or more. Until then, split the work: keep sensitive steps local and send only anonymised material to a stronger model."],
+      fr: ["En local, avec du matériel sérieux", "Il vous faut la meilleure qualité et les données doivent rester sur votre machine. Seuls les grands modèles ouverts approchent le niveau de pointe hors ligne, ce qui suppose un boîtier IA de 128 Go ou plus. En attendant, répartissez le travail : gardez les étapes sensibles en local et n'envoyez que des contenus anonymisés à un modèle plus puissant."]
+    },
+    cloud: {
+      en: ["Open-weight models in the cloud", "For automated or bulk work, paying per token is usually far cheaper than any subscription, and you can switch models freely. Use OpenRouter or Ollama Cloud, turn on zero data retention, and set a spending cap."],
+      fr: ["Des modèles ouverts dans le cloud", "Pour un travail automatisé ou en masse, payer au token revient généralement bien moins cher qu'un abonnement, et vous changez de modèle librement. Utilisez OpenRouter ou Ollama Cloud, activez la « zero data retention » et fixez un plafond de dépenses."]
+    },
+    sub: {
+      en: ["A frontier subscription", "You use AI every day and want the best model. A $20 plan from Anthropic, OpenAI or Google gives you that at a fixed price, which for daily use is cheaper than the same work at API rates. Check the data settings and switch off training on your chats."],
+      fr: ["Un abonnement de pointe", "Vous utilisez l'IA tous les jours et voulez le meilleur modèle. Un forfait à 20 $ chez Anthropic, OpenAI ou Google vous l'offre à prix fixe, ce qui pour un usage quotidien revient moins cher que le même travail aux tarifs de l'API. Vérifiez les paramètres de données et désactivez l'entraînement sur vos conversations."]
+    },
+    light: {
+      en: ["Start with free tiers or a few dollars of credit", "Occasional use rarely justifies a monthly plan. Try the free versions of the main apps, or put $10 of credit on OpenRouter and pay a few cents per task. Upgrade only when you keep hitting limits."],
+      fr: ["Commencez par les versions gratuites ou quelques dollars de crédit", "Un usage occasionnel justifie rarement un forfait mensuel. Essayez les versions gratuites des principales applications, ou mettez 10 $ de crédit sur OpenRouter et payez quelques centimes par tâche. Ne passez à un forfait payant que si vous atteignez souvent les limites."]
+    },
+    cloudDaily: {
+      en: ["Pay per token, or go local", "Daily use where good-enough quality will do is where open models shine. Pay per token in the cloud for convenience, or run a 12–30B model locally if your computer can manage it, and keep a free tier of a frontier app for the occasional hard question."],
+      fr: ["Payez au token, ou passez en local", "Un usage quotidien où une qualité suffisante convient, c'est là que les modèles ouverts brillent. Payez au token dans le cloud par commodité, ou faites tourner un modèle de 12 à 30 milliards en local si votre ordinateur le permet, et gardez la version gratuite d'une application de pointe pour les questions difficiles."]
+    }
+  };
+  function pick() {
+    var d = answers.data, u = answers.use, q = answers.quality;
+    if (d === "strict") return q === "best" ? "localBest" : "local";
+    if (u === "auto") return "cloud";
+    if (u === "occasional") return "light";
+    if (q === "best") return "sub";
+    return "cloudDaily";
+  }
+  function renderVerdict() {
+    var box = document.getElementById("verdict"), hint = document.getElementById("v-hint");
+    if (!(answers.data && answers.use && answers.quality)) { box.hidden = true; hint.hidden = false; return; }
+    var v = V[pick()][lang()];
+    document.getElementById("v-title").textContent = v[0];
+    document.getElementById("v-body").textContent = v[1];
+    box.hidden = false; hint.hidden = true;
+  }
+  document.querySelectorAll("#chooser-tool .q").forEach(function (q) {
+    var key = q.dataset.q;
+    q.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        q.querySelectorAll("button").forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+        answers[key] = b.dataset.v;
+        renderVerdict();
+      });
+    });
+  });
+
+  /* ---- calculator ---- */
+  var TOK = 650;
+  var ROWS = [
+    { id: "local", cls: "local", en: ["Local model", "On your own computer"], fr: ["Modèle local", "Sur votre propre ordinateur"], fixed: 0 },
+    { id: "dsf", en: ["DeepSeek V4 Flash", "Open-weight, pay per token"], fr: ["DeepSeek V4 Flash", "Modèle ouvert, payé au token"], pin: 0.054, pout: 0.242 },
+    { id: "glm", en: ["GLM 5.2", "Open-weight, pay per token"], fr: ["GLM 5.2", "Modèle ouvert, payé au token"], pin: 0.447, pout: 3.31 },
+    { id: "son", en: ["Claude Sonnet 5.5", "Frontier, pay per token (API)"], fr: ["Claude Sonnet 5.5", "Modèle de pointe, payé au token (API)"], pin: 2, pout: 10 },
+    { id: "opus", en: ["Claude Opus 5.5", "Frontier, pay per token (API)"], fr: ["Claude Opus 5.5", "Modèle de pointe, payé au token (API)"], pin: 4, pout: 20 },
+    { id: "sub", cls: "sub", en: ["Frontier subscription", "Claude Pro, ChatGPT Plus or Google AI Pro"], fr: ["Abonnement de pointe", "Claude Pro, ChatGPT Plus ou Google AI Pro"], fixed: 20 }
+  ];
+  var rowsEl = document.getElementById("cost-rows");
+  ROWS.forEach(function (r) {
+    var el = document.createElement("div");
+    el.className = "cost-row" + (r.cls ? " " + r.cls : "");
+    el.innerHTML = '<div class="who"><b></b><small></small></div><div class="bar"><i></i></div><div class="amt"></div>';
+    r.el = el; rowsEl.appendChild(el);
+  });
+  var inEl = document.getElementById("c-in"), outEl = document.getElementById("c-out"), multEl = document.getElementById("c-mult");
+  function money(x) {
+    var fr = lang() === "fr";
+    var s = x < 1 ? x.toFixed(2) : x < 100 ? x.toFixed(2) : Math.round(x).toLocaleString(fr ? "fr-FR" : "en-US");
+    if (fr) return s.replace(".", ",") + " $";
+    return "$" + s;
+  }
+  function calc() {
+    var L = lang();
+    var pin = Math.max(0, +inEl.value || 0), pout = Math.max(0, +outEl.value || 0), m = +multEl.value || 1;
+    var tin = pin * TOK * m / 1e6, tout = pout * TOK / 1e6;
+    var max = 20;
+    ROWS.forEach(function (r) { r.cost = r.fixed != null ? r.fixed : tin * r.pin + tout * r.pout; max = Math.max(max, r.cost); });
+    ROWS.forEach(function (r) {
+      r.el.querySelector("b").textContent = r[L][0];
+      r.el.querySelector("small").textContent = r[L][1];
+      r.el.querySelector(".bar i").style.width = (r.cost <= 0 ? 0 : Math.max(1.5, 100 * r.cost / max)) + "%";
+      r.el.querySelector(".amt").textContent = r.id === "local" ? (L === "fr" ? "0 $ + matériel" : "$0 + hardware") : money(r.cost) + (L === "fr" ? " /mois" : " /mo");
+    });
+    var opus = ROWS[4].cost, dsf = ROWS[1].cost, note;
+    if (L === "fr") {
+      note = opus > 20
+        ? "À ce volume, le meilleur modèle aux tarifs de l'API coûterait " + money(opus) + " par mois : l'abonnement à 20 $ est la meilleure affaire, tant que vous restez dans ses limites."
+        : "À ce volume, même le meilleur modèle payé au token coûte moins que 20 $ par mois (" + money(opus) + "), et un modèle ouvert seulement " + money(dsf) + ". Un abonnement ne se justifie que pour ses applications et outils.";
+    } else {
+      note = opus > 20
+        ? "At this volume the best model at API rates would cost " + money(opus) + " a month, so the $20 subscription is the better deal, as long as you stay within its limits."
+        : "At this volume even the best model paid per token costs less than $20 a month (" + money(opus) + "), and an open model just " + money(dsf) + ". A subscription only pays off for its apps and tools.";
+    }
+    document.getElementById("calc-note").textContent = note;
+  }
+  [inEl, outEl, multEl].forEach(function (e) { e.addEventListener("input", calc); e.addEventListener("change", calc); });
+  document.querySelectorAll(".presets button").forEach(function (b) {
+    b.addEventListener("click", function () { inEl.value = b.dataset.in; outEl.value = b.dataset.out; multEl.value = b.dataset.mult; calc(); });
+  });
+  function relabelSelect() { multEl.querySelectorAll("option").forEach(function (o) { o.textContent = o.dataset[lang()] || o.dataset.en; }); }
+
+  /* ---- course map highlight ---- */
+  var links = [].slice.call(document.querySelectorAll(".map ol a"));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          var i = secs.indexOf(e.target);
+          links.forEach(function (a, j) { a.classList.toggle("active", j === i); });
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    secs.forEach(function (s) { if (s) io.observe(s); });
+  }
+
+  document.addEventListener("lf:lang", function () { relabelSelect(); calc(); renderVerdict(); });
+  document.addEventListener("DOMContentLoaded", function () { relabelSelect(); calc(); });
+})();
+</script>
+</body>
+</html>
