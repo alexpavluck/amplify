@@ -132,6 +132,18 @@ button{font:inherit;color:inherit}
 .hub-wrap{margin-top:var(--gap-section)}
 .hub-wrap .head{margin-bottom:clamp(2.5rem,2rem + 2.5vw,4.5rem)}
 .hub{position:relative;height:620px;max-width:1160px;margin:0 auto}
+/* graph-paper backdrop behind the session wheel */
+.hub{isolation:isolate}
+.hub::before{content:"";position:absolute;inset:-3rem -2rem;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(94,164,218,.28) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(94,164,218,.28) 1px,transparent 1px),
+    linear-gradient(rgba(94,164,218,.14) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(94,164,218,.14) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
+  background-position:center center;
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 55%,transparent 85%);
+          mask-image:radial-gradient(ellipse at center,#000 55%,transparent 85%)} /* taste-skill-ignore: graph paper backdrop */
 .hub-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .hub-lines line{stroke:var(--line);stroke-width:1.5;stroke-dasharray:3 7;vector-effect:non-scaling-stroke;transition:stroke .25s}
 .hub-lines line.on{stroke:var(--ink)}
