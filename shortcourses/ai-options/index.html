@@ -72,7 +72,9 @@
 .calc-inputs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr); gap: 1rem; margin: 1rem 0 1.2rem; }
 @media (max-width: 760px) { .calc-inputs { grid-template-columns: minmax(0, 1fr); } }
 .calc-inputs label { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; }
-.calc-inputs input[type="number"], .calc-inputs select { font: inherit; padding: .55rem .7rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); width: 100%; }
+/* share rows across the three columns so a wrapping label doesn't push its input down */
+@supports (grid-template-rows: subgrid) { .calc-inputs label { grid-row: span 3; grid-template-rows: subgrid; row-gap: .35rem; align-items: end; } .calc-inputs small { align-self: start; } }
+.calc-inputs input[type="number"], .calc-inputs select { font: inherit; padding: .55rem .7rem; height: 2.9rem; box-sizing: border-box; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); width: 100%; }
 .calc-inputs small { font-weight: 400; color: var(--muted); }
 .presets { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
 .presets button { font: inherit; font-size: .9rem; border: 0; background: var(--surface-2); color: var(--fg); border-radius: 999px; padding: .45rem .9rem; cursor: pointer; }
