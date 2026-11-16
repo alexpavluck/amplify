@@ -136,7 +136,7 @@ en: {
   "toast.copy": "Copied to clipboard.",
   "toast.quiz": "Skill check passed.",
   "q.try": "Try again — the right answer makes sense once you think about who does the follow-through.",
-  "quiz.pass": "Skill check passed ✓",
+  "quiz.pass": "Skill check passed",
 
   "tool.chat": "Chat", "tool.cowork": "Cowork", "tool.code": "Code", "tool.any": "Any of them",
 },
@@ -270,7 +270,7 @@ fr: {
   "toast.copy": "Copié dans le presse-papiers.",
   "toast.quiz": "Test réussi.",
   "q.try": "Réessayez — la bonne réponse devient évidente quand on pense à qui fait le suivi.",
-  "quiz.pass": "Test réussi ✓",
+  "quiz.pass": "Test réussi",
 
   "tool.chat": "Chat", "tool.cowork": "Cowork", "tool.code": "Code", "tool.any": "Les trois",
 },
@@ -389,10 +389,14 @@ const $$ = (s) => Array.from(document.querySelectorAll(s));
 const t = (k) => (DICT[S.lang] && DICT[S.lang][k]) || DICT.en[k] || k;
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const v = (b) => (typeof b === "string" ? b : b[S.lang] || b.en); // bilingual value
+// Inline SVG status icons (lucide-style) — replaces check/cross glyphs.
+const ICON_PATHS = { check: '<path d="M20 6 9 17l-5-5"/>', x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>' };
+const icon = (name) => '<svg class="i" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON_PATHS[name] + "</svg>";
+const withCheck = (txt) => icon("check") + " " + esc(txt);
 
-function showToast(msg) {
+function showToast(msg, ico) {
   const el = $("#toast");
-  el.textContent = msg;
+  el.innerHTML = (ico ? icon(ico) + " " : "") + esc(msg);
   el.classList.add("show");
   clearTimeout(showToast._t);
   showToast._t = setTimeout(() => el.classList.remove("show"), 2000);
@@ -482,7 +486,7 @@ function renderQuiz(id) {
       );
     }).join("") +
     '</div>' +
-    '<div class="quiz-passed' + (all ? " show" : "") + '">✓ ' + esc(t("quiz.pass")) + "</div>";
+    '<div class="quiz-passed' + (all ? " show" : "") + '">' + withCheck(t("quiz.pass")) + "</div>";
 }
 function wireQuizzes() {
   QUIZ_IDS.forEach((id) => {
@@ -498,7 +502,7 @@ function wireQuizzes() {
         renderQuiz(id);
         updateNavChecks();
         updateRings();
-        if (quizPassed(id)) showToast("✓ " + t("toast.quiz"));
+        if (quizPassed(id)) showToast(t("toast.quiz"), "check");
       } else {
         btn.classList.add("wrong");
         item.querySelector(".q-try").classList.add("show");
@@ -556,14 +560,14 @@ function renderApp() {
   $$("[data-app-status]").forEach((el) => {
     const ok = done[+el.dataset.appStatus - 1];
     el.classList.toggle("ok", ok);
-    el.querySelector(".st").textContent = ok ? "✓ " + t("ex.done") : t("ex.todo");
+    el.querySelector(".st").innerHTML = ok ? withCheck(t("ex.done")) : esc(t("ex.todo"));
   });
   $("#app-missing").hidden = done.every(Boolean);
   const pageLi = $("[data-seen-page]");
   if (pageLi) {
     const pg = pageSeenData();
     pageLi.classList.toggle("ok", pg.complete);
-    pageLi.querySelector(".st").textContent = pg.complete ? "✓ " + t("seen.full") : pg.seen + "/" + pg.total + " " + t("seen.sections");
+    pageLi.querySelector(".st").innerHTML = pg.complete ? withCheck(t("seen.full")) : esc(pg.seen + "/" + pg.total + " " + t("seen.sections"));
   }
 }
 function wireApp() {
@@ -652,7 +656,7 @@ function sessionFileData() {
 function sessionFileHtml(d) {
   const val = (x) => x ? '<div class="v">' + esc(x) + "</div>" : '<div class="v empty">' + esc(t("rep.empty")) + "</div>";
   const row = (label, x) => '<div class="row"><div class="k">' + esc(label) + "</div>" + val(x) + "</div>";
-  const status = (ok) => '<span class="badge ' + (ok ? "ok" : "todo") + '">' + esc(ok ? "✓ " + t("ex.done") : t("ex.todo")) + "</span>";
+  const status = (ok) => '<span class="badge ' + (ok ? "ok" : "todo") + '">' + (ok ? withCheck(t("ex.done")) : esc(t("ex.todo"))) + "</span>";
   const date = new Date(d.exportedAt).toLocaleString(d.lang === "fr" ? "fr-FR" : "en-GB", { dateStyle: "long", timeStyle: "short" });
   const toolLabel = d.problem.tool ? t("app.tool." + d.problem.tool) : "";
   const skillDraft = (d.skill.name && d.skill.body)
@@ -665,7 +669,7 @@ function sessionFileHtml(d) {
     ":root{--fg:#1d2433;--muted:#5d6678;--line:#dfe3ea;--accent:#2f55d4;--soft:#eef2fc;--ok:#1f7a4d;--warn:#a35a00}" +
     "*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}" +
     "main{max-width:760px;margin:0 auto;padding:32px 16px 48px}header{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:20px}" +
-    ".eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}h1{margin:4px 0 2px;font-size:26px}" +
+    "h1{margin:0 0 2px;font-size:26px}.sub{color:var(--muted);font-size:14px;margin:0 0 6px}.badge .i{width:1em;height:1em;vertical-align:-.125em}" +
     ".meta{color:var(--muted);font-size:14px}.final{background:var(--soft);border:1px solid var(--accent);border-radius:10px;padding:14px 16px;margin:0 0 20px}" +
     ".final .k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700}.final p{margin:6px 0 0;font-size:17px}" +
     "section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px}" +
@@ -675,8 +679,8 @@ function sessionFileHtml(d) {
     ".v{white-space:pre-wrap;overflow-wrap:anywhere}.v.empty{color:var(--warn);font-style:italic}" +
     "details{margin-top:8px;font-size:13px;color:var(--muted)}pre{white-space:pre-wrap;background:#f4f6f9;border-radius:8px;padding:10px;font:13px/1.5 inherit}" +
     "footer{color:var(--muted);font-size:13px;margin-top:20px}@media print{body{background:#fff}details{display:none}}" +
-    "</style></head><body><main><header><div class=\"eyebrow\">AMPLIFY 2027 · " + esc(t("rep.sub")) + "</div>" +
-    "<h1>" + esc(t("rep.title")) + "</h1><div class=\"meta\">" + esc(t("rep.student")) + ": <strong>" + esc(d.student.name || t("rep.empty")) + "</strong> · " +
+    "</style></head><body><main><header>" +
+    "<h1>" + esc(t("rep.title")) + "</h1><p class=\"sub\">AMPLIFY 2027 · " + esc(t("rep.sub")) + "</p><div class=\"meta\">" + esc(t("rep.student")) + ": <strong>" + esc(d.student.name || t("rep.empty")) + "</strong> · " +
     esc(t("rep.date")) + ": " + esc(date) + "</div></header>" +
     (d.problem.statement
       ? '<div class="final"><div class="k">' + esc(t("rep.stmt")) + "</div><p>" + esc(d.problem.statement) + "</p></div>"

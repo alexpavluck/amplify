@@ -83,6 +83,7 @@
   }
 
   // ---- Copy buttons -----------------------------------------------------
+  var CHECK_ICON = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
   function initCopyButtons() {
     document.querySelectorAll(".term").forEach(function (term) {
       var pre = term.querySelector("pre");
@@ -96,7 +97,7 @@
       btn.addEventListener("click", function () {
         var text = pre.innerText.replace(/^\s*PS> ?|^\s*\$ ?|^\s*> ?/gm, "");
         navigator.clipboard.writeText(text).then(function () {
-          btn.textContent = btn.dataset[LF.getLang()] === "Copier" ? "Copié ✓" : "Copied ✓";
+          btn.innerHTML = (btn.dataset[LF.getLang()] === "Copier" ? "Copié " : "Copied ") + CHECK_ICON;
           btn.classList.add("copied");
           setTimeout(function () {
             btn.textContent = btn.dataset[LF.getLang()] || "Copy";

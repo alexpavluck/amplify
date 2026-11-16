@@ -15,7 +15,7 @@
 @media (max-width: 900px) { .opt-grid { grid-template-columns: minmax(0, 1fr); } }
 .opt { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.3rem; display: flex; flex-direction: column; gap: .5rem; }
 .opt h3 { margin: 0; }
-.opt .cost { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--accent); letter-spacing: -.01em; }
+.opt .cost { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--accent); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
 .opt ul { margin: .2rem 0 0; padding-left: 1.1rem; font-size: .95rem; }
 .opt li { margin: .2rem 0; }
 .opt .plus { color: var(--ok); font-weight: 600; }
@@ -26,7 +26,7 @@
 .part .lede { margin-bottom: 1rem; }
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .75rem; margin: 1.2rem 0; }
 .fact { background: var(--surface-2); border-radius: 12px; padding: .9rem 1rem; }
-.fact b { display: block; font-family: var(--display); font-size: 1.2rem; color: var(--fg); }
+.fact b { display: block; font-family: var(--display); font-size: 1.2rem; color: var(--fg); font-variant-numeric: tabular-nums; }
 .fact span { color: var(--muted); font-size: .92rem; }
 
 /* chooser */
@@ -57,7 +57,7 @@
 .nn figcaption { color: var(--muted); font-size: .9rem; margin-top: .6rem; }
 .wsize-lead { margin: 0 0 1rem; }
 .wsize-label { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; }
-.wsize-label output { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--accent); }
+.wsize-label output { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--accent); font-variant-numeric: tabular-nums; }
 #w-size { width: 100%; accent-color: var(--accent); margin: .4rem 0 1rem; }
 .wbars { display: grid; gap: .9rem; }
 .wbar-head { display: flex; justify-content: space-between; gap: .8rem; font-size: .95rem; margin-bottom: .3rem; }
@@ -74,7 +74,7 @@
 .calc-inputs label { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; }
 /* share rows across the three columns so a wrapping label doesn't push its input down */
 @supports (grid-template-rows: subgrid) { .calc-inputs label { grid-row: span 3; grid-template-rows: subgrid; row-gap: .35rem; align-items: end; } .calc-inputs small { align-self: start; } }
-.calc-inputs input[type="number"], .calc-inputs select { font: inherit; padding: .55rem .7rem; height: 2.9rem; box-sizing: border-box; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); width: 100%; }
+.calc-inputs input[type="number"], .calc-inputs select { font: inherit; font-variant-numeric: tabular-nums; padding: .55rem .7rem; height: 2.9rem; box-sizing: border-box; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); width: 100%; }
 .calc-inputs small { font-weight: 400; color: var(--muted); }
 .presets { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
 .presets button { font: inherit; font-size: .9rem; border: 0; background: var(--surface-2); color: var(--fg); border-radius: 999px; padding: .45rem .9rem; cursor: pointer; }
@@ -88,13 +88,14 @@
 .cost-row.sub .bar i { background: var(--accent); }
 .cost-row.local .bar i { background: var(--ok); }
 .cost-row .amt { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
-.calc-note { margin-top: 1rem; font-size: .95rem; }
+.calc-note { margin-top: 1rem; font-size: .95rem; font-variant-numeric: tabular-nums; }
 .calc-meta { color: var(--muted); font-size: .85rem; margin-top: .6rem; }
 
 .mix { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 @media (max-width: 900px) { .mix { grid-template-columns: minmax(0, 1fr); } }
 .sources { font-size: .9rem; color: var(--muted); }
 .sources li { margin: .25rem 0; }
+@media (prefers-reduced-motion: reduce) { .choices button:active { transform: none; } }
 </style>
 </head>
 <body>
@@ -107,7 +108,7 @@
 <div class="shell">
 <nav class="map" aria-label="Course sections">
   <div class="brand-row">
-    <div><div class="eyebrow">Short course</div><a class="brand" href="index.html"><span class="dot"></span><span class="lang-en">Which AI should you pay for?</span><span class="lang-fr">Quelle IA payer ?</span></a></div>
+    <div><a class="brand" href="index.html"><span class="dot"></span><span class="lang-en">Which AI should you pay for?</span><span class="lang-fr">Quelle IA payer ?</span></a><div class="brand-meta">Short course</div></div>
     <div class="lang-toggle" role="group" aria-label="Language / Langue">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="fr" aria-pressed="false">FR</button>
@@ -127,11 +128,11 @@
 
 <main class="wrap">
   <section class="hero" id="start">
-    <p class="eyebrow"><span class="lang-en">30-minute short course · Intermediate</span><span class="lang-fr">Cours express de 30 minutes · Intermédiaire</span></p>
     <h1>
       <span class="lang-en">Subscribe, rent, or run your own AI?</span>
       <span class="lang-fr">S'abonner, louer ou faire tourner sa propre IA&nbsp;?</span>
     </h1>
+    <p class="meta"><span class="lang-en">30-minute short course · Intermediate</span><span class="lang-fr">Cours express de 30 minutes · Intermédiaire</span></p>
     <p class="lede">
       <span class="lang-en">There are three ways to get a capable AI model to work for your programme: pay a monthly subscription to a frontier lab, pay per use for an open-weight model in the cloud, or run a free model on your own computer. Each one trades off cost, quality, privacy and freedom differently. This course walks through all three, then helps you pick, with a quick chooser and a cost calculator.</span>
       <span class="lang-fr">Il existe trois façons de mettre un modèle d'IA performant au service de votre programme : payer un abonnement mensuel à un laboratoire de pointe, payer à l'usage un modèle ouvert dans le cloud, ou faire tourner gratuitement un modèle sur votre propre ordinateur. Chacune arbitre différemment entre coût, qualité, confidentialité et liberté. Ce cours présente les trois, puis vous aide à choisir grâce à un petit questionnaire et un calculateur de coûts.</span>

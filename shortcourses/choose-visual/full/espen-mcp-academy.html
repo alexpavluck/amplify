@@ -39,6 +39,7 @@
   --st-good: #0ca30c; --st-warn: #fab219; --st-bad: #d03b3b; --st-none: #CBD8DF;
   --vgrid: #DFE8EE; --vaxis: #B7C9D4;
   --q1i: #0b0b0b; --q2i: #0b0b0b; --q3i: #ffffff; --q4i: #ffffff;
+  --em-end: #2386BA; /* deeper accent-2 so the gradient heading text keeps 3:1 on --bg */
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -46,13 +47,13 @@
     --accent: #3CABDD; --accent-soft: #143345; --amber: #FFC914; --amber-soft: #3A3009;
     --good: #5FCB86; --bad: #F08A7E; --bad-soft: #3D1E1A; color-scheme: dark;
     --s1: #3CABDD; --s2: #E07B3C; --dim: #3E5563;
-    --q1: #1E5674; --q2: #2E7FA6; --q3: #55B6E2; --q4: #A9DCF2; --st-none: #3A4E5A;
+    --q1: #1E5674; --q2: #2A79A2; --q3: #55B6E2; --q4: #A9DCF2; --st-none: #3A4E5A;
     --vgrid: #1D3340; --vaxis: #33505F;
-    --accent-2: #36C6FA;
+    --accent-2: #36C6FA; --em-end: #36C6FA;
     --sh-sm: 0 1px 2px rgb(0 0 0 / .35), 0 3px 10px -3px rgb(0 0 0 / .45);
     --sh-md: 0 2px 6px rgb(0 0 0 / .35), 0 16px 32px -16px rgb(0 0 0 / .6);
     --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 26%, transparent);
-    --q1i: #ffffff; --q2i: #0b0b0b; --q3i: #0b0b0b; --q4i: #0b0b0b;
+    --q1i: #ffffff; --q2i: #ffffff; --q3i: #0b0b0b; --q4i: #0b0b0b;
   }
 }
 :root[data-theme="dark"] {
@@ -60,9 +61,9 @@
   --accent: #3CABDD; --accent-soft: #143345; --amber: #FFC914; --amber-soft: #3A3009;
   --good: #5FCB86; --bad: #F08A7E; --bad-soft: #3D1E1A; color-scheme: dark;
   --s1: #3CABDD; --s2: #E07B3C; --dim: #3E5563;
-  --q1: #1E5674; --q2: #2E7FA6; --q3: #55B6E2; --q4: #A9DCF2; --st-none: #3A4E5A;
+  --q1: #1E5674; --q2: #2A79A2; --q3: #55B6E2; --q4: #A9DCF2; --st-none: #3A4E5A;
   --vgrid: #1D3340; --vaxis: #33505F;
-  --accent-2: #36C6FA;
+  --accent-2: #36C6FA; --em-end: #36C6FA;
   --sh-sm: 0 1px 2px rgb(0 0 0 / .35), 0 3px 10px -3px rgb(0 0 0 / .45);
   --sh-md: 0 2px 6px rgb(0 0 0 / .35), 0 16px 32px -16px rgb(0 0 0 / .6);
   --ring: 0 0 0 3px color-mix(in srgb, var(--accent) 26%, transparent);
@@ -85,6 +86,7 @@ body {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 ::selection { background: color-mix(in srgb, var(--accent) 24%, transparent); }
+html { accent-color: var(--accent); caret-color: var(--accent); }
 a { color: var(--accent); text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0; font-optical-sizing: auto; }
@@ -104,7 +106,7 @@ code { background: var(--sunk); padding: .1em .35em; border-radius: 4px; }
 @media (max-width: 900px) { .map { position: static; } }
 .brand-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .brand-row > div { display: grid; gap: 4px; }
-.brand .eyebrow { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.brand .eyebrow { font-size: 13px; color: var(--muted); }
 .brand b { font: 800 22px/1.1 var(--display); }
 .theme-toggle {
   flex: none; width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--line);
@@ -112,6 +114,7 @@ code { background: var(--sunk); padding: .1em .35em; border-radius: 4px; }
   box-shadow: var(--sh-sm); transition: color .15s ease, border-color .15s ease, transform .15s ease;
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle:hover { transform: none; } }
 .theme-toggle .sun { display: none; }
 .theme-toggle[aria-pressed="true"] .sun { display: block; }
 .theme-toggle[aria-pressed="true"] .moon { display: none; }
@@ -130,7 +133,7 @@ code { background: var(--sunk); padding: .1em .35em; border-radius: 4px; }
 .map li a:hover { background: var(--sunk); }
 .map li a.active { border-left-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
 .map li a.active .n { color: var(--accent); }
-.map .tag { font: 500 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--amber); background: var(--amber-soft); padding: 3px 6px; border-radius: 99px; margin-left: 6px; white-space: nowrap; }
+.map .tag { font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--amber); background: var(--amber-soft); padding: 3px 6px; border-radius: 99px; margin-left: 6px; white-space: nowrap; }
 @media (max-width: 900px) {
   .map ol { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); border-left: 0; gap: 6px; }
   .map li a { border: 1px solid var(--line); border-radius: 8px; margin: 0; background: var(--surface); }
@@ -143,22 +146,28 @@ main > section + section { border-top: 1px solid var(--line); padding-top: 56px;
 section { display: grid; gap: 24px; scroll-margin-top: 24px; }
 .prose { max-width: 68ch; display: grid; gap: 14px; }
 .prose p { color: var(--fg); }
+main p, .howto li { max-width: 70ch; }
+p.prose { display: block; } /* a <p> with an inline link must not become a grid */
 .lede { font-size: 18px; color: var(--muted); max-width: 62ch; }
-.kicker { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.kicker::before { content: ""; flex: none; width: 20px; height: 2px; border-radius: 2px; background: currentColor; opacity: .75; }
+/* meta line: sits directly below a heading (replaces the old uppercase kicker above it) */
+.hmeta { font: 500 14px/1.4 var(--body); color: var(--muted); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+section > .hmeta { margin-top: -16px; }
+.cap-hero > .hmeta { margin-top: -8px; color: color-mix(in srgb, var(--bg) 78%, var(--fg)); }
+.gi { width: 1em; height: 1em; flex: none; vertical-align: -.125em; }
 h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; letter-spacing: -.01em; }
 h3 { font-size: 21px; font-weight: 700; }
 h4 { font-size: 16px; font-weight: 700; }
+.step-t { font-size: 16px; font-weight: 700; }
 
 /* hero */
 .hero { display: grid; gap: 22px; padding-bottom: 8px; }
 .hero h1 { font-size: clamp(38px, 6.4vw, 66px); font-weight: 800; letter-spacing: -.025em; line-height: 1.02; max-width: 15ch; }
-.hero h1 em { font-style: normal; background: linear-gradient(115deg, var(--accent) 15%, var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero h1 em { font-style: normal; color: var(--accent); }
 .ladder { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
 .ladder a { padding: 14px 14px 16px; text-decoration: none; color: var(--fg); display: grid; gap: 4px; border-right: 1px solid var(--line); position: relative; transition: background .15s ease; }
 .ladder a:last-child { border-right: 0; background: var(--accent-soft); }
 .ladder a:hover { background: var(--sunk); }
-.ladder .step { font: 500 11px/1 var(--mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.ladder .step { font-size: 13px; color: var(--muted); line-height: 1.3; }
 .ladder strong { font: 700 16px/1.2 var(--display); }
 .ladder span { font-size: 13px; color: var(--muted); line-height: 1.4; }
 @media (max-width: 760px) { .ladder { grid-template-columns: minmax(0, 1fr); } .ladder a { border-right: 0; border-bottom: 1px solid var(--line); } .ladder a:last-child { border-bottom: 0; } }
@@ -171,8 +180,8 @@ h4 { font-size: 16px; font-weight: 700; }
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 @media (max-width: 760px) { .grid2, .grid3 { grid-template-columns: minmax(0, 1fr); } }
-.note { border-left: 3px solid var(--amber); background: var(--amber-soft); padding: 14px 16px; border-radius: 0 8px 8px 0; font-size: 15px; display: grid; gap: 6px; max-width: 72ch; }
-.note b { color: var(--amber); font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; }
+.note { border: 1px solid color-mix(in srgb, var(--amber) 35%, transparent); background: var(--amber-soft); padding: 14px 16px; border-radius: 10px; font-size: 15px; display: grid; gap: 6px; max-width: 72ch; }
+.note b { color: var(--amber); font-size: 14px; font-weight: 600; }
 
 /* flow diagram */
 .flow { overflow-x: auto; }
@@ -186,7 +195,7 @@ h4 { font-size: 16px; font-weight: 700; }
 
 /* tables */
 .tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; font-variant-numeric: tabular-nums; }
 th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font: 500 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--sunk); }
 tr:last-child td { border-bottom: 0; }
@@ -209,7 +218,8 @@ td:first-child { font-weight: 600; white-space: nowrap; }
   border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; cursor: pointer;
   transition: border-color .15s ease, background .15s ease, box-shadow .15s ease, transform .15s ease;
 }
-.opts button:hover { border-color: var(--accent); box-shadow: var(--sh-sm); transform: translateY(-1px); }
+.opts button:hover { border-color: var(--accent); box-shadow: var(--sh-sm); transform: translateY(-2px); }
+.opts button:active { transform: translateY(0); box-shadow: none; }
 .opts button.right { border-color: var(--good); background: var(--accent-soft); }
 .opts button.wrong { border-color: var(--bad); background: var(--bad-soft); }
 .fb { font-size: 14px; color: var(--muted); }
@@ -232,7 +242,7 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 .pipeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
 .pipeline div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 6px; align-content: start; }
 .pipeline div:nth-child(3) { border-color: var(--accent); }
-.pipeline .step { font: 500 11px/1 var(--mono); color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
+.pipeline .step { font-size: 13px; color: var(--muted); line-height: 1.3; margin-top: -2px; }
 .pipeline strong { font: 700 16px/1.2 var(--display); }
 .pipeline p { font-size: 13.5px; color: var(--muted); line-height: 1.45; }
 @media (max-width: 860px) { .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -246,8 +256,8 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 @media (max-width: 600px) { .sessions > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } .sessions .len { text-align: left; } }
 .rules { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .rules li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; font-size: 15px; }
-.rules li::before { content: "✓"; color: var(--accent); font-weight: 700; }
-.rules.dont li::before { content: "✕"; color: var(--bad); }
+.rules li::before { content: ""; width: 1em; height: 1em; margin-top: .2em; background-color: var(--accent); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat; }
+.rules.dont li::before { background-color: var(--bad); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E"); }
 
 /* forms */
 .canvas-form { display: grid; gap: 14px; }
@@ -276,7 +286,7 @@ input, select, textarea { transition: border-color .15s ease, box-shadow .15s ea
 .act.done { border-color: var(--accent); }
 .act summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 16px 18px; }
 .act summary::-webkit-details-marker { display: none; }
-.act .lvl { width: 44px; height: 44px; border-radius: 10px; background: var(--sunk); display: grid; place-items: center; font: 700 18px var(--display); color: var(--muted); }
+.act .lvl { width: 44px; height: 44px; border-radius: 10px; background: var(--sunk); display: grid; place-items: center; font: 700 18px var(--display); color: var(--muted); font-variant-numeric: tabular-nums; }
 .act.done .lvl { background: var(--accent); color: var(--bg); }
 .act summary h3 { font-size: 18px; }
 .act summary p { font-size: 14px; color: var(--muted); margin-top: 2px; }
@@ -301,12 +311,11 @@ input, select, textarea { transition: border-color .15s ease, box-shadow .15s ea
 
 /* capstone */
 .cap-hero { background: linear-gradient(150deg, var(--fg), color-mix(in srgb, var(--fg) 80%, var(--accent))); color: var(--bg); border-radius: 16px; padding: 30px; display: grid; gap: 14px; box-shadow: var(--sh-md); }
-.cap-hero .kicker { color: var(--accent); }
 .cap-hero h2 { color: var(--bg); }
 .cap-hero p { color: color-mix(in srgb, var(--bg) 78%, var(--fg)); max-width: 64ch; }
 .wire { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
 .wire > div { border: 1.5px dashed var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 6px; align-content: start; min-height: 96px; background: var(--bg); min-width: 0; }
-.wire .lbl { font: 500 10.5px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.wire .lbl { font-size: 12.5px; line-height: 1.3; color: var(--muted); }
 .wire b { font: 700 14.5px/1.25 var(--display); }
 .wire p { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
 .wire .src { font: 400 11px/1.35 var(--mono); color: var(--muted); margin-top: auto; padding-top: 6px; border-top: 1px dotted var(--line); overflow-wrap: anywhere; }
@@ -354,8 +363,8 @@ dl.gloss dt:nth-last-of-type(1), dl.gloss dd:last-of-type { border-bottom: 0; }
 /* chart chooser */
 .chooser { display: grid; gap: 22px; }
 .qstep { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; min-width: 0; }
-.qstep legend { padding: 0; margin-bottom: 10px; font: 700 17px/1.3 var(--display); display: flex; gap: 10px; align-items: baseline; }
-.qstep legend .qn { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.qstep legend { padding: 0; margin-bottom: 10px; font: 700 17px/1.3 var(--display); display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
+.qstep legend .qn { font: 500 13px/1.3 var(--body); color: var(--muted); }
 .qopts { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; }
 .qopts button {
   text-align: left; font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line);
@@ -364,7 +373,9 @@ dl.gloss dt:nth-last-of-type(1), dl.gloss dd:last-of-type { border-bottom: 0; }
 }
 .qopts button strong { font-size: 14.5px; font-weight: 600; }
 .qopts button span { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
-.qopts button:hover { border-color: var(--accent); box-shadow: var(--sh-sm); transform: translateY(-1px); }
+.qopts button:hover { border-color: var(--accent); box-shadow: var(--sh-sm); transform: translateY(-2px); }
+.qopts button:active { transform: translateY(0); box-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .opts button:hover, .qopts button:hover, .btn:hover { transform: none; } }
 .qopts button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
 .qbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .linkbtn { font: 600 13px var(--body); color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
@@ -383,7 +394,9 @@ dl.gloss dt:nth-last-of-type(1), dl.gloss dd:last-of-type { border-bottom: 0; }
 .mult { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 14px; }
 @media (max-width: 560px) { .mult { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .mult h5 { margin: 0 0 2px; font: 600 12.5px var(--body); }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fig svg.gi { display: inline-block; width: 1em; height: 1em; overflow: visible; }
+.legend .gi { margin-right: 4px; }
 .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
 .legend i.ln { height: 3px; border-radius: 2px; vertical-align: 3px; width: 16px; }
 .legend i.dash { height: 0; border-top: 2px dashed var(--muted); border-radius: 0; vertical-align: 3px; width: 16px; }
@@ -408,19 +421,22 @@ dl.gloss dt:nth-last-of-type(1), dl.gloss dd:last-of-type { border-bottom: 0; }
 .hexc { stroke: var(--bg); stroke-width: 2; }
 .cellt { font: 600 10px var(--body); text-anchor: middle; font-variant-numeric: tabular-nums; }
 .on-dark { fill: #fff; } .on-light { fill: #0b0b0b; }
+.cell-ic { fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.cell-ic.on-dark { stroke: #fff; } .cell-ic.on-light { stroke: #0b0b0b; } .cell-ic.vt { stroke: var(--muted); }
 .i1 { fill: var(--q1i); } .i2 { fill: var(--q2i); } .i3 { fill: var(--q3i); } .i4 { fill: var(--q4i); }
 .vtip { position: fixed; z-index: 10; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 12.5px; line-height: 1.4; padding: 6px 9px; border-radius: 6px; max-width: 240px; opacity: 0; transition: opacity .1s; }
 .vtip.on { opacity: 1; }
 .kpi { display: grid; gap: 6px; max-width: 320px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
 .kpi .k-l { font-size: 13px; color: var(--muted); }
 .kpi .k-v { font: 800 52px/1 var(--display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-.kpi .k-d { font-size: 13px; color: var(--muted); }
+.kpi .k-d { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.kpi .k-d .gi { vertical-align: -.15em; }
 .kpi .k-d b { color: var(--good); font-weight: 600; }
 .mini-tbl table { font-size: 13px; }
 .mini-tbl th, .mini-tbl td { padding: 8px 10px; }
 .mini-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .mini-tbl .tb-tools { display: flex; gap: 8px; padding: 10px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.mini-tbl .tb-tools span { font-size: 12px; border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; color: var(--muted); background: var(--bg); }
+.mini-tbl .tb-tools span { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; color: var(--muted); background: var(--bg); }
 .srcs { display: grid; gap: 6px; }
 .srcs div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; font-size: 14px; padding: 8px 12px; background: var(--sunk); border-radius: 8px; }
 .srcs code { background: none; padding: 0; color: var(--accent); font-weight: 500; }
@@ -448,8 +464,8 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <div class="brand">
       <div class="brand-row">
         <div>
-          <span class="eyebrow">Self-paced course</span>
           <b>Programme Data Academy</b>
+          <span class="eyebrow">Self-paced course</span>
         </div>
         <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch theme">
           <svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -478,15 +494,15 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
   <main>
     <!-- ======== 00 START ======== -->
     <section id="start" class="hero">
-      <div class="kicker">00 · Start here</div>
-      <h1>From first question to a <em>country dashboard</em>.</h1>
+      <h1>From first question to a <em>country dashboard</em></h1>
+      <div class="hmeta">00 · Start here</div>
       <p class="lede">This course teaches NTD programme staff, partners and analysts to use the programme data connector: the tool that lets Claude read national programme data and turn it into answers, charts, maps and dashboards. No coding needed. Work through it in order, or jump to the part you need.</p>
       <div class="ladder" role="list">
-        <a role="listitem" href="#what"><span class="step">Step 1 · Learn</span><strong>Understand it</strong><span>What it is, what data it reaches, what it can't tell you.</span></a>
-        <a role="listitem" href="#setup"><span class="step">Step 2 · Access</span><strong>Get set up</strong><span>Request a key, install, test the connection.</span></a>
-        <a role="listitem" href="#training"><span class="step">Step 3 · Train</span><strong>Build good habits</strong><span>Live sessions and a pathway for turning ideas into real tools.</span></a>
-        <a role="listitem" href="#practice"><span class="step">Step 4 · Practise</span><strong>Climb the ladder</strong><span>Eight hands-on activities, each a little harder.</span></a>
-        <a role="listitem" href="#capstone"><span class="step">Step 5 · Prove it</span><strong>Capstone</strong><span>Build a full country dashboard and score it.</span></a>
+        <a role="listitem" href="#what"><strong>Understand it</strong><span class="step">Step 1 · Learn</span><span>What it is, what data it reaches, what it can't tell you.</span></a>
+        <a role="listitem" href="#setup"><strong>Get set up</strong><span class="step">Step 2 · Access</span><span>Request a key, install, test the connection.</span></a>
+        <a role="listitem" href="#training"><strong>Build good habits</strong><span class="step">Step 3 · Train</span><span>Live sessions and a pathway for turning ideas into real tools.</span></a>
+        <a role="listitem" href="#practice"><strong>Climb the ladder</strong><span class="step">Step 4 · Practise</span><span>Eight hands-on activities, each a little harder.</span></a>
+        <a role="listitem" href="#capstone"><strong>Capstone</strong><span class="step">Step 5 · Prove it</span><span>Build a full country dashboard and score it.</span></a>
       </div>
       <div class="who" aria-label="Who this is for">
         <span class="chip">National NTD programme managers</span>
@@ -499,8 +515,8 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
     <!-- ======== 01 WHAT ======== -->
     <section id="what">
-      <div class="kicker">01 · Learn</div>
       <h2>What the programme data connector is</h2>
+      <div class="hmeta">01 · Learn</div>
       <div class="prose">
         <p>The national programme holds data for the five NTDs managed through preventive chemotherapy: <strong>lymphatic filariasis (LF), onchocerciasis, schistosomiasis (SCH), soil-transmitted helminths (STH) and trachoma</strong>, plus loiasis and WASH indicators. That data is reported through joint reporting forms and assembled into a consistent picture down to each implementation unit (IU, usually a district): where each disease is endemic, where mass drug administration (MDA) happened, how well it went, and what comes next.</p>
         <p>The <strong>data connector</strong> plugs that programme data straight into Claude. You ask a question in plain language; Claude picks the right tables, pulls only the columns it needs, and analyses, charts or maps the result. It can also combine programme data with your own spreadsheets and documents.</p>
@@ -582,23 +598,23 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       </div>
 
       <div class="panel">
-        <div class="kicker" style="color:var(--muted)">Check yourself · 3 questions</div>
+        <div class="hmeta">Check yourself · 3 questions</div>
         <div class="quiz" id="quiz"></div>
       </div>
     </section>
 
     <!-- ======== 02 SETUP ======== -->
     <section id="setup">
-      <div class="kicker">02 · Access <span class="soon">Coming soon</span></div>
       <h2>Get it and set it up</h2>
+      <div class="hmeta">02 · Access <span class="soon">Coming soon</span></div>
       <p class="lede">Public access to the programme data connector is being prepared. The steps below show what setup will look like so you can get ready. Exact links, request forms and dates will be added here when they're confirmed.</p>
       <div class="panel">
         <ol class="steps">
-          <li><div><h4>Get a Claude account</h4><p>You'll use Claude in the desktop app or on the web. Check with your organisation which plan you should use.</p></div><span class="status ready">Available now</span></li>
-          <li><div><h4>Request a programme API key</h4><p>Each user needs a personal key from the programme data team. Some datasets (site-level and district medicine data) need an extra access role; say if your work needs them.</p></div><span class="status tbc">Form coming soon</span></li>
-          <li><div><h4>Install the Connector plugin</h4><p>The plugin adds the connector plus two guided skills: <em>getting started</em> and <em>guided data analysis</em>. You'll enter your key as <code>PROGRAMME_API_KEY</code> during install.</p></div><span class="status tbc">Coming soon</span></li>
-          <li><div><h4>Turn the connector on</h4><p>In a chat, check the connector toggle in the chat's settings so Claude can use the programme data tools.</p></div><span class="status tbc">Coming soon</span></li>
-          <li><div><h4>Test the connection</h4><p>Ask: <em>"What programme data can you see?"</em> Claude should list diseases, levels and datasets. This is Activity 1 on the practice ladder.</p></div><span class="status tbc">Coming soon</span></li>
+          <li><div><h3 class="step-t">Get a Claude account</h3><p>You'll use Claude in the desktop app or on the web. Check with your organisation which plan you should use.</p></div><span class="status ready">Available now</span></li>
+          <li><div><h3 class="step-t">Request a programme API key</h3><p>Each user needs a personal key from the programme data team. Some datasets (site-level and district medicine data) need an extra access role; say if your work needs them.</p></div><span class="status tbc">Form coming soon</span></li>
+          <li><div><h3 class="step-t">Install the Connector plugin</h3><p>The plugin adds the connector plus two guided skills: <em>getting started</em> and <em>guided data analysis</em>. You'll enter your key as <code>PROGRAMME_API_KEY</code> during install.</p></div><span class="status tbc">Coming soon</span></li>
+          <li><div><h3 class="step-t">Turn the connector on</h3><p>In a chat, check the connector toggle in the chat's settings so Claude can use the programme data tools.</p></div><span class="status tbc">Coming soon</span></li>
+          <li><div><h3 class="step-t">Test the connection</h3><p>Ask: <em>"What programme data can you see?"</em> Claude should list diseases, levels and datasets. This is Activity 1 on the practice ladder.</p></div><span class="status tbc">Coming soon</span></li>
         </ol>
       </div>
       <div class="grid3">
@@ -611,17 +627,17 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
     <!-- ======== 03 TRAINING ======== -->
     <section id="training">
-      <div class="kicker">03 · Train</div>
       <h2>Training and the idea pathway</h2>
+      <div class="hmeta">03 · Train</div>
       <p class="lede">Access alone doesn't produce useful tools. Training makes sure the good ideas people bring actually get built, checked against the data, and used by the teams who need them.</p>
 
       <h3>How an idea becomes a tool people use</h3>
       <div class="pipeline">
-        <div><span class="step">1 · Idea</span><strong>Spot a need</strong><p>A question you answer by hand every quarter, or a report that takes days to assemble.</p></div>
-        <div><span class="step">2 · Shape</span><strong>Fill a canvas</strong><p>Name the audience, the decision it supports, and the data it needs.</p></div>
-        <div><span class="step">3 · Build</span><strong>Prototype in Claude</strong><p>Use the connector to build a first version in one session.</p></div>
-        <div><span class="step">4 · Check</span><strong>Validate</strong><p>Cross-check against country summaries and the programme team's own knowledge.</p></div>
-        <div><span class="step">5 · Share</span><strong>Adopt</strong><p>Share it, present it at a showcase, and hand it to the team that will keep it current.</p></div>
+        <div><strong>Spot a need</strong><span class="step">1 · Idea</span><p>A question you answer by hand every quarter, or a report that takes days to assemble.</p></div>
+        <div><strong>Fill a canvas</strong><span class="step">2 · Shape</span><p>Name the audience, the decision it supports, and the data it needs.</p></div>
+        <div><strong>Prototype in Claude</strong><span class="step">3 · Build</span><p>Use the connector to build a first version in one session.</p></div>
+        <div><strong>Validate</strong><span class="step">4 · Check</span><p>Cross-check against country summaries and the programme team's own knowledge.</p></div>
+        <div><strong>Adopt</strong><span class="step">5 · Share</span><p>Share it, present it at a showcase, and hand it to the team that will keep it current.</p></div>
       </div>
 
       <h3>Planned training</h3>
@@ -695,28 +711,28 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
     <!-- ======== 04 PRACTICE ======== -->
     <section id="practice">
-      <div class="kicker">04 · Practise</div>
       <h2>The practice ladder</h2>
+      <div class="hmeta">04 · Practise</div>
       <p class="lede">Eight activities, each building on the last. Copy the prompt, swap in your country, run it in Claude with the programme data connector on, and check your result against "What good looks like". Tick each one off when you're done; your progress is saved in this browser.</p>
       <div class="acts" id="acts"></div>
     </section>
 
     <!-- ======== 05 CHARTS ======== -->
     <section id="charts">
-      <div class="kicker">05 · Visualise</div>
       <h2>Choose the right chart</h2>
+      <div class="hmeta">05 · Visualise</div>
       <p class="lede">The right chart depends on the question, not on the data you happen to have. Answer two or three questions below and the chooser recommends a chart, shows an example, and writes the prompt to build it with the programme data connector.</p>
 
       <div class="panel chooser" id="chooser">
         <div class="qbar">
-          <div class="kicker" style="color:var(--muted)">Chart chooser</div>
+          <div class="hmeta">Chart chooser</div>
           <button type="button" class="linkbtn" id="ch-reset">Start over</button>
         </div>
         <div id="ch-steps" class="chooser"></div>
         <div class="rec" id="ch-rec" hidden aria-live="polite">
           <div class="rec-head">
-            <div class="kicker" id="ch-kicker">Recommended</div>
             <h3 id="ch-name"></h3>
+            <div class="hmeta" id="ch-kicker">Recommended</div>
             <p id="ch-why"></p>
           </div>
           <figure class="fig" id="ch-fig" style="margin:0"></figure>
@@ -793,42 +809,42 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <!-- ======== 05 CAPSTONE ======== -->
     <section id="capstone">
       <div class="cap-hero">
-        <div class="kicker">06 · Capstone</div>
         <h2>Build a country NTD dashboard</h2>
+        <div class="hmeta">06 · Capstone</div>
         <p>Bring everything together in one interactive page for a country of your choice: every PC-NTD, how endemicity has shifted, reporting history, the key trends, and where each disease is heading. Your audience is the national NTD programme team. They should understand where the country stands in two minutes.</p>
       </div>
 
       <h3>Required panels</h3>
       <p class="prose" style="color:var(--muted)">A layout to aim for. Each panel lists the programme data source to pull from. Boxes are placeholders; your dashboard fills them with your country's data. Not sure which chart suits a panel? Run it through the <a href="#charts">chart chooser</a>.</p>
       <div class="wire" aria-label="Dashboard wireframe">
-        <div class="w-head"><div><span class="lbl">Header</span><b>Country name · data snapshot date · latest complete year</b></div><p>Includes a one-line recency caveat</p></div>
+        <div class="w-head"><div><b>Country name · data snapshot date · latest complete year</b><span class="lbl">Header</span></div><p>Includes a one-line recency caveat</p></div>
         <div class="w-kpi">
-          <div><span class="lbl">KPI</span><b>Districts requiring MDA</b><i class="ghost"></i></div>
-          <div><span class="lbl">KPI</span><b>Districts with effective MDA</b><i class="ghost"></i></div>
-          <div><span class="lbl">KPI</span><b>People treated, latest year</b><i class="ghost"></i></div>
-          <div><span class="lbl">KPI</span><b>Diseases eliminated or in surveillance</b><i class="ghost"></i></div>
+          <div><b>Districts requiring MDA</b><span class="lbl">KPI</span><i class="ghost"></i></div>
+          <div><b>Districts with effective MDA</b><span class="lbl">KPI</span><i class="ghost"></i></div>
+          <div><b>People treated, latest year</b><span class="lbl">KPI</span><i class="ghost"></i></div>
+          <div><b>Diseases eliminated or in surveillance</b><span class="lbl">KPI</span><i class="ghost"></i></div>
         </div>
-        <div class="span3"><span class="lbl">1 · All diseases</span><b>Endemicity at a glance</b><p>LF, oncho, SCH, STH, trachoma and loiasis: status, districts endemic, districts under MDA.</p>
+        <div class="span3"><b>Endemicity at a glance</b><span class="lbl">1 · All diseases</span><p>LF, oncho, SCH, STH, trachoma and loiasis: status, districts endemic, districts under MDA.</p>
           <svg class="mini" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><rect class="r" x="0" y="4" width="150" height="7" rx="2"/><rect class="r" x="0" y="18" width="110" height="7" rx="2"/><rect class="r" x="0" y="32" width="70" height="7" rx="2"/></svg>
           <span class="src">Country summary table · disease=all, level=country</span></div>
-        <div class="span3"><span class="lbl">2 · Change over time</span><b>Changes in endemicity</b><p>Districts by endemicity category, year by year, per disease. Shows movement into surveillance or elimination.</p>
+        <div class="span3"><b>Changes in endemicity</b><span class="lbl">2 · Change over time</span><p>Districts by endemicity category, year by year, per disease. Shows movement into surveillance or elimination.</p>
           <svg class="mini" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><rect class="r" x="4" y="8" width="22" height="34"/><rect class="r" x="34" y="12" width="22" height="30"/><rect class="r" x="64" y="16" width="22" height="26"/><rect class="r" x="94" y="22" width="22" height="20"/><rect class="r" x="124" y="26" width="22" height="16"/><rect class="r" x="154" y="30" width="22" height="12"/></svg>
           <span class="src">Afro_IU_[disease]_data · Endemicity × Year</span></div>
-        <div class="span4"><span class="lbl">3 · Key trends</span><b>Coverage, people treated, effective rounds</b><p>One small chart per disease. Coverage in %, populations as counts on separate charts. Mark incomplete years.</p>
+        <div class="span4"><b>Coverage, people treated, effective rounds</b><span class="lbl">3 · Key trends</span><p>One small chart per disease. Coverage in %, populations as counts on separate charts. Mark incomplete years.</p>
           <svg class="mini" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><line class="g" x1="0" y1="22" x2="200" y2="22"/><polyline class="l" points="0,34 30,28 60,30 90,20 120,16 150,14 180,26 200,40"/></svg>
           <span class="src">Country-level tables · Year, EpiCoverage, PopTreat, EffMDA</span></div>
-        <div class="span2"><span class="lbl">4 · Forecasts</span><b>Elimination outlook</b><p>Projected year each disease reaches its target, with the forecast's assumptions.</p>
+        <div class="span2"><b>Elimination outlook</b><span class="lbl">4 · Forecasts</span><p>Projected year each disease reaches its target, with the forecast's assumptions.</p>
           <svg class="mini" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><line class="g" x1="0" y1="38" x2="200" y2="38"/><polyline class="l" points="0,6 50,14 100,24 150,32 200,37"/></svg>
           <span class="src">Forecast tables · LF, oncho, SCH, STH</span></div>
-        <div class="span3"><span class="lbl">5 · Reporting</span><b>Report submissions over the years</b><p>Grid of years × JAP components (JRSM, JRF, EPIRF, AWP, TEMF) showing submitted, accepted or missing.</p>
+        <div class="span3"><b>Report submissions over the years</b><span class="lbl">5 · Reporting</span><p>Grid of years × JAP components (JRSM, JRF, EPIRF, AWP, TEMF) showing submitted, accepted or missing.</p>
           <svg class="mini" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><g><rect class="r" x="0" y="2" width="26" height="11"/><rect class="r" x="30" y="2" width="26" height="11"/><rect class="r" x="60" y="2" width="26" height="11"/><rect class="r" x="90" y="2" width="26" height="11"/><rect class="r" x="120" y="2" width="26" height="11"/><rect class="r" x="150" y="2" width="26" height="11"/></g><g><rect class="r" x="0" y="17" width="26" height="11"/><rect class="r" x="30" y="17" width="26" height="11"/><rect class="r" x="60" y="17" width="26" height="11"/><rect class="r" x="90" y="17" width="26" height="11"/><rect class="r" x="120" y="17" width="26" height="11"/><rect class="r" x="150" y="17" width="26" height="11"/></g><g><rect class="r" x="0" y="32" width="26" height="11"/><rect class="r" x="30" y="32" width="26" height="11"/><rect class="r" x="60" y="32" width="26" height="11"/><rect class="r" x="90" y="32" width="26" height="11"/><rect class="r" x="120" y="32" width="26" height="11"/><rect class="r" x="150" y="32" width="26" height="11"/></g></svg>
           <span class="src">list_japs · component statuses by year</span></div>
-        <div class="span3"><span class="lbl">6 · Medicines</span><b>Shipments and supply</b><p>Donated medicine shipments by year and drug, with status.</p>
+        <div class="span3"><b>Shipments and supply</b><span class="lbl">6 · Medicines</span><p>Donated medicine shipments by year and drug, with status.</p>
           <svg class="mini" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><rect class="r" x="6" y="20" width="18" height="22"/><rect class="r" x="40" y="10" width="18" height="32"/><rect class="r" x="74" y="16" width="18" height="26"/><rect class="r" x="108" y="6" width="18" height="36"/><rect class="r" x="142" y="18" width="18" height="24"/><rect class="r" x="176" y="24" width="18" height="18"/></svg>
           <span class="src">get_shipments · medicine inventory tables</span></div>
-        <div class="span6"><span class="lbl">7 · Detail</span><b>District table with filters</b><p>Every IU with region, endemicity per disease, latest coverage, cumulative and effective rounds. Filter by disease, region and status.</p>
+        <div class="span6"><b>District table with filters</b><span class="lbl">7 · Detail</span><p>Every IU with region, endemicity per disease, latest coverage, cumulative and effective rounds. Filter by disease, region and status.</p>
           <span class="src">Afro_IU_[disease]_data · latest complete year</span></div>
-        <div class="span6"><span class="lbl">8 · Honesty</span><b>Key takeaways, caveats and sources</b><p>Three plain-language takeaways. Every table and year used. Which years look incomplete and how you handled zeros.</p></div>
+        <div class="span6"><b>Key takeaways, caveats and sources</b><span class="lbl">8 · Honesty</span><p>Three plain-language takeaways. Every table and year used. Which years look incomplete and how you handled zeros.</p></div>
       </div>
 
       <h3>Starter prompt</h3>
@@ -860,8 +876,8 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
 
     <!-- ======== GLOSSARY ======== -->
     <section id="glossary">
-      <div class="kicker">Appendix</div>
       <h2>Glossary</h2>
+      <div class="hmeta">Appendix</div>
       <dl class="gloss">
         <dt>PC-NTDs</dt><dd>The five NTDs controlled with preventive chemotherapy: LF, onchocerciasis, SCH, STH and trachoma.</dd>
         <dt>IU</dt><dd>Implementation unit. The level at which MDA is planned and reported, usually a district.</dd>
@@ -889,6 +905,9 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
 
 <script>
 (function () {
+ /* lucide-style inline icons (24 viewBox, stroke currentColor) */
+ var ICONS = { check: '<path d="M20 6 9 17l-5-5"/>', x: '<path d="M18 6 6 18M6 6l12 12"/>', dots: '<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>', minus: '<path d="M5 12h14"/>', up: '<path d="m5 12 7-7 7 7M12 19V5"/>', down: '<path d="m6 9 6 6 6-6"/>', right: '<path d="m9 18 6-6-6-6"/>' };
+ function ico(n) { return '<svg class="gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[n] + '</svg>'; }
   var store = {
     get: function (k) { try { return JSON.parse(localStorage.getItem('programme-academy:' + k)); } catch (e) { return null; } },
     set: function (k, v) { try { localStorage.setItem('programme-academy:' + k, JSON.stringify(v)); } catch (e) {} }
@@ -1018,7 +1037,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
     var id = 'done-act' + (i + 1);
     var d = document.createElement('details'); d.className = 'act'; d.id = 'act' + (i + 1);
     d.innerHTML =
-      '<summary><span class="lvl">' + (i + 1) + '</span><div><h3>' + a.t + '</h3><p>' + a.s + '</p></div><span class="meta"><span class="skill">' + a.k + '</span><span class="chev" aria-hidden="true">▶</span></span></summary>' +
+      '<summary><span class="lvl">' + (i + 1) + '</span><div><h3>' + a.t + '</h3><p>' + a.s + '</p></div><span class="meta"><span class="skill">' + a.k + '</span><span class="chev" aria-hidden="true">' + ico('right') + '</span></span></summary>' +
       '<div class="body"><p class="goal"><strong>Goal.</strong> ' + a.g + '</p>' +
       '<div class="prompt"></div>' +
       '<div class="cols"><div><h4>What good looks like</h4><ul>' + a.good.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' +
@@ -1227,7 +1246,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
   function statusGrid() {
     var yrs = range(2019, 2024), comps = ['JRSM', 'JRF', 'EPIRF', 'AWP', 'TEMF'];
     var rows = ['aaaaas', 'aamann', 'aaasmn', 'aamaas', 'maaaas'];
-    var ST = { a: ['fgood', '✓', 'on-dark', 'Accepted'], s: ['fwarn', '…', 'on-light', 'Submitted, under review'], m: ['fbad', '✕', 'on-dark', 'Missing'], n: ['fnone', '–', 'vt', 'Not yet due'] };
+    var ST = { a: ['fgood', 'check', 'on-dark', 'Accepted'], s: ['fwarn', 'dots', 'on-light', 'Submitted, under review'], m: ['fbad', 'x', 'on-dark', 'Missing'], n: ['fnone', 'minus', 'vt', 'Not yet due'] };
     var l = 60, cw = 76, ch = 30, g = 4, s = '';
     yrs.forEach(function (y, j) { s += '<text class="vt" x="' + (l + j * (cw + g) + cw / 2) + '" y="14" text-anchor="middle">' + y + '</text>'; });
     comps.forEach(function (c, i) {
@@ -1235,11 +1254,11 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       s += '<text class="vt" x="' + (l - 8) + '" y="' + (y + ch / 2 + 4) + '" text-anchor="end">' + c + '</text>';
       rows[i].split('').forEach(function (k, j) {
         var st = ST[k], x = l + j * (cw + g);
-        s += '<g data-tip="' + esc(c + ' · ' + yrs[j] + ': ' + st[3]) + '"><rect class="' + st[0] + '" x="' + x + '" y="' + y + '" width="' + cw + '" height="' + ch + '" rx="4"/><text class="cellt ' + st[2] + '" x="' + (x + cw / 2) + '" y="' + (y + ch / 2 + 4) + '" style="font-size:13px">' + st[1] + '</text></g>';
+        s += '<g data-tip="' + esc(c + ' · ' + yrs[j] + ': ' + st[3]) + '"><rect class="' + st[0] + '" x="' + x + '" y="' + y + '" width="' + cw + '" height="' + ch + '" rx="4"/><svg class="cell-ic ' + st[2] + '" x="' + (x + cw / 2 - 8) + '" y="' + (y + ch / 2 - 8) + '" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[st[1]] + '</svg></g>';
       });
     });
     return svgWrap(l + yrs.length * (cw + g), 24 + comps.length * (ch + g), s, 'Status grid of JAP components by year') +
-      legend([['bgood', '✓ Accepted'], ['bwarn', '… Submitted, under review'], ['bbad', '✕ Missing'], ['bnone', '– Not yet due (JRF lags ~2 years)']]);
+      legend([['bgood', ico('check') + 'Accepted'], ['bwarn', ico('dots') + 'Submitted, under review'], ['bbad', ico('x') + 'Missing'], ['bnone', ico('minus') + 'Not yet due (JRF lags ~2 years)']]);
   }
 
   function heatmap() {
@@ -1476,7 +1495,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       why: 'When the answer is one number, show the number: big, with its year, a comparison and a small trend. A one-bar chart adds nothing.',
       draw: function () {
         return fig('KPI tile', 'One number, its year, and context',
-          '<div class="kpi"><span class="k-l">People treated for LF, 2023</span><span class="k-v">4.4M</span><span class="k-d"><b>▲ 5%</b> vs 2022 · 2024 not yet fully reported</span>' + spark(LF_T.slice(0, 10)) + '<span class="k-l" style="font-size:11.5px">Country-level LF table · 2014–2023</span></div>');
+          '<div class="kpi"><span class="k-l">People treated for LF, 2023</span><span class="k-v">4.4M</span><span class="k-d"><b>' + ico('up') + ' 5%</b> vs 2022 · 2024 not yet fully reported</span>' + spark(LF_T.slice(0, 10)) + '<span class="k-l" style="font-size:11.5px">Country-level LF table · 2014–2023</span></div>');
       },
       dos: ['Name the year; use the latest complete one', 'Give a comparison (last year, or the target)', 'Put the source right under the number'],
       donts: ['A one-bar chart or a two-slice pie', 'Calling a partial year "this year"'],
@@ -1520,7 +1539,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
       draw: function () {
         var rows = [['District A', 'Region 1', 'Needs MDA', '72%', '9', '7'], ['District B', 'Region 1', 'Surveillance after MDA', '–', '11', '9'], ['District C', 'Region 2', 'Needs MDA', '58%', '6', '3'], ['District D', 'Region 2', 'Awaiting impact survey', '66%', '8', '6'], ['District E', 'Region 3', 'Needs MDA', '47%', '5', '2']];
         return fig('District detail', 'LF, latest complete year',
-          '<div class="tbl mini-tbl"><div class="tb-tools"><span>Region ▾</span><span>Status ▾</span><span>Search district…</span></div><table><thead><tr><th>District</th><th>Region</th><th>Status</th><th style="text-align:right">Coverage</th><th style="text-align:right">Rounds</th><th style="text-align:right">Effective</th></tr></thead><tbody>' +
+          '<div class="tbl mini-tbl"><div class="tb-tools"><span>Region ' + ico('down') + '</span><span>Status ' + ico('down') + '</span><span>Search district…</span></div><table><thead><tr><th>District</th><th>Region</th><th>Status</th><th style="text-align:right">Coverage</th><th style="text-align:right">Rounds</th><th style="text-align:right">Effective</th></tr></thead><tbody>' +
           rows.map(function (r) { return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td class="num">' + r[3] + '</td><td class="num">' + r[4] + '</td><td class="num">' + r[5] + '</td></tr>'; }).join('') +
           '</tbody></table></div>', 'A dash means no MDA that year, not 0%');
       },
@@ -1585,7 +1604,7 @@ Before pulling any data, show me your plan: which tables and columns you'll use 
     var list = steps(), html = '', done = true;
     list.forEach(function (st, i) {
       if (!done) return;
-      html += '<fieldset class="qstep"><legend><span class="qn">Q' + (i + 1) + '</span>' + st.q + '</legend><div class="qopts">' +
+      html += '<fieldset class="qstep"><legend><span>' + st.q + '</span><span class="qn">Q' + (i + 1) + '</span></legend><div class="qopts">' +
         st.o.map(function (o) { return '<button type="button" data-k="' + st.k + '" data-v="' + o[0] + '" aria-pressed="' + (ch.a[st.k] === o[0]) + '"><strong>' + o[1] + '</strong><span>' + o[2] + '</span></button>'; }).join('') + '</div></fieldset>';
       if (!ch.a[st.k]) done = false;
     });

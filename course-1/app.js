@@ -33,7 +33,7 @@ en: {
   "setup.hw.t": "Homework is not optional — it is how you stay in the course",
   "setup.hw.d": "A homework assignment follows every class. Each one practices the topics we just covered and applies them to your own project. Every class opens with a student presenting their solution. You will all present during the course — homework is your ticket to the showcase.",
   "setup.banned.label": "Tools we leave at the door:",
-  "setup.banned.slack": "Slack only ✓",
+  "setup.banned.slack": "Slack only",
   "setup.chk.t": "Set up before Class 1",
   "setup.chk.hint": "Tick as you go — progress is saved on this device and shows in the ring at the top.",
   "chk.meet": "My Google account works — I can sign in and join a Google Meet test call",
@@ -95,8 +95,8 @@ en: {
   "mock.side.chat1": "LF coverage table draft",
   "mock.side.chat2": "Week 1 homework questions",
   "mock.side.chat3": "Summary of programme guideline",
-  "mock.side.projects": "▸ Projects",
-  "mock.side.settings": "⚙ Settings (Claude Teams)",
+  "mock.side.projects": "Projects",
+  "mock.side.settings": "Settings (Claude Teams)",
   "mock.spot.search.t": "Search",
   "mock.spot.search.d": "Every conversation you've had is searchable here — months from now you'll find that prompt you half-remember.",
   "mock.spot.new.t": "New chat",
@@ -213,7 +213,7 @@ en: {
   "worked.t": "A worked example — colour-coded",
   "worked.note": "Spot the parts: persona → task → context → format → iterate. Still room to improve — \"easy-to-read format\" is vague. Say what columns you want.",
   "ba.t": "Same request, two prompts — see the difference",
-  "ba.bad.label": "✗ Vague", "ba.good.label": "✓ Structured",
+  "ba.bad.label": "Vague", "ba.good.label": "Structured",
   "ph.t": "Three phrases worth memorizing",
   "ph.1": "\"Think through this with me step by step.\"",
   "ph.2": "\"That's helpful, but I need it specific to my context: …\"",
@@ -336,7 +336,7 @@ fr: {
   "setup.hw.t": "Les devoirs ne sont pas facultatifs — c'est ainsi que vous restez dans le cours",
   "setup.hw.d": "Un devoir suit chaque cours. Chacun vous fait pratiquer les thèmes que nous venons de couvrir et vous les applique à votre propre projet. Chaque cours commence par la présentation des devoirs d'un·e étudiant·e. Vous présenterez tou·te·s au fil du cours — les devoirs sont votre billet pour la présentation finale.",
   "setup.banned.label": "Les outils qu'on laisse à la porte :",
-  "setup.banned.slack": "Slack uniquement ✓",
+  "setup.banned.slack": "Slack uniquement",
   "setup.chk.t": "À préparer avant le cours 1",
   "setup.chk.hint": "Cochez au fur et à mesure — la progression est enregistrée sur cet appareil et apparaît dans l'anneau en haut.",
   "chk.meet": "Mon compte Google fonctionne — je peux me connecter et rejoindre un appel test Google Meet",
@@ -399,8 +399,8 @@ fr: {
   "mock.side.chat1": "Brouillon du tableau de couverture LF",
   "mock.side.chat2": "Questions sur le devoir de la semaine 1",
   "mock.side.chat3": "Résumé d'une directive publiée",
-  "mock.side.projects": "▸ Projets",
-  "mock.side.settings": "⚙ Paramètres (Claude Teams)",
+  "mock.side.projects": "Projets",
+  "mock.side.settings": "Paramètres (Claude Teams)",
   "mock.spot.search.t": "Recherche",
   "mock.spot.search.d": "Chaque conversation que vous avez eue est consultable ici — dans quelques mois, vous retrouverez ce prompt dont vous vous souvenez à moitié.",
   "mock.spot.new.t": "Nouvelle discussion",
@@ -517,7 +517,7 @@ fr: {
   "worked.t": "Un exemple travaillé — en couleur",
   "worked.note": "Repérez les parties : persona → tâche → contexte → format → itération. On peut encore améliorer : « format facile à lire » reste vague. Dites quelles colonnes vous voulez.",
   "ba.t": "La même demande, deux prompts — voyez la différence",
-  "ba.bad.label": "✗ Vague", "ba.good.label": "✓ Structuré",
+  "ba.bad.label": "Vague", "ba.good.label": "Structuré",
   "ph.t": "Trois phrases à mémoriser",
   "ph.1": "« Réfléchis à ça avec moi, étape par étape. »",
   "ph.2": "« C'est utile, mais j'ai besoin que ce soit spécifique à mon contexte : … »",
@@ -825,10 +825,14 @@ const $$ = (s) => Array.from(document.querySelectorAll(s));
 const t = (k) => (DICT[S.lang] && DICT[S.lang][k]) || DICT.en[k] || k;
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const v = (b) => (typeof b === "string" ? b : b[S.lang] || b.en); // bilingual value
+// Inline SVG status icons (lucide-style) — replaces check/cross glyphs.
+const ICON_PATHS = { check: '<path d="M20 6 9 17l-5-5"/>', x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>' };
+const icon = (name) => '<svg class="i" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON_PATHS[name] + "</svg>";
+const withCheck = (txt) => icon("check") + " " + esc(txt);
 
-function showToast(msg) {
+function showToast(msg, ico) {
   const el = $("#toast");
-  el.textContent = msg;
+  el.innerHTML = (ico ? icon(ico) + " " : "") + esc(msg);
   el.classList.add("show");
   clearTimeout(showToast._t);
   showToast._t = setTimeout(() => el.classList.remove("show"), 2000);
@@ -929,7 +933,7 @@ function renderQuiz(id) {
       );
     }).join("") +
     '</div>' +
-    '<div class="quiz-passed' + (all ? " show" : "") + '">✓ ' + esc(t("quiz.pass")) + "</div>";
+    '<div class="quiz-passed' + (all ? " show" : "") + '">' + withCheck(t("quiz.pass")) + "</div>";
 }
 function wireQuizzes() {
   QUIZ_IDS.forEach((id) => {
@@ -947,7 +951,7 @@ function wireQuizzes() {
         save();
         renderQuiz(id);
         updateNavChecks();
-        if (quizPassed(id)) showToast("✓ " + t("toast.quiz"));
+        if (quizPassed(id)) showToast(t("toast.quiz"), "check");
       } else {
         btn.classList.add("wrong");
         item.classList.remove("q-wrong");
@@ -1186,14 +1190,14 @@ function renderSeed() {
   $$("[data-seed-status]").forEach((el) => {
     const ok = done[+el.dataset.seedStatus - 1];
     el.classList.toggle("ok", ok);
-    el.querySelector(".st").textContent = ok ? "✓ " + t("seed.ex.done") : t("seed.ex.todo");
+    el.querySelector(".st").innerHTML = ok ? withCheck(t("seed.ex.done")) : esc(t("seed.ex.todo"));
   });
   $("#seed-missing").hidden = done.every(Boolean);
   const pageLi = $("[data-seen-page]");
   if (pageLi) {
     const pg = pageSeenData();
     pageLi.classList.toggle("ok", pg.complete);
-    pageLi.querySelector(".st").textContent = pg.complete ? "✓ " + t("seen.full") : pg.seen + "/" + pg.total + " " + t("seen.sections");
+    pageLi.querySelector(".st").innerHTML = pg.complete ? withCheck(t("seen.full")) : esc(pg.seen + "/" + pg.total + " " + t("seen.sections"));
   }
 }
 function wireSeed() {
@@ -1231,7 +1235,7 @@ function problemFileHtml(d) {
   const val = (x) => x ? '<div class="v">' + esc(x) + "</div>" : '<div class="v empty">' + esc(t("seed.rep.empty")) + "</div>";
   const row = (label, x) => '<div class="row"><div class="k">' + esc(label) + "</div>" + val(x) + "</div>";
   const prompt = (x) => '<details><summary>' + esc(t("seed.rep.prompt")) + "</summary><pre>" + esc(x) + "</pre></details>";
-  const status = (ok) => '<span class="badge ' + (ok ? "ok" : "todo") + '">' + esc(ok ? "✓ " + t("seed.ex.done") : t("seed.ex.todo")) + "</span>";
+  const status = (ok) => '<span class="badge ' + (ok ? "ok" : "todo") + '">' + (ok ? withCheck(t("seed.ex.done")) : esc(t("seed.ex.todo"))) + "</span>";
   const date = new Date(d.exportedAt).toLocaleString(d.lang === "fr" ? "fr-FR" : "en-GB", { dateStyle: "long", timeStyle: "short" });
   const json = JSON.stringify(d).replace(/</g, "\\u003c");
   return '<!doctype html><html lang="' + d.lang + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
@@ -1239,7 +1243,7 @@ function problemFileHtml(d) {
     ":root{--fg:#1d2433;--muted:#5d6678;--line:#dfe3ea;--accent:#2f55d4;--soft:#eef2fc;--ok:#1f7a4d;--warn:#a35a00}" +
     "*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}" +
     "main{max-width:760px;margin:0 auto;padding:32px 16px 48px}header{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:20px}" +
-    ".eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}h1{margin:4px 0 2px;font-size:26px}" +
+    "h1{margin:0 0 2px;font-size:26px}.sub{color:var(--muted);font-size:14px;margin:0 0 6px}.badge .i{width:1em;height:1em;vertical-align:-.125em}" +
     ".meta{color:var(--muted);font-size:14px}.final{background:var(--soft);border:1px solid var(--accent);border-radius:10px;padding:14px 16px;margin:0 0 20px}" +
     ".final .k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700}.final p{margin:6px 0 0;font-size:17px}" +
     "section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px}" +
@@ -1249,8 +1253,8 @@ function problemFileHtml(d) {
     ".v{white-space:pre-wrap;overflow-wrap:anywhere}.v.empty{color:var(--warn);font-style:italic}" +
     "details{margin-top:8px;font-size:13px;color:var(--muted)}pre{white-space:pre-wrap;background:#f4f6f9;border-radius:8px;padding:10px;font:13px/1.5 inherit}" +
     "footer{color:var(--muted);font-size:13px;margin-top:20px}@media print{body{background:#fff}details{display:none}}" +
-    "</style></head><body><main><header><div class=\"eyebrow\">AMPLIFY 2027 · " + esc(t("seed.rep.sub")) + "</div>" +
-    "<h1>" + esc(t("seed.rep.title")) + "</h1><div class=\"meta\">" + esc(t("seed.rep.student")) + ": <strong>" + esc(d.student.name || t("seed.rep.empty")) + "</strong> · " +
+    "</style></head><body><main><header>" +
+    "<h1>" + esc(t("seed.rep.title")) + "</h1><p class=\"sub\">AMPLIFY 2027 · " + esc(t("seed.rep.sub")) + "</p><div class=\"meta\">" + esc(t("seed.rep.student")) + ": <strong>" + esc(d.student.name || t("seed.rep.empty")) + "</strong> · " +
     esc(t("seed.rep.date")) + ": " + esc(date) + "</div></header>" +
     (d.statement.pasted
       ? '<div class="final"><div class="k">' + esc(t("seed.rep.statement")) + "</div><p>" + esc(d.statement.pasted) + "</p></div>"
@@ -1352,8 +1356,8 @@ function renderAutopsy() {
       fb.hidden = false;
       fb.className = "au-feedback " + (ok ? "ok" : "bad");
       fb.innerHTML = ok
-        ? '<strong>✓ '+esc(t("quiz.pass"))+' — '+esc(c.missing)+' '+esc(t("pt."+c.missing+".t"))+'</strong><p>'+esc(v(c.why))+'</p><p class="au-fix"><em>'+esc(v(c.fix))+'</em></p>'
-        : '<strong>✗ '+esc(t("q.try"))+' — '+esc(t("pt."+pick+".t"))+' is not the biggest gap here.</strong><p>'+esc(v(c.why))+'</p><p class="au-fix"><em>'+esc(v(c.fix))+'</em></p>';
+        ? '<strong>'+withCheck(t("quiz.pass"))+' — '+esc(c.missing)+' '+esc(t("pt."+c.missing+".t"))+'</strong><p>'+esc(v(c.why))+'</p><p class="au-fix"><em>'+esc(v(c.fix))+'</em></p>'
+        : '<strong>'+icon("x")+' '+esc(t("q.try"))+' — '+esc(t("pt."+pick+".t"))+' is not the biggest gap here.</strong><p>'+esc(v(c.why))+'</p><p class="au-fix"><em>'+esc(v(c.fix))+'</em></p>';
       fb.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   });

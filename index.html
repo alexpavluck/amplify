@@ -383,6 +383,40 @@ button{font:inherit;color:inherit}
 }
 @media (max-width:480px){.c2-who{grid-template-columns:1fr}}
 
+
+/* ══ refinements ═══════════════════════════════════ */
+:root{--sky-deep:#2568A0;accent-color:var(--ink);caret-color:var(--ink)}
+a{text-underline-offset:.2em}
+/* display tracking back to the -0.04em floor */
+.display{letter-spacing:-.04em}
+/* authored icons replace glyphs */
+.ic{width:1em;height:1em;flex:none;vertical-align:-.14em}
+.ic-s{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hub-card .badge .ic,.hub-hint .badge .ic{width:.8em;height:.8em;vertical-align:-.05em}
+.hub-hint .badge{align-items:center;gap:.3rem}
+.panel-module b .ic{width:1.05em;height:1.05em;margin-right:.15em;vertical-align:-.17em}
+.panel-module b{display:block}
+.mentor-banner .mb-icon .ic{width:18px;height:18px}
+/* gold means go: decorative bullets move to sky, gold stays for interactive + next action */
+.areas li::before,.c2-how li::before{background:var(--sky)}
+/* sky as text fails contrast on white; labels use the deep sky */
+.c2-who li span{color:var(--sky-deep)}
+/* eyebrows retired: the facts sit under the title as plain lines */
+.mentor-banner .mb-meta{font-size:var(--fs-small);color:rgba(11,15,26,.72);margin-top:.2rem}
+.mentor-banner .mb-key{font-weight:600;color:var(--ink)}
+.c2-cta-meta{font-weight:600;color:var(--ink);margin-bottom:.6rem}
+.c2-cta-title{margin-bottom:.4rem}
+/* measure: keep running text near 65-75 characters */
+.problem-why{max-width:36em}
+.hub-panel .story{max-width:40em}
+/* tactile session cards: lift on hover, press on click (button only; the li carries the position) */
+.hub-card button{transition:background-color .15s,color .15s,box-shadow .2s var(--ease),transform .2s var(--ease)}
+.hub-card button:hover{transform:translateY(-2px);box-shadow:0 0 0 2px var(--ink) inset,0 12px 24px -14px rgba(11,15,26,.45)}
+.hub-card button[aria-pressed="true"]{box-shadow:0 14px 28px -16px rgba(11,15,26,.6)}
+.hub-card button:active{transform:translateY(0) scale(.98)}
+/* numerals line up in the roster and fact strip */
+.roster .c,.c2-facts dd{font-variant-numeric:tabular-nums}
+.profiles-soon{padding:1.5rem;text-align:center}
 </style>
 </head>
 <body>
@@ -420,7 +454,7 @@ button{font:inherit;color:inherit}
       <h2 class="h2" data-rise data-i18n="hub.h2">Learn AI on a problem you own</h2>
       <p class="lead" data-rise style="--rd:.08s" data-i18n="hub.lead">Leave with a working AI solution to a real task from your NTD programme, and the skills to keep it running after the course ends. Eight live sessions over four months, free for national programme staff.</p>
     </div>
-    <p class="hub-hint" data-i18n="hub.hint"><span><b>Click any session</b> to see what it covers and what you do before the next one.</span><span><span class="badge">▶ Interactive</span> sessions also open a hands-on learning module.</span></p>
+    <p class="hub-hint" data-i18n="hub.hint"><span><b>Click any session</b> to see what it covers and what you do before the next one.</span><span><span class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.2v13.6a.8.8 0 0 0 1.2.7l11-6.8a.8.8 0 0 0 0-1.4l-11-6.8a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg> Interactive</span> sessions also open a hands-on learning module.</span></p>
     <div class="hub" id="hub">
       <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <line x1="50" y1="50" x2="33.2" y2="13"/>
@@ -447,8 +481,8 @@ button{font:inherit;color:inherit}
       </div>
 
       <ol class="hub-list" aria-label="The eight sessions" data-i18n-aria-label="a.sessions">
-        <li class="hub-card" style="--x:33.2%;--y:13%"><button type="button" data-s="0" aria-pressed="true" aria-controls="panel-0" data-i18n="hub.b0"><span class="m">Session 1</span><span class="t">Setup, AI fundamentals &amp; prompting</span><span class="cue"><span class="go">See details</span><span class="badge">▶ Interactive</span></span></button></li>
-        <li class="hub-card" style="--x:66.8%;--y:13%"><button type="button" data-s="1" aria-pressed="false" aria-controls="panel-1" data-i18n="hub.b1"><span class="m">Session 2</span><span class="t">Chat vs agents &amp; prompts to skills</span><span class="cue"><span class="go">See details</span><span class="badge">▶ Interactive</span></span></button></li>
+        <li class="hub-card" style="--x:33.2%;--y:13%"><button type="button" data-s="0" aria-pressed="true" aria-controls="panel-0" data-i18n="hub.b0"><span class="m">Session 1</span><span class="t">Setup, AI fundamentals &amp; prompting</span><span class="cue"><span class="go">See details</span><span class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.2v13.6a.8.8 0 0 0 1.2.7l11-6.8a.8.8 0 0 0 0-1.4l-11-6.8a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg> Interactive</span></span></button></li>
+        <li class="hub-card" style="--x:66.8%;--y:13%"><button type="button" data-s="1" aria-pressed="false" aria-controls="panel-1" data-i18n="hub.b1"><span class="m">Session 2</span><span class="t">Chat vs agents &amp; prompts to skills</span><span class="cue"><span class="go">See details</span><span class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.2v13.6a.8.8 0 0 0 1.2.7l11-6.8a.8.8 0 0 0 0-1.4l-11-6.8a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg> Interactive</span></span></button></li>
         <li class="hub-card" style="--x:90.7%;--y:34.7%"><button type="button" data-s="2" aria-pressed="false" aria-controls="panel-2" data-i18n="hub.b2"><span class="m">Session 3</span><span class="t">Knowledge management: notebooks &amp; RAG</span><span class="cue"><span class="go">See details</span></span></button></li>
         <li class="hub-card" style="--x:90.7%;--y:65.3%"><button type="button" data-s="3" aria-pressed="false" aria-controls="panel-3" data-i18n="hub.b3"><span class="m">Session 4</span><span class="t">Connectors: built-in &amp; custom</span><span class="cue"><span class="go">See details</span></span></button></li>
         <li class="hub-card" style="--x:66.8%;--y:87%"><button type="button" data-s="4" aria-pressed="false" aria-controls="panel-4" data-i18n="hub.b4"><span class="m">Session 5</span><span class="t">AI for decision-making: data-to-action</span><span class="cue"><span class="go">See details</span></span></button></li>
@@ -461,11 +495,11 @@ button{font:inherit;color:inherit}
     <div aria-live="polite">
       <div class="hub-panel" id="panel-0">
         <div data-i18n="hub.h0"><h3 class="h3">Setup, AI fundamentals &amp; prompting</h3><p class="m">Session 1 · Foundations</p></div>
-        <div class="story" data-i18n="hub.s0"><p>You meet the cohort and the instructors, and leave with your own Claude project and a place on the course Slack. We introduce the vocabulary you will use for the next four months: what the different models are good at, the red lines on what must never go into an AI tool, and the habit of judging every answer, then keeping it, trying a new idea or discarding it. From there we get straight into prompting: how an effective prompt is put together, and how to get answers that sound like you rather than a chatbot.</p><p>Before the next session, you introduce yourself on Slack, post your problem for the whole cohort to read, and respond to at least two other people’s. By the end of the week your problem has a name, and other people are already thinking about it.</p><div class="panel-module teams"><p><b>👥 Getting started with Claude Teams</b>Join the AMPLIFY workspace, take a tour of the app, and learn to share projects and artifacts, and what stays private to you.</p><a class="btn btn-ink" href="shortcourses/claude-teams/">Start here <span class="arr" aria-hidden="true">→</span></a></div><div class="panel-module"><p><b>▶ Interactive learning module</b>Checklists, a prompt builder and exercises for this session, in English and French.</p><a class="btn btn-ink" href="course-1/">Open session&nbsp;1 module <span class="arr" aria-hidden="true">→</span></a></div></div>
+        <div class="story" data-i18n="hub.s0"><p>You meet the cohort and the instructors, and leave with your own Claude project and a place on the course Slack. We introduce the vocabulary you will use for the next four months: what the different models are good at, the red lines on what must never go into an AI tool, and the habit of judging every answer, then keeping it, trying a new idea or discarding it. From there we get straight into prompting: how an effective prompt is put together, and how to get answers that sound like you rather than a chatbot.</p><p>Before the next session, you introduce yourself on Slack, post your problem for the whole cohort to read, and respond to at least two other people’s. By the end of the week your problem has a name, and other people are already thinking about it.</p><div class="panel-module teams"><p><b><svg class="ic ic-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Getting started with Claude Teams</b>Join the AMPLIFY workspace, take a tour of the app, and learn to share projects and artifacts, and what stays private to you.</p><a class="btn btn-ink" href="shortcourses/claude-teams/">Start here <span class="arr" aria-hidden="true">→</span></a></div><div class="panel-module"><p><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.2v13.6a.8.8 0 0 0 1.2.7l11-6.8a.8.8 0 0 0 0-1.4l-11-6.8a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg> Interactive learning module</b>Checklists, a prompt builder and exercises for this session, in English and French.</p><a class="btn btn-ink" href="course-1/">Open session&nbsp;1 module <span class="arr" aria-hidden="true">→</span></a></div></div>
       </div>
       <div class="hub-panel" id="panel-1" hidden>
         <div data-i18n="hub.h1"><h3 class="h3">Chat vs agents &amp; prompts to skills</h3><p class="m">Session 2 · Foundations</p></div>
-        <div class="story" data-i18n="hub.s1"><p>Most AI use so far has been chat: one question, one answer. An agent works differently — it takes a goal, breaks it into steps and carries them out, checking its own work as it goes. You compare the two on the same task, so you can judge when a chat reply is enough and when a task is worth handing to an agent.</p><p>Then you convert what already works. A prompt you have refined until it reliably gives a good answer can become a skill the AI follows without being re-taught — one you build yourself, or borrow from someone else. You turn those prompts on your own problem, using the AI to question it until it is sharper than the version you posted, and start to separate the parts of your task that repeat, which a skill can take on, from the steps you only do once.</p><div class="panel-module"><p><b>▶ Interactive learning module</b>Hands-on exercises to work through this session at your own pace.</p><a class="btn btn-ink" href="course-2/">Open session&nbsp;2 module <span class="arr" aria-hidden="true">→</span></a></div></div>
+        <div class="story" data-i18n="hub.s1"><p>Most AI use so far has been chat: one question, one answer. An agent works differently — it takes a goal, breaks it into steps and carries them out, checking its own work as it goes. You compare the two on the same task, so you can judge when a chat reply is enough and when a task is worth handing to an agent.</p><p>Then you convert what already works. A prompt you have refined until it reliably gives a good answer can become a skill the AI follows without being re-taught — one you build yourself, or borrow from someone else. You turn those prompts on your own problem, using the AI to question it until it is sharper than the version you posted, and start to separate the parts of your task that repeat, which a skill can take on, from the steps you only do once.</p><div class="panel-module"><p><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.2v13.6a.8.8 0 0 0 1.2.7l11-6.8a.8.8 0 0 0 0-1.4l-11-6.8a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg> Interactive learning module</b>Hands-on exercises to work through this session at your own pace.</p><a class="btn btn-ink" href="course-2/">Open session&nbsp;2 module <span class="arr" aria-hidden="true">→</span></a></div></div>
       </div>
       <div class="hub-panel" id="panel-2" hidden>
         <div data-i18n="hub.h2s"><h3 class="h3">Knowledge management: notebooks &amp; RAG</h3><p class="m">Session 3 · Knowledge &amp; connectors</p></div>
@@ -536,11 +570,11 @@ button{font:inherit;color:inherit}
 <section class="section" id="pilot">
   <div class="wrap">
     <h2 class="h2 pilot-h" data-rise data-i18n="c1.h2">AMPLIFY Cohort 1 (2026): sixteen NTD professionals</h2>
-    <div class="mentor-banner" data-rise style="--rd:.06s" role="status" aria-label="Peer mentor announcement" data-i18n-aria-label="a.mentor">
-      <div class="mb-icon" aria-hidden="true">★</div>
+    <div class="mentor-banner" data-rise style="--rd:.06s" aria-label="Peer mentor announcement" data-i18n-aria-label="a.mentor">
+      <div class="mb-icon" aria-hidden="true"><svg class="ic ic-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <div class="mb-body">
-        <div class="mb-eyebrow" data-i18n="c1.eyebrow">Cohort 1 → Cohort 2</div>
         <div class="mb-title" data-i18n="c1.title">Five students from Cohort 1 will return as peer mentors for Cohort 2!</div>
+        <div class="mb-meta" data-i18n="c1.eyebrow">Cohort 1 → Cohort 2</div>
         <div class="mb-sub" data-i18n="c1.sub">We’re excited to see participants supporting each other.</div>
       </div>
     </div>
@@ -571,11 +605,11 @@ button{font:inherit;color:inherit}
     <!-- cohort 2 -->
     <div class="cohort2" id="cohort-2">
       <h2 class="h2 pilot-h" data-rise data-i18n="c2.h2">AMPLIFY Cohort 2:<br>Session 1, winter/spring 2027</h2>
-      <div class="mentor-banner" data-rise style="--rd:.06s" role="status" aria-label="Cohort 2 enrolment notice" data-i18n-aria-label="a.c2">
-        <div class="mb-icon" aria-hidden="true">★</div>
+      <div class="mentor-banner" data-rise style="--rd:.06s" aria-label="Cohort 2 enrolment notice" data-i18n-aria-label="a.c2">
+        <div class="mb-icon" aria-hidden="true"><svg class="ic ic-s" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg></div>
         <div class="mb-body">
-          <div class="mb-eyebrow" data-i18n="c2.eyebrow">Applications open December 2026</div>
           <div class="mb-title" data-i18n="c2.title">Enrolment for Cohort 2 will be a competitive process for invited country pairs</div>
+          <div class="mb-meta mb-key" data-i18n="c2.eyebrow">Applications open December 2026</div>
           <div class="mb-sub" data-i18n="c2.sub">Cohort 2 is made possible through the generous support of the <a href="https://www.gatesfoundation.org" target="_blank" rel="noopener">Gates Foundation</a> and <a href="https://www.sightsavers.org" target="_blank" rel="noopener">Sightsavers</a>.</div>
         </div>
       </div>
@@ -611,12 +645,12 @@ button{font:inherit;color:inherit}
 
       <div class="c2-cta" data-rise>
         <div>
-          <p class="c2-cta-eyebrow" data-i18n="c2.cta.eyebrow">Space is limited · committed participants only</p>
           <h3 class="c2-cta-title" data-i18n="c2.cta.title">Apply for Cohort 2</h3>
+          <p class="c2-cta-meta" data-i18n="c2.cta.eyebrow">Space is limited · committed participants only</p>
           <p class="c2-cta-sub" data-i18n="c2.cta.sub">Attendance and assignments are mandatory. This is a build-along course, not a webinar series, so apply only if you have the time to commit.</p>
         </div>
         <div class="c2-cta-side">
-          <span class="c2-soon" role="status" data-i18n="c2.soon">Coming in Dec 2026</span>
+          <span class="c2-soon" data-i18n="c2.soon">Coming in Dec 2026</span>
           <p class="c2-share" data-i18n="c2.share">Share the flyer: <a href="/flyers/amplify-cohort-2-flyer-en.pdf" target="_blank" rel="noopener" hreflang="en">English (PDF)</a> · <a href="/flyers/amplify-cohort-2-flyer-fr.pdf" target="_blank" rel="noopener" hreflang="fr" lang="fr">Français (PDF)</a></p>
         </div>
       </div>

@@ -1,0 +1,1313 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.528Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.545Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.557Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.570Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.583Z",
+        "reason": "Instrument Sans is the AMPLIFY brand face recorded in DESIGN.md"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "course-1/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.597Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "course-1/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.609Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "course-1/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.622Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "course-1/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.636Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "course-1/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.651Z",
+        "reason": "Instrument Sans is the AMPLIFY brand face recorded in DESIGN.md"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "course-2/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.666Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "course-2/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.680Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "course-2/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.695Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "course-2/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.711Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "course-2/index.html"
+        ],
+        "createdAt": "2026-11-16T19:00:50.726Z",
+        "reason": "Instrument Sans is the AMPLIFY brand face recorded in DESIGN.md"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "course-2/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.740Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "course-2/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.753Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "course-2/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.766Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "course-2/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.778Z",
+        "reason": "DESIGN.md records session modules as an accepted sub-theme with their own palette and scale (user chose homepage-as-main with sub-themes)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "course-2/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:00:50.790Z",
+        "reason": "Instrument Sans is the AMPLIFY brand face recorded in DESIGN.md"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "course-1/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:01:05.288Z",
+        "reason": "remaining left borders are the progress-map rail, blockquote rules and P/T/C/F/I colour-coded worked lines; the one real side-tab card (.card-why) was replaced with a tint"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "course-2/styles.css"
+        ],
+        "createdAt": "2026-11-16T19:01:05.309Z",
+        "reason": "remaining left borders are the progress-map rail, blockquote rules and P/T/C/F/I colour-coded worked lines; the one real side-tab card (.card-why) was replaced with a tint"
+      },
+      {
+        "rule": "icon-tile-stack",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:01:15.911Z",
+        "reason": "icon now sits beside the h3 via CSS grid in styles.css; the static check reads DOM order only (verified in browser)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "course-1/index.html"
+        ],
+        "createdAt": "2026-11-16T19:01:25.060Z",
+        "reason": "chan-table and ptypes-wrap are bordered table wrappers whose cells carry 10-12px padding (measured in browser)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.887Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.904Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.919Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.935Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.950Z",
+        "reason": "the zero-offset shadow is the --ring keyboard focus ring and an inset selected-option border, not decoration"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.963Z",
+        "reason": "static check misresolves dark-mode tokens and dark-gradient panels; computed-style sweep in browser found no failing text pairs"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.976Z",
+        "reason": ".tbl is a bordered table wrapper; cells have 11px/14px padding (measured)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:49.990Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.006Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.020Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.035Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, teal-blue) with its own palette and scale"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.050Z",
+        "reason": "the zero-offset shadow is the --ring keyboard focus ring and an inset selected-option border, not decoration"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.065Z",
+        "reason": "static check misresolves dark-mode tokens and dark-gradient panels; computed-style sweep in browser found no failing text pairs"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.081Z",
+        "reason": ".tbl is a bordered table wrapper; cells have 11px/14px padding (measured)"
+      },
+      {
+        "rule": "tiny-text",
+        "value": "*",
+        "files": [
+          "shortcourses/choose-visual/full/espen-mcp-academy.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.095Z",
+        "reason": "11px items are uppercase mono data labels: table headers, status and skill badges"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "country-selection/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.112Z",
+        "reason": "internal country-selection tool with its own small palette, outside the homepage system"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "country-selection/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.125Z",
+        "reason": "internal country-selection tool with its own small palette, outside the homepage system"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "country-selection/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.141Z",
+        "reason": "internal country-selection tool with its own small palette, outside the homepage system"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "country-selection/index.html"
+        ],
+        "createdAt": "2026-11-16T19:02:50.155Z",
+        "reason": "internal country-selection tool with its own small palette, outside the homepage system"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.788Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.806Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.828Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.849Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.871Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.892Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.912Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.932Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.954Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.975Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:38.994Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.014Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.033Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.053Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.072Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.093Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.112Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.131Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.150Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.169Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.188Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.208Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.226Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.246Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.262Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.282Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.303Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.322Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.339Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.356Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.377Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.394Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.415Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.435Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.455Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.476Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.494Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.516Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.536Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.555Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/slides.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.576Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/slides.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.596Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/slides.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.619Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/slides.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.641Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/slides.html"
+        ],
+        "createdAt": "2026-11-16T19:08:39.665Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.691Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.714Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.736Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.763Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.790Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.816Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.839Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.866Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.893Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.920Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/teams.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.942Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/teams.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.970Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/teams.css"
+        ],
+        "createdAt": "2026-11-16T19:08:39.995Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/teams.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.020Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/teams.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.046Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.070Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.090Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.115Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.139Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.162Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.185Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.209Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.234Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.258Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.281Z",
+        "reason": "DESIGN.md records the short courses as an accepted sub-theme (Inter Tight / Noto Sans / IBM Plex Mono, blue) with its own palette and scale"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.310Z",
+        "reason": "remaining left borders are the course-map rail and terminal-mock tool lines; the one real side-tab (.callout) was replaced with a tinted box"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.336Z",
+        "reason": "remaining left borders are the course-map rail and terminal-mock tool lines; the one real side-tab (.callout) was replaced with a tinted box"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.360Z",
+        "reason": "remaining left borders are the course-map rail and terminal-mock tool lines; the one real side-tab (.callout) was replaced with a tinted box"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/assets/css/site.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.385Z",
+        "reason": "remaining left borders are the course-map rail and terminal-mock tool lines; the one real side-tab (.callout) was replaced with a tinted box"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.410Z",
+        "reason": "remaining left borders are the course-map rail and terminal-mock tool lines; the one real side-tab (.callout) was replaced with a tinted box"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.437Z",
+        "reason": "remaining left borders are the course-map rail and terminal-mock tool lines; the one real side-tab (.callout) was replaced with a tinted box"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.458Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/assets/css/teams.css"
+        ],
+        "createdAt": "2026-11-16T19:08:40.484Z",
+        "reason": "room top border colour identifies the privacy zone (me/team/world); the colour carries meaning"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.509Z",
+        "reason": "room top border colour identifies the privacy zone (me/team/world); the colour carries meaning"
+      },
+      {
+        "rule": "undersized-ui-text",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.532Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "tiny-text",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.557Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "gpt-thin-border-wide-shadow",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.582Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.608Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "repeated-container-text",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.631Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.656Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.681Z",
+        "reason": "tour.html draws a miniature mock of the Claude app; avatars, file badges, window chrome and its internal headings imitate the real UI"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.708Z",
+        "reason": "inline pills/tags with deliberate tight vertical padding; text is inset horizontally"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.735Z",
+        "reason": "inline pills/tags with deliberate tight vertical padding; text is inset horizontally"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.759Z",
+        "reason": "inline pills/tags with deliberate tight vertical padding; text is inset horizontally"
+      },
+      {
+        "rule": "repeated-container-text",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:40.790Z",
+        "reason": "gh auth login is a command repeated across separate FAQ answers by design"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/ai-options/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.848Z",
+        "reason": "callouts have 19px left and up to 216px right padding (measured); the static check misreads the max(1.2rem, 100% - 61ch) measure rule"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.870Z",
+        "reason": "callouts have 19px left and up to 216px right padding (measured); the static check misreads the max(1.2rem, 100% - 61ch) measure rule"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.886Z",
+        "reason": "callouts have 19px left and up to 216px right padding (measured); the static check misreads the max(1.2rem, 100% - 61ch) measure rule"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.905Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.921Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.940Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.955Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/github-vercel/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.975Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/index.html"
+        ],
+        "createdAt": "2026-11-16T19:08:59.992Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/setup.html"
+        ],
+        "createdAt": "2026-11-16T19:09:00.011Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "shortcourses/openrouter/slides.html"
+        ],
+        "createdAt": "2026-11-16T19:09:00.031Z",
+        "reason": "zero-offset shadow is the --ring keyboard focus ring"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "shortcourses/claude-teams/tour.html"
+        ],
+        "createdAt": "2026-11-16T19:09:00.051Z",
+        "reason": "room top border colour identifies the privacy zone (me/team/world)"
+      }
+    ]
+  }
+}
