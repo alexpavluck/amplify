@@ -30,7 +30,7 @@ Success means participants leave with a working solution to a real task and the 
 ## Operating Context
 
 - **Cohort 2 (2027):** 8 live online sessions, every 2 weeks, over about 4 months, starting winter/spring 2027. Taught in English and French. Free; all fees are covered. Places are limited and selection is competitive among invited country pairs. Attendance and assignments are mandatory: "a build-along course, not a webinar series."
-- **Session arc:** Foundations (setup, prompting, chat vs agents, skills) → Knowledge & connectors (notebooks/RAG, connectors) → Decisions & content (data-to-action, office documents) → Visualisation & showcase (dashboards, maps, group presentations).
+- **Session arc:** Foundations (setup, prompting, chat vs agents, skills) → Knowledge & connectors (notebooks/RAG, connectors) → Data & content (data analysis and visualisation: charts, dashboards, maps; office documents) → Showcase & next steps (group presentations, data-to-action, transferring memory and chat history).
 - **Rituals:** homework between sessions, posted and discussed on the course Slack; feedback in pairs and small groups; a final presentation and a one-page reflection.
 - **Tools:** Claude Teams (AMPLIFY workspace), Slack, notebooks, connectors (Google Drive, email, custom programme-data connectors), plus short courses on OpenRouter, GitHub and Vercel.
 - **Problem statement:** written for the application, using four problem areas: data management and analysis, communication, knowledge management, project management. It covers the task, how often it happens, what happened last time, what went wrong, and what "better" would look like.
